@@ -2,13 +2,14 @@ import {MongoClient} from 'mongodb'
 import cors from 'cors'
 import Express, {json} from 'express'
 import { router } from './rotas.js'
-
+import dotenv from 'dotenv'
+dotenv.config()
 const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
 export let db=null
-const mongoClient=new MongoClient("mongodb://localhost:27017")
+const mongoClient=new MongoClient(process.env.DB_URL)
 const promessa= mongoClient.connect()
 promessa.then(async()=>{
     db=mongoClient.db("futebol")
@@ -19,7 +20,8 @@ promessa.then(async()=>{
     if(partidas===0)await createall()
 })
 promessa.catch(()=>console.log('erro conectando ao banco'))
-app.listen(4000,()=>console.log('listening on 4000'))
+const port =process.env.PORT||4000
+app.listen(port,()=>console.log(`listening on port ${port}`))
 /*
 let id=;const r=
     id++ //1
