@@ -1,7 +1,7 @@
-import { getTabelaData } from "./utils.js"
+import { getPartidas } from "../utils.js"
 const listaTimes=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
 export async function totalResultado(ignorados,rodadas,estadia,metade){
-    const {partidasTotais,golList}=await getTabelaData()
+    const partidasTotais=await getPartidas()
     const resp=[]
     let cont
     for(let time of listaTimes){
@@ -15,15 +15,15 @@ export async function totalResultado(ignorados,rodadas,estadia,metade){
         let derrotas=0;let golsContra=0;
         cont=0
         for(let partida of partidas){
+            console.log(partida)
             if(remain===0)break;
             let nosso=0
             let deles=0
-            const golsUnfiltred=golList.filter(gol=>(gol.partidaId==partida.id))
-            const gols=golsUnfiltred.filter(gol=>(!metade?true:(
+            const gols=partida.gols?partida.gols?.filter(gol=>(!metade?true:(
                 metade==1?(gol.minuto<=45):(gol.minuto>45)
-            )))
+            ))):[]
             for(let gol of gols){
-                if(gol.marcador==time){
+                if(partida.mandante==time?gol.mandante:!gol.mandante){
                     nosso++;golsPro++;golsTotal++
                 }else{
                     deles++;golsContra++;golsTotal++
@@ -34,12 +34,12 @@ export async function totalResultado(ignorados,rodadas,estadia,metade){
             cont++
         }
         resp.push({time,
-            c1:Math.round(vitorias*100/cont),
-            c2:Math.round(empates*100/cont),
-            c3:Math.round(derrotas*100/cont),
-            c4:(golsPro/cont).toFixed(2),
-            c5:(golsTotal/cont).toFixed(2),
-            c6:(golsContra/cont).toFixed(2)
+            c1:cont==0?'-':Math.round(vitorias*100/cont),
+            c2:cont==0?'-':Math.round(empates*100/cont),
+            c3:cont==0?'-':Math.round(derrotas*100/cont),
+            c4:cont==0?'-':(golsPro/cont).toFixed(2),
+            c5:cont==0?'-':(golsTotal/cont).toFixed(2),
+            c6:cont==0?'-':(golsContra/cont).toFixed(2)
         })
     }
     return resp

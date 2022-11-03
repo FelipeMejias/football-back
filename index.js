@@ -13,10 +13,14 @@ const mongoClient=new MongoClient(process.env.DB_URL)
 const promessa= mongoClient.connect()
 promessa.then(async()=>{
     db=mongoClient.db("futebol")
+
     await apagar()
     const partidas=await getPartidas()
     console.log(partidas)
-    if(partidas===0)await createall()
+    if(partidas===0){
+      await createOne()
+      await createall()
+    }
 })
 promessa.catch(()=>console.log('erro conectando ao banco'))
 const port =process.env.PORT||4000
@@ -45,53 +49,79 @@ let id=;const r=
     await create(id,r,'',[])
     
 */
-async function create(id,rodada,times,gols){
+async function create(id,rodada,times,goals){
     const mandante=times[0]+times[1]+times[2]
     const visitante=times[3]+times[4]+times[5]
-    await partida(id,rodada,mandante,visitante)
-    for(let goal of gols){
-        if(goal>=0){
-            await gol(id,goal)
-        }else{
-            await gol(id,-goal,false)
-        }
-    }
-}
-
-async function partida(id,rodada,mandante,visitante){
+    const gols=[]
+   for(let goal of goals){
+      if(goal>=0){
+          gols.push({mandante:true,minuto:goal})
+      }else{
+         gols.push({mandante:false,minuto:-goal})
+      }
+   }
    try {
-      await db.collection('partidas').insertOne({id,rodada,mandante,visitante})
+      await db.collection('partidas').insertOne({id,rodada,mandante,visitante,gols})
+      console.log(`partida da rodada ${rodada} criada id ${id}`)
    } catch (error) {
       console.log('partida nao criada')
    }
-    
 }
 
-async function gol(partidaId,minuto,bool=true){
-    const {mandante,visitante}=await db.collection('partidas').findOne({id:partidaId})
-    await db.collection('gols').insertOne({partidaId,
-        marcador:bool?mandante:visitante,
-        sofredor:bool?visitante:mandante,
-        minuto})
-}
 
-async function apagar(a,b){
+async function apagar(){
     await db.collection('partidas').deleteMany({})
-    await db.collection('gols').deleteMany({})
+    console.log('partidas deletadas')
 }
 
 async function getPartidas(){
     const tudo=await db.collection('partidas').find({}).toArray()
     return tudo.length
 }
-async function getGols(part){
-    const mandante=part[0]+part[1]+part[2]
-    const visitante=part[3]+part[4]+part[5]
-    const partida=await db.collection('partidas').findOne({
-        mandante,visitante
-    })
-    const tudo=await db.collection('gols').find({partidaId:partida.id}).toArray()
-    console.log('gols',tudo)
+async function createOne(){
+   let id=0;let r=1
+   //================== RODADA 1 =====================//
+    id++ //1
+    await create(id,r,'flusan',[])
+    id++ //2
+    await create(id,r,'agofla',[75,-84])
+    id++ //3
+    await create(id,r,'palcea',[-7,-14,22,-85,90])
+    id++ //4
+    await create(id,r,'ctbgoi',[10,47,90])
+    id++ //5
+    await create(id,r,'botcor',[-17,-26,-44,66])
+    id++ //6
+    await create(id,r,'camint',[10,90])
+    id++ //7
+    await create(id,r,'forcui',[-8])
+    id++ //8
+    await create(id,r,'avaamg',[52])
+    id++ //9
+    await create(id,r,'saocap',[19,52,70,74])
+    id++ //10
+    await create(id,r,'juvbra',[-12,30,69,-89])
+    r=2//================== RODADA 2 =====================//
+    id++ //1
+    await create(id,r,'goipal',[57,-90])
+    id++ //2
+    await create(id,r,'amgjuv',[19,25,65,-84,89])
+    id++ //3
+    await create(id,r,'corava',[9,25,55])
+    id++ //4
+    await create(id,r,'cuiflu',[-90])
+    id++ //5
+    await create(id,r,'sanctb',[12,-28,32])
+    id++ //6
+    await create(id,r,'flasao',[25,-41,69,72])
+    id++ //7
+    await create(id,r,'capcam',[-49])
+    id++ //8
+    await create(id,r,'intfor',[-45,45,90])
+    id++ //9
+    await create(id,r,'braago',[19,26,30,59])
+    id++ //10
+    await create(id,r,'ceabot',[-18,43,-60,-80])
 }
 async function createall(){
 let id=60;let r=7

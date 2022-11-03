@@ -1,8 +1,7 @@
-import { getFootballData } from "./utils.js"
+import { getPartidasTime } from "../utils.js"
 
-export async function winningLosing(ignorados,rodadas,time,who,tieing=false){
-
-    const {golList,partidas}=await getFootballData(time)
+export async function whenGolHappens(ignorados,rodadas,time,who){
+    const partidas=await getPartidasTime(time)
     let ganhou=0
     let empatou=0
     let perdeu=0
@@ -12,35 +11,35 @@ export async function winningLosing(ignorados,rodadas,time,who,tieing=false){
     let counter=rodadas
     for(let partida of partidas){
         if(counter===0)break;
-        const {mandante,visitante,rodada}=partida
+        const {mandante,visitante,rodada,gols}=partida
         if(ignorados.includes(mandante==time?visitante:mandante))continue
         let nosso=0
         let deles=0
-        const gols=golList.filter(gol=>(gol.partidaId==partida.id))
-        if(gols.length==0 && !tieing)continue
+        for (let gol of gols){
+            if(partida.mandante==time?gol.mandante:!gol.mandante){
+                nosso++
+            }else{deles++}
+        }
+        if(gols.length==0)continue
         let participaDaContagem=false
-        for(let k=0;k<=gols.length;k++){
-
-            if(tieing?nosso==deles:(who?nosso>deles:nosso<deles)){
+        for(let k=0;k<gols.length;k++){
+            if(who?partida.mandante==time?gols[k].mandante:!gols[k].mandante:partida.mandante==time?!gols[k].mandante:gols[k].mandante){
                 participaDaContagem=true
                 const situation={partida:partida.id,adversario:(mandante==time?visitante:mandante),emCasa:(mandante==time?true:false),rodada}
-                if(!gols[k]){
-                    listNada.push({...situation,apos:(gols[k-1]?90-gols[k-1].minuto:90)})
-                }else if(gols[k].sofredor==time){
-                    listTomou.push({...situation,apos:gols[k].minuto-(gols[k-1]?gols[k-1].minuto:0)})
+                if(!gols[k+1]){
+                    listNada.push({...situation,apos:90-gols[k].minuto})
+                }else if(partida.mandante==time?!gols[k+1].mandante:gols[k+1].mandante){
+                    listTomou.push({...situation,apos:gols[k+1].minuto-gols[k].minuto})
                 }else{
-                    listFez.push({...situation,apos:gols[k].minuto-(gols[k-1]?gols[k-1].minuto:0)})
+                    listFez.push({...situation,apos:gols[k+1].minuto-gols[k].minuto})
                 }
             }
-            if(gols[k]?.marcador==time){
-                nosso++
-            }else if(gols[k]?.sofredor==time){deles++}
         }
         if(participaDaContagem){
             if(nosso>deles){ganhou++}else if(nosso<deles){perdeu++}else{empatou++}
         }
         counter--
-}
+    }
     const total=(ganhou+empatou+perdeu)/100
     const resp={
         resultados:{

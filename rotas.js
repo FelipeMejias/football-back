@@ -1,13 +1,12 @@
 import Router from 'express'
 import { db } from "./index.js"
-import { firstGoal } from './firstGoal.js'
-import { whenTies } from './whenTies.js'
-import { whenGolHappens } from './whenGolHappens.js'
-import { winningLosing } from './winningLosing.js'
-import { ordenarGols } from './utils.js'
-import { inicialSituation } from './inicialSituation.js'
-import { totalTempo } from './totalTempo.js'
-import { totalResultado } from './totalResultado.js'
+import { firstGoal } from './src-times/firstGoal.js'
+import { whenTies } from './src-times/whenTies.js'
+import { whenGolHappens } from './src-times/whenGolHappens.js'
+import { winningLosing } from './src-times/winningLosing.js'
+import { inicialSituation } from './src-times/inicialSituation.js'
+import { totalTempo } from './src-tabelas/totalTempo.js'
+import { totalResultado } from './src-tabelas/totalResultado.js'
 
 export const router=Router()
 
@@ -55,8 +54,6 @@ router.post('/totais',async(req,res)=>{
 router.get('/partidas/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const partida=await db.collection('partidas').findOne({id})
-    const golsUnordered=await db.collection('gols').find({partidaId:id}).toArray()
-    const gols=ordenarGols(golsUnordered)
-    const resp={partida,gols}
+    const resp={partida,gols:partida.gols}
     res.status(200).send(resp)
 })
