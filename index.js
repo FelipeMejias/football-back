@@ -13,10 +13,9 @@ const mongoClient=new MongoClient(process.env.DB_URL)
 const promessa= mongoClient.connect()
 promessa.then(async()=>{
     db=mongoClient.db("futebol")
-
-    
-    
+    await apagar()
     const partidas=await getPartidas()
+    console.log(partidas)
     if(partidas===0)await createall()
 })
 promessa.catch(()=>console.log('erro conectando ao banco'))
@@ -60,7 +59,12 @@ async function create(id,rodada,times,gols){
 }
 
 async function partida(id,rodada,mandante,visitante){
-    await db.collection('partidas').insertOne({id,rodada,mandante,visitante})
+   try {
+      await db.collection('partidas').insertOne({id,rodada,mandante,visitante})
+   } catch (error) {
+      console.log('partida nao criada')
+   }
+    
 }
 
 async function gol(partidaId,minuto,bool=true){
@@ -72,7 +76,8 @@ async function gol(partidaId,minuto,bool=true){
 }
 
 async function apagar(a,b){
-    await db.collection('partidas').deleteMany({id:a,rodada:b})
+    await db.collection('partidas').deleteMany({})
+    await db.collection('gols').deleteMany({})
 }
 
 async function getPartidas(){
