@@ -15,7 +15,6 @@ export async function totalResultado(ignorados,rodadas,estadia,metade){
         let derrotas=0;let golsContra=0;
         cont=0
         for(let partida of partidas){
-            console.log(partida)
             if(remain===0)break;
             let nosso=0
             let deles=0

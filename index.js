@@ -16,8 +16,7 @@ promessa.then(async()=>{
 
     await apagar()
     const partidas=await getPartidas()
-    console.log(partidas)
-    if(partidas===0){
+    if(partidas.length===0){
       await createOne()
       await createall()
     }
@@ -76,7 +75,7 @@ async function apagar(){
 
 async function getPartidas(){
     const tudo=await db.collection('partidas').find({}).toArray()
-    return tudo.length
+    return tudo
 }
 async function createOne(){
    let id=0;let r=1
