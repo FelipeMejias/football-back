@@ -10,7 +10,6 @@ app.use(json())
 app.use(router)
 export const bancoFake=[]
 
-
 createAll()
 
 const port =process.env.PORT||4000
@@ -196,7 +195,7 @@ async function createAll(){
     id++ //4
     await create(id,r,'juvpal',[-9,-31,-90])
     id++ //5
-    await create(id,r,'cuiint',[50])
+    await create(id,r,'cuiint',[50,-83])
     id++ //6
     await create(id,r,'amgbot',[38,-86])
     id++ //7
@@ -206,12 +205,12 @@ async function createAll(){
     id++ //9
     await create(id,r,'capava',[25,44,-51])
     id++ //10
-    await create(id,r,'bracam',[13,90])
+    await create(id,r,'bracam',[13,-66])
  r=8
     id++ //1
     await create(id,r,'goibra',[-40,74])
     id++ //2
-    await create(id,r,'saocea',[8,-37,42,71])
+    await create(id,r,'saocea',[8,-37,42,-71])
     id++ //3
     await create(id,r,'forjuv',[-49,65])
     id++ //4
@@ -243,7 +242,7 @@ async function createAll(){
     id++ //6
     await create(id,r,'juvflu',[32])
     id++ //7
-    await create(id,r,'flafor',[-28,45,90])
+    await create(id,r,'flafor',[-28,45,-90])
     id++ //8
     await create(id,r,'palcam',[])
     id++ //9
@@ -265,14 +264,13 @@ async function createAll(){
     id++ //6
     await create(id,r,'flucam',[18,29,-35,37,-45,-53,58,63])
     id++ //7
-    await create(id,r,'sanint',[63,71])
+    await create(id,r,'sanint',[63,-71])
     id++ //8
     await create(id,r,'palbot',[11,18,33,87])
     id++ //9
     await create(id,r,'ctbsao',[-4,59])
     id++ //10
     await create(id,r,'forgoi',[13,-56])
-
  r=11
     id++ //1
     await create(id,r,'corjuv',[2,84])
@@ -329,7 +327,7 @@ async function createAll(){
     id++ //5
     await create(id,r,'corgoi',[34])
     id++ //6
-    await create(id,r,'intbot',[9,14,-19,-19,-59,-90])
+    await create(id,r,'intbot',[9,14,-19,-59,-90])
     id++ //7
     await create(id,r,'foramg',[43])
     id++ //8
@@ -349,7 +347,7 @@ async function createAll(){
     id++ //4
     await create(id,r,'corsan',[])
     id++ //5
-    await create(id,r,'camfor',[-3,29,76,87,90])
+    await create(id,r,'camfor',[-3,-29,76,87,90])
     id++ //6
     await create(id,r,'avapal',[45,-47,-65,73])
     id++ //7
@@ -492,7 +490,7 @@ async function createAll(){
     await create(id,r,'brajuv',[28])
     id++ //10
     await create(id,r,'sanflu',[16,-71,-72,86])
-
+    
  r=21
     id++ //1
     await create(id,r,'juvamg',[-8])
@@ -602,6 +600,243 @@ async function createAll(){
     await create(id,r,'cuisao',[7,-80])
     id++ //10
     await create(id,r,'sangoi',[-2,55,-61])
-
-
+    r=26//================== RODADA 26 =====================//
+    id++ //1
+    await create(id,r,'cambra',[17,-31])
+    id++ //2
+    await create(id,r,'intcui',[68])
+    id++ //3
+    await create(id,r,'ceasan',[6,30,-56])
+    id++ //4
+    await create(id,r,'flufor',[11,-51,56])
+    id++ //5
+    await create(id,r,'paljuv',[46,-63,67])
+    id++ //6
+    await create(id,r,'avacap',[22,-48])
+    id++ //7
+    await create(id,r,'botamg',[])
+    id++ //8
+    await create(id,r,'saocor',[-14,33])
+    id++ //9
+    await create(id,r,'ctbago',[45,49])
+    id++ //10
+    await create(id,r,'goifla',[80,-84])
+    r=27//================== RODADA 27 =====================//
+    id++ //1
+    await create(id,r,'avacam',[54])
+    id++ //2
+    await create(id,r,'botctb',[75,79])
+    id++ //3
+    await create(id,r,'bragoi',[28,-55])
+    id++ //4
+    await create(id,r,'flaflu',[-45,-76,83])
+    id++ //5
+    await create(id,r,'ceasao',[-23,-90])
+    id++ //6
+    await create(id,r,'amgcor',[77])
+    id++ //7
+    await create(id,r,'juvfor',[-44,78])
+    id++ //8
+    await create(id,r,'palsan',[77])
+    id++ //9
+    await create(id,r,'capcui',[-8,35,45,-64])
+    id++ //10
+    await create(id,r,'agoint',[-28,-35,64])
+    r=28//================== RODADA 28 =====================//
+    id++ //1
+    await create(id,r,'saoava',[25,45,45,90])
+    id++ //2
+    await create(id,r,'sancap',[35,90])
+    id++ //3
+    await create(id,r,'ctbcea',[30])
+    id++ //4
+    await create(id,r,'corago',[12,-17,88])
+    id++ //5
+    await create(id,r,'flujuv',[19,28,56,88])
+    id++ //6
+    await create(id,r,'forfla',[18,-32,-45,51,90])
+    id++ //7
+    await create(id,r,'cuiamg',[32,62,-90])
+    id++ //8
+    await create(id,r,'intbra',[])
+    id++ //9
+    await create(id,r,'campal',[-51])
+    id++ //10
+    await create(id,r,'goibot',[-89])
+    r=29//================== RODADA 29 =====================//
+    id++ //1
+    await create(id,r,'camflu',[41,65])
+    id++ //2
+    await create(id,r,'intsan',[23])
+    id++ //3
+    await create(id,r,'ceaamg',[-25,-68,90])
+    id++ //4
+    await create(id,r,'avaago',[-45,-56,66])
+    id++ //5
+    await create(id,r,'capjuv',[20,69])
+    id++ //6
+    await create(id,r,'flabra',[12,-48,66,70,71])
+    id++ //7
+    await create(id,r,'goifor',[-14])
+    id++ //8
+    await create(id,r,'corcui',[33,45])
+    id++ //9
+    await create(id,r,'botpal',[20,-26,-36,-60])
+    id++ //10
+    await create(id,r,'saoctb',[2,63,72,-84])
+    r=30//================== RODADA 30 =====================//
+    id++ //1
+    await create(id,r,'juvcor',[-24,46,-54,62])
+    id++ //2
+    await create(id,r,'agoflu',[-5,-37,45,75,88])
+    id++ //3
+    await create(id,r,'ceagoi',[47,-90])
+    id++ //4
+    await create(id,r,'bracui',[-34,45,60])
+    id++ //5
+    await create(id,r,'capfor',[-15,90])
+    id++ //6
+    await create(id,r,'flaint',[])
+    id++ //7
+    await create(id,r,'sancam',[-72,88,-90])
+    id++ //8
+    await create(id,r,'palctb',[15,34,51,77])
+    id++ //9
+    await create(id,r,'amgsao',[10,-34,-90])
+    id++ //10
+    await create(id,r,'avabot',[11,-49,-56])
+   
+    r=31//================== RODADA 31 =====================//
+    id++ //1
+    await create(id,r,'cuifla',[-58,-66,90])
+    id++ //2
+    await create(id,r,'corcap',[6,22,-81])
+    id++ //3
+    await create(id,r,'intgoi',[13,-33,42,-45,57,90])
+    id++ //4
+    await create(id,r,'saobot',[-90])
+    id++ //5
+    await create(id,r,'forava',[54,90])
+    id++ //6
+    await create(id,r,'ctbbra',[12,-26,58])
+    id++ //7
+    await create(id,r,'camcea',[])
+    id++ //8
+    await create(id,r,'fluamg',[-5,-34])
+    id++ //9
+    await create(id,r,'agopal',[-49,65])
+    id++ //10
+    await create(id,r,'sanjuv',[24,54,63,75,-78])
+    r=32//================== RODADA 32 =====================//
+    id++ //1
+    await create(id,r,'flacam',[38])
+    id++ //2
+    await create(id,r,'amgfor',[-34,-83,90])
+    id++ //3
+    await create(id,r,'ceacui',[-82,90])
+    id++ //4
+    await create(id,r,'palsao',[])
+    id++ //5
+    await create(id,r,'juvago',[-51,76])
+    id++ //6
+    await create(id,r,'botint',[-67])
+    id++ //7
+    await create(id,r,'avaflu',[-25,-41,-63])
+    id++ //8
+    await create(id,r,'capctb',[89])
+    id++ //9
+    await create(id,r,'brasan',[-51,-69])
+    id++ //10
+    await create(id,r,'goicor',[])
+    r=33//================== RODADA 33 =====================//
+    id++ //1
+    await create(id,r,'bracap',[5,37,45,-64,-67,90])
+    id++ //2
+    await create(id,r,'amgfla',[-11,13,-24])
+    id++ //3
+    await create(id,r,'sancor',[-89])
+    id++ //4
+    await create(id,r,'palava',[4,55,90])
+    id++ //5
+    await create(id,r,'flubot',[-41,-52,76,82])
+    id++ //6
+    await create(id,r,'juvsao',[-36,39,-56])
+    id++ //7
+    await create(id,r,'ctbint',[24,-60])
+    id++ //8
+    await create(id,r,'agocea',[24])
+    id++ //9
+    await create(id,r,'cuigoi',[-8,-20,65])
+    id++ //10
+    await create(id,r,'forcam',[])
+    r=34//================== RODADA 34 =====================//
+    id++ //1
+    await create(id,r,'flasan',[45,-53,78,87,-90])
+    id++ //2
+    await create(id,r,'cappal',[30,-59,-70,-76])
+    id++ //3
+    await create(id,r,'botbra',[18,-62,71])
+    id++ //4
+    await create(id,r,'corflu',[-12,-70])
+    id++ //5
+    await create(id,r,'intcea',[-6,65,78])
+    id++ //6
+    await create(id,r,'goiamg',[-60,61,-88,90])
+    id++ //7
+    await create(id,r,'forctb',[2,55,-60,73])
+    id++ //8
+    await create(id,r,'saoago',[22,-72,90])
+    id++ //9
+    await create(id,r,'camjuv',[12])
+    id++ //10
+    await create(id,r,'cuiava',[90])
+    r=35//================== RODADA 35 =====================//
+    id++ //1
+    await create(id,r,'ceaflu',[-72])
+    id++ //2
+    await create(id,r,'botcui',[-41,-52])
+    id++ //3
+    await create(id,r,'saocam',[-25,40,45,-81])
+    id++ //4
+    await create(id,r,'capgoi',[6,13,29,-40,-51])
+    id++ //5
+    await create(id,r,'amgint',[76])
+    id++ //6
+    await create(id,r,'juvctb',[-90])
+    id++ //7
+    await create(id,r,'avabra',[-60,-68,90])
+    id++ //8
+    await create(id,r,'agosan',[-19,29,39,-52,-90])
+    id++ //9
+    await create(id,r,'palfor',[15,48,32,64])
+    id++ //10
+    await create(id,r,'flacor',[-43,48,-75])
 }
+
+function partidasCruzadas(list){
+   const lista=bancoFake.filter(part=>(
+         list.includes(part.mandante)&&list.includes(part.visitante)
+         ))
+   lista.forEach(p=>{
+      const {rodada,mandante,visitante,gols}=p
+      let man=0;let vis=0
+      gols.forEach(g=>{
+         if(g.mandante){man++}else{vis++}
+      })
+      console.log(`(${rodada}) ${mandante} ${man} x ${vis} ${visitante} `)
+   })
+}
+/*
+bancoFake.forEach(part=>{
+      const {gols,mandante,visitante,id,rodada}=part
+      const t=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
+      let man=0;let vis=0
+      for(let gol of gols){
+         if(gol.mandante){
+            man++
+         }else{vis++}
+      }
+      console.log(`${mandante} ${man} x ${vis} ${visitante}`)
+      if(id%10==0)console.log(`---------------rodada ${rodada+1}`)
+    })
+    */
