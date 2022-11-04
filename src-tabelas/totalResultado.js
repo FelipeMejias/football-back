@@ -1,7 +1,7 @@
 import { getPartidas } from "../utils.js"
 const listaTimes=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
-export async function totalResultado(ignorados,rodadas,estadia,metade){
-    const partidasTotais=await getPartidas()
+export  function totalResultado(ignorados,rodadas,estadia,metade){
+    const partidasTotais= getPartidas()
     const resp=[]
     let cont
     for(let time of listaTimes){

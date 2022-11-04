@@ -1,21 +1,20 @@
-import { bancoFake, db } from "./index.js"
-export async function getPartidasTime(time){
-    //const partMandantes=await db.collection('partidas').find({mandante:time}).toArray()
-    //const partVisitantes=await db.collection('partidas').find({visitante:time}).toArray()
+import { bancoFake } from "./index.js"
+export function getPartidasTime(time){
     const partidasUnordered=bancoFake.filter(part=>(
         part.mandante==time||part.visitante==time
     ))
-    //const partidas=ordernarPorRodada([...partMandantes,...partVisitantes])
     const partidas=ordernarPorRodada(partidasUnordered)
     return partidas
 }
 
-export async function getPartidas(){
-    //const partidasUnordered=await db.collection('partidas').find({}).toArray()
-    //const partidasTotais=ordernarPorRodada(partidasUnordered)
+export function getPartidas(){
     const partidasTotais=ordernarPorRodada(bancoFake)
     return partidasTotais
 }
+
+export function qtdRodadas(){
+    return Math.ceil(bancoFake.length/10)
+} 
 
 function ordernarPorRodada(list){
     const used=[]

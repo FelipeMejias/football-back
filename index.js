@@ -9,20 +9,10 @@ app.use(cors())
 app.use(json())
 app.use(router)
 export const bancoFake=[]
-export let db=null
-const mongoClient=new MongoClient(process.env.DB_URL)
-const promessa= mongoClient.connect()
-promessa.then(async()=>{
-    db=mongoClient.db("futebol")
 
-   /*
-    await apagar()
-    const partidas=await getPartidas()
-    if(partidas.length===0){*/
-      await createOne()
-      await createall()
-})
-promessa.catch(()=>console.log('erro conectando ao banco'))
+
+createAll()
+
 const port =process.env.PORT||4000
 app.listen(port,()=>console.log(`listening on port ${port}`))
 /*
@@ -47,7 +37,6 @@ app.listen(port,()=>console.log(`listening on port ${port}`))
     await create(id,r,'',[])
     id++ //10
     await create(id,r,'',[])
-    
 */
 async function create(id,rodada,times,goals){
     const mandante=times[0]+times[1]+times[2]
@@ -62,24 +51,14 @@ async function create(id,rodada,times,goals){
    }
    try {
       bancoFake.push({id,rodada,mandante,visitante,gols})
-      //await db.collection('partidas').insertOne({id,rodada,mandante,visitante,gols})
-      console.log(`partida da rodada ${rodada} criada id ${id}`)
+      if(id%10==0)console.log(`rodada ${rodada} (${id} partidas)`)
    } catch (error) {
-      console.log('partida nao criada')
+      console.log('ERRO AO CRIAR')
    }
 }
 
 
-async function apagar(){
-    await db.collection('partidas').deleteMany({})
-    console.log('partidas deletadas')
-}
-
-async function getPartidas(){
-    const tudo=await db.collection('partidas').find({}).toArray()
-    return tudo
-}
-async function createOne(){
+async function createAll(){
    let id=0;let r
    r=1//================== RODADA 1 =====================//
     id++ //1
@@ -207,10 +186,7 @@ async function createOne(){
     await create(id,r,'botfor',[-14,42,89,90])
     id++ //10
     await create(id,r,'goisan',[19])
-    
-}
-async function createall(){
-let id=60;let r=7
+ r=7
     id++ //1
     await create(id,r,'agoctb',[45,90])
     id++ //2
@@ -231,8 +207,7 @@ let id=60;let r=7
     await create(id,r,'capava',[25,44,-51])
     id++ //10
     await create(id,r,'bracam',[13,90])
-
- id=70; r=8
+ r=8
     id++ //1
     await create(id,r,'goibra',[-40,74])
     id++ //2
@@ -254,7 +229,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'intago',[12,-79])
 
- id=80; r=9
+  r=9
     id++ //1
     await create(id,r,'amgcui',[25,-42,53])
     id++ //2
@@ -276,7 +251,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'botgoi',[45,-73,-84],'')
 
- id=90; r=10
+ r=10
     id++ //1
     await create(id,r,'cuicor',[36])
     id++ //2
@@ -298,7 +273,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'forgoi',[13,-56])
 
- id=100; r=11
+ r=11
     id++ //1
     await create(id,r,'corjuv',[2,84])
     id++ //2
@@ -320,7 +295,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'botava',[-45])
 
- id=110; r=12
+ r=12
     id++ //1
     await create(id,r,'juvsan',[26,-57,-77])
     id++ //2
@@ -342,7 +317,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'avafor',[33,40,-44,-65,70])
 
- id=120; r=13
+  r=13
     id++ //1
     await create(id,r,'cuicea',[])
     id++ //2
@@ -364,7 +339,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'saopal',[17,-90,-90])
 
- id=130; r=14
+ r=14
     id++ //1
     await create(id,r,'intctb',[19,42,54])
     id++ //2
@@ -386,7 +361,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'saojuv',[])
 
- id=140; r=15
+ r=15
     id++ //1
     await create(id,r,'juvcam',[-30,-56,76])
     id++ //2
@@ -408,7 +383,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'brabot',[-64])
 
- id=150; r=16
+ r=16
     id++ //1
     await create(id,r,'braava',[70,76,87,90])
     id++ //2
@@ -430,7 +405,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'intamg',[90])
 
- id=160; r=17
+ r=17
     id++ //1
     await create(id,r,'capint',[])
     id++ //2
@@ -452,7 +427,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'palcui',[49])
 
- id=170; r=18
+  r=18
     id++ //1
     await create(id,r,'ceaava',[45])
     id++ //2
@@ -474,7 +449,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'amgpal',[-65])
    
- id=180; r=19
+  r=19
     id++ //1
     await create(id,r,'saogoi',[-8,29,33,-39,48,-90])
     id++ //2
@@ -496,7 +471,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'ctbcui',[40])
    
- id=190; r=20
+ r=20
     id++ //1
     await create(id,r,'goictb',[80])
     id++ //2
@@ -518,7 +493,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'sanflu',[16,-71,-72,86])
 
- id=200; r=21
+ r=21
     id++ //1
     await create(id,r,'juvamg',[-8])
     id++ //2
@@ -540,7 +515,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'ctbsan',[-47,57,-90])
 
- id=210; r=22
+ r=22
     id++ //1
     await create(id,r,'goiava',[-45,79])
     id++ //2
@@ -562,7 +537,7 @@ let id=60;let r=7
     id++ //10
     await create(id,r,'intflu',[36,71,90]) 
 
- id=220; r=23
+ r=23
     id++ //1
     await create(id,r,'camgoi',[-51])
     id++ //2
