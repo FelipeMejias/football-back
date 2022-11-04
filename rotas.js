@@ -1,5 +1,5 @@
 import Router from 'express'
-import { db } from "./index.js"
+import { bancoFake, db } from "./index.js"
 import { firstGoal } from './src-times/firstGoal.js'
 import { whenTies } from './src-times/whenTies.js'
 import { whenGolHappens } from './src-times/whenGolHappens.js'
@@ -53,7 +53,8 @@ router.post('/totais',async(req,res)=>{
 
 router.get('/partidas/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
-    const partida=await db.collection('partidas').findOne({id})
+    //const partida=await db.collection('partidas').findOne({id})
+    const partida=bancoFake.filter(part=>part.id==id)[0]
     const resp={partida,gols:partida.gols}
     res.status(200).send(resp)
 })

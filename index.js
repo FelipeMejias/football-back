@@ -8,24 +8,25 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
+export const bancoFake=[]
 export let db=null
 const mongoClient=new MongoClient(process.env.DB_URL)
 const promessa= mongoClient.connect()
 promessa.then(async()=>{
     db=mongoClient.db("futebol")
 
+   /*
     await apagar()
     const partidas=await getPartidas()
-    if(partidas.length===0){
+    if(partidas.length===0){*/
       await createOne()
       await createall()
-    }
 })
 promessa.catch(()=>console.log('erro conectando ao banco'))
 const port =process.env.PORT||4000
 app.listen(port,()=>console.log(`listening on port ${port}`))
 /*
-let id=;const r=
+ r=//================== RODADA 1 =====================//
     id++ //1
     await create(id,r,'',[])
     id++ //2
@@ -60,7 +61,8 @@ async function create(id,rodada,times,goals){
       }
    }
    try {
-      await db.collection('partidas').insertOne({id,rodada,mandante,visitante,gols})
+      bancoFake.push({id,rodada,mandante,visitante,gols})
+      //await db.collection('partidas').insertOne({id,rodada,mandante,visitante,gols})
       console.log(`partida da rodada ${rodada} criada id ${id}`)
    } catch (error) {
       console.log('partida nao criada')
@@ -78,8 +80,8 @@ async function getPartidas(){
     return tudo
 }
 async function createOne(){
-   let id=0;let r=1
-   //================== RODADA 1 =====================//
+   let id=0;let r
+   r=1//================== RODADA 1 =====================//
     id++ //1
     await create(id,r,'flusan',[])
     id++ //2
@@ -121,6 +123,91 @@ async function createOne(){
     await create(id,r,'braago',[19,26,30,59])
     id++ //10
     await create(id,r,'ceabot',[-18,43,-60,-80])
+    r=3//================== RODADA 3 =====================//
+    id++ //1
+    await create(id,r,'brasao',[1,-70])
+    id++ //2
+    await create(id,r,'capfla',[32])
+    id++ //3
+    await create(id,r,'palcor',[14,19,71])
+    id++ //4
+    await create(id,r,'fluint',[-54])
+    id++ //5
+    await create(id,r,'camctb',[23,36,-62,-78])
+    id++ //6
+    await create(id,r,'sanamg',[29,51,78])
+    id++ //7
+    await create(id,r,'juvcui',[-84])
+    id++ //8
+    await create(id,r,'agobot',[51,-90])
+    id++ //9
+    await create(id,r,'avagoi',[4,51,62,-76,-88])
+    id++ //10
+    await create(id,r,'forcea',[-45])
+    r=4//================== RODADA 4 =====================//
+    id++ //1
+    await create(id,r,'ceabra',[-17])
+    id++ //2
+    await create(id,r,'amgcap',[75])
+    id++ //3
+    await create(id,r,'goicam',[-39,53,-56,80])
+    id++ //4
+    await create(id,r,'cuiago',[-45,82])
+    id++ //5
+    await create(id,r,'botjuv',[-64,83])
+    id++ //6
+    await create(id,r,'corfor',[53])
+    id++ //7
+    await create(id,r,'ctbflu',[-19,-36,53,61,90])
+    id++ //8
+    await create(id,r,'intava',[])
+    id++ //9
+    await create(id,r,'saosan',[10,-45,82])
+    id++ //10
+    await create(id,r,'flapal',[])
+    r=5//================== RODADA 5 =====================//
+    id++ //1
+    await create(id,r,'camamg',[-7,69,-81])
+    id++ //2
+    await create(id,r,'capcea',[49])
+    id++ //3
+    await create(id,r,'flabot',[-51])
+    id++ //4
+    await create(id,r,'palflu',[72,-83])
+    id++ //5
+    await create(id,r,'agogoi',[-1])
+    id++ //6
+    await create(id,r,'bracor',[-54])
+    id++ //7
+    await create(id,r,'sancui',[3,-11,37,76,78])
+    id++ //8
+    await create(id,r,'juvint',[-47,90])
+    id++ //9
+    await create(id,r,'forsao',[-57,69])
+    id++ //10
+    await create(id,r,'avactb',[-52,62,73])
+    r=6//================== RODADA 6 =====================//
+    id++ //1
+    await create(id,r,'palbra',[30,90])
+    id++ //2
+    await create(id,r,'ceafla',[-7,26,-38,90])
+    id++ //3
+    await create(id,r,'intcor',[25,-30,44,-64])
+    id++ //4
+    await create(id,r,'camago',[14,72])
+    id++ //5
+    await create(id,r,'flucap',[8,78,-90])
+    id++ //6
+    await create(id,r,'saocui',[-33,66,82])
+    id++ //7
+    await create(id,r,'ctbamg',[45])
+    id++ //8
+    await create(id,r,'avajuv',[-25,27,-70])
+    id++ //9
+    await create(id,r,'botfor',[-14,42,89,90])
+    id++ //10
+    await create(id,r,'goisan',[19])
+    
 }
 async function createall(){
 let id=60;let r=7
