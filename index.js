@@ -811,6 +811,27 @@ async function createAll(){
     await create(id,r,'palfor',[15,48,32,64])
     id++ //10
     await create(id,r,'flacor',[-43,48,-75])
+    r=36//================== RODADA 36 =====================//
+    id++ //1
+    await create(id,r,'sanava',[5,-51])
+    id++ //2
+    await create(id,r,'flusao',[-30,46,56,59])
+    id++ //3
+    await create(id,r,'braamg',[-6,18,-25,-42,-90])
+    id++ //4
+    await create(id,r,'goijuv',[81])
+    id++ //5
+    await create(id,r,'corcea',[90])
+    id++ //6
+    await create(id,r,'intcap',[63,67])
+    id++ //7
+    await create(id,r,'forago',[-17,58])
+    id++ //8
+    await create(id,r,'ctbfla',[58])
+    id++ //9
+    await create(id,r,'cuipal',[6,-75])
+    id++ //10
+    await create(id,r,'cambot',[-76,-84])
 }
 
 function partidasCruzadas(list){
