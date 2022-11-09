@@ -1,7 +1,5 @@
-import { getPartidasTime } from "../utils.js"
 
-export  function inicialSituation(ignorados,rodadas,time){
-    const partidas= getPartidasTime(time)
+export  function inicialSituation(partidas,ignorados,rodadas,time){
     let ganhou=0
     let empatou=0
     let perdeu=0

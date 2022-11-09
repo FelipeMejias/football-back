@@ -1,6 +1,4 @@
-import { getPartidasTime } from "../utils.js"
-export  function winningLosing(ignorados,rodadas,time,who,tieing=false){
-    const partidas= getPartidasTime(time)
+export  function winningLosing(partidas,ignorados,rodadas,time,who,tieing=false){
     let ganhou=0
     let empatou=0
     let perdeu=0

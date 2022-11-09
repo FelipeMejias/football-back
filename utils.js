@@ -1,6 +1,6 @@
 import { bancoFake } from "./index.js"
-export function getPartidasTime(time){
-    const partidasUnordered=bancoFake.filter(part=>(
+export function getPartidasTime(banco,time){
+    const partidasUnordered=banco.filter(part=>(
         part.mandante==time||part.visitante==time
     ))
     const partidas=ordernarPorRodada(partidasUnordered)

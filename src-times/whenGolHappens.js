@@ -1,7 +1,5 @@
-import { getPartidasTime } from "../utils.js"
 
-export function whenGolHappens(ignorados,rodadas,time,who){
-    const partidas=getPartidasTime(time)
+export function whenGolHappens(partidas,ignorados,rodadas,time,who){
     let ganhou=0
     let empatou=0
     let perdeu=0

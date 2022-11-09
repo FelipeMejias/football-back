@@ -1,7 +1,5 @@
-import { getPartidasTime } from "../utils.js"
 
-export  function firstGoal(ignorados,rodadas,time,who){
-    const partidas= getPartidasTime(time)
+export  function firstGoal(partidas,ignorados,rodadas,time,who){
     let ganhou=0
     let empatou=0
     let perdeu=0

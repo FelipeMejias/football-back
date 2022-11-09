@@ -9,6 +9,7 @@ app.use(cors())
 app.use(json())
 app.use(router)
 export const bancoFake=[]
+export const bancoEliminatorias=[]
 
 createAll()
 
@@ -50,7 +51,7 @@ async function create(id,rodada,times,goals){
    }
    try {
       bancoFake.push({id,rodada,mandante,visitante,gols})
-      if(id%10==0)console.log(`rodada ${rodada} (${id} partidas)`)
+      //if(id%10==0)console.log(`rodada ${rodada} (${id} partidas)`)
    } catch (error) {
       console.log('ERRO AO CRIAR')
    }
