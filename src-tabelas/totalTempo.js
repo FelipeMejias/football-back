@@ -1,7 +1,6 @@
-const listaTimes=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
-import { getPartidas } from "../utils.js"
-export  function totalTempo(ignorados,rodadas,estadia,metade){
-    const partidasTotais= getPartidas()
+
+export  function totalTempo(context,ignorados,rodadas,estadia,metade){
+    const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
         const partidasUnfiltred=partidasTotais.filter(part=>(part.mandante===time||part.visitante===time))

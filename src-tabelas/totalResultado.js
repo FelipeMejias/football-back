@@ -1,7 +1,5 @@
-import { getPartidas } from "../utils.js"
-const listaTimes=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
-export  function totalResultado(ignorados,rodadas,estadia,metade){
-    const partidasTotais= getPartidas()
+export  function totalResultado(context,ignorados,rodadas,estadia,metade){
+    const {partidasTotais,listaTimes}=context
     const resp=[]
     let cont
     for(let time of listaTimes){

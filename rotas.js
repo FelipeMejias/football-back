@@ -1,5 +1,5 @@
 import Router from 'express'
-import { bancoEliminatorias, bancoFake } from "./index.js"
+import { bancoAfrica, bancoAmericaNorte, bancoAmericaSul, bancoAsia, bancoBra1, bancoEuropa } from "./index.js"
 import { firstGoal } from './src-times/firstGoal.js'
 import { whenTies } from './src-times/whenTies.js'
 import { whenGolHappens } from './src-times/whenGolHappens.js'
@@ -7,57 +7,64 @@ import { winningLosing } from './src-times/winningLosing.js'
 import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
-import { getPartidasTime, qtdRodadas } from './utils.js'
+import { getPartidasTime } from './utils.js'
 
 export const router=Router()
 
-router.post('/times/:time',async(req,res)=>{
-    const {time}=req.params
+router.post('/times/:camp/:time',async(req,res)=>{
+    const {time,camp}=req.params
     const {type}=req.query
     const rodadas=parseInt(req.query.rodadas)
     const {ignorados}=req.body
     const who=parseInt(req.query.who)
-    const partidas=getPartidasTime(bancoFake,time)
+    const {partidasTotais,qtdRodadas}=buildContext(camp,time)
+    const partidas=getPartidasTime(partidasTotais,time)
     let resp
     if(type==='1'){
-        resp= firstGoal(partidas,ignorados,rodadas,time,who)
+        resp= firstGoal(partidas,ignorados||[],rodadas,time,who)
     }else if(type==='2'){
-        resp= whenTies(partidas,ignorados,rodadas,time,who)
+        resp= whenTies(partidas,ignorados||[],rodadas,time,who)
     }else if(type==='3'){
-        resp= whenGolHappens(partidas,ignorados,rodadas,time,who)
+        resp= whenGolHappens(partidas,ignorados||[],rodadas,time,who)
     }else if(type==='4'){
-        resp= winningLosing(partidas,ignorados,rodadas,time,who)
+        resp= winningLosing(partidas,ignorados||[],rodadas,time,who)
     }else if(type==='9'){
-        resp= winningLosing(partidas,ignorados,rodadas,time,null,true)
+        resp= winningLosing(partidas,ignorados||[],rodadas,time,null,true)
     }else if(type==='10'){
-        resp= inicialSituation(partidas,ignorados,rodadas,time)
+        resp= inicialSituation(partidas,ignorados||[],rodadas,time)
     }
     res.status(200).send({
         ...resp,
-        qtdRodadas:qtdRodadas()
+        qtdRodadas
     })
 })
 
-router.post('/tempos',async(req,res)=>{
+router.post('/tempos/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const rodadas=parseInt(req.query.rodadas)
     const {ignorados}=req.body
-    const resp= totalTempo(ignorados,rodadas,estadia,metade)
+    const {camp}=req.params
+    const {elimin}=req.query
+    const context=buildContext(camp,elimin)
+    const resp= totalTempo(context,ignorados||[],rodadas,estadia,metade)
     res.status(200).send({
-        qtdRodadas:qtdRodadas(),
+        qtdRodadas:context.qtdRodadas,
         listaTabela:resp
     })
 })
 
-router.post('/totais',async(req,res)=>{
+router.post('/totais/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const rodadas=parseInt(req.query.rodadas)
+    const {elimin}=req.query
     const {ignorados}=req.body
-    const resp= totalResultado(ignorados,rodadas,estadia,metade)
+    const {camp}=req.params
+    const context=buildContext(camp,elimin)
+    const resp= totalResultado(context,ignorados||[],rodadas,estadia,metade)
     res.status(200).send({
-        qtdRodadas:qtdRodadas(),
+        qtdRodadas:context.qtdRodadas,
         listaTabela:resp
     })
 })
@@ -65,7 +72,7 @@ router.post('/totais',async(req,res)=>{
 router.get('/partidas/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     let partida
-    for (let part of bancoFake){
+    for (let part of bancoBra1){
         if(part.id==id){
             partida=part
             break;
@@ -74,45 +81,23 @@ router.get('/partidas/:partida',async(req,res)=>{
     res.status(200).send(partida)
 })
 
-const escolhas={}
-escolhas['ingles']=0
-escolhas['espanhol']=0
-escolhas['italiano']=0
-escolhas['alemao']=0
-escolhas['frances']=0
-router.post('/escolha',async(req,res)=>{
-    
-    const {escolha}=req.body
-    let status=200
-    if(escolhas[escolha]||escolhas[escolha]==0){
-        status=201
-        escolhas[escolha]=escolhas[escolha]+1
+const americaNorte=['eua','mex','crc','can']
+const americaSul=['equ','arg','bra','uru']
+const europa=['ser','hol','ing','gal','pol','din','ale','fra','esp','cro','bel','por','sui']
+const africa=['sen','tun','mar','cam','gan']
+const asia=['ira','ara','jap','cor','aus']
+
+
+function buildContext(camp,dif){
+    if(camp=='bra1')return {qtdRodadas:36,partidasTotais:bancoBra1,listaTimes:['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']}
+    if(camp=='wc'){
+        if(!dif||dif==='cat')return {qtdRodadas:2,partidasTotais:[...bancoAmericaNorte,...bancoAmericaSul,...bancoEuropa,...bancoAfrica,...bancoAsia,...bancoOceania],listaTimes:['cat','equ','sen','hol','ing','ira','eua','gal','arg','ara','mex','pol','din','tun','fra','aus','ale','jap','esp','crc','mar','cro','bel','can','sui','cam','bra','ser','uru','cor','por','gan']}
+        if(dif==='amn'||americaNorte.includes(dif))return{qtdRodadas:0,partidasTotais:bancoAmericaNorte,listaTimes:americaNorte}
+        if(dif==='ams'||americaSul.includes(dif))return{qtdRodadas:2,partidasTotais:bancoAmericaSul,listaTimes:americaSul}
+        if(dif==='eur'||europa.includes(dif))return{qtdRodadas:0,partidasTotais:bancoEuropa,listaTimes:europa}
+        if(dif==='afr'||africa.includes(dif))return{qtdRodadas:0,partidasTotais:bancoAfrica,listaTimes:africa}
+        if(dif==='asi'||asia.includes(dif))return{qtdRodadas:0,partidasTotais:bancoAsia,listaTimes:asia}
     }
-    res.status(status).send(formatResponse())
-})
-router.get('/escolha',async(req,res)=>{
-    res.status(200).send(formatResponse())
-})
-router.put('/escolha',async(req,res)=>{
-    const {mais,menos}=req.body
-    let status=200
-    if((escolhas[mais]||escolhas[mais]==0)&&(escolhas[menos]||escolhas[menos]==0)){
-        status=201
-        escolhas[mais]=escolhas[mais]+1
-        escolhas[menos]=escolhas[menos]-1
-        console.log(escolhas)
-    }
-    res.status(status).send(formatResponse())
-})
-function formatResponse(){
-    const {ingles,espanhol,italiano,alemao,frances}=escolhas
-    const total=ingles+espanhol+italiano+alemao+frances
-    const response=[
-        {name:'Inglês',perc:Math.round(100*ingles/total)||0},
-        {name:'Espanhol',perc:Math.round(100*espanhol/total)||0},
-        {name:'Italiano',perc:Math.round(100*italiano/total)||0},
-        {name:'Alemão',perc:Math.round(100*alemao/total)||0},
-        {name:'Francês',perc:Math.round(100*frances/total)||0}
-    ]
-    return response
 }
+
+const guest='cat'
