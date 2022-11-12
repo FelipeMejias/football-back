@@ -9,7 +9,7 @@ export  function inicialSituation(partidas,ignorados,rodadas,time){
     let counter=rodadas
     for(let partida of partidas){
         if(counter===0)break;
-        const {mandante,visitante,rodada,gols}=partida
+        const {mandante,visitante,rodada,gols,torneio}=partida
         const timeEhMandante=mandante==time
         if(ignorados.includes(timeEhMandante?visitante:mandante))continue
         let nosso=0
@@ -20,7 +20,7 @@ export  function inicialSituation(partidas,ignorados,rodadas,time){
             }else{deles++}
         }
         
-        const situation={partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
+        const situation={torneio,partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
         if(gols.length===0){
             listNada.push({...situation,apos:90})
         }else if(timeEhMandante?!gols[0].mandante:gols[0].mandante){

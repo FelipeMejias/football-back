@@ -10,7 +10,7 @@ export  function firstGoal(partidas,ignorados,rodadas,time,who){
     let counter=rodadas
     for(let partida of partidas){
         if(counter===0)break;
-        const {mandante,visitante,rodada,gols}=partida
+        const {mandante,visitante,rodada,gols,torneio}=partida
         const timeEhMandante=mandante==time
         if(ignorados.includes(timeEhMandante?visitante:mandante))continue
         let nosso=0
@@ -23,7 +23,7 @@ export  function firstGoal(partidas,ignorados,rodadas,time,who){
         
         if(gols.length==0)continue
         if(who?timeEhMandante?gols[0].mandante:!gols[0].mandante:timeEhMandante?!gols[0].mandante:gols[0].mandante){
-            const situation={partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
+            const situation={torneio,partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
             if(!gols[1]){
                 listNada.push({...situation,apos:90-gols[0].minuto})
             }else if(timeEhMandante?!gols[1].mandante:gols[1].mandante){

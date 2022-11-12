@@ -9,7 +9,7 @@ export function whenGolHappens(partidas,ignorados,rodadas,time,who){
     let counter=rodadas
     for(let partida of partidas){
         if(counter===0)break;
-        const {mandante,visitante,rodada,gols}=partida
+        const {mandante,visitante,rodada,gols,torneio}=partida
         const timeEhMandante=mandante==time
         if(ignorados.includes(timeEhMandante?visitante:mandante))continue
         let nosso=0
@@ -24,7 +24,7 @@ export function whenGolHappens(partidas,ignorados,rodadas,time,who){
         for(let k=0;k<gols.length;k++){
             if(who?timeEhMandante?gols[k].mandante:!gols[k].mandante:partida.mandante==time?!gols[k].mandante:gols[k].mandante){
                 participaDaContagem=true
-                const situation={partida:partida.id,adversario:(mandante==time?visitante:mandante),emCasa:(mandante==time?true:false),rodada}
+                const situation={torneio,partida:partida.id,adversario:(mandante==time?visitante:mandante),emCasa:(mandante==time?true:false),rodada}
                 if(!gols[k+1]){
                     listNada.push({...situation,apos:90-gols[k].minuto})
                 }else if(timeEhMandante?!gols[k+1].mandante:gols[k+1].mandante){

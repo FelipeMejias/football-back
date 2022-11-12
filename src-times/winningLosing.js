@@ -9,7 +9,7 @@ export  function winningLosing(partidas,ignorados,rodadas,time,who,tieing=false)
 
     for(let partida of partidas){
         if(counter===0)break;
-        const {mandante,visitante,rodada,gols}=partida
+        const {mandante,visitante,rodada,gols,torneio}=partida
         const timeEhMandante=mandante==time
         if(ignorados.includes(timeEhMandante?visitante:mandante))continue
         let nosso=0
@@ -19,7 +19,7 @@ export  function winningLosing(partidas,ignorados,rodadas,time,who,tieing=false)
         for(let k=0;k<=gols.length;k++){
             if(tieing?nosso==deles:(who?nosso>deles:nosso<deles)){
                 participaDaContagem=true
-                const situation={partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
+                const situation={torneio,partida:partida.id,adversario:(timeEhMandante?visitante:mandante),emCasa:(timeEhMandante?true:false),rodada}
                 if(!gols[k]){
                     listNada.push({...situation,apos:(gols[k-1]?90-gols[k-1].minuto:90)})
                 }else if(timeEhMandante?!gols[k].mandante:gols[k].mandante){
