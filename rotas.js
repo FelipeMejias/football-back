@@ -11,27 +11,28 @@ import { getPartidasTime } from './utils.js'
 
 export const router=Router()
 
-router.post('/times/:camp/:time',async(req,res)=>{
+router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
     const {type}=req.query
     const rodadas=parseInt(req.query.rodadas)
-    const {ignorados,copaType}=req.body
+    const {filtros}=req.query
+    const {copaType, ignorados}=desempacotar(camp,filtros)
     const who=parseInt(req.query.who)
     const {partidasTotais,qtdRodadas}=buildContext(camp,copaType)
     const partidas=getPartidasTime(partidasTotais,time)
     let resp
     if(type==='1'){
-        resp= firstGoal(partidas,camp=='bra1'?ignorados:[],rodadas,time,who)
+        resp= firstGoal(partidas,ignorados,rodadas,time,who)
     }else if(type==='2'){
-        resp= whenTies(partidas,camp=='bra1'?ignorados:[],rodadas,time,who)
+        resp= whenTies(partidas,ignorados,rodadas,time,who)
     }else if(type==='3'){
-        resp= whenGolHappens(partidas,camp=='bra1'?ignorados:[],rodadas,time,who)
+        resp= whenGolHappens(partidas,ignorados,rodadas,time,who)
     }else if(type==='4'){
-        resp= winningLosing(partidas,camp=='bra1'?ignorados:[],rodadas,time,who)
+        resp= winningLosing(partidas,ignorados,rodadas,time,who)
     }else if(type==='9'){
-        resp= winningLosing(partidas,camp=='bra1'?ignorados:[],rodadas,time,null,true)
+        resp= winningLosing(partidas,ignorados,rodadas,time,null,true)
     }else if(type==='10'){
-        resp= inicialSituation(partidas,camp=='bra1'?ignorados:[],rodadas,time)
+        resp= inicialSituation(partidas,ignorados,rodadas,time)
     }
     res.status(200).send({
         ...resp,
@@ -39,28 +40,37 @@ router.post('/times/:camp/:time',async(req,res)=>{
     })
 })
 
-router.post('/tempos/:camp',async(req,res)=>{
+router.get('/tempos/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const rodadas=parseInt(req.query.rodadas)
-    const {ignorados,copaType}=req.body
+    const {filtros}=req.query
     const {camp}=req.params
+    const {copaType, ignorados}=desempacotar(camp,filtros)
     const context=buildContext(camp,copaType)
-    const resp= totalTempo(context,ignorados||[],rodadas,estadia,metade)
+    const resp= totalTempo(context,ignorados,rodadas,estadia,metade)
     res.status(200).send({
         qtdRodadas:context.qtdRodadas,
         listaTabela:resp
     })
 })
-
-router.post('/totais/:camp',async(req,res)=>{
+function desempacotar(camp,filtros){
+    if(camp=='bra1')return {copaType:null, ignorados:toList(filtros)}
+    if(camp=='wc')return {copaType:toList(filtros), ignorados:[]}
+}
+function toList(string){
+    const list=string.split('-')
+    return list.map(str=>(parseInt(str)))
+}
+router.get('/totais/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const rodadas=parseInt(req.query.rodadas)
-    const {ignorados,copaType}=req.body
     const {camp}=req.params
+    const {filtros}=req.query
+    const {copaType, ignorados}=desempacotar(camp,filtros)
     const context=buildContext(camp,copaType)
-    const resp= totalResultado(context,ignorados||[],rodadas,estadia,metade)
+    const resp= totalResultado(context,ignorados,rodadas,estadia,metade)
     res.status(200).send({
         qtdRodadas:context.qtdRodadas,
         listaTabela:resp
