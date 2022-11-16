@@ -96,6 +96,28 @@ async function createCopa(torneio,data,times,goals){
 }
 async function createBra1(){
    let r
+   r=38//================== RODADA 38 =====================//
+   await create(r,'flaava',[42,-45,-79])
+   await create(r,'capbot',[52,62,90])
+   await create(r,'ceajuv',[23,45,-52,70,89])
+   await create(r,'amgago',[-17,45])
+   await create(r,'sanfor',[-66,-80])
+   await create(r,'cuictb',[37,44,-76])
+   await create(r,'braflu',[-31])
+   await create(r,'corcam',[-45])
+   await create(r,'intpal',[10,39,85])
+   await create(r,'goisao',[-20,-71,-77,-90])
+   r=37//================== RODADA 37 =====================//
+   await create(r,'saoint',[-21])
+   await create(r,'ctbcor',[10,-30,37,-48])
+   await create(r,'flugoi',[78,83,90])
+   await create(r,'avacea',[49,90])
+   await create(r,'forbra',[26,37,42,45,57,90])
+   await create(r,'juvfla',[-1,36,43,-90])
+   await create(r,'palamg',[-15,42,81])
+   await create(r,'agocap',[51,-61])
+   await create(r,'botsan',[10,53,70])
+   await create(r,'camcui',[4,45,56])
    r=36//================== RODADA 36 =====================//
    await create(r,'sanava',[5,-51])
    await create(r,'flusao',[-30,46,56,59])
