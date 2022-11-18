@@ -12,6 +12,7 @@ app.listen(port,()=>console.log(`listening on port ${port}`))
 
 export const bancoBra1=[]
 export let bancoWc=[]
+export const bancoIng1=[]
 
 /*
 r=//================== RODADA  =====================//

@@ -1,3 +1,4 @@
+import { buildTimeResponse } from "../utils.js"
 
 export function whenGolHappens(partidas,ignorados,rodadas,time,who){
     let ganhou=0
@@ -39,15 +40,5 @@ export function whenGolHappens(partidas,ignorados,rodadas,time,who){
         }
         counter--
     }
-    const total=(ganhou+empatou+perdeu)/100
-    const resp={
-        resultados:{
-            ganhou:{total:ganhou,perc:(ganhou?ganhou/total:0)},
-            empatou:{total:empatou,perc:(empatou?empatou/total:0)},
-            perdeu:{total:perdeu,perc:(perdeu?perdeu/total:0)}
-        },fez:listFez,
-        nada:listNada,
-        tomou:listTomou
-    }
-    return resp
+    return buildTimeResponse(ganhou,empatou,perdeu,listFez,listNada,listTomou)
 }
