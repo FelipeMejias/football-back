@@ -4,6 +4,7 @@ export function getPartidasTime(banco,time){
     ))
     return partidas
 }
+
 export function desempacotar(camp,filtros){
     if(camp=='wc')return {copaType:toList(filtros), ignorados:[]}
     return {copaType:null, ignorados:toList(filtros)}

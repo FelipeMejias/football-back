@@ -1,5 +1,4 @@
 import Router from 'express'
-import { bancoBra1, bancoIng1, bancoWc } from "./index.js"
 import { firstGoal } from './src-times/firstGoal.js'
 import { whenTies } from './src-times/whenTies.js'
 import { whenGolHappens } from './src-times/whenGolHappens.js'
@@ -7,7 +6,8 @@ import { winningLosing } from './src-times/winningLosing.js'
 import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
-import { desempacotar, getPartidasTime } from './utils.js'
+import {  desempacotar, getPartidasTime } from './utils.js'
+import { buildContext } from './bancos.js'
 
 export const router=Router()
 
@@ -84,29 +84,5 @@ router.get('/partidas/:camp/:partida',async(req,res)=>{
     res.status(200).send(partida)
 })
 
-function buildContext(camp,copaType){
-    if(camp=='bra1')return {
-        qtdRodadas:36,
-        partidasTotais:bancoBra1,
-        listaTimes:['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
-    }
-    if(camp=='ing1')return {
-        qtdRodadas:17,
-        partidasTotais:bancoIng1,
-        listaTimes:['ars','ast','bou','bre','bri','che','cry','eve','ful','lee','lei','liv','mau','mac','new','not','sou','tot','wes','wol']
-    }
-    if(camp=='wc')return {
-        qtdRodadas:24,
-        partidasTotais:bancoWc.filter(part=>{
-            const {torneio}=part
-            return(
-                (copaType[0]||torneio!='c22')&&
-                (copaType[1]||torneio!='eli')&&
-                (copaType[2]||torneio!='tor')&&
-                (copaType[3]||torneio!='ami')&&
-                (copaType[4]||torneio!='c18')
-            )}),
-        listaTimes:['cat','equ','sen','hol','ing','ira','eua','gal','arg','ara','mex','pol','din','tun','fra','aus','ale','jap','esp','crc','mar','cro','bel','can','sui','cam','bra','ser','uru','cor','por','gan']
-    }
-}
+
 
