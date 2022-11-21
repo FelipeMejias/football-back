@@ -73,15 +73,9 @@ router.get('/totais/:camp',async(req,res)=>{
 router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
-    let partida
     const {partidasTotais}=buildContext(camp,[true,true,true,true,true])
-    for (let part of partidasTotais){
-        if(part.id==id){
-            partida=part
-            break;
-        }
-    }
-    res.status(200).send(partida)
+    
+    res.status(200).send(partidasTotais[id-1])
 })
 
 
