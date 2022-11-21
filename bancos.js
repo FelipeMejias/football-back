@@ -8,12 +8,65 @@ export const bancoIng1=[]
 
 let idGeral
 let bancoGeral
+
 export async function iniciateDatabases(){
    createWc()
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
+   /*
+   const goo={}
+   const vii={}
+   const fuu={}
+    bancoIng1.forEach(part=>{
+       const {mandante,visitante,gols}=part
+        if(fuu[mandante]){
+            fuu[mandante]=fuu[mandante]+1
+        }else{
+            fuu[mandante]=1
+        }
+        if(fuu[visitante]){
+            fuu[visitante]=fuu[visitante]+1
+        }else{
+            fuu[visitante]=1
+        }
+       let ma=0;let vi=0
+       for(let gol of gols){
+        if(!gol.mandante){
+            ma++
+            if(goo[mandante]){
+                goo[mandante]=goo[mandante]+1
+            }else{
+                goo[mandante]=1
+            }
+        }else{
+            vi++
+            if(goo[visitante]){
+                goo[visitante]=goo[visitante]+1
+            }else{
+                goo[visitante]=1
+            }
+        }
+       }
+       if(vi>ma){
+        if(vii[visitante]){
+            vii[visitante]=vii[visitante]+1
+        }else{
+            vii[visitante]=1
+        }
+       }
+       if(ma>vi){
+        if(vii[mandante]){
+            vii[mandante]=vii[mandante]+1
+        }else{
+            vii[mandante]=1
+        }
+       }
+       if(mandante=='bre'&&vi==3)console.log(part)
+       if(visitante=='bre'&&ma==3)console.log(part)
+     })
+     console.log(goo)
+     */
 }
-
 
 export async function create(rodada,times,goals){
    if(!times)return;

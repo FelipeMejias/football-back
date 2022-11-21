@@ -88,7 +88,7 @@ export async function createIng1(){
     await create(r,'cryche',[7,-38,-90])
     await create(r,'soueve',[49,-52,-54])
     await create(r,'fulnew',[-11,-33,-43,-57,88])
-    await create(r,'livbre',[-4,-17,33,54,63,-83])
+    await create(r,'livbri',[-4,-17,33,54,63,-83])
     await create(r,'arstot',[20,-31,49,67])
     r=8//================== RODADA 8 =====================//
     await create(r,'evewes',[53])
