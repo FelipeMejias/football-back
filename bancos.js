@@ -1,10 +1,12 @@
 import { createBra1 } from "./src-creations/brasil.js";
 import { createWc } from "./src-creations/copa.js";
+import { createEsp1 } from "./src-creations/espanha.js";
 import { createIng1 } from "./src-creations/inglaterra.js";
 
 export const bancoBra1=[]
 export const bancoWc=[]
 export const bancoIng1=[]
+export const bancoEsp1=[]
 
 let idGeral
 let bancoGeral
@@ -13,12 +15,24 @@ export async function iniciateDatabases(){
    createWc()
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
+   idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    /*
    const goo={}
    const vii={}
    const fuu={}
-    bancoIng1.forEach(part=>{
-       const {mandante,visitante,gols}=part
+   const paa={}
+    bancoEsp1.forEach(part=>{
+       const {mandante,visitante,gols,rodada}=part
+       if(paa[mandante]){
+        paa[mandante]=paa[mandante]+1
+    }else{
+        paa[mandante]=1
+    }
+    if(paa[visitante]){
+        paa[visitante]=paa[visitante]+1
+    }else{
+        paa[visitante]=1
+    }
         if(fuu[mandante]){
             fuu[mandante]=fuu[mandante]+1
         }else{
@@ -61,10 +75,16 @@ export async function iniciateDatabases(){
             vii[mandante]=1
         }
        }
-       if(mandante=='bre'&&vi==3)console.log(part)
-       if(visitante=='bre'&&ma==3)console.log(part)
+       if(mandante=='atm'||visitante=='atm'){
+        console.log(`${rodada} = ${mandante} ${ma} x ${vi} ${visitante}`)
+       }
      })
-     console.log(goo)
+     
+     
+     for(let time of ['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']){
+        console.log(time+'= '+' G: '+paa[time])
+     }
+     
      */
 }
 
@@ -92,9 +112,14 @@ export function buildContext(camp,copaType){
         listaTimes:['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
     }
     if(camp=='ing1')return {
-        qtdRodadas:17,
+        qtdRodadas:16,
         partidasTotais:bancoIng1,
         listaTimes:['ars','ast','bou','bre','bri','che','cry','eve','ful','lee','lei','liv','mau','mac','new','not','sou','tot','wes','wol']
+    }
+    if(camp=='esp1')return {
+        qtdRodadas:14,
+        partidasTotais:bancoEsp1,
+        listaTimes:['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
     }
     if(camp=='wc')return {
         qtdRodadas:24,
