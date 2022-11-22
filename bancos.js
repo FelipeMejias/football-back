@@ -19,76 +19,7 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
-   /*
-   const goo={}
-   const vii={}
-   const fuu={}
-   const paa={}
-    bancoEsp1.forEach(part=>{
-       const {mandante,visitante,gols,rodada}=part
-       if(paa[mandante]){
-        paa[mandante]=paa[mandante]+1
-    }else{
-        paa[mandante]=1
-    }
-    if(paa[visitante]){
-        paa[visitante]=paa[visitante]+1
-    }else{
-        paa[visitante]=1
-    }
-        if(fuu[mandante]){
-            fuu[mandante]=fuu[mandante]+1
-        }else{
-            fuu[mandante]=1
-        }
-        if(fuu[visitante]){
-            fuu[visitante]=fuu[visitante]+1
-        }else{
-            fuu[visitante]=1
-        }
-       let ma=0;let vi=0
-       for(let gol of gols){
-        if(!gol.mandante){
-            ma++
-            if(goo[mandante]){
-                goo[mandante]=goo[mandante]+1
-            }else{
-                goo[mandante]=1
-            }
-        }else{
-            vi++
-            if(goo[visitante]){
-                goo[visitante]=goo[visitante]+1
-            }else{
-                goo[visitante]=1
-            }
-        }
-       }
-       if(vi>ma){
-        if(vii[visitante]){
-            vii[visitante]=vii[visitante]+1
-        }else{
-            vii[visitante]=1
-        }
-       }
-       if(ma>vi){
-        if(vii[mandante]){
-            vii[mandante]=vii[mandante]+1
-        }else{
-            vii[mandante]=1
-        }
-       }
-       if(mandante=='atm'||visitante=='atm'){
-        console.log(`${rodada} = ${mandante} ${ma} x ${vi} ${visitante}`)
-       }
-     })
-     
-     
-     for(let time of ['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']){
-        console.log(time+'= '+' G: '+paa[time])
-     }
-     
-     */
+   //conferir(bancoAle1,timesAle1)
 }
 
 export async function create(rodada,times,goals){
@@ -112,22 +43,22 @@ export function buildContext(camp,copaType){
     if(camp=='bra1')return {
         qtdRodadas:36,
         partidasTotais:bancoBra1,
-        listaTimes:['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
+        listaTimes:timesBra1
     }
     if(camp=='ing1')return {
         qtdRodadas:16,
         partidasTotais:bancoIng1,
-        listaTimes:['ars','ast','bou','bre','bri','che','cry','eve','ful','lee','lei','liv','mau','mac','new','not','sou','tot','wes','wol']
+        listaTimes:timesIng1
     }
     if(camp=='esp1')return {
         qtdRodadas:14,
         partidasTotais:bancoEsp1,
-        listaTimes:['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
+        listaTimes:timesEsp1
     }
     if(camp=='ale1')return {
         qtdRodadas:14,
         partidasTotais:bancoAle1,
-        listaTimes:['aug','bay','boc','bor','col','ein','fre','her','hof','lei','lev','mai','mon','sch','stu','uni','wer','wol']
+        listaTimes:timesAle1
     }
     if(camp=='wc')return {
         qtdRodadas:24,
@@ -140,6 +71,37 @@ export function buildContext(camp,copaType){
                 (copaType[3]||torneio!='ami')&&
                 (copaType[4]||torneio!='c18')
             )}),
-        listaTimes:['cat','equ','sen','hol','ing','ira','eua','gal','arg','ara','mex','pol','din','tun','fra','aus','ale','jap','esp','crc','mar','cro','bel','can','sui','cam','bra','ser','uru','cor','por','gan']
+        listaTimes:timesWc
+    }
+}
+
+const timesBra1=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
+const timesIng1=['ars','ast','bou','bre','bri','che','cry','eve','ful','lee','lei','liv','mau','mac','new','not','sou','tot','wes','wol']
+const timesEsp1=['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
+const timesAle1=['aug','bay','boc','bor','col','ein','fre','her','hof','lei','lev','mai','mon','sch','stu','uni','wer','wol']
+const timesWc=['cat','equ','sen','hol','ing','ira','eua','gal','arg','ara','mex','pol','din','tun','fra','aus','ale','jap','esp','crc','mar','cro','bel','can','sui','cam','bra','ser','uru','cor','por','gan']
+
+function conferir(banco,times){
+    const gc={}
+    for(let part of bancoAle1){
+     const {mandante,visitante,gols}=part
+     for(let gol of gols){
+         if(gol.mandante){
+             if(gc[visitante]){
+                 gc[visitante]=gc[visitante]+1
+             }else{
+                 gc[visitante]=1
+             }
+         }else{
+             if(gc[mandante]){
+                 gc[mandante]=gc[mandante]+1
+             }else{
+                 gc[mandante]=1
+             }
+         }
+     }
+    }
+    for(let time of timesAle1){
+     console.log(`${time} - ${gc[time]}`)
     }
 }
