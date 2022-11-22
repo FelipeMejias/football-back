@@ -1,3 +1,4 @@
+import { createAle1 } from "./src-creations/alemanha.js";
 import { createBra1 } from "./src-creations/brasil.js";
 import { createWc } from "./src-creations/copa.js";
 import { createEsp1 } from "./src-creations/espanha.js";
@@ -7,6 +8,7 @@ export const bancoBra1=[]
 export const bancoWc=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
+export const bancoAle1=[]
 
 let idGeral
 let bancoGeral
@@ -16,6 +18,7 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
+   idGeral=0;bancoGeral=bancoEsp1;await createAle1()
    /*
    const goo={}
    const vii={}
@@ -120,6 +123,11 @@ export function buildContext(camp,copaType){
         qtdRodadas:14,
         partidasTotais:bancoEsp1,
         listaTimes:['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
+    }
+    if(camp=='ale1')return {
+        qtdRodadas:14,
+        partidasTotais:bancoAle1,
+        listaTimes:['aug','bay','boc','bor','col','ein','fre','her','hof','lei','lev','mai','mon','sch','stu','uni','wer','wol']
     }
     if(camp=='wc')return {
         qtdRodadas:24,
