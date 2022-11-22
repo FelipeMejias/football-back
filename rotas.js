@@ -7,7 +7,7 @@ import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
 import {  desempacotar, getPartidasTime } from './utils.js'
-import { buildContext } from './bancos.js'
+import { bancoWc, buildContext } from './bancos.js'
 
 export const router=Router()
 
@@ -74,9 +74,12 @@ router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
     const {partidasTotais}=buildContext(camp,[true,true,true,true,true])
-    
-    res.status(200).send(partidasTotais[id-1])
+    res.status(200).send(camp=='wc'?getPartidaCopa(id):partidasTotais[id-1])
 })
-
+function getPartidaCopa(id){
+    for(let part of bancoWc){
+        if(part.id==id)return part
+    }
+}
 
 

@@ -34,7 +34,11 @@ async function createCopa(torneio,data,times,goals){
     auxiliar.push({id,data,torneio,mandante,visitante,gols})
  }
 export async function createWc(){
-    let tor;
+    let tor='c22'
+    await createCopa(tor,'221120','catequ',[16,31])
+    await createCopa(tor,'221121','ingira',[35,43,45,62,-65,71,90,-90])
+    await createCopa(tor,'221121','senhol',[-84,-90])
+    await createCopa(tor,'221121','euagal',[36,-82])
     //================== CATAR =====================//
     tor='ami'
     await createCopa(tor,'220923','catcan',[-4,-13])

@@ -20,6 +20,7 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
    //conferir(bancoAle1,timesAle1)
+   //conferirCopa()
 }
 
 export async function create(rodada,times,goals){
@@ -56,7 +57,7 @@ export function buildContext(camp,copaType){
         listaTimes:timesEsp1
     }
     if(camp=='ale1')return {
-        qtdRodadas:14,
+        qtdRodadas:15,
         partidasTotais:bancoAle1,
         listaTimes:timesAle1
     }
@@ -104,4 +105,13 @@ function conferir(banco,times){
     for(let time of timesAle1){
      console.log(`${time} - ${gc[time]}`)
     }
+}
+function conferirCopa(){
+    let maior='1700000'
+    for(let part of bancoWc){
+     const {data}=part
+        if(data>maior)maior=data
+     
+    }
+    console.log(maior)
 }
