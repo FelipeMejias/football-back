@@ -18,7 +18,7 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
-   idGeral=0;bancoGeral=bancoEsp1;await createAle1()
+   idGeral=0;bancoGeral=bancoAle1;await createAle1()
    /*
    const goo={}
    const vii={}
