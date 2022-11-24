@@ -30,6 +30,7 @@ export async function create(rodada,times,goals){
    const mandante=times[0]+times[1]+times[2]
    const visitante=times[3]+times[4]+times[5]
    const gols=[]
+   console.log(goals)
    for(let goal of goals){
       if(goal>=0){
           gols.push({mandante:true,minuto:goal})
@@ -37,7 +38,9 @@ export async function create(rodada,times,goals){
          gols.push({mandante:false,minuto:-goal})
       }
    }
-   bancoGeral.push({id,rodada,mandante,visitante,gols})
+   const x={id,rodada,mandante,visitante,gols}
+   console.log(x)
+   bancoGeral.push(x)
 }
 
 export function buildContext(camp,copaType){

@@ -35,10 +35,20 @@ async function createCopa(torneio,data,times,goals){
  }
 export async function createWc(){
     let tor='c22'
+    
     await createCopa(tor,'221120','catequ',[16,31])
     await createCopa(tor,'221121','ingira',[35,43,45,62,-65,71,90,-90])
     await createCopa(tor,'221121','senhol',[-84,-90])
     await createCopa(tor,'221121','euagal',[36,-82])
+    await createCopa(tor,'221122','argara',[10,-48,-53])
+    await createCopa(tor,'221122','dintun',[])
+    await createCopa(tor,'221122','mexpol',[])
+    await createCopa(tor,'221122','fraaus',[-9,27,32,68,71])
+    await createCopa(tor,'221123','marcro',[])
+    await createCopa(tor,'221123','alejap',[33,-75,-83])
+    await createCopa(tor,'221123','espcrc',[11,21,31,54,74,90,90])
+    await createCopa(tor,'221123','belcan',[44])
+    await createCopa(tor,'221124','suicam',[48])
     //================== CATAR =====================//
     tor='ami'
     await createCopa(tor,'220923','catcan',[-4,-13])
