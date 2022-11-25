@@ -49,6 +49,14 @@ export async function createWc(){
     await createCopa(tor,'221123','espcrc',[11,21,31,54,74,90,90])
     await createCopa(tor,'221123','belcan',[44])
     await createCopa(tor,'221124','suicam',[48])
+    await createCopa(tor,'221124','urucor',[])
+    await createCopa(tor,'221124','porgan',[65,-73,78,80,-89])
+    await createCopa(tor,'221124','braser',[62,73])
+    await createCopa(tor,'221125','galira',[-90,-90])
+    await createCopa(tor,'2211','',[])
+    await createCopa(tor,'2211','',[])
+    await createCopa(tor,'2211','',[])
+
     //================== CATAR =====================//
     tor='ami'
     await createCopa(tor,'220923','catcan',[-4,-13])
