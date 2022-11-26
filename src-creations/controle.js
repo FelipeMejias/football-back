@@ -8,7 +8,7 @@ export async function adicionar(req,res){
       rawList=goalsStr.replace('  ',' ').split(' ')
     }
     const goals=rawList.map(str=>{
-      if(str[0]=='-')return -parseInt(str.replace('-',''))
+      if(str[0]=='0')return -parseInt(str.replace('0',''))
       return parseInt(str)
     })
     const mandante=times[0]+times[1]+times[2]
@@ -34,5 +34,6 @@ export async function adicionar(req,res){
     }else if(camp=='ale1'){
         bancoAle1.unshift(modeloPart)
     }
+
    res.sendStatus(200)
 }
