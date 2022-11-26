@@ -114,10 +114,10 @@ router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
     const {partidasTotais}=buildContext(camp,[true,true,true,true,true])
-    res.status(200).send(camp=='wc'?getPartidaCopa(id):partidasTotais[id-1])
+    res.status(200).send(getPartida(partidasTotais,id))
 })
-function getPartidaCopa(id){
-    for(let part of bancoWc){
+function getPartida(banco,id){
+    for(let part of banco){
         if(part.id==id)return part
     }
 }
