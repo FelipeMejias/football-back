@@ -3,12 +3,9 @@ import { bancoAle1, bancoEsp1, bancoIng1, bancoWc } from "../bancos.js"
 let idAjuda=500
 export async function adicionar(req,res){
     const {rodada,times,gols:goalsStr,camp}=req.body
-    let rawList=goalsStr.split(',')
-    if(rawList.length<=1){
-      rawList=goalsStr.replace('  ',' ').split(' ')
-    }
+    const rawList=goalsStr.split(',')
     const goals=rawList.map(str=>{
-      if(str[0]=='0')return -parseInt(str.replace('0',''))
+      if(str[0]=='-')return -parseInt(str.replace('-',''))
       return parseInt(str)
     })
     const mandante=times[0]+times[1]+times[2]
