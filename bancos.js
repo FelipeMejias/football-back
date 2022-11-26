@@ -43,7 +43,7 @@ export async function create(rodada,times,goals){
 
 export function buildContext(camp,copaType){
     if(camp=='bra1')return {
-        qtdRodadas:36,
+        qtdRodadas:38,
         partidasTotais:bancoBra1,
         listaTimes:timesBra1
     }

@@ -8,6 +8,8 @@ import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
 import {  desempacotar, getPartidasTime } from './utils.js'
 import { bancoWc, buildContext } from './bancos.js'
+import { classificacao } from './src-tabelas/classificacao.js'
+import { partidasRodada } from './src-tabelas/partidasRodada.js'
 
 export const router=Router()
 
@@ -67,6 +69,42 @@ router.get('/totais/:camp',async(req,res)=>{
     res.status(200).send({
         qtdRodadas:context.qtdRodadas,
         listaTabela:resp
+    })
+})
+router.get('/classif/:camp/:rodada',async(req,res)=>{
+    
+    const {camp,rodada:rodadaStr}=req.params
+    const rodada=parseInt(rodadaStr)
+    const context=buildContext(camp,[true,false,false,false,false])
+    const {partidasTotais,listaTimes}=context
+    let listaTabela
+    if(camp=='wc'){
+        const partidas=[]
+        const classif=[]
+        let j=0
+        for(let k=0;k<8;k++){
+            const times=[listaTimes[j],listaTimes[j+1],listaTimes[j+2],listaTimes[j+3]]
+            const pT=partidasTotais.filter(part=>times.includes(part.mandante))
+            const groupContext={partidasTotais:pT,listaTimes:times}
+            partidas.push(partidasRodada(groupContext,rodada))
+            classif.push(classificacao(groupContext,rodada))
+            j+=4
+        }
+        listaTabela={
+            classif,
+            partidas
+        }
+    }else{
+        const partidas=partidasRodada(context,rodada)
+        const resp=classificacao(context,rodada)
+        listaTabela={
+            classif:resp,
+            partidas
+        }
+    }
+    res.status(200).send({
+        qtdRodadas:context.qtdRodadas,
+        listaTabela
     })
 })
 

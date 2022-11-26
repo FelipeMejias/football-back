@@ -31,12 +31,14 @@ async function createCopa(torneio,data,times,goals){
           gols.push({mandante:false,minuto:-goal})
        }
     }
-    auxiliar.push({id,data,torneio,mandante,visitante,gols})
+    const part=r?{id,data,torneio,mandante,visitante,gols,rodada:r}:{id,data,torneio,mandante,visitante,gols}
+    auxiliar.push(part)
  }
+ let r=false
 export async function createWc(){
     let tor='c22'
-    
-    await createCopa(tor,'221120','catequ',[16,31])
+    r=1
+    await createCopa(tor,'221120','catequ',[-16,-31])
     await createCopa(tor,'221121','ingira',[35,43,45,62,-65,71,90,-90])
     await createCopa(tor,'221121','senhol',[-84,-90])
     await createCopa(tor,'221121','euagal',[36,-82])
@@ -52,11 +54,19 @@ export async function createWc(){
     await createCopa(tor,'221124','urucor',[])
     await createCopa(tor,'221124','porgan',[65,-73,78,80,-89])
     await createCopa(tor,'221124','braser',[62,73])
+    r=2
     await createCopa(tor,'221125','galira',[-90,-90])
+    await createCopa(tor,'221125','catsen',[-41,-48,78,-84])
+    await createCopa(tor,'221125','holequ',[6,-49])
+    await createCopa(tor,'221125','ingeua',[])
+    await createCopa(tor,'2211','',[])
+    await createCopa(tor,'2211','',[])
+    await createCopa(tor,'2211','',[])
     await createCopa(tor,'2211','',[])
     await createCopa(tor,'2211','',[])
     await createCopa(tor,'2211','',[])
 
+   r=false
     //================== CATAR =====================//
     tor='ami'
     await createCopa(tor,'220923','catcan',[-4,-13])
