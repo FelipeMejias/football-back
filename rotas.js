@@ -10,9 +10,11 @@ import {  desempacotar, getPartidasTime } from './utils.js'
 import { bancoWc, buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
+import { adicionar } from './src-creations/copa.js'
 
 export const router=Router()
 
+router.post('/partidas',adicionar)
 router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
     const {type}=req.query

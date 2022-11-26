@@ -1,6 +1,30 @@
 import { bancoWc } from "../bancos.js";
-
-const auxiliar=[];let idCopa=0
+export async function adicionar(req,res){
+   const {rodada,times,gols:goalsStr}=req.body
+   const rawList=goalsStr.split(',')
+   const goals=rawList.map(str=>{
+      if(str[0]=='-')return -parseInt(str.replace('-',''))
+      return parseInt(str)
+   })
+    idCopa++
+    const mandante=times[0]+times[1]+times[2]
+    const visitante=times[3]+times[4]+times[5]
+    const gols=[]
+    
+    for(let goal of goals){
+       if(goal>=0){
+           gols.push({mandante:true,minuto:goal})
+       }else{
+          gols.push({mandante:false,minuto:-goal})
+       }
+    }
+   const novaPartida={
+       mandante,visitante,gols,rodada:parseInt(rodada),torneio:'c22',id:idCopa
+   }
+   bancoWc.unshift(novaPartida)
+   res.sendStatus(200)
+}
+const auxiliar=[];export let idCopa=0
 function ordenarCopa(matches){
     let maior;const used=[];let inuse
     for(let k=0;k<matches.length;k++){
