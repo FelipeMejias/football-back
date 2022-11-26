@@ -7,10 +7,10 @@ import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
 import {  desempacotar, getPartidasTime } from './utils.js'
-import { bancoWc, buildContext } from './bancos.js'
+import { buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
-import { adicionar } from './src-creations/copa.js'
+import { adicionar } from './src-creations/controle.js'
 
 export const router=Router()
 

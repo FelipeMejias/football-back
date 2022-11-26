@@ -1,4 +1,4 @@
-import { bancoAle1, bancoEsp1, bancoIng1, bancoWc } from "../bancos"
+import { bancoAle1, bancoEsp1, bancoIng1, bancoWc } from "../bancos.js"
 
 let idAjuda=500
 export async function adicionar(req,res){
