@@ -1,3 +1,4 @@
+import { buscarMongo } from "./db.js";
 import { createAle1 } from "./src-creations/alemanha.js";
 import { createBra1 } from "./src-creations/brasil.js";
 import { createWc } from "./src-creations/copa.js";
@@ -15,10 +16,12 @@ let bancoGeral
 
 export async function iniciateDatabases(){
    createWc()
+   buscarMongo()
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
+
    //conferir(bancoAle1,timesAle1)
    //conferirCopa()
 }

@@ -10,7 +10,7 @@ import {  desempacotar, getPartidasTime } from './utils.js'
 import { buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
-import { adicionar } from './src-creations/controle.js'
+import { adicionar } from './controle.js'
 
 export const router=Router()
 
