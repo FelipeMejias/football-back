@@ -15,13 +15,27 @@ export async function adicionar(req,res){
 }
 
 async function moldarPartida(rodada,times,goalsStr){
+  const mandante=times[0]+times[1]+times[2]
+  const visitante=times[3]+times[4]+times[5]
+  let gols=[]
+  if(goalsStr.length>0)gols=moldarGols(goalsStr)
+    const id=await maiorId()
+    console.log(id)
+    const modeloPart={
+      mandante,visitante,gols,
+      rodada:parseInt(rodada),
+      id,torneio:'c22'
+    }
+    return modeloPart
+}
+
+function moldarGols(goalsStr){
   const rawList=goalsStr.split(',')
     const goals=rawList.map(str=>{
       if(str[0]=='-')return -parseInt(str.replace('-',''))
       return parseInt(str)
     })
-    const mandante=times[0]+times[1]+times[2]
-    const visitante=times[3]+times[4]+times[5]
+    
     const gols=[]
     for(let goal of goals){
        if(goal>=0){
@@ -30,11 +44,5 @@ async function moldarPartida(rodada,times,goalsStr){
           gols.push({mandante:false,minuto:-goal})
        }
     }
-    const id=await maiorId()
-    const modeloPart={
-      mandante,visitante,gols,
-      rodada:parseInt(rodada),
-      id,torneio:'c22'
-    }
-    return modeloPart
+    return gols
 }

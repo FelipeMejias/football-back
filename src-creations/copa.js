@@ -59,12 +59,17 @@ export async function createWc(){
     await createCopa(tor,'221125','catsen',[-41,-48,78,-84])
     await createCopa(tor,'221125','holequ',[6,-49])
     await createCopa(tor,'221125','ingeua',[])
-    await createCopa(tor,'2211','',[])
-    await createCopa(tor,'2211','',[])
-    await createCopa(tor,'2211','',[])
-    await createCopa(tor,'2211','',[])
-    await createCopa(tor,'2211','',[])
-    await createCopa(tor,'2211','',[])
+    await createCopa(tor,'22112','argmex',[74,87])
+    await createCopa(tor,'22112','tunaus',[-23])
+    await createCopa(tor,'22112','polara',[39,82])
+    await createCopa(tor,'22112','fradin',[61,-68,86])
+    await createCopa(tor,'22112','japcrc',[-81])
+    await createCopa(tor,'22112','belmar',[-73,-90])
+
+
+
+
+
 
    r=false
     //================== CATAR =====================//

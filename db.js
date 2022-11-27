@@ -31,5 +31,5 @@ export async function maiorId(){
     partidas.forEach(partida => {
         if(partida.id>maior)maior=partida.id
     });
-    return maior
+    return maior+1
 }
