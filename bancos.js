@@ -1,12 +1,13 @@
 import { buscarMongo } from "./db.js";
 import { createAle1 } from "./src-creations/alemanha.js";
 import { createBra1 } from "./src-creations/brasil.js";
-import { createWc } from "./src-creations/copa.js";
+import { createWc, createWcFuturo } from "./src-creations/copa.js";
 import { createEsp1 } from "./src-creations/espanha.js";
 import { createIng1 } from "./src-creations/inglaterra.js";
 
 export const bancoBra1=[]
 export const bancoWc=[]
+export const bancoWcFuturo=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoAle1=[]
@@ -21,11 +22,19 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
-
+    //createWcFuturo()
    //conferir(bancoAle1,timesAle1)
    //conferirCopa()
 }
-
+let idF=1000
+export async function createFuturo(rodada,data,times){
+    idF++
+    const id=idF
+    const mandante=times[0]+times[1]+times[2]
+    const visitante=times[3]+times[4]+times[5]
+    const part={id,data,rodada,mandante,visitante}
+    bancoWcFuturo.push(part)
+ }
 export async function create(rodada,times,goals){
    if(!times)return;
    idGeral++
@@ -87,34 +96,26 @@ const timesAle1=['aug','bay','boc','bor','col','ein','fre','her','hof','lei','le
 const timesWc=['cat','equ','sen','hol','ing','ira','eua','gal','arg','ara','mex','pol','din','tun','fra','aus','ale','jap','esp','crc','mar','cro','bel','can','sui','cam','bra','ser','uru','cor','por','gan']
 
 function conferir(banco,times){
-    const gc={}
-    for(let part of bancoAle1){
+    const ch={}
+    for(let part of banco){
      const {mandante,visitante,gols}=part
      for(let gol of gols){
          if(gol.mandante){
-             if(gc[visitante]){
-                 gc[visitante]=gc[visitante]+1
+             if(ch[visitante]){
+                 ch[visitante]=ch[visitante]+1
              }else{
-                 gc[visitante]=1
+                 ch[visitante]=1
              }
          }else{
-             if(gc[mandante]){
-                 gc[mandante]=gc[mandante]+1
+             if(ch[mandante]){
+                 ch[mandante]=ch[mandante]+1
              }else{
-                 gc[mandante]=1
+                 ch[mandante]=1
              }
          }
      }
     }
-    for(let time of timesAle1){
-     console.log(`${time} - ${gc[time]}`)
-    }
-}
-function conferirCopa(){
-    let maior='1700000'
-    for(let part of bancoWc){
-     const {data}=part
-        if(data>maior)maior=data
-     
+    for(let time of times){
+     console.log(`${time} - ${ch[time]}`)
     }
 }

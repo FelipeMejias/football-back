@@ -6,19 +6,27 @@ export  function partidasRodada(context,rodada){
         const {mandante,visitante,gols,id}=part
         let m=0
         let v=0
-        for(let gol of gols){
-            if(gol.mandante){
-                m++
-            }else{
-                v++
+        if(gols){
+            for(let gol of gols){
+                if(gol.mandante){
+                    m++
+                }else{
+                    v++
+                }
             }
+            resp.push({
+                id,
+                mandante,
+                visitante,
+                placar:[m,v]
+            })
+        }else{
+            resp.push({
+                id,
+                mandante,
+                visitante,
+            })
         }
-        resp.push({
-            id,
-            mandante,
-            visitante,
-            placar:[m,v]
-        })
     }
     return resp
 }

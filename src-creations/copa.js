@@ -1,4 +1,4 @@
-import { bancoWc } from "../bancos.js";
+import { bancoWc, createFuturo } from "../bancos.js";
 
 const auxiliar=[];export let idCopa=0
 function ordenarCopa(matches){
@@ -34,6 +34,11 @@ async function createCopa(torneio,data,times,goals){
     const part=r?{id,data,torneio,mandante,visitante,gols,rodada:r}:{id,data,torneio,mandante,visitante,gols}
     auxiliar.push(part)
  }
+ export async function createWcFuturo(){
+   let rod=2
+   //await createFuturo(rod,'2211281000','corgan')
+ }
+   
  let r=false
 export async function createWc(){
     let tor='c22'
@@ -59,18 +64,24 @@ export async function createWc(){
     await createCopa(tor,'221125','catsen',[-41,-48,78,-84])
     await createCopa(tor,'221125','holequ',[6,-49])
     await createCopa(tor,'221125','ingeua',[])
-    await createCopa(tor,'22112','argmex',[74,87])
-    await createCopa(tor,'22112','tunaus',[-23])
-    await createCopa(tor,'22112','polara',[39,82])
-    await createCopa(tor,'22112','fradin',[61,-68,86])
-    await createCopa(tor,'22112','japcrc',[-81])
-    await createCopa(tor,'22112','belmar',[-73,-90])
-
-
-
-
-
-
+    await createCopa(tor,'221126','argmex',[74,87])
+    await createCopa(tor,'221126','tunaus',[-23])
+    await createCopa(tor,'221126','polara',[39,82])
+    await createCopa(tor,'221126','fradin',[61,-68,86])
+    await createCopa(tor,'221126','japcrc',[-81])
+    await createCopa(tor,'221126','belmar',[-73,-90])
+    await createCopa(tor,'221127','crocan',[-2,36,44,70,90])
+    await createCopa(tor,'221127','espale',[62,-83])
+    await createCopa(tor,'221128','camser',[29,-45,-45,-53,63,66])
+    await createCopa(tor,'221128','corgan',[-24,-34,58,61,-68])
+    await createCopa(tor,'221128','brasui',[83])
+    await createCopa(tor,'221128','poruru',[54,90])
+    await createCopa(tor,'221129','equsen',[-44,67,-70])
+    await createCopa(tor,'221129','holcat',[26,49])
+    await createCopa(tor,'221129','iraeua',[-38])
+    await createCopa(tor,'221129','galing',[-50,-51,-68])
+    await createCopa(tor,'221130','tunfra',[58])
+    await createCopa(tor,'221130','ausdin',[60])
    r=false
     //================== CATAR =====================//
     tor='ami'

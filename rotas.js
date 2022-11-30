@@ -7,10 +7,11 @@ import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
 import {  desempacotar, getPartidasTime } from './utils.js'
-import { buildContext } from './bancos.js'
+import { bancoWcFuturo, buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
 import { adicionar } from './controle.js'
+import { defineTimeOut } from './index.js'
 
 export const router=Router()
 
@@ -87,8 +88,10 @@ router.get('/classif/:camp/:rodada',async(req,res)=>{
         for(let k=0;k<8;k++){
             const times=[listaTimes[j],listaTimes[j+1],listaTimes[j+2],listaTimes[j+3]]
             const pT=partidasTotais.filter(part=>times.includes(part.mandante))
+            const pF=bancoWcFuturo.filter(part=>times.includes(part.mandante))
             const groupContext={partidasTotais:pT,listaTimes:times}
-            partidas.push(partidasRodada(groupContext,rodada))
+            const futureContext={partidasTotais:pF,listaTimes:times}
+            partidas.push([...partidasRodada(groupContext,rodada),...partidasRodada(futureContext,rodada)])
             classif.push(classificacao(groupContext,rodada))
             j+=4
         }
@@ -114,12 +117,24 @@ router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
     const {partidasTotais}=buildContext(camp,[true,true,true,true,true])
-    res.status(200).send(getPartida(partidasTotais,id))
+    res.status(200).send(id<1000?getPartida(partidasTotais,id):getPartidaFuturo(bancoWcFuturo,id))
 })
 function getPartida(banco,id){
     for(let part of banco){
         if(part.id==id)return part
     }
 }
-
+function getPartidaFuturo(banco,id){
+    for(let part of banco){
+        if(part.id==id){
+            const d=part.data
+            const horario=d[6]+d[7]+':'+d[8]+d[9]
+            console.log(horario)
+            const faltam=defineTimeOut(horario)
+            return ({
+                ...part,faltam
+            })
+        }
+    }
+}
 

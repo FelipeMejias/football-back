@@ -9,6 +9,7 @@ const mongoClient=new MongoClient(process.env.MONGO_URL)
 try{
     await mongoClient.connect()
     db=mongoClient.db(process.env.BANCO)
+    db.collection('fut').deleteMany()
 }catch (error){
     console.log('Erro ao conectar ao banco')
     console.log(error)
@@ -17,6 +18,7 @@ try{
 export async function salvarMongo(partida){
     await db.collection('fut').insertOne(partida)
 }
+
 
 export async function buscarMongo(){
     const partidas= await db.collection('fut').find({}).toArray()
