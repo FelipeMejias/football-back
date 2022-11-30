@@ -76,6 +76,7 @@ export async function createWc(){
     await createCopa(tor,'221128','corgan',[-24,-34,58,61,-68])
     await createCopa(tor,'221128','brasui',[83])
     await createCopa(tor,'221128','poruru',[54,90])
+    r=3
     await createCopa(tor,'221129','equsen',[-44,67,-70])
     await createCopa(tor,'221129','holcat',[26,49])
     await createCopa(tor,'221129','iraeua',[-38])
