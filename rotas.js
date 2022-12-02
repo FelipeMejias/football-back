@@ -87,10 +87,8 @@ router.get('/classif/:camp/:rodada',async(req,res)=>{
         for(let k=0;k<8;k++){
             const times=[listaTimes[j],listaTimes[j+1],listaTimes[j+2],listaTimes[j+3]]
             const pT=partidasTotais.filter(part=>times.includes(part.mandante))
-            const pF=bancoWcFuturo.filter(part=>times.includes(part.mandante))
             const groupContext={partidasTotais:pT,listaTimes:times}
-            const futureContext={partidasTotais:pF,listaTimes:times}
-            partidas.push([...partidasRodada(groupContext,rodada),...partidasRodada(futureContext,rodada)])
+            partidas.push(partidasRodada(groupContext,rodada))
             classif.push(classificacao(groupContext,rodada))
             j+=4
         }
