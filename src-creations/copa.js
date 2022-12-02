@@ -1,4 +1,4 @@
-import { bancoWc, createFuturo } from "../bancos.js";
+import { bancoWc } from "../bancos.js";
 
 const auxiliar=[];export let idCopa=0
 function ordenarCopa(matches){
@@ -34,11 +34,7 @@ async function createCopa(torneio,data,times,goals){
     const part=r?{id,data,torneio,mandante,visitante,gols,rodada:r}:{id,data,torneio,mandante,visitante,gols}
     auxiliar.push(part)
  }
- export async function createWcFuturo(){
-   let rod=2
-   //await createFuturo(rod,'2211281000','corgan')
- }
-   
+
  let r=false
 export async function createWc(){
     let tor='c22'
@@ -83,6 +79,12 @@ export async function createWc(){
     await createCopa(tor,'221129','galing',[-50,-51,-68])
     await createCopa(tor,'221130','tunfra',[58])
     await createCopa(tor,'221130','ausdin',[60])
+    await createCopa(tor,'221130','polarg',[-46,-67])
+    await createCopa(tor,'221130','aramex',[-47,-52,90])
+    await createCopa(tor,'221201','crobel',[])
+    await createCopa(tor,'221201','canmar',[-4,-23,40])
+    await createCopa(tor,'221201','japale',[-11,48,51])
+    await createCopa(tor,'221201','crcale',[-10,58,70,-73,-85,-89])
    r=false
     //================== CATAR =====================//
     tor='ami'

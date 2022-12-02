@@ -7,11 +7,10 @@ import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
 import {  desempacotar, getPartidasTime } from './utils.js'
-import { bancoWcFuturo, buildContext } from './bancos.js'
+import { buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
 import { adicionar } from './controle.js'
-import { defineTimeOut } from './index.js'
 
 export const router=Router()
 
@@ -124,17 +123,5 @@ function getPartida(banco,id){
         if(part.id==id)return part
     }
 }
-function getPartidaFuturo(banco,id){
-    for(let part of banco){
-        if(part.id==id){
-            const d=part.data
-            const horario=d[6]+d[7]+':'+d[8]+d[9]
-            console.log(horario)
-            const faltam=defineTimeOut(horario)
-            return ({
-                ...part,faltam
-            })
-        }
-    }
-}
+
 

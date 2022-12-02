@@ -1,13 +1,12 @@
 import { buscarMongo } from "./db.js";
 import { createAle1 } from "./src-creations/alemanha.js";
 import { createBra1 } from "./src-creations/brasil.js";
-import { createWc, createWcFuturo } from "./src-creations/copa.js";
+import { createWc } from "./src-creations/copa.js";
 import { createEsp1 } from "./src-creations/espanha.js";
 import { createIng1 } from "./src-creations/inglaterra.js";
 
 export const bancoBra1=[]
 export const bancoWc=[]
-export const bancoWcFuturo=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoAle1=[]
@@ -22,19 +21,10 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
-    //createWcFuturo()
    //conferir(bancoAle1,timesAle1)
    //conferirCopa()
 }
-let idF=1000
-export async function createFuturo(rodada,data,times){
-    idF++
-    const id=idF
-    const mandante=times[0]+times[1]+times[2]
-    const visitante=times[3]+times[4]+times[5]
-    const part={id,data,rodada,mandante,visitante}
-    bancoWcFuturo.push(part)
- }
+
 export async function create(rodada,times,goals){
    if(!times)return;
    idGeral++
@@ -75,7 +65,7 @@ export function buildContext(camp,copaType){
         listaTimes:timesAle1
     }
     if(camp=='wc')return {
-        qtdRodadas:24,
+        qtdRodadas:27,
         partidasTotais:bancoWc.filter(part=>{
             const {torneio}=part
             return(
