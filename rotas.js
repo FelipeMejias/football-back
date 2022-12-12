@@ -11,6 +11,8 @@ import { buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
 import { adicionar } from './controle.js'
+import { general } from './src-times/general.js'
+import { totalComparacao } from './src-tabelas/comparar.js'
 
 export const router=Router()
 
@@ -37,6 +39,8 @@ router.get('/times/:camp/:time',async(req,res)=>{
         resp= winningLosing(partidas,ignorados,rodadas,time,null,true)
     }else if(type==='10'){
         resp= inicialSituation(partidas,ignorados,rodadas,time)
+    }else if(type==='11'){
+        resp= general(partidas,ignorados,rodadas,time,who)
     }
     res.status(200).send({
         ...resp,
@@ -44,6 +48,19 @@ router.get('/times/:camp/:time',async(req,res)=>{
     })
 })
 
+router.get('/comparar/:camp',async(req,res)=>{
+    const handicap=parseInt(req.query.handicap)
+    const rodadas=parseInt(req.query.rodadas)
+    const {filtros}=req.query
+    const {camp}=req.params
+    const {copaType, ignorados}=desempacotar(camp,filtros)
+    const context=buildContext(camp,copaType)
+    const resp= totalComparacao(context,ignorados,rodadas,handicap)
+    res.status(200).send({
+        qtdRodadas:context.qtdRodadas,
+        listaTabela:resp
+    })
+})
 router.get('/tempos/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)

@@ -2,6 +2,12 @@ import { create } from "../bancos.js"
 
 export async function createEsp1(){
     let r
+    r=18//================== RODADA 18 =====================//
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
     r=14//================== RODADA 14 =====================//
     await create(r,'remcad',[40,70,-81])
     await create(r,'valbet',[63,81,90])

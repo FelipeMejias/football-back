@@ -16,7 +16,7 @@ let bancoGeral
 
 export async function iniciateDatabases(){
    createWc()
-   buscarMongo()
+   //buscarMongo()
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
@@ -32,14 +32,18 @@ export async function create(rodada,times,goals){
    const mandante=times[0]+times[1]+times[2]
    const visitante=times[3]+times[4]+times[5]
    const gols=[]
+   let man=0
+   let vis=0
    for(let goal of goals){
       if(goal>=0){
+            man++
           gols.push({mandante:true,minuto:goal})
       }else{
+        vis++
          gols.push({mandante:false,minuto:-goal})
       }
    }
-   const part={id,rodada,mandante,visitante,gols}
+   const part={id,rodada,mandante,visitante,gols,placar:[man,vis]}
    bancoGeral.push(part)
 }
 

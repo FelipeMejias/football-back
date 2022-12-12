@@ -77,9 +77,9 @@ export  function totalResultado(context,ignorados,rodadas,estadia,metade){
             c1:vit==0?'-':vit,
             c2:emp==0?'-':emp,
             c3:der==0?'-':der,
-            c4:cont==0?'-':(golsPro/cont).toFixed(2),
-            c5:cont==0?'-':(golsTotal/cont).toFixed(2),
-            c6:cont==0?'-':(golsContra/cont).toFixed(2)
+            c4:cont==0?'-':parseFloat((golsPro/cont).toFixed(2)),
+            c5:cont==0?'-':parseFloat((golsTotal/cont).toFixed(2)),
+            c6:cont==0?'-':parseFloat((golsContra/cont).toFixed(2))
         })
     }
     return resp

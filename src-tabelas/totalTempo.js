@@ -79,12 +79,12 @@ export  function totalTempo(context,ignorados,rodadas,estadia,metade){
         }  
         
         resp.push({time,
-            c1:c1==0?'-':(totalPrimMeu/c1).toFixed(1),
-            c2:c2==0?'-':(totalPrim/c2).toFixed(1),
-            c3:c3==0?'-':(totalPrimDeles/c3).toFixed(1),
-            c4:c4==0?'-':(totalUltMeu/c4).toFixed(1),
-            c5:c5==0?'-':(totalUlt/c5).toFixed(1),
-            c6:c6==0?'-':(totalUltDeles/c6).toFixed(1),
+            c1:c1==0?'-':parseFloat((totalPrimMeu/c1).toFixed(1)),
+            c2:c2==0?'-':parseFloat((totalPrim/c2).toFixed(1)),
+            c3:c3==0?'-':parseFloat((totalPrimDeles/c3).toFixed(1)),
+            c4:c4==0?'-':parseFloat((totalUltMeu/c4).toFixed(1)),
+            c5:c5==0?'-':parseFloat((totalUlt/c5).toFixed(1)),
+            c6:c6==0?'-':parseFloat((totalUltDeles/c6).toFixed(1)),
         })
     }
     return resp
