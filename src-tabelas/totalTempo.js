@@ -1,21 +1,17 @@
 
-export  function totalTempo(context,ignorados,rodadas,estadia,metade){
+export  function totalTempo(context,estadia,metade){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
-        const partidasUnfiltred=partidasTotais.filter(part=>(part.mandante===time||part.visitante===time))
-        const partidas=partidasUnfiltred.filter(part=>(!estadia?true:(
+        const partidas=partidasTotais.filter(part=>(!estadia?(part.mandante==time||part.visitante==time):(
             estadia==1?part.mandante==time:part.visitante==time
         )))
         let totalPrimMeu=0;let totalUltMeu=0;
         let totalPrimDeles=0;let totalUltDeles=0;
         let totalPrim=0; let totalUlt=0;
         let c1=0;let c2=0;let c3=0;let c4=0;let c5=0;let c6=0;
-        let counter=rodadas
         for(let partida of partidas){
-            if(counter===0)break;
             const {mandante,visitante,gols:golsUnfiltred}=partida
-            if(ignorados.includes(mandante==time?visitante:mandante))continue
             let primeiroMeu=null
             let primeiroDeles=null
             let ultimoMeu=null;
@@ -24,7 +20,7 @@ export  function totalTempo(context,ignorados,rodadas,estadia,metade){
                 metade==1?(gol.minuto<=45):(gol.minuto>45)
             ))):[]
             for(let gol of gols){
-                if(partida.mandante==time?gol.mandante:!gol.mandante){
+                if(mandante==time?gol.mandante:!gol.mandante){
                     if(!primeiroMeu)primeiroMeu=gol.minuto
                     ultimoMeu=gol.minuto
                 }else{
@@ -75,7 +71,6 @@ export  function totalTempo(context,ignorados,rodadas,estadia,metade){
             }
             if(!ultimoDeles && !ultimoMeu){
             }
-            counter--
         }  
         
         resp.push({time,

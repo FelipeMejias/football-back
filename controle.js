@@ -1,11 +1,11 @@
-import { bancoAle1, bancoEsp1, bancoIng1, bancoWc } from "./bancos.js"
+import { bancoAle1, bancoEsp1, bancoIng1 } from "./bancos.js"
 import { maiorId, salvarMongo } from "./db.js"
 
 export async function adicionar(req,res){
     const {rodada,times,gols:goalsStr,camp}=req.body
     try {
       const partida=await moldarPartida(rodada,times,goalsStr)
-      bancoWc.unshift(partida)
+      //bancoWc.unshift(partida)
       await salvarMongo(partida)
       res.sendStatus(200)
     } catch (error) {

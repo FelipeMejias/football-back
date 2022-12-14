@@ -6,131 +6,76 @@ import { winningLosing } from './src-times/winningLosing.js'
 import { inicialSituation } from './src-times/inicialSituation.js'
 import { totalTempo } from './src-tabelas/totalTempo.js'
 import { totalResultado } from './src-tabelas/totalResultado.js'
-import { desempacotar, getPartidasTime } from './utils.js'
+import { getPartidasTime } from './utils.js'
 import { buildContext } from './bancos.js'
 import { classificacao } from './src-tabelas/classificacao.js'
 import { partidasRodada } from './src-tabelas/partidasRodada.js'
 import { adicionar } from './controle.js'
 import { general } from './src-times/general.js'
 import { totalComparacao } from './src-tabelas/comparar.js'
+import { criarOrdem } from './barrinhaFactory.js'
 
 export const router=Router()
 
 router.post('/partidas',adicionar)
+
 router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
-    const {type}=req.query
-    const rodadas=parseInt(req.query.rodadas)
-    const {filtros}=req.query
-    const {copaType, ignorados}=desempacotar(camp,filtros)
-    const who=parseInt(req.query.who)
-    const {partidasTotais,qtdRodadas}=buildContext(camp,copaType)
-    const partidas=getPartidasTime(partidasTotais,time)
-    let resp
-    if(type==='1'){
-        resp= firstGoal(partidas,ignorados,rodadas,time,who)
-    }else if(type==='2'){
-        resp= whenTies(partidas,ignorados,rodadas,time,who)
-    }else if(type==='3'){
-        resp= whenGolHappens(partidas,ignorados,rodadas,time,who)
-    }else if(type==='4'){
-        resp= winningLosing(partidas,ignorados,rodadas,time,who)
-    }else if(type==='9'){
-        resp= winningLosing(partidas,ignorados,rodadas,time,null,true)
-    }else if(type==='10'){
-        resp= inicialSituation(partidas,ignorados,rodadas,time)
-    }else if(type==='11'){
-        resp= general(partidas,ignorados,rodadas,time,who)
-    }
-    res.status(200).send({
-        ...resp,
-        qtdRodadas
-    })
+    const context=buildContext(camp)
+    const resposta=criarOrdem(time,context)
+    res.status(200).send(resposta)
 })
 
 router.get('/comparar/:camp',async(req,res)=>{
     const handicap=parseInt(req.query.handicap)
-    const rodadas=parseInt(req.query.rodadas)
-    const {filtros}=req.query
     const {camp}=req.params
-    const {copaType, ignorados}=desempacotar(camp,filtros)
-    const context=buildContext(camp,copaType)
-    const resp= totalComparacao(context,ignorados,rodadas,handicap)
-    res.status(200).send({
-        qtdRodadas:context.qtdRodadas,
-        listaTabela:resp
-    })
+    const context=buildContext(camp)
+    const resp= totalComparacao(context,handicap)
+    res.status(200).send(resp)
 })
 router.get('/tempos/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
-    const rodadas=parseInt(req.query.rodadas)
-    const {filtros}=req.query
     const {camp}=req.params
-    const {copaType, ignorados}=desempacotar(camp,filtros)
-    const context=buildContext(camp,copaType)
-    const resp= totalTempo(context,ignorados,rodadas,estadia,metade)
-    res.status(200).send({
-        qtdRodadas:context.qtdRodadas,
-        listaTabela:resp
-    })
+    const context=buildContext(camp)
+    const resp= totalTempo(context,estadia,metade)
+    res.status(200).send(resp)
 })
 
 router.get('/totais/:camp',async(req,res)=>{
     const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
-    const rodadas=parseInt(req.query.rodadas)
     const {camp}=req.params
-    const {filtros}=req.query
-    const {copaType, ignorados}=desempacotar(camp,filtros)
-    const context=buildContext(camp,copaType)
-    const resp= totalResultado(context,ignorados,rodadas,estadia,metade)
-    res.status(200).send({
-        qtdRodadas:context.qtdRodadas,
-        listaTabela:resp
-    })
+    const context=buildContext(camp)
+    
+    const resp= totalResultado(context,estadia,metade)
+    res.status(200).send(resp)
 })
 router.get('/classif/:camp/:rodada',async(req,res)=>{
-    
     const {camp,rodada:rodadaStr}=req.params
-    const rodada=parseInt(rodadaStr)
-    const context=buildContext(camp,[true,false,false,false,false])
-    const {partidasTotais,listaTimes}=context
-    let listaTabela
-    if(camp=='wc'){
-        const partidas=[]
-        const classif=[]
-        let j=0
-        for(let k=0;k<8;k++){
-            const times=[listaTimes[j],listaTimes[j+1],listaTimes[j+2],listaTimes[j+3]]
-            const pT=partidasTotais.filter(part=>times.includes(part.mandante))
-            const groupContext={partidasTotais:pT,listaTimes:times}
-            partidas.push(partidasRodada(groupContext,rodada))
-            classif.push(classificacao(groupContext,rodada))
-            j+=4
-        }
-        listaTabela={
-            classif,
-            partidas
-        }
-    }else{
-        const partidas=partidasRodada(context,rodada)
-        const resp=classificacao(context,rodada)
-        listaTabela={
+    const context=buildContext(camp)
+    let rodada=parseInt(rodadaStr)
+    let fal=false
+    if(rodada==0){
+        rodada=context.qtdRodadas
+        fal=true
+    }
+    const partidas=partidasRodada(context,rodada)
+    const resp=classificacao(context,rodada)
+    const resposta={
+        rodadaAtual:fal?context.qtdRodadas:null,
+        listaTabela:{
             classif:resp,
             partidas
         }
     }
-    res.status(200).send({
-        qtdRodadas:context.qtdRodadas,
-        listaTabela
-    })
+    res.status(200).send(resposta)
 })
 
 router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
-    const {partidasTotais}=buildContext(camp,[true,true,true,true,true])
+    const {partidasTotais}=buildContext(camp)
     res.status(200).send(getPartida(partidasTotais,id))
 })
 function getPartida(banco,id){

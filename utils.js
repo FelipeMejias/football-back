@@ -6,18 +6,8 @@ export function getPartidasTime(banco,time){
     return partidas
 }
 
-export function desempacotar(camp,filtros){
-    if(camp=='wc')return {copaType:toListInt(filtros), ignorados:[]}
-    return {copaType:null, ignorados:toListStr3(filtros)}
-}
-function toListInt(string){
-    const list=string.split('-')
-    return list.map(str=>(parseInt(str)))
-}
-function toListStr3(string){
-    const list=string.split('-')
-    return list
-}
+
+
 export function buildTimeResponse(ganhou,empatou,perdeu,listFez,listNada,listTomou){
     const total=(ganhou+empatou+perdeu)/100
     const fezLen=listFez.length
