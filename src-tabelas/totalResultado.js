@@ -26,6 +26,7 @@ export  function totalResultado(context,estadia,metade){
             if(nosso>deles){vitorias++}else if(nosso<deles){derrotas++}else{empates++}
             cont++
         }
+        console.log(cont)
         const v=vitorias*100/cont
         const e=empates*100/cont
         const d=derrotas*100/cont

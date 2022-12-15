@@ -27,6 +27,10 @@ export async function create(rodada,times,goals){
    const id=idGeral
    const mandante=times[0]+times[1]+times[2]
    const visitante=times[3]+times[4]+times[5]
+   if(typeof goals  == "string")return bancoGeral.push({
+        id,rodada,mandante,visitante,
+        data:goals,futura:true
+    })
    const gols=[]
    let man=0
    let vis=0
@@ -46,22 +50,22 @@ export async function create(rodada,times,goals){
 export function buildContext(camp){
     if(camp=='bra1')return {
         qtdRodadas:38,
-        partidasTotais:bancoBra1,
+        partidasTotais:bancoBra1.filter(part=>!part.futura),
         listaTimes:timesBra1
     }
     if(camp=='ing1')return {
         qtdRodadas:16,
-        partidasTotais:bancoIng1,
+        partidasTotais:bancoIng1.filter(part=>!part.futura),
         listaTimes:timesIng1
     }
     if(camp=='esp1')return {
         qtdRodadas:14,
-        partidasTotais:bancoEsp1,
+        partidasTotais:bancoEsp1.filter(part=>!part.futura),
         listaTimes:timesEsp1
     }
     if(camp=='ale1')return {
         qtdRodadas:15,
-        partidasTotais:bancoAle1,
+        partidasTotais:bancoAle1.filter(part=>!part.futura),
         listaTimes:timesAle1
     }
 }
