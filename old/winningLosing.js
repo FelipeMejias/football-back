@@ -1,4 +1,4 @@
-import { buildTimeResponse } from "../utils.js"
+import { buildTimeResponse } from "../src/utils.js"
 
 export  function winningLosing(partidas,ignorados,rodadas,time,who,tieing=false){
     let ganhou=0

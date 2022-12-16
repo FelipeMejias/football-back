@@ -1,19 +1,14 @@
 import Router from 'express'
-import { firstGoal } from './src-times/firstGoal.js'
-import { whenTies } from './src-times/whenTies.js'
-import { whenGolHappens } from './src-times/whenGolHappens.js'
-import { winningLosing } from './src-times/winningLosing.js'
-import { inicialSituation } from './src-times/inicialSituation.js'
-import { totalTempo } from './src-tabelas/totalTempo.js'
-import { totalResultado } from './src-tabelas/totalResultado.js'
-import { getPartidasTime } from './utils.js'
-import { buildContext } from './bancos.js'
-import { classificacao } from './src-tabelas/classificacao.js'
-import { partidasRodada } from './src-tabelas/partidasRodada.js'
-import { adicionar } from './controle.js'
-import { general } from './src-times/general.js'
-import { totalComparacao } from './src-tabelas/comparar.js'
-import { criarOrdem } from './barrinhaFactory.js'
+import { totalTempo } from './tabelas/totalTempo.js'
+import { totalResultado } from './tabelas/totalResultado.js'
+import {  ordenarIndividual, quantoTempoFalta } from './utils.js'
+import { buildContext, buildFuturaResponse } from './bancos.js'
+import { classificacao } from './tabelas/classificacao.js'
+import { partidasRodada } from './tabelas/partidasRodada.js'
+import { adicionar } from './config/controle.js'
+import { totalComparacao } from './tabelas/comparar.js'
+import { criarOrdem } from './profundo/individual.js'
+import { criarOrdemDupla } from './profundo/dupla.js'
 
 export const router=Router()
 
@@ -22,10 +17,16 @@ router.post('/partidas',adicionar)
 router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
     const context=buildContext(camp)
-    const resposta=criarOrdem(time,context)
-    res.status(200).send(resposta)
+    const resposta=criarOrdem(context,time)
+    const resp=ordenarIndividual(resposta)
+    res.status(200).send(resp)
 })
-
+router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
+    const {camp,mandante,visitante}=req.params
+    const context=buildContext(camp)
+    const resp=criarOrdemDupla(context,mandante,visitante)
+    res.status(200).send(resp)
+})
 router.get('/comparar/:camp',async(req,res)=>{
     const handicap=parseInt(req.query.handicap)
     const {camp}=req.params
@@ -71,16 +72,25 @@ router.get('/classif/:camp/:rodada',async(req,res)=>{
     }
     res.status(200).send(resposta)
 })
-
+router.get('/partidasgerais',async(req,res)=>{
+    const lista=buildFuturaResponse()
+    res.status(200).send(lista)
+})
 router.get('/partidas/:camp/:partida',async(req,res)=>{
     const id=parseInt(req.params.partida)
     const {camp}=req.params
-    const {partidasTotais}=buildContext(camp)
+    const {partidasTotais}=buildContext(camp,true)
     res.status(200).send(getPartida(partidasTotais,id))
 })
+
 function getPartida(banco,id){
     for(let part of banco){
-        if(part.id==id)return part
+        if(part.id==id){
+            if(part.futura){
+                const faltam=quantoTempoFalta(part.data)
+                return {...part,...faltam}
+            }else{return part}
+        }
     }
 }
 

@@ -1,4 +1,4 @@
-import { bancoAle1, bancoEsp1, bancoIng1 } from "./bancos.js"
+import { bancoAle1, bancoEsp1, bancoIng1 } from "../bancos.js"
 import { maiorId, salvarMongo } from "./db.js"
 
 export async function adicionar(req,res){

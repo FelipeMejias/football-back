@@ -1,10 +1,10 @@
-import { totalComparacao } from "./src-tabelas/comparar.js"
-import { totalResultado } from "./src-tabelas/totalResultado.js"
-import { totalTempo } from "./src-tabelas/totalTempo.js"
+import { totalComparacao } from "../tabelas/comparar.js"
+import { totalResultado } from "../tabelas/totalResultado.js"
+import { totalTempo } from "../tabelas/totalTempo.js"
 
 let rel
 const listaRel=[6,3,3,3,1,1,3,1,1,6,3,3,3,1,1,3,1,1,2,2,2,2,2]
-export function criarOrdem(time,context){
+export function criarOrdem(context,time){
     rel=0
     const resp=[]
     let frases=[
@@ -102,9 +102,7 @@ export function criarOrdem(time,context){
             })
         })
     }
-    const respFinal=respostaFinal(resp)
-    console.log(respFinal)
-    return respFinal
+    return resp
 }
 export function fucarTabela(tabela,time){
     const relev=listaRel[rel]
@@ -167,23 +165,3 @@ function ordenarDescr(lista,time,c){
     }
 }
 
-
-function respostaFinal(lista){
-    const used=[]
-    const final=[]
-    for(let k=0;k<lista.length;k++){
-        let using
-        let posi={pos:Infinity}
-        for(let h=0;h<lista.length;h++){
-            if(used.includes(h))continue
-            const item=lista[h]
-            if(item.pos<posi.pos || ( item.pos==posi.pos && item.relev>posi.relev )){
-                using=h
-                posi=item
-            }
-        }
-        used.push(using)
-        final.push(posi)
-    }
-    return final
-}

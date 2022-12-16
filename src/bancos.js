@@ -1,8 +1,8 @@
-import { buscarMongo } from "./db.js";
-import { createAle1 } from "./src-creations/alemanha.js";
-import { createBra1 } from "./src-creations/brasil.js";
-import { createEsp1 } from "./src-creations/espanha.js";
-import { createIng1 } from "./src-creations/inglaterra.js";
+import { buscarMongo } from "./config/db.js";
+import { createAle1 } from "./creations/alemanha.js";
+import { createBra1 } from "./creations/brasil.js";
+import { createEsp1 } from "./creations/espanha.js";
+import { createIng1 } from "./creations/inglaterra.js";
 
 export const bancoBra1=[]
 export const bancoIng1=[]
@@ -46,26 +46,39 @@ export async function create(rodada,times,goals){
    const part={id,rodada,mandante,visitante,gols,placar:[man,vis]}
    bancoGeral.push(part)
 }
-
-export function buildContext(camp){
+export function buildFuturaResponse(){
+    const ingl=bancoIng1.filter(part=>part.futura)
+    const ing=ingl.map(part=>({...part,camp:'ing1'}))
+    const espa=bancoEsp1.filter(part=>part.futura)
+    const esp=espa.map(part=>({...part,camp:'esp1'}))
+    const alem=bancoAle1.filter(part=>part.futura)
+    const ale=alem.map(part=>({...part,camp:'ale1'}))
+    const resp= [...ing,...esp,...ale].sort((a,b)=>{
+        if(a.data<b.data){
+            return -1
+        }else{return true}
+    })
+    return resp
+}
+export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
         qtdRodadas:38,
-        partidasTotais:bancoBra1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
         listaTimes:timesBra1
     }
     if(camp=='ing1')return {
         qtdRodadas:16,
-        partidasTotais:bancoIng1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoIng1:bancoIng1.filter(part=>!part.futura),
         listaTimes:timesIng1
     }
     if(camp=='esp1')return {
         qtdRodadas:14,
-        partidasTotais:bancoEsp1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoEsp1:bancoEsp1.filter(part=>!part.futura),
         listaTimes:timesEsp1
     }
     if(camp=='ale1')return {
         qtdRodadas:15,
-        partidasTotais:bancoAle1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoAle1:bancoAle1.filter(part=>!part.futura),
         listaTimes:timesAle1
     }
 }

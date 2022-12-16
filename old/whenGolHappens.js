@@ -1,4 +1,4 @@
-import { buildTimeResponse } from "../utils.js"
+import { buildTimeResponse } from "../src/utils.js"
 
 export function whenGolHappens(partidas,ignorados,rodadas,time,who){
     let ganhou=0

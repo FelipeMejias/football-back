@@ -1,4 +1,4 @@
-import { buildTimeResponse } from "../utils.js"
+import { buildTimeResponse } from "../src/utils.js"
 
 export  function general(partidas,ignorados,rodadas,time,handicap){
     let ganhou=0

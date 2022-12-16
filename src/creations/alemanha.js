@@ -2,6 +2,16 @@ import { create } from "../bancos.js"
 
 export async function createAle1(){
     let r
+    r=16//================== RODADA 16 =====================//
+    await create(r,'leibay','2301201630')
+    await create(r,'unihof','2301211130')
+    await create(r,'bocher','2301211130')
+    await create(r,'stumai','2301211130')
+    await create(r,'wolfre','2301211130')
+    await create(r,'einsch','2301211130')
+    await create(r,'colwer','2301211430')
+    await create(r,'boraug','2301221130')
+    await create(r,'monlev','2301221330')
     r=15//================== RODADA 15 =====================//
     await create(r,'freuni',[4,6,20,45,-84])
     await create(r,'maiein',[40,-67])

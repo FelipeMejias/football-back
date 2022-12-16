@@ -1,6 +1,6 @@
-import { buildContext } from "./bancos.js"
-import { partidasRodada } from "./src-tabelas/partidasRodada.js"
-import { totalResultado } from "./src-tabelas/totalResultado.js"
+import { buildContext } from "../bancos.js"
+import { partidasRodada } from "../tabelas/partidasRodada.js"
+import { totalResultado } from "../tabelas/totalResultado.js"
 import chalk from 'chalk'
 const possibles=[ 0.01 , 0.05 , 0.1 , 0.15 , 0.2 , 0.25 , 0.3 , 0.4 , 0.5 , 0.6 , 0.7 , 0.8 , 0.9 , 1 , 1.1 , 1.2 , 1.3 , 1.5 , 1.7 , 2 , 2.3 , 2.6 , 2.9 , 3.2]
 const camp='ing1'
