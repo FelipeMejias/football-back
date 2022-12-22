@@ -86,10 +86,7 @@ router.get('/partidas/:camp/:partida',async(req,res)=>{
 function getPartida(banco,id){
     for(let part of banco){
         if(part.id==id){
-            if(part.futura){
-                const faltam=quantoTempoFalta(part.data)
-                return {...part,...faltam}
-            }else{return part}
+            return part
         }
     }
 }

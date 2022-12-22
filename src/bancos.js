@@ -3,6 +3,7 @@ import { createAle1 } from "./creations/alemanha.js";
 import { createBra1 } from "./creations/brasil.js";
 import { createEsp1 } from "./creations/espanha.js";
 import { createIng1 } from "./creations/inglaterra.js";
+import { quantoTempoFalta } from "./utils.js";
 
 export const bancoBra1=[]
 export const bancoIng1=[]
@@ -48,11 +49,29 @@ export async function create(rodada,times,goals){
 }
 export function buildFuturaResponse(){
     const ingl=bancoIng1.filter(part=>part.futura)
-    const ing=ingl.map(part=>({...part,camp:'ing1'}))
+    const ing=ingl.map(part=>{
+        const faltam=quantoTempoFalta(part.data)
+        return {...part,
+            ...faltam,
+            camp:'ing1'
+        
+    }})
     const espa=bancoEsp1.filter(part=>part.futura)
-    const esp=espa.map(part=>({...part,camp:'esp1'}))
+    const esp=espa.map(part=>{
+        const faltam=quantoTempoFalta(part.data)
+        return {...part,
+            ...faltam,
+            camp:'esp1'
+        
+    }})
     const alem=bancoAle1.filter(part=>part.futura)
-    const ale=alem.map(part=>({...part,camp:'ale1'}))
+    const ale=alem.map(part=>{
+        const faltam=quantoTempoFalta(part.data)
+        return {...part,
+            ...faltam,
+            camp:'ale1'
+        
+    }})
     const resp= [...ing,...esp,...ale].sort((a,b)=>{
         if(a.data<b.data){
             return -1
