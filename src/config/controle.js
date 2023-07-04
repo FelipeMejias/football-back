@@ -1,10 +1,10 @@
-import { bancoAle1, bancoEsp1, bancoIng1 } from "../bancos.js"
+
 import { maiorId, salvarMongo } from "./db.js"
 
 export async function adicionar(req,res){
     const {rodada,times,gols:goalsStr,camp}=req.body
     try {
-      const partida=await moldarPartida(rodada,times,goalsStr)
+      const partida=await moldarPartida(camp,rodada,times,goalsStr)
       //bancoWc.unshift(partida)
       await salvarMongo(partida)
       res.sendStatus(200)
@@ -14,7 +14,7 @@ export async function adicionar(req,res){
     }
 }
 
-async function moldarPartida(rodada,times,goalsStr){
+async function moldarPartida(camp,rodada,times,goalsStr){
   const mandante=times[0]+times[1]+times[2]
   const visitante=times[3]+times[4]+times[5]
   let gols=[]
@@ -24,7 +24,7 @@ async function moldarPartida(rodada,times,goalsStr){
     const modeloPart={
       mandante,visitante,gols,
       rodada:parseInt(rodada),
-      id,torneio:'c22'
+      id,torneio:camp
     }
     return modeloPart
 }

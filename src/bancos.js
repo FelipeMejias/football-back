@@ -1,11 +1,13 @@
 import { buscarMongo } from "./config/db.js";
 import { createAle1 } from "./creations/alemanha.js";
-import { createBra1 } from "./creations/brasil.js";
+import { createBra1novo } from "./creations/bra23.js";
+import { createBra1antigo } from "./creations/brasil.js";
 import { createEsp1 } from "./creations/espanha.js";
 import { createIng1 } from "./creations/inglaterra.js";
 import { quantoTempoFalta } from "./utils.js";
 
-export const bancoBra1=[]
+export const bancoBra1antigo=[]
+export const bancoBra1novo=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoAle1=[]
@@ -15,7 +17,8 @@ let bancoGeral
 
 export async function iniciateDatabases(){
    //buscarMongo()
-   idGeral=0;bancoGeral=bancoBra1;await createBra1()
+   idGeral=0;bancoGeral=bancoBra1antigo;await createBra1antigo()
+   idGeral=0;bancoGeral=bancoBra1novo;await createBra1novo()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoAle1;await createAle1()
@@ -81,9 +84,14 @@ export function buildFuturaResponse(){
 }
 export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
+        qtdRodadas:0,
+        partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
+        listaTimes:timesBra1novo
+    }
+    if(camp=='bra1-2022')return {
         qtdRodadas:38,
         partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
-        listaTimes:timesBra1
+        listaTimes:timesBra1antigo
     }
     if(camp=='ing1')return {
         qtdRodadas:16,
@@ -101,8 +109,8 @@ export function buildContext(camp,consider=false){
         listaTimes:timesAle1
     }
 }
-
-const timesBra1=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
+const timesBra1novo=['amg','cap','cam','bah','bot','bra','cor','ctb','cru','cui','fla','flu','for','goi','gre','int','pal','san','sao','vas']
+const timesBra1antigo=['amg','cap','ago','cam','ava','bot','bra','cea','cor','ctb','cui','fla','flu','for','goi','int','juv','pal','san','sao']
 const timesIng1=['ars','ast','bou','bre','bri','che','cry','eve','ful','lee','lei','liv','mau','mac','new','not','sou','tot','wes','wol']
 const timesEsp1=['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
 const timesAle1=['aug','bay','boc','bor','col','ein','fre','her','hof','lei','lev','mai','mon','sch','stu','uni','wer','wol']

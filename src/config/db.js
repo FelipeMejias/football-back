@@ -2,6 +2,7 @@ import {MongoClient} from 'mongodb'
 import dotenv from 'dotenv'
 dotenv.config()
 
+import { bancoAle1, bancoBra1, bancoEsp1, bancoIng1 } from "../bancos.js"
 let db = null
 
 export async function conectarBanco(){
@@ -24,7 +25,21 @@ export async function salvarMongo(partida){
 export async function buscarMongo(){
     const partidas= await db.collection('fut').find({}).toArray()
     partidas.forEach(partida => {
-        //bancoWc.unshift(partida)
+        const {camp}=partida
+        switch(camp){
+            case 'bra1':
+                bancoBra1
+            ;break;
+            case 'ing1':
+                
+            ;break;
+            case 'esp1':
+                
+            ;break;
+            case 'ale1':
+                
+            ;break
+        }
     });
 }
 export async function maiorId(){

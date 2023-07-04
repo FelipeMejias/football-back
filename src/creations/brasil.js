@@ -1,6 +1,6 @@
 import { create } from "../bancos.js"
 
-export async function createBra1(){
+export async function createBra1antigo(){
     let r
     r=38//================== RODADA 38 =====================//
     await create(r,'flaava',[42,-45,-79])
