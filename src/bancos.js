@@ -85,12 +85,12 @@ export function buildFuturaResponse(){
 export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
         qtdRodadas:0,
-        partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoBra1novo:bancoBra1novo.filter(part=>!part.futura),
         listaTimes:timesBra1novo
     }
     if(camp=='bra1-2022')return {
         qtdRodadas:38,
-        partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
+        partidasTotais:consider?bancoBra1antigo:bancoBra1antigo.filter(part=>!part.futura),
         listaTimes:timesBra1antigo
     }
     if(camp=='ing1')return {
