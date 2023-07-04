@@ -2,7 +2,7 @@ import { create } from "../bancos.js"
 
 export async function createEsp1(){
     let r
-    r=15//================== RODADA 15 =====================//
+    /*r=15//================== RODADA 15 =====================//
     await create(r,'girray','2212291300')
     await create(r,'betatb','2212291515')
     await create(r,'atmelc','2212291730')
@@ -12,7 +12,7 @@ export async function createEsp1(){
     await create(r,'revrem','2212301730')
     await create(r,'baresp','2212311000')
     await create(r,'resosa','2212311215')
-    await create(r,'vilval','2212311215')
+    await create(r,'vilval','2212311215')*/
     r=14//================== RODADA 14 =====================//
     await create(r,'remcad',[40,70,-81])
     await create(r,'valbet',[63,81,90])

@@ -3,7 +3,7 @@ import { create } from "../bancos.js"
 export async function createIng1(){
     let r
     
-    r=17//================== RODADA 17 =====================//
+    /*r=17//================== RODADA 17 =====================//
     await create(r,'bretot','2212260930')
     await create(r,'soubri','2212261200')
     await create(r,'leinew','2212261200')
@@ -13,7 +13,7 @@ export async function createIng1(){
     await create(r,'arswes','2212261700')
     await create(r,'chebou','2212271430')
     await create(r,'macnot','2212271700')
-    await create(r,'leemac','2212281700')
+    await create(r,'leemac','2212281700')*/
     r=16//================== RODADA 16 =====================//
     await create(r,'fulmau',[-14,61,-90])
     await create(r,'briast',[1,-20,-54])
