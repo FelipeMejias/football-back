@@ -51,6 +51,14 @@ export async function create(rodada,times,goals){
    bancoGeral.push(part)
 }
 export function buildFuturaResponse(){
+    const bras=bancoBra1novo.filter(part=>part.futura)
+    const bra=bras.map(part=>{
+        const faltam=quantoTempoFalta(part.data)
+        return {...part,
+            ...faltam,
+            camp:'bra1'
+        
+    }})
     const ingl=bancoIng1.filter(part=>part.futura)
     const ing=ingl.map(part=>{
         const faltam=quantoTempoFalta(part.data)
@@ -75,7 +83,7 @@ export function buildFuturaResponse(){
             camp:'ale1'
         
     }})
-    const resp= [...ing,...esp,...ale].sort((a,b)=>{
+    const resp= [...ing,...esp,...ale,...bra].sort((a,b)=>{
         if(a.data<b.data){
             return -1
         }else{return true}

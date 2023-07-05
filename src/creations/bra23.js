@@ -2,17 +2,7 @@ import { create } from "../bancos.js"
 
 export async function createBra1novo(){
     let r
-    r=15//================== RODADA 15 =====================//
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
-    await create(r,'',[])
+    
     r=14//================== RODADA 14 =====================//
     await create(r,'cuibah','2307081600')
     await create(r,'vascru','2307081600')
