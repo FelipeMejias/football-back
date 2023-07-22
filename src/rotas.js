@@ -9,6 +9,7 @@ import { adicionar } from './config/controle.js'
 import { totalComparacao } from './tabelas/comparar.js'
 import { criarOrdem } from './profundo/individual.js'
 import { criarOrdemDupla } from './profundo/dupla.js'
+import { partidasTime } from './profundo/partidasTime.js'
 
 export const router=Router()
 
@@ -18,8 +19,9 @@ router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
     const context=buildContext(camp)
     const resposta=criarOrdem(context,time)
-    const resp=ordenarIndividual(resposta)
-    res.status(200).send(resp)
+    const stats=ordenarIndividual(resposta)
+    const partidas=partidasTime(context,time)
+    res.status(200).send({stats,partidas})
 })
 router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
     const {camp,mandante,visitante}=req.params

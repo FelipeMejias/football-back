@@ -71,7 +71,7 @@ export function criarOrdem(context,time){
                 })
             })
         }
-    }
+    }/*
     frases=[
         [['que mais marca gol',true],['que menos marca gol',false]],
         [['que mais segura o resultado',null],['que menos segura o resultado',null]],
@@ -101,7 +101,7 @@ export function criarOrdem(context,time){
                 handicap:i
             })
         })
-    }
+    }*/
     return resp
 }
 export function fucarTabela(tabela,time){
