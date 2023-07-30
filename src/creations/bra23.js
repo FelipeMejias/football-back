@@ -2,17 +2,28 @@ import { create } from "../bancos.js"
 
 export async function createBra1novo(){
     let r
-    r=15//================== RODADA 16 =====================//
-    await create(r,'palfor','2307221600')
-    await create(r,'flaamg','2307221600')
-    await create(r,'cuisao','2307221830')
-    await create(r,'bahcor','2307221830')
-    await create(r,'grecam','2307222100')
-    await create(r,'braint','2307231600')
-    await create(r,'sanbot','2307231600')
-    await create(r,'crugoi','2307231600')
-    await create(r,'vascap','2307231830')
-    await create(r,'ctbflu','2307231900')
+    r=17//================== RODADA 17 =====================//
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'',[])
+    await create(r,'camfla','2307301600')
+    await create(r,'saobah','2307301600')
+    await create(r,'amgpal','2307301600')
+    await create(r,'botctb','2307301600')
+    await create(r,'goigre','2307301830')
+    r=16//================== RODADA 16 =====================//
+    await create(r,'palfor',[8,-45,76,90])
+    await create(r,'flaamg',[-84,90])
+    await create(r,'cuisao',[66,78,-90])
+    await create(r,'bahcor',[])
+    await create(r,'grecam',[11])
+    await create(r,'braint',[])
+    await create(r,'sanbot',[24,81,-84,-90])
+    await create(r,'crugoi',[-28])
+    await create(r,'vascap',[-71,-80])
+    await create(r,'ctbflu',[24,28])
     r=15//================== RODADA 15 =====================//
     await create(r,'',[])
     await create(r,'',[])
