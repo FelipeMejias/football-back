@@ -92,7 +92,7 @@ export function buildFuturaResponse(){
 }
 export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
-        qtdRodadas:13,
+        qtdRodadas:18,
         partidasTotais:consider?bancoBra1novo:bancoBra1novo.filter(part=>!part.futura),
         listaTimes:timesBra1novo
     }
