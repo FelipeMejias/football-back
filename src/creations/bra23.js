@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createBra1novo(){
     let r
+    r=20//================== RODADA 20 =====================//
+    await create(r,'saobot','2308191600')
+    await create(r,'intfor','2308191600')
+    await create(r,'cuipal','2308191830')
+    await create(r,'fluamg','2308191830')
+    await create(r,'crucor','2308192100')
+    await create(r,'vascam','2308201100')
+    await create(r,'ctbfla','2308201600')
+    await create(r,'bahbra','2308201600')
+    await create(r,'sangre','2308201600')
+    await create(r,'goicap','2308212000')
     r=19//================== RODADA 19 =====================//
     await create(r,'botint',[-18,55,58,73])
     await create(r,'cambah',[49])
@@ -47,8 +58,8 @@ export async function createBra1novo(){
     await create(r,'vascap',[-71,-80])
     await create(r,'ctbflu',[24,28])
     r=15//================== RODADA 15 =====================//
-    await create(r,'',[])
-    await create(r,'',[])
+    await create(r,'','2308191600')
+    await create(r,'','2308191600')
     await create(r,'botbra',[48,60])
     await create(r,'cructb',[])
     await create(r,'forcui',[-19])
