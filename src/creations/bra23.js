@@ -3,16 +3,16 @@ import { create } from "../bancos.js"
 export async function createBra1novo(){
     let r
     r=19//================== RODADA 19 =====================//
-    await create(r,'botint','2308122100')
-    await create(r,'cambah','2308131100')
-    await create(r,'amggoi','2308131600')
-    await create(r,'corctb','2308131600')
-    await create(r,'greflu','2308131600')
-    await create(r,'flasao','2308131830')
-    await create(r,'forsan','2308131830')
-    await create(r,'palcru','2308141900')
-    await create(r,'bravas','2308142100')
-    await create(r,'capcui','2308152000')
+    await create(r,'botint',[-18,55,58,73])
+    await create(r,'cambah',[49])
+    await create(r,'amggoi',[-34])
+    await create(r,'corctb',[-28,51,54,67])
+    await create(r,'greflu',[-19,25,45])
+    await create(r,'flasao',[-38,90])
+    await create(r,'forsan',[58,80,83,90])
+    await create(r,'palcru',[90])
+    await create(r,'bravas',[-32,45])
+    await create(r,'capcui',[45,82])
     r=18//================== RODADA 18 =====================//
     await create(r,'sancap',[-30,90])
     await create(r,'goifor',[53])
@@ -47,8 +47,8 @@ export async function createBra1novo(){
     await create(r,'vascap',[-71,-80])
     await create(r,'ctbflu',[24,28])
     r=15//================== RODADA 15 =====================//
-    await create(r,'','')
-    await create(r,'','')
+    await create(r,'',[])
+    await create(r,'',[])
     await create(r,'botbra',[48,60])
     await create(r,'cructb',[])
     await create(r,'forcui',[-19])
