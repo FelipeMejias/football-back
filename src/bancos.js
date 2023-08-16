@@ -23,11 +23,11 @@ let rodadasEsp1
 
 export async function iniciateDatabases(){
    //buscarMongo()
-   contRodadas=0;idGeral=0;bancoGeral=bancoBra1antigo;await createBra1antigo();rodadasBra1antigo=qtdRodadas
-   contRodadas=0;idGeral=0;bancoGeral=bancoBra1novo;await createBra1novo();rodadasBra1novo=qtdRodadas
-   contRodadas=0;idGeral=0;bancoGeral=bancoIng1;await createIng1();rodadasIng1=qtdRodadas
-   contRodadas=0;idGeral=0;bancoGeral=bancoEsp1;await createEsp1();rodadasEsp1=qtdRodadas
-   contRodadas=0;idGeral=0;bancoGeral=bancoAle1;await createAle1();rodadasAle1=qtdRodadas
+   contRodadas=0;idGeral=0;bancoGeral=bancoBra1antigo;await createBra1antigo();rodadasBra1antigo=contRodadas
+   contRodadas=0;idGeral=0;bancoGeral=bancoBra1novo;await createBra1novo();rodadasBra1novo=contRodadas
+   contRodadas=0;idGeral=0;bancoGeral=bancoIng1;await createIng1();rodadasIng1=contRodadas
+   contRodadas=0;idGeral=0;bancoGeral=bancoEsp1;await createEsp1();rodadasEsp1=contRodadas
+   contRodadas=0;idGeral=0;bancoGeral=bancoAle1;await createAle1();rodadasAle1=contRodadas
    //conferir(bancoAle1,timesAle1)
 }
 
@@ -100,27 +100,27 @@ export function buildFuturaResponse(){
 }
 export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
-        qtdRodadas:rodadasBra1novo,
+        contRodadas:rodadasBra1novo,
         partidasTotais:consider?bancoBra1novo:bancoBra1novo.filter(part=>!part.futura),
         listaTimes:timesBra1novo
     }
     if(camp=='bra1-2022')return {
-        qtdRodadas:rodadasBra1antigo,
+        contRodadas:rodadasBra1antigo,
         partidasTotais:consider?bancoBra1antigo:bancoBra1antigo.filter(part=>!part.futura),
         listaTimes:timesBra1antigo
     }
     if(camp=='ing1')return {
-        qtdRodadas:rodadasIng1,
+        contRodadas:rodadasIng1,
         partidasTotais:consider?bancoIng1:bancoIng1.filter(part=>!part.futura),
         listaTimes:timesIng1
     }
     if(camp=='esp1')return {
-        qtdRodadas:rodadasEsp1,
+        contRodadas:rodadasEsp1,
         partidasTotais:consider?bancoEsp1:bancoEsp1.filter(part=>!part.futura),
         listaTimes:timesEsp1
     }
     if(camp=='ale1')return {
-        qtdRodadas:rodadasAle1,
+        contRodadas:rodadasAle1,
         partidasTotais:consider?bancoAle1:bancoAle1.filter(part=>!part.futura),
         listaTimes:timesAle1
     }
