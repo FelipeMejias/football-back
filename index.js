@@ -1,6 +1,6 @@
 import cors from 'cors'
 import Express, {json} from 'express'
-import { router } from './src/rotas.js'
+import { router } from './src/rotas2.js'
 import dotenv from 'dotenv'
 dotenv.config()
 import { principal } from './src/config/previsoes.js'

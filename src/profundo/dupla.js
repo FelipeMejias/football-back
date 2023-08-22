@@ -1,5 +1,5 @@
 import { ordenarDupla } from "../utils.js";
-import { criarOrdem } from "./individual.js";
+import { criarOrdem } from "./individual2.js";
 
 export function criarOrdemDupla(context,mandante,visitante){
     const ordemMandante=criarOrdem(context,mandante)
@@ -12,6 +12,7 @@ export function criarOrdemDupla(context,mandante,visitante){
             listao.push([est,par])
         }
     })
+    
     return ordenarDupla(listao)
 }
 function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
