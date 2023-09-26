@@ -96,25 +96,6 @@ router.get('/escanteios/:camp',async(req,res)=>{
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFuturaResponse()
 
-    const newo=[]
-    lista.forEach(element => {
-        const {mandante,visitante,camp}=element
-        const contexto=buildContext(camp)
-        const test=criarOrdemDupla(contexto,mandante,visitante)
-        const minilist=[]
-        test.forEach(elem=>{
-            if(elem[0].pos==1&&elem[1].pos==1){
-                minilist.push(elem)
-            }
-        })
-        if(minilist.length>0)newo.push({
-            mandante,visitante,minilist
-        })
-    });
-    console.log(newo)
-
-
-
     res.status(200).send(lista)
 })
 router.get('/partidas/:camp/:partida',async(req,res)=>{
@@ -139,6 +120,36 @@ router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
     const resp=criarOrdemDupla(context,mandante,visitante)
     res.status(200).send(resp)
 })
+
+
+router.get('/favoritos',async(req,res)=>{
+    const lista=buildFuturaResponse()
+    const newo=[]
+    lista.forEach(element => {
+
+        const {mandante,visitante,camp}=element
+        const contexto=buildContext(camp)
+        const test=criarOrdemDupla(contexto,mandante,visitante)
+        const minilist=[]
+        test.forEach(elem=>{
+            if( elem[0].valor&&elem[1].valor&&
+                (elem[0].pos==1&&elem[1].pos==1 ||
+                elem[0].pos==1&&elem[1].pos==2 ||
+                elem[0].pos==2&&elem[1].pos==1 ||
+                elem[0].pos==1&&elem[1].pos==3 ||
+                elem[0].pos==3&&elem[1].pos==1)
+            ){
+                minilist.push(elem)
+            }
+        })
+        if(minilist.length>0)newo.push({
+            mandante,visitante,minilist,path:camp
+        })
+    });
+    res.status(200).send(newo)
+})
+
+
 
 function getPartida(banco,id){
     for(let part of banco){
