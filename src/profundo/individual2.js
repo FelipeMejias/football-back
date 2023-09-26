@@ -1,6 +1,3 @@
-import { totalComparacao } from "../tabelas/comparar.js"
-import { totalResultado } from "../tabelas/totalResultado.js"
-import { totalTempo } from "../tabelas/totalTempo.js"
 import { comparar } from "../tabelas2/comparar.js"
 import { escanteios } from "../tabelas2/escanteios.js"
 import { mediaGols } from "../tabelas2/mediaGols.js"

@@ -1,12 +1,9 @@
 import Router from 'express'
-import { totalTempo } from './tabelas/totalTempo.js'
-import { totalResultado } from './tabelas/totalResultado.js'
 import {  ordenarIndividual, quantoTempoFalta } from './utils.js'
 import { buildContext, buildFuturaResponse } from './bancos.js'
 import { classificacao } from './tabelas/classificacao.js'
 import { partidasRodada } from './tabelas/partidasRodada.js'
 import { adicionar } from './config/controle.js'
-import { totalComparacao } from './tabelas/comparar.js'
 import { criarOrdem } from './profundo/individual2.js'
 import { criarOrdemDupla } from './profundo/dupla.js'
 import { partidasTime } from './profundo/partidasTime.js'
@@ -98,6 +95,26 @@ router.get('/escanteios/:camp',async(req,res)=>{
 })
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFuturaResponse()
+
+    const newo=[]
+    lista.forEach(element => {
+        const {mandante,visitante,camp}=element
+        const contexto=buildContext(camp)
+        const test=criarOrdemDupla(contexto,mandante,visitante)
+        const minilist=[]
+        test.forEach(elem=>{
+            if(elem[0].pos==1&&elem[1].pos==1){
+                minilist.push(elem)
+            }
+        })
+        if(minilist.length>0)newo.push({
+            mandante,visitante,minilist
+        })
+    });
+    console.log(newo)
+
+
+
     res.status(200).send(lista)
 })
 router.get('/partidas/:camp/:partida',async(req,res)=>{

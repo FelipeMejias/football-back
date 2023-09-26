@@ -32,6 +32,5 @@ export  function escanteios(context,estadia){
             c3:cont==0?'-':parseFloat((golsContra/cont).toFixed(1))
         })
     }
-    console.log(resp)
     return resp
 }
