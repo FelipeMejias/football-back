@@ -2,7 +2,7 @@ import {MongoClient} from 'mongodb'
 import dotenv from 'dotenv'
 dotenv.config()
 
-import { bancoAle1, bancoBra1novo, bancoBra1antigo, bancoEsp1, bancoIng1 } from "../bancos.js"
+import { bancoAle1, bancoBra1, bancoEsp1, bancoIng1 } from "../bancos.js"
 let db = null
 
 export async function conectarBanco(){

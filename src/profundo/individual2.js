@@ -2,6 +2,7 @@ import { totalComparacao } from "../tabelas/comparar.js"
 import { totalResultado } from "../tabelas/totalResultado.js"
 import { totalTempo } from "../tabelas/totalTempo.js"
 import { comparar } from "../tabelas2/comparar.js"
+import { escanteios } from "../tabelas2/escanteios.js"
 import { mediaGols } from "../tabelas2/mediaGols.js"
 import { placar } from "../tabelas2/placar.js"
 import { primeiroGol } from "../tabelas2/primeiroGol.js"
@@ -66,6 +67,30 @@ export function criarOrdem(context,time){
                 })
             })
         }
+    }
+    frases=[
+        [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
+        [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
+        [['com mais escanteios contra',false],['com menos escanteios contrários',true]],
+    ]
+    for(let i=0;i<=2;i++){
+        const list=fucarTabela(escanteios(context,i),time)
+        list.forEach(item=>{
+            const {pos,asc,valor,c,relev}=item
+            resp.push({
+                pos,
+                descricao:frases[c-1][asc][0]+complementos2[i],
+                bom:frases[c-1][asc][1],
+                valor,
+                relev:6-(i?1:0),
+                c,
+                asc,
+                grandeza:6,
+                estadia:i,
+                metade:null,
+                handicap:null
+            })
+        })
     }
     frases=[
         [['com primeiro gol marcado mais tarde',false],['com primeiro gol marcado mais cedo',true]],

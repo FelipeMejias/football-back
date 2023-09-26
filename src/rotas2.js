@@ -15,6 +15,7 @@ import { primeiroGol } from './tabelas2/primeiroGol.js'
 import { placar } from './tabelas2/placar.js'
 import { mediaGols } from './tabelas2/mediaGols.js'
 import { comparar } from './tabelas2/comparar.js'
+import { escanteios } from './tabelas2/escanteios.js'
 
 export const router=Router()
 
@@ -87,7 +88,14 @@ router.get('/mediagols/:camp',async(req,res)=>{
     const resp= mediaGols(context,estadia,metade)
     res.status(200).send(resp)
 })
-
+router.get('/escanteios/:camp',async(req,res)=>{
+    const estadia=parseInt(req.query.estadia)
+    const {camp}=req.params
+    const context=buildContext(camp)
+    
+    const resp= escanteios(context,estadia)
+    res.status(200).send(resp)
+})
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFuturaResponse()
     res.status(200).send(lista)
