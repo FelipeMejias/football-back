@@ -2,7 +2,7 @@ import { create } from "../bancos.js"
 
 export async function createBra1(){
     let r
-    r=24//================== RODADA 24 =====================//
+    r=25//================== RODADA 25 =====================//
     await create(r,'saoctb','2309271900')
     await create(r,'flabah','2309301600')
     await create(r,'forgre','2309301600')

@@ -19,7 +19,7 @@ export async function iniciateDatabases(){
    //idGeral=0;bancoGeral=bancoBra1antigo;await createBra1antigo()
    idGeral=0;bancoGeral=bancoBra1;await createBra1()
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
-   //idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
+   idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    //idGeral=0;bancoGeral=bancoAle1;await createAle1()
    //idGeral=0;bancoGeral=bancoAra1;await createAra1()
    //conferir(bancoAle1,timesAle1)
@@ -115,7 +115,7 @@ export function buildContext(camp,consider=false){
         listaTimes:timesIng1
     }
     if(camp=='esp1')return {
-        qtdRodadas:14,
+        qtdRodadas:6,
         partidasTotais:consider?bancoEsp1:bancoEsp1.filter(part=>!part.futura),
         listaTimes:timesEsp1
     }
@@ -127,7 +127,7 @@ export function buildContext(camp,consider=false){
 }
 const timesBra1=['amg','cap','cam','bah','bot','bra','cor','ctb','cru','cui','fla','flu','for','goi','gre','int','pal','san','sao','vas']
 const timesIng1=['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','liv','lut','mau','mac','new','not','she','tot','wes','wol']
-const timesEsp1=['alm','atb','atm','bar','bet','cad','cel','elc','esp','get','gir','mal','osa','ray','rem','res','rev','sev','val','vil']
+const timesEsp1=['ala','alm','atb','atm','bar','bet','cad','cel','get','gir','gra','las','mal','osa','ray','rem','res','sev','val','vil']
 const timesAle1=['aug','bay','boc','bor','col','ein','fre','her','hof','lei','lev','mai','mon','sch','stu','uni','wer','wol']
 const timesAra1=['abh','ahl','akh','dha','ett','fat','fei','haz','hil','itt','kha','nas','rae','riy','sha','taa','tae','weh']
 function conferir(banco,times){
