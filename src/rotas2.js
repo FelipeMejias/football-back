@@ -126,8 +126,8 @@ router.get('/favoritos',async(req,res)=>{
     const lista=buildFuturaResponse()
     const newo=[]
     lista.forEach(element => {
-
-        const {mandante,visitante,camp}=element
+        const {mandante,visitante,camp,id}=element
+        console.log(element)
         const contexto=buildContext(camp)
         const test=criarOrdemDupla(contexto,mandante,visitante)
         const minilist=[]
@@ -143,7 +143,7 @@ router.get('/favoritos',async(req,res)=>{
             }
         })
         if(minilist.length>0)newo.push({
-            mandante,visitante,minilist,path:camp
+            mandante,visitante,minilist,camp,id
         })
     });
     res.status(200).send(newo)
