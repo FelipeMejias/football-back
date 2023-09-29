@@ -114,7 +114,7 @@ export async function createBra1(){
     await create(r,'vascap',[8,2],[-71,-80])
     await create(r,'ctbflu',[7,11],[24,28])
     r=15//================== RODADA 15 =====================//
-    await create(r,'amgvas',[],[])
+    await create(r,'amgvas',[3,8],[-90])
     await create(r,'corgre',[6,4],[-21,-27,45,45,45,-51,-58,67])
     await create(r,'botbra',[4,11],[48,60])
     await create(r,'cructb',[11,8],[])

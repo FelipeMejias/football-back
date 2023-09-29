@@ -95,7 +95,6 @@ router.get('/escanteios/:camp',async(req,res)=>{
 })
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFuturaResponse()
-
     res.status(200).send(lista)
 })
 router.get('/partidas/:camp/:partida',async(req,res)=>{
@@ -127,7 +126,6 @@ router.get('/favoritos',async(req,res)=>{
     const newo=[]
     lista.forEach(element => {
         const {mandante,visitante,camp,id}=element
-        console.log(element)
         const contexto=buildContext(camp)
         const test=criarOrdemDupla(contexto,mandante,visitante)
         const minilist=[]
