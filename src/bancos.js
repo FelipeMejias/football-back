@@ -9,6 +9,10 @@ export const bancoBra1=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoIta1=[]
+export let qtdBra
+export let qtdIng
+export let qtdEsp
+export let qtdIta
 let idGeral
 let bancoGeral
 
@@ -91,22 +95,22 @@ export function buildFuturaResponse(){
 }
 export function buildContext(camp,consider=false){
     if(camp=='bra1')return {
-        qtdRodadas:24,
+        qtdRodadas:qtdBra,
         partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
         listaTimes:timesBra1
     }
     if(camp=='ing1')return {
-        qtdRodadas:6,
+        qtdRodadas:qtdIng,
         partidasTotais:consider?bancoIng1:bancoIng1.filter(part=>!part.futura),
         listaTimes:timesIng1
     }
     if(camp=='esp1')return {
-        qtdRodadas:6,
+        qtdRodadas:qtdEsp,
         partidasTotais:consider?bancoEsp1:bancoEsp1.filter(part=>!part.futura),
         listaTimes:timesEsp1
     }
     if(camp=='ita1')return {
-        qtdRodadas:5,
+        qtdRodadas:qtdIta,
         partidasTotais:consider?bancoIta1:bancoIta1.filter(part=>!part.futura),
         listaTimes:timesita1
     }

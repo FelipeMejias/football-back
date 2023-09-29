@@ -1,8 +1,9 @@
-import { create } from "../bancos.js"
+import { create, qtdIta } from "../bancos.js"
 
 export async function createIta1(){
     let r
     r=7//================== RODADA 7 =====================//
+    qtdIta=r-1
     await create(r,'lecnap','2309301000')
     await create(r,'millaz','2309301300')
     await create(r,'salint','2309301545')

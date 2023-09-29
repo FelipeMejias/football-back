@@ -1,8 +1,9 @@
-import { create } from "../bancos.js"
+import { create, qtdBra } from "../bancos.js"
 
 export async function createBra1(){
     let r
     r=25//================== RODADA 25 =====================//
+    qtdBra=r-1
     await create(r,'saoctb','2309271900')
     await create(r,'flabah','2309301600')
     await create(r,'forgre','2309301600')
