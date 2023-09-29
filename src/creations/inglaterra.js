@@ -1,9 +1,8 @@
-import { create, qtdIng } from "../bancos.js"
+import { create } from "../bancos.js"
 
 export async function createIng1(){
     let r
     r=7//================== RODADA 7 =====================//
-    qtdIng=r-1
     await create(r,'astbri','2309300830')
     await create(r,'maucry','2309301100')
     await create(r,'newbur','2309301100')

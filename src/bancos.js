@@ -9,10 +9,10 @@ export const bancoBra1=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoIta1=[]
-export let qtdBra
-export let qtdIng
-export let qtdEsp
-export let qtdIta
+const qtdBra=24
+const qtdIng=6
+const qtdEsp=7
+const qtdIta=6
 let idGeral
 let bancoGeral
 

@@ -1,9 +1,8 @@
-import { create, qtdEsp } from "../bancos.js"
+import { create } from "../bancos.js"
 
 export async function createEsp1(){
     let r
     r=8//================== RODADA 8 =====================//
-    qtdEsp=r-1
     await create(r,'barsev','2309291600')
     await create(r,'getvil','2309300900')
     await create(r,'raymal','2309301115')
