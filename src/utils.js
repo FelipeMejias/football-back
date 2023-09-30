@@ -6,8 +6,39 @@ export function getPartidasTime(banco,time){
     return partidas
 }
 
+
+
+export function buildTimeResponse(ganhou,empatou,perdeu,listFez,listNada,listTomou){
+    const total=(ganhou+empatou+perdeu)/100
+    const fezLen=listFez.length
+    const tomouLen=listTomou.length
+    const nadaLen=listNada.length
+    const totalList=(fezLen+nadaLen+tomouLen)/100
+    const resp={
+        resultados:{
+            ganhou:{total:ganhou,perc:(ganhou?ganhou/total:0)},
+            empatou:{total:empatou,perc:(empatou?empatou/total:0)},
+            perdeu:{total:perdeu,perc:(perdeu?perdeu/total:0)}
+        },
+        fez:{
+            lista:listFez,
+            perc:(fezLen?fezLen/totalList:0),
+            total:fezLen
+        },
+        nada:{
+            lista:listNada,
+            perc:(nadaLen?nadaLen/totalList:0),
+            total:nadaLen
+        },
+        tomou:{
+            lista:listTomou,
+            perc:(tomouLen?tomouLen/totalList:0),
+            total:tomouLen
+        },
+    }
+    return resp
+}
 export function quantoTempoFalta(time){
-    let on;let texto
     const now=horario()
     const ano='20'+time[0]+time[1]
     const mes=time[2]+time[3]
@@ -16,24 +47,29 @@ export function quantoTempoFalta(time){
     const minuto=time[8]+time[9]
     const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
     const mt= date.diff(dayjs(now), 'minute', true)
-    const anoAgora=now[0]+now[1]+now[2]+now[3]
-    const mesAgora=now[5]+now[6]
-    const diaAgora=now[8]+now[9]
-    const horaAgora=now[11]+now[12]
-    if(((mesAgora==mes&&diaAgora==dia) && (horaAgora-hora>=2)) || ((anoAgora>ano)||(anoAgora==ano&&mesAgora>mes||(anoAgora==ano&&mesAgora==mes&&diaAgora>dia)))){
-        on=false
-        texto='Finalizado'  
+    const dias=Math.floor(mt/1440)
+    const horas=Math.floor(mt%1440/60)
+    const minutos=Math.floor(mt%1440%60)
+    if(mt<0){
+        if(mt<-120){
+            return{
+                on:false,
+                texto:'Finalizado'
+            }
+        }else{
+            return{
+                on:true,
+                texto:'Iniciado'
+            }
+        }
     }else{
-        on=true
-        texto=fazerTexto(Math.floor(mt/1440),Math.floor(mt%1440/60),Math.floor(mt%1440%60))
-    }
-    return {
-        on,
-        texto
+        return{
+            on:true,
+            texto:fazerTexto(dias,horas,minutos)
+        }
     }
 }
 function fazerTexto(dias,horas,minutos){
-    if(minutos<0)return 'Iniciado'
     if(dias>0){
       return `Faltam ${dias?dias+' dias':''} ${horas?'e '+horas+' horas':''}`
     }else{
@@ -50,6 +86,7 @@ function horario(){
     const parts=time[0].split(':')
     let hour=parseInt(parts[0])
     if(time[1]=='PM')hour+=hour==12?0:12
+    if(time[1]=='AM'&&time[0][0]==1&&time[0][1]==2)hour=0
     const finalTime=`${hour>9?hour:`0${hour}`}:${parts[1].length==2?parts[1]:`0${parts[1]}`}:${parts[2].length==2?parts[2]:`0${parts[2]}`}`
     const resp=`${finalDate} ${finalTime}`
     return resp
