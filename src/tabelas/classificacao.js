@@ -1,4 +1,4 @@
-export  function classificacao(context,rodada){
+export  function classificacao(context,rodada,camp){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     let cont
@@ -34,9 +34,9 @@ export  function classificacao(context,rodada){
             saldoGols:golsPro-golsContra
         })
     }
-    return ordenarClassificacao(resp)
+    return ordenarClassificacao(resp,camp=='bra1'||camp=='bra2')
 }
-function ordenarClassificacao(arr){
+function ordenarClassificacao(arr,brazuca){
     let using;const resp=[];const hash={}
     for(let k=0;k<arr.length;k++){
         const {time,pontos,vitorias,saldoGols,golsPro}=arr[k]
@@ -52,19 +52,18 @@ function ordenarClassificacao(arr){
             using=c
             maior=arr[c]
            }else if(l[0]==maior.pontos){
-                if(l[1]>maior.vitorias){
+                if(brazuca?l[1]>maior.vitorias:l[2]>maior.saldoGols){
                     using=c
                     maior=arr[c]
-                }else if(l[1]==maior.vitorias){
-                    if(l[2]>maior.saldoGols){
+                }else if(brazuca?l[1]==maior.vitorias:l[2]==maior.saldoGols){
+                    if(brazuca?l[2]>maior.saldoGols:l[3]>maior.golsPro){
                         using=c
                         maior=arr[c]
-                    }else if(l[2]==maior.saldoGols){
-                        if(l[3]>maior.golsPro){
+                    }else if(brazuca?l[2]==maior.saldoGols:l[3]==maior.golsPro){
+                        if(brazuca?l[3]>maior.golsPro:l[1]>maior.vitorias){
                             using=c
                             maior=arr[c]
                         }else if(l[1]==maior.vitorias){
-                            console.log('total empate')
                         }
                     }
                 }

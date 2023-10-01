@@ -3,11 +3,11 @@ import { create } from "../bancos.js"
 export async function createEsp1(){
     let r
     r=8//================== RODADA 8 =====================//
-    await create(r,'barsev','2309291600')
-    await create(r,'getvil','2309300900')
-    await create(r,'raymal','2309301115')
-    await create(r,'girrem','2309301330')
-    await create(r,'resatb','2309301600')
+    await create(r,'barsev',[13,3],[76])
+    await create(r,'getvil',[6,4],[])
+    await create(r,'raymal',[5,0],[4,-44,-59,90])
+    await create(r,'girrem',[1,4],[-17,-21,-71])
+    await create(r,'resatb',[5,7],[30,48,66])
     await create(r,'almgra','2310010900')
     await create(r,'alaosa','2310011115')
     await create(r,'betval','2310011600')

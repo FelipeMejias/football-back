@@ -3,14 +3,14 @@ import { create } from "../bancos.js"
 export async function createIng1(){
     let r
     r=7//================== RODADA 7 =====================//
-    await create(r,'astbri','2309300830')
-    await create(r,'maucry','2309301100')
-    await create(r,'newbur','2309301100')
-    await create(r,'wolmac','2309301100')
-    await create(r,'bouars','2309301100')
-    await create(r,'wesshe','2309301100')
-    await create(r,'evelut','2309301100')
-    await create(r,'totliv','2309301330')
+    await create(r,'astbri',[1,3],[14,21,26,-50,65,85,90])
+    await create(r,'maucry',[10,4],[-25])
+    await create(r,'newbur',[5,3],[14,76])
+    await create(r,'wolmac',[0,6],[13,-58,66])
+    await create(r,'bouars',[6,6],[-17,-44,-53,-90])
+    await create(r,'wesshe',[7,4],[24,37])
+    await create(r,'evelut',[3,6],[-24,-31,41])
+    await create(r,'totliv',[11,5],[36,-45,90])
     await create(r,'notbre','2310011000')
     await create(r,'fulche','2310021600')
     r=6//================== RODADA 6 =====================//

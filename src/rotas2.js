@@ -3,7 +3,6 @@ import {  ordenarIndividual, quantoTempoFalta } from './utils.js'
 import { buildContext, buildFuturaResponse } from './bancos.js'
 import { classificacao } from './tabelas/classificacao.js'
 import { partidasRodada } from './tabelas/partidasRodada.js'
-import { adicionar } from './config/controle.js'
 import { criarOrdem } from './profundo/individual2.js'
 import { criarOrdemDupla } from './profundo/dupla.js'
 import { partidasTime } from './profundo/partidasTime.js'
@@ -16,7 +15,6 @@ import { escanteios } from './tabelas2/escanteios.js'
 
 export const router=Router()
 
-router.post('/partidas',adicionar)
 
 router.get('/classif/:camp/:rodada',async(req,res)=>{
     const {camp,rodada:rodadaStr}=req.params
@@ -28,7 +26,7 @@ router.get('/classif/:camp/:rodada',async(req,res)=>{
         fal=true
     }
     const partidas=partidasRodada(context,rodada)
-    const resp=classificacao(context,rodada)
+    const resp=classificacao(context,rodada,camp)
     const resposta={
         rodadaAtual:fal?context.qtdRodadas:null,
         listaTabela:{

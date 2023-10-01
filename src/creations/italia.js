@@ -3,9 +3,9 @@ import { create } from "../bancos.js"
 export async function createIta1(){
     let r
     r=7//================== RODADA 7 =====================//
-    await create(r,'lecnap','2309301000')
-    await create(r,'millaz','2309301300')
-    await create(r,'salint','2309301545')
+    await create(r,'lecnap',[3,7],[-16,-51,-88,-90])
+    await create(r,'millaz',[7,1],[60,88])
+    await create(r,'salint',[3,3],[-62,-77,-85,-89])
     await create(r,'bolemp','2310010730')
     await create(r,'udigen','2310011000')
     await create(r,'atajuv','2310011300')
@@ -51,7 +51,7 @@ export async function createIta1(){
     await create(r,'rommil',[3,5],[-9,-48,90])
     await create(r,'udifro',[3,5],[])
     await create(r,'bolcag',[5,2],[-22,59,89])
-    await create(r,'naplaz',[7,2],[-30,32,52])
+    await create(r,'naplaz',[7,2],[-30,32,-52])
     await create(r,'atamon',[7,3],[35,42,62])
     await create(r,'torgen',[4,0],[90])
     await create(r,'intfio',[1,1],[23,53,58,73])
@@ -60,7 +60,7 @@ export async function createIta1(){
     r=2//================== RODADA 2 =====================//
     await create(r,'froata',[3,7],[5,24,-56])
     await create(r,'monemp',[6,5],[45,53])
-    await create(r,'verrom',[1,12],[4,45,84])
+    await create(r,'verrom',[1,12],[4,45,-56])
     await create(r,'miltor',[2,1],[33,-36,43,45,65])
     await create(r,'juvbol',[6,2],[-24,80])
     await create(r,'fiolec',[3,3],[3,25,-49,-76])
