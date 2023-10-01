@@ -3,6 +3,17 @@ import { create } from "../bancos.js"
 export async function createBra2(){
     let r
     r=30//================== RODADA 30 =====================//
+    await create(r,'mirlon','2310031930')
+    await create(r,'chaabc','2310051915')
+    await create(r,'agoitu','2310062130')
+    await create(r,'crbcea','2310062130')
+    await create(r,'tomjuv','2310071530')
+    await create(r,'botava','2310071700')
+    await create(r,'samnov','2310071700')
+    await create(r,'guavil','2310071800')
+    await create(r,'crivit','2310081800')
+    await create(r,'spopon','2310092000')
+    r=30//================== RODADA 30 =====================//
     await create(r,'mircrb',[0,3],[36])
     await create(r,'lonsam',[5,5],[19])
     await create(r,'avaspo',[5,9],[1,-5,37,-90])
@@ -11,8 +22,8 @@ export async function createBra2(){
     await create(r,'itubot',[7,1],[13,-37])
     await create(r,'guanov',[7,1],[-8,33,83])
     await create(r,'abcpon',[4,6],[73,90])
-    await create(r,'vilcha','2310011545')
-    await create(r,'ceaago','2310011800')
+    await create(r,'vilcha',[7,3],[])
+    await create(r,'ceaago',[5,4],[-68])
     r=29//================== RODADA 29 =====================//
     await create(r,'samvil',[6,7],[-11,39,69])
     await create(r,'ponmir',[4,5],[-23,-71,-90])
