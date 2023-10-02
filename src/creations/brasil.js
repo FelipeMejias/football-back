@@ -11,7 +11,7 @@ export async function createBra1(){
     await create(r,'cruamg',[9,7],[21,-28])
     await create(r,'ctbcap',[2,11],[14,45])
     await create(r,'sanvas',[5,11],[15,-31,45,45,75])
-    await create(r,'brapal',[6,4],[-15,61])
+    await create(r,'brapal',[6,4],[-15,61,90])
     await create(r,'botgoi','2310022000')
     r=24//================== RODADA 24 =====================//
     await create(r,'bahsan',[6,8],[59,-73,-90])

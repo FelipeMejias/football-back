@@ -11,7 +11,7 @@ export async function createIng1(){
     await create(r,'wesshe',[7,4],[24,37])
     await create(r,'evelut',[3,6],[-24,-31,41])
     await create(r,'totliv',[11,5],[36,-45,90])
-    await create(r,'notbre','2310011000')
+    await create(r,'notbre',[1,11],[-58,65])
     await create(r,'fulche','2310021600')
     r=6//================== RODADA 6 =====================//
     await create(r,'macnot',[6,6],[7,14])
