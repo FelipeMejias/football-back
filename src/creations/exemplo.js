@@ -4,16 +4,16 @@ export async function create1(){
     let r
     
     r=30//================== RODADA 30 =====================//
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
-    await create(r,'','2310')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
+    await create(r,'','231008')
     r=29//================== RODADA 29 =====================//
     await create(r,'',[],[])
     await create(r,'',[],[])

@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createEsp1(){
     let r
+    r=9//================== RODADA 9 =====================//
+    await create(r,'atbalm',[6,2],[10,63,81])
+    await create(r,'cadgir',[5,5],[-59])
+    await create(r,'remosa',[5,4],[9,54,65,70])
+    await create(r,'malval',[3,6],[5,-45])
+    await create(r,'sevray',[12,2],[-21,-26,50,90])
+    await create(r,'villas','2310080900')
+    await create(r,'atmres','2310081115')
+    await create(r,'alabet','2310081330')
+    await create(r,'celget','2310081330')
+    await create(r,'grabar','2310081600')
     r=8//================== RODADA 8 =====================//
     await create(r,'barsev',[13,3],[76])
     await create(r,'getvil',[6,4],[])
@@ -56,7 +67,7 @@ export async function createEsp1(){
     await create(r,'girlas',[3,5],[86])
     await create(r,'malatb',[3,5],[])
     await create(r,'osabar',[8,5],[-45,76,-86])
-    await create(r,'',[])
+    await create(r,'',[],[])
     r=3//================== RODADA 3 =====================//
     await create(r,'lasres',[5,7],[])
     await create(r,'celrem',[3,5],[-81])
