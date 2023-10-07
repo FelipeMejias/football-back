@@ -12,7 +12,7 @@ export async function createEsp1(){
     await create(r,'alaosa',[4,2],[-36,-90])
     await create(r,'betval',[5,3],[41,52,85])
     await create(r,'atmcad',[5,3],[-12,-27,32,46,66])
-    await create(r,'lascel','2310021600')
+    await create(r,'lascel',[4,5],[-67,84,90])
     r=7//================== RODADA 7 =====================//
     await create(r,'sevalm',[9,4],[7,8,38,51,-71,90])
     await create(r,'malbar',[7,2],[8,-41,45,-75])

@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createBra1(){
     let r
+    r=26//================== RODADA 26 =====================//
+    await create(r,'goibah','2310071600')
+    await create(r,'vassao','2310071930')
+    await create(r,'corfla','2310072100')
+    await create(r,'intgre','2310081600')
+    await create(r,'palsan','2310081600')
+    await create(r,'flubot','2310081600')
+    await create(r,'capbra','2310081830')
+    await create(r,'camctb','2310081830')
+    await create(r,'foramg','2310081830')
+    await create(r,'cuicru','2310142100')
     r=25//================== RODADA 25 =====================//
     await create(r,'flabah',[12,2],[61])
     await create(r,'forgre',[3,7],[44,-80])
@@ -12,7 +23,7 @@ export async function createBra1(){
     await create(r,'ctbcap',[2,11],[14,45])
     await create(r,'sanvas',[5,11],[15,-31,45,45,75])
     await create(r,'brapal',[6,4],[-15,61,90])
-    await create(r,'botgoi','2310022000')
+    await create(r,'botgoi',[8,3],[-27,52])
     r=24//================== RODADA 24 =====================//
     await create(r,'bahsan',[6,8],[59,-73,-90])
     await create(r,'amgbra',[2,14],[-36,-90])

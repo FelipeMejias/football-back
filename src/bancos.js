@@ -14,9 +14,9 @@ let bancoGeral
 export function buildContext(camp,consider=false){
     const BRASIL1=25
     const BRASIL2=30
-    const INGLATERRA=7
-    const ESPANHA=8
-    const ITALIA=7
+    const INGLATERRA=8
+    const ESPANHA=9
+    const ITALIA=8
     if(camp=='bra1')return {
         qtdRodadas:BRASIL1,
         partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
