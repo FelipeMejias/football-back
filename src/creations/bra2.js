@@ -2,7 +2,9 @@ import { create } from "../bancos.js"
 
 export async function createBra2(){
     let r
-    r=30//================== RODADA 30 =====================//
+    r=32//=======================================//
+    await create(r,'vilbot','2310112130')
+    r=31//================== RODADA 31 =====================//
     await create(r,'mirlon','2310031930')
     await create(r,'chaabc','2310051915')
     await create(r,'agoitu','2310062130')
