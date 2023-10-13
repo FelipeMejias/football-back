@@ -1,18 +1,28 @@
 import { ordenarDupla } from "../utils.js";
+import { acharAposta } from "./aposta.js";
 import { criarOrdem } from "./individual2.js";
 
-export function criarOrdemDupla(context,mandante,visitante){
+export function criarOrdemDupla(context,mandante,visitante,onFav=false){
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
+    let x=true
     ordemMandante.forEach(est=>{
-        const {grandeza,c,asc,estadia,metade,handicap}=est
-        const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
-        if(par){
-            listao.push([est,par])
+        const {grandeza,c,asc,estadia,metade,handicap,pos}=est
+        if(pos>3 && pos<18 && onFav){}else{
+            const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
+            const aposta=acharAposta(est)
+            if(par){
+                if(aposta){
+                    const x=[est,par,aposta]
+                    listao.push(x)
+                }else{
+                    listao.push([est,par])
+                }
+            }
+    
         }
     })
-    
     return ordenarDupla(listao)
 }
 function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
@@ -25,9 +35,7 @@ function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
             &&metade==metadee
             &&(!handicapp&&!handicap||handicap==-handicapp)
             &&(
-                (c==1&&cc==3)||(cc==1&&c==3)||
-                (c==2&&cc==2)||(cc==5&&c==5)||
-                (c==4&&cc==6)||(cc==4&&c==6)
+                (c==1&&cc==3)||(cc==1&&c==3)||(c==2&&cc==2)
             )
         ){
             return lista[k]

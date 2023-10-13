@@ -3,18 +3,18 @@ import { create } from "../bancos.js"
 export async function create1(){
     let r
     
-    r=30//================== RODADA 30 =====================//
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    await create(r,'','231008')
-    r=29//================== RODADA 29 =====================//
+    r=//=======================================//
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    await create(r,'','2310')
+    r=//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -25,7 +25,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=28//================== RODADA 28 =====================//
+    r=28//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -36,7 +36,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=27//================== RODADA 27 =====================//
+    r=27//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -47,7 +47,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=26//================== RODADA 26 =====================//
+    r=26//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -58,7 +58,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=25//================== RODADA 26 =====================//
+    r=25//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -69,7 +69,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=24//================== RODADA 24 =====================//
+    r=24//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -80,7 +80,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=23//================== RODADA 23 =====================//
+    r=23//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -91,7 +91,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=22//================== RODADA 22 =====================//
+    r=22//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -102,7 +102,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=21//================== RODADA 21 =====================//
+    r=21//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -113,7 +113,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=20//================== RODADA 20 =====================//
+    r=20//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -124,7 +124,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=19//================== RODADA 19 =====================//
+    r=19//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -135,7 +135,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=18//================== RODADA 18 =====================//
+    r=18//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -146,7 +146,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=17//================== RODADA 17 =====================//
+    r=17//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -157,7 +157,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=16//================== RODADA 16 =====================//
+    r=16//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -168,7 +168,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=15//================== RODADA 15 =====================//
+    r=15//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -179,7 +179,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=14//================== RODADA 14 =====================//
+    r=14//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -190,7 +190,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=13//================== RODADA 13 =====================//
+    r=13//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -201,7 +201,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=12//================== RODADA 12 =====================//
+    r=12//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -212,7 +212,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=11//================== RODADA 11 =====================//
+    r=11//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -223,7 +223,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=10//================== RODADA 10 =====================//
+    r=10//=======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -234,7 +234,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=9//================== RODADA 9 =====================//
+    r=9//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -245,7 +245,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=8//================== RODADA 8 =====================//
+    r=8//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -256,7 +256,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=7//================== RODADA 7 =====================//
+    r=7//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -267,7 +267,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=6//================== RODADA 6 =====================//
+    r=6//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -278,7 +278,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=5//================== RODADA 5 =====================//
+    r=5//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -289,7 +289,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=4//================== RODADA 4 =====================//
+    r=4//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -300,7 +300,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=3//================== RODADA 3 =====================//
+    r=3//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -311,7 +311,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=2//================== RODADA 2 =====================//
+    r=2//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
@@ -322,7 +322,7 @@ export async function create1(){
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])
-    r=1//================== RODADA 1 =====================//
+    r=1//======================================//
     await create(r,'',[],[])
     await create(r,'',[],[])
     await create(r,'',[],[])

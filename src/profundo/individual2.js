@@ -1,9 +1,18 @@
 import { comparar } from "../tabelas2/comparar.js"
 import { escanteios } from "../tabelas2/escanteios.js"
+import { marcaPrimeiro } from "../tabelas2/marcaPrimeiro.js"
 import { mediaGols } from "../tabelas2/mediaGols.js"
 import { placar } from "../tabelas2/placar.js"
 import { primeiroGol } from "../tabelas2/primeiroGol.js"
 import { ultimoGol } from "../tabelas2/ultimoGol.js"
+
+const RELEVANCIA1=16 //PLACAR
+const RELEVANCIA2=15 //MEDIA GOLS
+const RELEVANCIA3=1  //1o GOL
+const RELEVANCIA4=1  //Uo GOL
+const RELEVANCIA5=5  //VANTAGEM
+const RELEVANCIA6=10 //ESCANTEIOS
+const RELEVANCIA7=12 //PRIMEIRO A MARCAR
 
 export function criarOrdem(context,time){
     const resp=[]
@@ -28,7 +37,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:8-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA1-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:1,
@@ -41,7 +50,7 @@ export function criarOrdem(context,time){
     }
     frases=[
         [['com maior média de gols marcados',true],['com menor média de gols marcados',false]],
-        [['com maior média de gols na partida',null],['com menor média de gols na partida',null]],
+        [['com maior média de gols',null],['com menor média de gols',null]],
         [['com maior média de gols sofridos',false],['com menor média de gols sofridos',true]],
     ]
     for(let i=0;i<=2;i++){
@@ -54,7 +63,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:7-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA2-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:2,
@@ -64,6 +73,31 @@ export function criarOrdem(context,time){
                 })
             })
         }
+    }
+    frases=[
+        [['que mais marca o primeiro gol',true],['que menos marca o primeiro gol',false]],
+        [['com mais 0x0',null],['com menos 0x0',null]],
+        [['que mais sofre o primeiro gol',false],['que menos sofre o primeiro gol',true]],
+
+    ]
+    for(let i=0;i<=2;i++){
+        const list=fucarTabela(marcaPrimeiro(context,i),time)
+        list.forEach(item=>{
+            const {pos,asc,valor,c,relev}=item
+            resp.push({
+                pos,
+                descricao:frases[c-1][asc][0]+complementos2[i],
+                bom:frases[c-1][asc][1],
+                valor,
+                relev:RELEVANCIA3-(i?1:0),
+                c,
+                asc,
+                grandeza:7,
+                estadia:i,
+                metade:null,
+                handicap:null
+            })
+        })
     }
     frases=[
         [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
@@ -79,7 +113,7 @@ export function criarOrdem(context,time){
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:6-(i?1:0),
+                relev:RELEVANCIA4-(i?1:0),
                 c,
                 asc,
                 grandeza:6,
@@ -105,7 +139,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:4-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA7-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:3,
@@ -131,7 +165,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:4-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA5-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:4,
@@ -159,7 +193,7 @@ export function criarOrdem(context,time){
                 descricao:frases[c-1][asc][0]+complementos[i+1],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:5,
+                relev:RELEVANCIA6,
                 c,
                 asc,
                 grandeza:5,

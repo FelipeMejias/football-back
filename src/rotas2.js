@@ -12,6 +12,7 @@ import { placar } from './tabelas2/placar.js'
 import { mediaGols } from './tabelas2/mediaGols.js'
 import { comparar } from './tabelas2/comparar.js'
 import { escanteios } from './tabelas2/escanteios.js'
+import { marcaPrimeiro } from './tabelas2/marcaPrimeiro.js'
 
 export const router=Router()
 
@@ -89,6 +90,14 @@ router.get('/escanteios/:camp',async(req,res)=>{
     const context=buildContext(camp)
     
     const resp= escanteios(context,estadia)
+    res.status(200).send(resp)
+})
+router.get('/marcaprimeiro/:camp',async(req,res)=>{
+    const estadia=parseInt(req.query.estadia)
+    const {camp}=req.params
+    const context=buildContext(camp)
+    
+    const resp= marcaPrimeiro(context,estadia)
     res.status(200).send(resp)
 })
 router.get('/partidasgerais',async(req,res)=>{

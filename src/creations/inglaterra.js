@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createIng1(){
     let r
+    r=9//=======================================//
+    await create(r,'liveve','2310210830')
+    await create(r,'brebur','2310211100')
+    await create(r,'bouwol','2310211100')
+    await create(r,'notlut','2310211100')
+    await create(r,'macbri','2310211100')
+    await create(r,'newcry','2310211100')
+    await create(r,'chears','2310211330')
+    await create(r,'shemau','2310211600')
+    await create(r,'astwes','2310221230')
+    await create(r,'totful','2310231600')
     r=8//================== RODADA 8 =====================//
     await create(r,'luttot',[5,6],[-52])
     await create(r,'fulshe',[9,4],[53,-68,76,90])
@@ -9,10 +20,10 @@ export async function createIng1(){
     await create(r,'maubre',[7,5],[-26,90,90])
     await create(r,'evebou',[8,7],[8,37,60])
     await create(r,'crynot',[3,7],[])
-    await create(r,'briliv','2310081000')
-    await create(r,'wesnew','2310081000')
-    await create(r,'wolast','2310081000')
-    await create(r,'arsmac','2310081230')
+    await create(r,'briliv',[8,1],[20,-40,-45,78])
+    await create(r,'wesnew',[4,2],[8,-57,-62,89])
+    await create(r,'wolast',[2,10],[53,-55])
+    await create(r,'arsmac',[5,4],[86])
     r=7//================== RODADA 7 =====================//
     await create(r,'astbri',[1,3],[14,21,26,-50,65,85,90])
     await create(r,'maucry',[10,4],[-25])

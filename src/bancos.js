@@ -12,8 +12,8 @@ export const bancoIta1=[]
 let idGeral
 let bancoGeral
 export function buildContext(camp,consider=false){
-    const BRASIL1=25
-    const BRASIL2=30
+    const BRASIL1=26
+    const BRASIL2=31
     const INGLATERRA=8
     const ESPANHA=9
     const ITALIA=8
