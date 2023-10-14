@@ -1,26 +1,40 @@
-import { ordenarDupla } from "../utils.js";
+import { ordenarDupla, ordenarDuplaFavoritos } from "../utils.js";
 import { acharAposta } from "./aposta.js";
 import { criarOrdem } from "./individual2.js";
-
-export function criarOrdemDupla(context,mandante,visitante,onFav=false){
+export function criarOrdemDuplaFavoritos(context,mandante,visitante){
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
-    let x=true
     ordemMandante.forEach(est=>{
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
-        if(pos>3 && pos<18 && onFav){}else{
+        if(pos<4){
             const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
-            const aposta=acharAposta(est)
-            if(par){
+            if(par && par.pos<4){
+                const aposta=acharAposta(est)
                 if(aposta){
                     const x=[est,par,aposta]
                     listao.push(x)
-                }else{
-                    listao.push([est,par])
                 }
             }
-    
+        }
+    })
+    return ordenarDuplaFavoritos(listao)
+}
+export function criarOrdemDupla(context,mandante,visitante){
+    const ordemMandante=criarOrdem(context,mandante)
+    const ordemVisitante=criarOrdem(context,visitante)
+    const listao=[]
+    ordemMandante.forEach(est=>{
+        const {grandeza,c,asc,estadia,metade,handicap,pos}=est
+        const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
+        const aposta=acharAposta(est)
+        if(par){
+            if(aposta){
+                const x=[est,par,aposta]
+                listao.push(x)
+            }else{
+                listao.push([est,par])
+            }
         }
     })
     return ordenarDupla(listao)

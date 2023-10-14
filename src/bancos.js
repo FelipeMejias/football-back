@@ -76,7 +76,7 @@ export async function create(rodada,times,escant,goals=[]){
    const part={id,rodada,mandante,visitante,escant,gols,placar:[man,vis]}
    bancoGeral.push(part)
 }
-export function buildFuturaResponse(){
+export function buildFuturaResponse(desord=false){
     const bras=bancoBra1.filter(part=>part.futura)
     const bra=bras.map(part=>{
         const faltam=quantoTempoFalta(part.data)
@@ -117,17 +117,20 @@ export function buildFuturaResponse(){
             camp:'ita1'
         
     }})
-    const resp= [...ing,...esp,...ita,...bra,...bra2].sort((a,b)=>{
-        if(a.data<b.data){
-            return -1
-        }else{return true}
-    })
-    const respFinal=resp.sort((a,b)=>{
+    const desordenada=[...ing,...esp,...ita,...bra,...bra2].sort((a,b)=>{
         if(a.on&&!b.on){
             return -1
         }else{return true}
     })
-    return respFinal
+    if(desord){
+        return desordenada
+    }
+    const resp= desordenada.sort((a,b)=>{
+        if(a.data<b.data){
+            return -1
+        }else{return true}
+    })
+    return resp
 }
 
 const timesBra1=['amg','cap','cam','bah','bot','bra','cor','ctb','cru','cui','fla','flu','for','goi','gre','int','pal','san','sao','vas']

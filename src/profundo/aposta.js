@@ -33,19 +33,19 @@ export function acharAposta(stat){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} gols para mandante`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} gols para mandante`
+                texto=`Mais de ${Math.floor(valor)-0.5} gols para mandante`
             }
         }else if(c==2){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} gols`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} gols`
+                texto=`Mais de ${Math.floor(valor)-0.5} gols`
             }
         }else if(c==3){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} gols para visitante`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} gols para visitante`
+                texto=`Mais de ${Math.floor(valor)-0.5} gols para visitante`
             }
         }
         if(metade==0)texto+=' na partida'
@@ -59,19 +59,19 @@ export function acharAposta(stat){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} escanteios para mandante`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} escanteios para mandante`
+                texto=`Mais de ${Math.floor(valor)-0.5} escanteios para mandante`
             }
         }else if(c==2){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} escanteios`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} escanteios`
+                texto=`Mais de ${Math.floor(valor)-0.5} escanteios`
             }
         }else if(c==3){
             if(asc){
                 texto=`Menos de ${Math.ceil(valor)+0.5} escanteios para visitante`
             }else{
-                texto=`Mais de ${Math.floor(valor)+0.5} escanteios para visitante`
+                texto=`Mais de ${Math.floor(valor)-0.5} escanteios para visitante`
             }
         }
         return {texto,odd:gerarOdd()}

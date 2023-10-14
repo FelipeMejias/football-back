@@ -4,7 +4,7 @@ import { buildContext, buildFuturaResponse } from './bancos.js'
 import { classificacao } from './tabelas/classificacao.js'
 import { partidasRodada } from './tabelas/partidasRodada.js'
 import { criarOrdem } from './profundo/individual2.js'
-import { criarOrdemDupla } from './profundo/dupla.js'
+import { criarOrdemDupla, criarOrdemDuplaFavoritos } from './profundo/dupla.js'
 import { partidasTime } from './profundo/partidasTime.js'
 import { ultimoGol } from './tabelas2/ultimoGol.js'
 import { primeiroGol } from './tabelas2/primeiroGol.js'
@@ -129,29 +129,23 @@ router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
 
 
 router.get('/favoritos',async(req,res)=>{
-    const lista=buildFuturaResponse()
+    const lista=buildFuturaResponse(true)
     const newo=[]
     lista.forEach(element => {
-        const {mandante,visitante,camp,id}=element
+        const {mandante,visitante,camp,id,texto}=element
         const contexto=buildContext(camp)
-        const test=criarOrdemDupla(contexto,mandante,visitante)
-        const minilist=[]
-        test.forEach(elem=>{
-            if( elem[0].valor&&elem[1].valor&&
-                (elem[0].pos==1&&elem[1].pos==1 ||
-                elem[0].pos==1&&elem[1].pos==2 ||
-                elem[0].pos==2&&elem[1].pos==1 ||
-                elem[0].pos==1&&elem[1].pos==3 ||
-                elem[0].pos==3&&elem[1].pos==1)
-            ){
-                minilist.push(elem)
-            }
-        })
-        if(minilist.length>0)newo.push({
-            mandante,visitante,minilist,camp,id
-        })
+        const minilist=criarOrdemDuplaFavoritos(contexto,mandante,visitante)
+        const objeto={
+            mandante,visitante,minilist,camp,id,texto
+        }
+        if(minilist.length>0)newo.push(objeto)
     });
-    res.status(200).send(newo)
+    const resp=newo.sort((a,b)=>{
+        if(a.minilist[0][2].odd>b.minilist[0][2].odd){
+            return -1
+        }else{return true}
+    })
+    res.status(200).send(resp)
 })
 
 
