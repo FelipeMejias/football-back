@@ -81,7 +81,7 @@ export function buildFuturaResponse(desord=false){
     const bra=bras.map(part=>{
         const faltam=quantoTempoFalta(part.data)
         return {...part,
-            ...faltam,
+            texto:faltam,
             camp:'bra1'
         
     }})
@@ -89,7 +89,7 @@ export function buildFuturaResponse(desord=false){
     const bra2=bras2.map(part=>{
         const faltam=quantoTempoFalta(part.data)
         return {...part,
-            ...faltam,
+            texto:faltam,
             camp:'bra2'
         
     }})
@@ -97,7 +97,7 @@ export function buildFuturaResponse(desord=false){
     const ing=ingl.map(part=>{
         const faltam=quantoTempoFalta(part.data)
         return {...part,
-            ...faltam,
+            texto:faltam,
             camp:'ing1'
         
     }})
@@ -105,7 +105,7 @@ export function buildFuturaResponse(desord=false){
     const esp=espa.map(part=>{
         const faltam=quantoTempoFalta(part.data)
         return {...part,
-            ...faltam,
+            texto:faltam,
             camp:'esp1'
         
     }})
@@ -113,24 +113,29 @@ export function buildFuturaResponse(desord=false){
     const ita=itam.map(part=>{
         const faltam=quantoTempoFalta(part.data)
         return {...part,
-            ...faltam,
+            texto:faltam,
             camp:'ita1'
         
     }})
-    const desordenada=[...ing,...esp,...ita,...bra,...bra2].sort((a,b)=>{
-        if(a.on&&!b.on){
-            return -1
-        }else{return true}
-    })
+    const desordenada=[...ing,...esp,...ita,...bra,...bra2]
     if(desord){
-        return desordenada
+        const desordenadaFinal=desordenada.filter(part=>{
+            if(part.texto=='Finalizado')return false
+            return true
+        })
+        return desordenadaFinal
     }
     const resp= desordenada.sort((a,b)=>{
         if(a.data<b.data){
             return -1
         }else{return true}
     })
-    return resp
+    const respFinal= resp.sort((a,b)=>{
+        if(a.texto!=='Finalizado' && b.texto=='Finalizado'){
+            return -1
+        }else{return true}
+    })
+    return respFinal
 }
 
 const timesBra1=['amg','cap','cam','bah','bot','bra','cor','ctb','cru','cui','fla','flu','for','goi','gre','int','pal','san','sao','vas']

@@ -14,7 +14,7 @@ export async function createBra1(){
     await create(r,'sanbra','2310192000')
     await create(r,'flucor','2310192130')
     r=26//================== RODADA 26 =====================//
-    await create(r,'goibah',[6,4],[-15,-18,27,-37,45,45,50,53,56,90])
+    await create(r,'goibah',[6,4],[-15,-18,27,-37,45,45,50,-53,-56,-90])
     await create(r,'vassao',[7,3],[])
     await create(r,'corfla',[2,8],[-54,79])
     await create(r,'intgre',[4,1],[6,49,-67,70,-74])
