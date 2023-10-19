@@ -117,7 +117,7 @@ export function buildFuturaResponse(desord=false){
             camp:'ita1'
         
     }})
-    const desordenada=[...ing,...esp,...ita,...bra,...bra2]
+    const desordenada=[/*...ing,...esp,...ita,*/...bra,...bra2]
     if(desord){
         const desordenadaFinal=desordenada.filter(part=>{
             if(part.texto=='Finalizado')return false

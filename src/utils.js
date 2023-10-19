@@ -24,7 +24,7 @@ export function quantoTempoFalta(time){
         if(mt<-120){
             return 'Finalizado'
         }else{
-            return 'Iniciado'
+            return 'Em andamento'
         }
     }else{
         return fazerTexto(dias,horas,minutos)
