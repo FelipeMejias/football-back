@@ -23,7 +23,7 @@ export async function createBra1(){
     await create(r,'capbra',[8,7],[-34,40])
     await create(r,'camctb',[2,5],[59,-64,-90])
     await create(r,'foramg',[8,2],[-18,-23,31,56,68])
-    await create(r,'cuicru','2310142100')
+    await create(r,'cuicru',[5,5],[])
     r=25//================== RODADA 25 =====================//
     await create(r,'flabah',[12,2],[61])
     await create(r,'forgre',[3,7],[44,-80])
