@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createBra2(){
     let r
+    r=33//=======================================//
+    await create(r,'tomvil',[5,3],[-18,87,90])
+    await create(r,'agoabc',[4,3],[4,52,-82,85])
+    await create(r,'samvit','2310201900')
+    await create(r,'mirgua','2310202130')
+    await create(r,'crbcri','2310211700')
+    await create(r,'botnov','2310211700')
+    await create(r,'juvlon','2310211800')
+    await create(r,'spocha','2310221800')
+    await create(r,'avacea','2310221800')
+    await create(r,'ponitu','2310232000')
     r=32//=======================================//
     await create(r,'abcmir',[9,0],[-10,-21,74])
     await create(r,'vilbot',[3,3],[14,40,57,-70])
