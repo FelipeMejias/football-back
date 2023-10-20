@@ -3,7 +3,6 @@ import { create } from "../bancos.js"
 export async function createEsp1(){
     let r
     r=10//=======================================//
-    await create(r,'osagra','2310201600')
     await create(r,'resmal','2310210900')
     await create(r,'getbet','2310211115')
     await create(r,'sevrem','2310211330')
