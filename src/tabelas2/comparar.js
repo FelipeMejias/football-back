@@ -40,9 +40,9 @@ export  function comparar(context,handicap){
         const v=fez*100/cont
         const e=nada*100/cont
         const d=tomou*100/cont
-        let vit=cont==0?0:parseFloat(v.toFixed(2))
-        let emp=cont==0?0:parseFloat(e.toFixed(2))
-        let der=cont==0?0:parseFloat(d.toFixed(2))
+        let vit=cont==0?0:parseFloat(v.toFixed(0))
+        let emp=cont==0?0:parseFloat(e.toFixed(0))
+        let der=cont==0?0:parseFloat(d.toFixed(0))
         resp.push({time,
             c1:vit,
             c2:emp,

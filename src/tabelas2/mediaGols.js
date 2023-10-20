@@ -25,9 +25,9 @@ export  function mediaGols(context,estadia,metade){
         }
      
         resp.push({time,
-            c1:cont==0?'-':parseFloat((golsPro/cont).toFixed(3)),
-            c2:cont==0?'-':parseFloat((golsTotal/cont).toFixed(3)),
-            c3:cont==0?'-':parseFloat((golsContra/cont).toFixed(3))
+            c1:cont==0?'-':parseFloat((golsPro/cont).toFixed(2)),
+            c2:cont==0?'-':parseFloat((golsTotal/cont).toFixed(2)),
+            c3:cont==0?'-':parseFloat((golsContra/cont).toFixed(2))
         })
     }
     return resp

@@ -25,9 +25,9 @@ export  function marcaPrimeiro(context,estadia){
         const v=pro*100/cont
         const e=sem*100/cont
         const d=con*100/cont
-        let vit=cont==0?0:parseFloat(v.toFixed(2))
-        let emp=cont==0?0:parseFloat(e.toFixed(2))
-        let der=cont==0?0:parseFloat(d.toFixed(2))
+        let vit=cont==0?0:parseFloat(v.toFixed(0))
+        let emp=cont==0?0:parseFloat(e.toFixed(0))
+        let der=cont==0?0:parseFloat(d.toFixed(0))
         resp.push({time,
             c1:vit,
             c2:emp,

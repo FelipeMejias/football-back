@@ -48,9 +48,9 @@ export  function primeiroGol(context,estadia,metade){
         }  
         
         resp.push({time,
-            c1:c1==0?'-':parseFloat((totalPrimMeu/c1).toFixed(1)),
-            c2:c2==0?'-':parseFloat((totalPrim/c2).toFixed(1)),
-            c3:c3==0?'-':parseFloat((totalPrimDeles/c3).toFixed(1)),
+            c1:c1==0?'-':parseFloat((totalPrimMeu/c1).toFixed(0)),
+            c2:c2==0?'-':parseFloat((totalPrim/c2).toFixed(0)),
+            c3:c3==0?'-':parseFloat((totalPrimDeles/c3).toFixed(0)),
         })
     }
     return resp
