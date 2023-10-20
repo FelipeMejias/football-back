@@ -4,11 +4,13 @@ import { createEsp1 } from "./creations/espanha.js";
 import { createIng1 } from "./creations/inglaterra.js";
 import { quantoTempoFalta } from "./utils.js";
 import { createBra2 } from "./creations/bra2.js";
+import { createAle1 } from "./creations/alemanha.js";
 export const bancoBra1=[]
-export const bancoBra2=[]
 export const bancoIng1=[]
 export const bancoEsp1=[]
 export const bancoIta1=[]
+export const bancoAle1=[]
+export const bancoBra2=[]
 let idGeral
 let bancoGeral
 export function buildContext(camp,consider=false){
@@ -17,15 +19,11 @@ export function buildContext(camp,consider=false){
     const INGLATERRA=8
     const ESPANHA=9
     const ITALIA=8
+    const ALEMANHA=7
     if(camp=='bra1')return {
         qtdRodadas:BRASIL1,
         partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),
         listaTimes:timesBra1
-    }
-    if(camp=='bra2')return {
-        qtdRodadas:BRASIL2,
-        partidasTotais:consider?bancoBra2:bancoBra2.filter(part=>!part.futura),
-        listaTimes:timesBra2
     }
     if(camp=='ing1')return {
         qtdRodadas:INGLATERRA,
@@ -40,7 +38,17 @@ export function buildContext(camp,consider=false){
     if(camp=='ita1')return {
         qtdRodadas:ITALIA,
         partidasTotais:consider?bancoIta1:bancoIta1.filter(part=>!part.futura),
-        listaTimes:timesita1
+        listaTimes:timesIta1
+    }
+    if(camp=='ale1')return {
+        qtdRodadas:ALEMANHA,
+        partidasTotais:consider?bancoAle1:bancoAle1.filter(part=>!part.futura),
+        listaTimes:timesAle1
+    }
+    if(camp=='bra2')return {
+        qtdRodadas:BRASIL2,
+        partidasTotais:consider?bancoBra2:bancoBra2.filter(part=>!part.futura),
+        listaTimes:timesBra2
     }
 }
 export async function iniciateDatabases(){
@@ -49,6 +57,7 @@ export async function iniciateDatabases(){
    idGeral=0;bancoGeral=bancoIng1;await createIng1()
    idGeral=0;bancoGeral=bancoEsp1;await createEsp1()
    idGeral=0;bancoGeral=bancoIta1;await createIta1()
+   idGeral=0;bancoGeral=bancoAle1;await createAle1()
 }
 
 export async function create(rodada,times,escant,goals=[]){
@@ -117,7 +126,15 @@ export function buildFuturaResponse(desord=false){
             camp:'ita1'
         
     }})
-    const desordenada=[...ing,...esp,...ita,...bra,...bra2]
+    const alem=bancoAle1.filter(part=>part.futura)
+    const ale=alem.map(part=>{
+        const faltam=quantoTempoFalta(part.data)
+        return {...part,
+            texto:faltam,
+            camp:'ale1'
+        
+    }})
+    const desordenada=[...ing,...esp,...ita,...bra,...bra2,...ale]
     if(desord){
         const desordenadaFinal=desordenada.filter(part=>{
             if(part.texto=='Finalizado')return false
@@ -139,7 +156,8 @@ export function buildFuturaResponse(desord=false){
 }
 
 const timesBra1=['amg','cap','cam','bah','bot','bra','cor','ctb','cru','cui','fla','flu','for','goi','gre','int','pal','san','sao','vas']
-const timesIng1=['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','liv','lut','mau','mac','new','not','she','tot','wes','wol']
+const timesIng1=['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','liv','lut','man','cit','new','not','she','tot','wes','wol']
 const timesEsp1=['ala','alm','atb','atm','bar','bet','cad','cel','get','gir','gra','las','mal','osa','ray','rem','res','sev','val','vil']
-const timesita1=['ata','bol','cag','emp','fio','fro','gen','int','juv','laz','lec','mil','mon','nap','rom','sal','sas','tor','udi','ver']
+const timesIta1=['ata','bol','cag','emp','fio','fro','gen','int','juv','laz','lec','mil','mon','nap','rom','sal','sas','tor','udi','ver']
 const timesBra2=['abc','ago','ava','bot','cea','cha','crb','cri','gua','itu','juv','lon','mir','nov','pon','sam','spo','tom','vil','vit']
+const timesAle1=['aug','bay','boc','bor','col','dar','ein','fre','hei','hof','lei','lev','mai','mon','stu','uni','wer','wol']

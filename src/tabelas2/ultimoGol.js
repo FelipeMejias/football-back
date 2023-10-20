@@ -1,5 +1,5 @@
 
-export  function ultimoGol(context,estadia,metade){
+export  function ultimoGol(context,estadia){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
@@ -11,12 +11,9 @@ export  function ultimoGol(context,estadia,metade){
         let totalUlt=0;
         let c1=0;let c2=0;let c3=0;
         for(let partida of partidas){
-            const {mandante,visitante,gols:golsUnfiltred}=partida
+            const {mandante,visitante,gols}=partida
             let ultimoMeu=null;
             let ultimoDeles=null
-            const gols=golsUnfiltred?golsUnfiltred?.filter(gol=>(!metade?true:(
-                metade==1?(gol.minuto<=45):(gol.minuto>45)
-            ))):[]
             for(let gol of gols){
                 if(mandante==time?gol.mandante:!gol.mandante){
                     ultimoMeu=gol.minuto

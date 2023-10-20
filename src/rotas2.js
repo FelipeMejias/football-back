@@ -42,19 +42,17 @@ router.get('/classif/:camp/:rodada',async(req,res)=>{
 
 
 router.get('/primeirogol/:camp',async(req,res)=>{
-    const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const {camp}=req.params
     const context=buildContext(camp)
-    const resp= primeiroGol(context,estadia,metade)
+    const resp= primeiroGol(context,estadia)
     res.status(200).send(resp)
 })
 router.get('/ultimogol/:camp',async(req,res)=>{
-    const metade=parseInt(req.query.metade)
     const estadia=parseInt(req.query.estadia)
     const {camp}=req.params
     const context=buildContext(camp)
-    const resp= ultimoGol(context,estadia,metade)
+    const resp= ultimoGol(context,estadia)
     res.status(200).send(resp)
 })
 

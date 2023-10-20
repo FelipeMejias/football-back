@@ -1,5 +1,5 @@
 
-export  function primeiroGol(context,estadia,metade){
+export  function primeiroGol(context,estadia){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
@@ -11,12 +11,9 @@ export  function primeiroGol(context,estadia,metade){
         let totalPrim=0
         let c1=0;let c2=0;let c3=0
         for(let partida of partidas){
-            const {mandante,visitante,gols:golsUnfiltred}=partida
+            const {mandante,visitante,gols}=partida
             let primeiroMeu=null
             let primeiroDeles=null
-            const gols=golsUnfiltred?golsUnfiltred?.filter(gol=>(!metade?true:(
-                metade==1?(gol.minuto<=45):(gol.minuto>45)
-            ))):[]
             for(let gol of gols){
                 if(mandante==time?gol.mandante:!gol.mandante){
                     if(!primeiroMeu)primeiroMeu=gol.minuto

@@ -130,25 +130,23 @@ export function criarOrdem(context,time){
     ]
     
     for(let i=0;i<=2;i++){
-        for(let j=0;j<=2;j++){
-            const list=fucarTabela(primeiroGol(context,i,j),time)
+            const list=fucarTabela(primeiroGol(context,i),time)
             list.forEach(item=>{
                 const {pos,asc,valor,c,relev}=item
                 resp.push({
                     pos,
-                    descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
+                    descricao:frases[c-1][asc][0]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA7-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA7-(i?1:0),
                     c,
                     asc,
                     grandeza:3,
                     estadia:i,
-                    metade:j,
+                    metade:null,
                     handicap:null
                 })
             })
-        }
     }
     frases=[
         [['com último gol marcado mais tarde',true],['com último gol marcado mais cedo',false]],
@@ -156,25 +154,23 @@ export function criarOrdem(context,time){
         [['com último gol sofrido mais tarde',false],['com último gol sofrido mais cedo',true]],
     ]
     for(let i=0;i<=2;i++){
-        for(let j=0;j<=2;j++){
-            const list=fucarTabela(ultimoGol(context,i,j),time)
+            const list=fucarTabela(ultimoGol(context,i),time)
             list.forEach(item=>{
                 const {pos,asc,valor,c,relev}=item
                 resp.push({
                     pos,
-                    descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
+                    descricao:frases[c-1][asc][0]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA5-(i?1:0)-(j?1:0),
+                    relev:RELEVANCIA5-(i?1:0),
                     c,
                     asc,
                     grandeza:4,
                     estadia:i,
-                    metade:j,
+                    metade:null,
                     handicap:null
                 })
             })
-        }
     }
     frases=[
         [['que mais marca gol',true],['que menos marca gol',false]],
@@ -218,6 +214,7 @@ export function fucarTabela(tabela,time){
     return resposta
 }
 function buscarPosicao(lista,time,c){
+    console.log(lista)
     const caso0=ordenarCresc(lista,time,c)
     const caso1=ordenarDescr(lista,time,c)
     if(caso0.pos<caso1.pos){
