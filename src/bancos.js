@@ -14,12 +14,12 @@ export const bancoBra2=[]
 let idGeral
 let bancoGeral
 export function buildContext(camp,consider=false){
-    const BRASIL1=27
+    const BRASIL1=28
     const BRASIL2=33
-    const INGLATERRA=8
-    const ESPANHA=9
-    const ITALIA=8
-    const ALEMANHA=7
+    const ESPANHA=10
+    const INGLATERRA=9
+    const ITALIA=9
+    const ALEMANHA=8
     if(camp=='bra1')return {
         qtdRodadas:BRASIL1,
         partidasTotais:consider?bancoBra1:bancoBra1.filter(part=>!part.futura),

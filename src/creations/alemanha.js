@@ -3,13 +3,13 @@ import { create } from "../bancos.js"
 export async function createAle1(){
     let r
     r=8//=======================================//
-    await create(r,'borwer','2310201530')
-    await create(r,'wollev','2310211030')
-    await create(r,'darlei','2310211030')
-    await create(r,'unistu','2310211030')
-    await create(r,'hofein','2310211030')
-    await create(r,'freboc','2310211030')
-    await create(r,'maibay','2310211330')
+    await create(r,'borwer',[10,4],[67])
+    await create(r,'wollev',[4,3],[-13,41,-62])
+    await create(r,'darlei',[6,0],[-1,-24,32,-72])
+    await create(r,'unistu',[4,2],[-16,-81,-88])
+    await create(r,'hofein',[6,3],[3,-11,-23,-45])
+    await create(r,'freboc',[5,2],[-15,26,45])
+    await create(r,'maibay',[2,7],[-11,-16,43,-59])
     await create(r,'colmon','2310221030')
     await create(r,'heiaug','2310221230')
     r=7//======================================//

@@ -3,10 +3,10 @@ import { create } from "../bancos.js"
 export async function createIta1(){
     let r
     r=9//=======================================//
-    await create(r,'vernap','2310211000')
-    await create(r,'torint','2310211300')
-    await create(r,'saslaz','2310211545')
-    await create(r,'rommon','2310220730')
+    await create(r,'vernap',[5,8],[-27,-43,-55,60])
+    await create(r,'torint',[2,4],[-59,-67,-90])
+    await create(r,'saslaz',[5,7],[-28,-35])
+    await create(r,'rommon',[8,5],[90])
     await create(r,'salcag','2310221000')
     await create(r,'bolfro','2310221000')
     await create(r,'atagen','2310221300')

@@ -3,10 +3,10 @@ import { create } from "../bancos.js"
 export async function createBra1(){
     let r
     r=28//=======================================//
-    await create(r,'cuigoi','2310211830')
-    await create(r,'saogre','2310211830')
-    await create(r,'bahfor','2310211830')
-    await create(r,'botcap','2310212100')
+    await create(r,'cuigoi',[13,2],[-45,46])
+    await create(r,'saogre',[6,3],[21,68,90])
+    //await create(r,'bahfor','2310211830')
+    await create(r,'botcap',[7,2],[22,90])
     await create(r,'camcru','2310221600')
     await create(r,'flavas','2310221600')
     await create(r,'intsan','2310221600')
