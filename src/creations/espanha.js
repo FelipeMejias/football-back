@@ -2,17 +2,28 @@ import { create } from "../bancos.js"
 
 export async function createEsp1(){
     let r
+    r=11//=======================================//
+    await create(r,'gircel','2310271600')
+    await create(r,'almlas','2310280900')
+    await create(r,'barrem','2310281115')
+    await create(r,'malget','2310281330')
+    await create(r,'cadsev','2310281600')
+    await create(r,'betosa','2310291000')
+    await create(r,'rayres','2310291215')
+    await create(r,'atbval','2310291430')
+    await create(r,'atmala','2310291700')
+    await create(r,'gravil','2310301700')
     r=10//=======================================//
     await create(r,'resmal',[1,7],[11,59])
     await create(r,'resmal',[2,5],[64])
     await create(r,'getbet',[4,8],[-1,17])
     await create(r,'sevrem',[4,6],[74,-78])
     await create(r,'celatm',[7,5],[-29,-64,-70])
-    await create(r,'lasray','2310220900')
-    await create(r,'giralm','2310221115')
-    await create(r,'vilala','2310221330')
-    await create(r,'baratb','2310221600')
-    await create(r,'valcad','2310231600')
+    await create(r,'lasray',[10,5],[-90])
+    await create(r,'giralm',[9,6],[-2,-24,37,39,43,71,85])
+    await create(r,'vilala',[9,3],[-48,65])
+    await create(r,'baratb',[4,7],[80])
+    await create(r,'valcad',[4,5],[4,26])
     r=9//================== RODADA 9 =====================//
     await create(r,'atbalm',[6,2],[10,63,81])
     await create(r,'cadgir',[5,5],[-59])

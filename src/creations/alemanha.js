@@ -2,6 +2,16 @@ import { create } from "../bancos.js"
 
 export async function createAle1(){
     let r
+    r=9//=======================================//
+    await create(r,'bocmai','2310271530')
+    await create(r,'augwol','2310281030')
+    await create(r,'weruni','2310281030')
+    await create(r,'baydar','2310281030')
+    await create(r,'monhei','2310281030')
+    await create(r,'stuhof','2310281030')
+    await create(r,'leicol','2310281330')
+    await create(r,'einbor','2310291130')
+    await create(r,'levfre','2310291300')
     r=8//=======================================//
     await create(r,'borwer',[10,4],[67])
     await create(r,'wollev',[4,3],[-13,41,-62])
@@ -10,8 +20,8 @@ export async function createAle1(){
     await create(r,'hofein',[6,3],[3,-11,-23,-45])
     await create(r,'freboc',[5,2],[-15,26,45])
     await create(r,'maibay',[2,7],[-11,-16,43,-59])
-    await create(r,'colmon','2310221030')
-    await create(r,'heiaug','2310221230')
+    await create(r,'colmon',[8,3],[9,-63,76,90])
+    await create(r,'heiaug',[6,5],[17,18,-29,-41,-42,-64,-88])
     r=7//======================================//
     await create(r,'monmai',[10,3],[22,-24,-75,88])
     await create(r,'leiboc',[9,1],[])

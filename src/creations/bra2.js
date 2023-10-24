@@ -2,6 +2,17 @@ import { create } from "../bancos.js"
 
 export async function createBra2(){
     let r
+    r=34//=======================================//
+    await create(r,'abcava','2310261900')
+    await create(r,'ceaspo','2310271900')
+    await create(r,'guabot','2310272130')
+    await create(r,'novpon','2310272130')
+    await create(r,'chatom','2310281500')
+    await create(r,'crisam','2310281530')
+    await create(r,'itumir','2310281530')
+    await create(r,'vilago','2310281900')
+    await create(r,'loncrb','2310291830')
+    await create(r,'vitjuv','2310291900')
     r=33//=======================================//
     await create(r,'tomvil',[5,3],[-18,87,90])
     await create(r,'agoabc',[4,3],[4,52,-82,85])
@@ -10,9 +21,9 @@ export async function createBra2(){
     await create(r,'crbcri',[7,7],[-50])
     await create(r,'botnov',[1,13],[45,59])
     await create(r,'juvlon',[10,4],[-11,31,-36,76])
-    await create(r,'spocha','2310221800')
-    await create(r,'avacea','2310221800')
-    await create(r,'ponitu','2310232000')
+    await create(r,'spocha',[7,5],[-34,50,62])
+    await create(r,'avacea',[4,5],[47])
+    await create(r,'ponitu',[2,8],[])
     r=32//=======================================//
     await create(r,'abcmir',[9,0],[-10,-21,74])
     await create(r,'vilbot',[3,3],[14,40,57,-70])

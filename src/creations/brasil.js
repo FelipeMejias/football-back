@@ -2,17 +2,28 @@ import { create } from "../bancos.js"
 
 export async function createBra1(){
     let r
+    r=29//=======================================//
+    //await create(r,'forbot','2310')
+    await create(r,'bracam','2310251900')
+    await create(r,'camamg','2310251900')
+    await create(r,'flugoi','2310251900')
+    await create(r,'crubah','2310252000')
+    await create(r,'palsao','2310252000')
+    await create(r,'grefla','2310252130')
+    await create(r,'cuicor','2310252130')
+    await create(r,'vasint','2310261900')
+    await create(r,'sanctb','2310262130')
     r=28//=======================================//
     await create(r,'cuigoi',[13,2],[-45,46])
     await create(r,'saogre',[6,3],[21,68,90])
-    //await create(r,'bahfor','2310211830')
-    await create(r,'botcap',[7,2],[22,90])
-    await create(r,'camcru','2310221600')
-    await create(r,'flavas','2310221600')
-    await create(r,'intsan','2310221600')
-    await create(r,'braflu','2310221830')
-    await create(r,'ctbpal','2310221830')
-    await create(r,'coramg','2310221830')
+    await create(r,'bahfor',[7,2],[22,90])
+    await create(r,'botcap',[7,2],[22,-41])
+    await create(r,'camcru',[1,7],[-87])
+    await create(r,'flavas',[7,8],[76])
+    await create(r,'intsan',[3,6],[1,14,27,39,54,61,75,-80])
+    await create(r,'braflu',[7,6],[17])
+    await create(r,'ctbpal',[3,6],[-33,-45])
+    await create(r,'coramg',[4,4],[-38,90])
     r=27//=======================================//
     await create(r,'grecap',[4,8],[7,-38,-90])
     await create(r,'amgbot',[12,1],[-22,39,-50])

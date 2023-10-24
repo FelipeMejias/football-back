@@ -214,7 +214,6 @@ export function fucarTabela(tabela,time){
     return resposta
 }
 function buscarPosicao(lista,time,c){
-    console.log(lista)
     const caso0=ordenarCresc(lista,time,c)
     const caso1=ordenarDescr(lista,time,c)
     if(caso0.pos<caso1.pos){

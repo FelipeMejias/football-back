@@ -2,17 +2,28 @@ import { create } from "../bancos.js"
 
 export async function createIta1(){
     let r
+    r=10//=======================================//
+    await create(r,'gensal','2310271545')
+    await create(r,'sasbol','2310281000')
+    await create(r,'lector','2310281300')
+    await create(r,'juvver','2310281545')
+    await create(r,'cagfro','2310290830')
+    await create(r,'monudi','2310291100')
+    await create(r,'introm','2310291400')
+    await create(r,'napmil','2310291645')
+    await create(r,'empata','2310301430')
+    await create(r,'lazfio','2310301645')
     r=9//=======================================//
     await create(r,'vernap',[5,8],[-27,-43,-55,60])
     await create(r,'torint',[2,4],[-59,-67,-90])
     await create(r,'saslaz',[5,7],[-28,-35])
     await create(r,'rommon',[8,5],[90])
-    await create(r,'salcag','2310221000')
-    await create(r,'bolfro','2310221000')
-    await create(r,'atagen','2310221300')
-    await create(r,'miljuv','2310221545')
-    await create(r,'udilec','2310231330')
-    await create(r,'fioemp','2310231545')
+    await create(r,'salcag',[8,5],[-79,86,-88,90])
+    await create(r,'bolfro',[4,5],[19,22,-63])
+    await create(r,'atagen',[8,4],[68,90])
+    await create(r,'miljuv',[6,3],[-63])
+    await create(r,'udilec',[2,7],[49,-83])
+    await create(r,'fioemp',[13,3],[-21,-81])
     r=8//================== RODADA 8 =====================//
     await create(r,'empudi',[5,7],[])
     await create(r,'lecsas',[5,3],[-22,48])
