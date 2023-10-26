@@ -5,7 +5,7 @@ export async function createBra1(){
     r=29//=======================================//
     //await create(r,'forbot','2310')
     await create(r,'bracam','2310251900')
-    await create(r,'camamg','2310251900')
+    await create(r,'capamg','2310251900')
     await create(r,'flugoi','2310251900')
     await create(r,'crubah','2310252000')
     await create(r,'palsao','2310252000')
