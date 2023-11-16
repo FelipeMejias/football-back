@@ -1,28 +1,28 @@
-export  function partidasRodada(context,rodada){
-    const {partidasTotais}=context
-    const partidas=partidasTotais.filter(part=>(part.rodada==rodada))
+export  function partidasRodada(banco,rodada){
+    const partidas= banco[banco.length-rodada]
     const resp=[]
     for(let part of partidas){
-        const {mandante,visitante,gols,id}=part
+        const nome=part[0]
+        const mandante=nome[0]+nome[1]+nome[2]
+        const visitante=nome[3]+nome[4]+nome[5]
+        const gols=part[2]
         let m=0
         let v=0
-        if(gols){
+        if(gols && !(gols[0]&&typeof(gols[0])!='number')){
             for(let gol of gols){
-                if(gol.mandante){
+                if(gol>0){
                     m++
                 }else{
                     v++
                 }
             }
             resp.push({
-                id,
                 mandante,
                 visitante,
                 placar:[m,v]
             })
         }else{
             resp.push({
-                id,
                 mandante,
                 visitante,
             })

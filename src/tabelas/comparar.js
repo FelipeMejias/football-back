@@ -5,10 +5,16 @@ export  function comparar(context,handicap){
         let fez=0
         let nada=0
         let tomou=0
-        const partidas=partidasTotais.filter(part=>(part.mandante==time||part.visitante==time))
+        const partidas=partidasTotais.filter(part=>{
+            const nome=part[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const visitante=nome[3]+nome[4]+nome[5]
+            return (mandante==time||visitante==time)})
         for(let partida of partidas){
-            const {mandante,visitante,rodada,gols,torneio}=partida
+            const nome=partida[0]
+            const mandante=nome[0]+nome[1]+nome[2]
             const timeEhMandante=mandante==time
+            const gols=partida[2]
             let nosso=0
             let deles=0
             let participaDaContagem=false
@@ -23,14 +29,14 @@ export  function comparar(context,handicap){
                     participaDaContagem=true
                     if(!gols[k]){
                         nada++;
-                    }else if(timeEhMandante?!gols[k].mandante:gols[k].mandante){
+                    }else if(timeEhMandante?gols[k]<0:gols[k]>0){
                         tomou++;
                     }else{
                         fez++;
                     }
                 }
                 if(gols[k]){
-                    if(timeEhMandante?!gols[k].mandante:gols[k].mandante){
+                    if(timeEhMandante?gols[k]<0:gols[k]>0){
                         deles++
                     }else{nosso++}
                 }

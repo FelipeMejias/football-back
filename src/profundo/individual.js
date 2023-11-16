@@ -1,10 +1,10 @@
-import { comparar } from "../tabelas2/comparar.js"
-import { escanteios } from "../tabelas2/escanteios.js"
-import { marcaPrimeiro } from "../tabelas2/marcaPrimeiro.js"
-import { mediaGols } from "../tabelas2/mediaGols.js"
-import { placar } from "../tabelas2/placar.js"
-import { primeiroGol } from "../tabelas2/primeiroGol.js"
-import { ultimoGol } from "../tabelas2/ultimoGol.js"
+import { comparar } from "../tabelas/comparar.js"
+import { escanteios } from "../tabelas/escanteios.js"
+import { marcaPrimeiro } from "../tabelas/marcaPrimeiro.js"
+import { mediaGols } from "../tabelas/mediaGols.js"
+import { placar } from "../tabelas/placar.js"
+import { primeiroGol } from "../tabelas/primeiroGol.js"
+import { ultimoGol } from "../tabelas/ultimoGol.js"
 
 const RELEVANCIA1=16 //PLACAR
 const RELEVANCIA2=15 //MEDIA GOLS
@@ -14,7 +14,7 @@ const RELEVANCIA5=5  //VANTAGEM
 const RELEVANCIA6=10 //ESCANTEIOS
 const RELEVANCIA7=12 //PRIMEIRO A MARCAR
 
-export function criarOrdem(context,time){
+export function criarOrdem(context,time,enxuta=false){
     const resp=[]
     let frases=[
         [['com mais vitórias',true],['com menos vitórias',false]],
@@ -75,6 +75,31 @@ export function criarOrdem(context,time){
         }
     }
     frases=[
+        [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
+        [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
+        [['com mais escanteios contra',false],['com menos escanteios contrários',true]],
+    ]
+    for(let i=0;i<=2;i++){
+        const list=fucarTabela(escanteios(context,i),time)
+        list.forEach(item=>{
+            const {pos,asc,valor,c,relev}=item
+            resp.push({
+                pos,
+                descricao:frases[c-1][asc][0]+complementos2[i],
+                bom:frases[c-1][asc][1],
+                valor,
+                relev:RELEVANCIA6-(i?1:0),
+                c,
+                asc,
+                grandeza:6,
+                estadia:i,
+                metade:null,
+                handicap:null
+            })
+        })
+    }
+    if(enxuta)return resp
+    frases=[
         [['que mais marca o primeiro gol',true],['que menos marca o primeiro gol',false]],
         [['com mais 0x0',null],['com menos 0x0',null]],
         [['que mais sofre o primeiro gol',false],['que menos sofre o primeiro gol',true]],
@@ -89,34 +114,10 @@ export function criarOrdem(context,time){
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:RELEVANCIA3-(i?1:0),
+                relev:RELEVANCIA7-(i?1:0),
                 c,
                 asc,
                 grandeza:7,
-                estadia:i,
-                metade:null,
-                handicap:null
-            })
-        })
-    }
-    frases=[
-        [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
-        [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
-        [['com mais escanteios contra',false],['com menos escanteios contrários',true]],
-    ]
-    for(let i=0;i<=2;i++){
-        const list=fucarTabela(escanteios(context,i),time)
-        list.forEach(item=>{
-            const {pos,asc,valor,c,relev}=item
-            resp.push({
-                pos,
-                descricao:frases[c-1][asc][0]+complementos2[i],
-                bom:frases[c-1][asc][1],
-                valor,
-                relev:RELEVANCIA4-(i?1:0),
-                c,
-                asc,
-                grandeza:6,
                 estadia:i,
                 metade:null,
                 handicap:null
@@ -138,7 +139,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA7-(i?1:0),
+                    relev:RELEVANCIA3-(i?1:0),
                     c,
                     asc,
                     grandeza:3,
@@ -162,7 +163,7 @@ export function criarOrdem(context,time){
                     descricao:frases[c-1][asc][0]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA5-(i?1:0),
+                    relev:RELEVANCIA4-(i?1:0),
                     c,
                     asc,
                     grandeza:4,
@@ -174,7 +175,7 @@ export function criarOrdem(context,time){
     }
     frases=[
         [['que mais marca gol',true],['que menos marca gol',false]],
-        [['que mais segura o resultado',null],['que menos segura o resultado',null]],
+        [['com menos gols na partida',null],['com mais gols na partida',null]],
         [['que mais sofre gol',false],['que menos sofre gol',true]],
     ]
     complementos=[
@@ -189,7 +190,7 @@ export function criarOrdem(context,time){
                 descricao:frases[c-1][asc][0]+complementos[i+1],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:RELEVANCIA6,
+                relev:RELEVANCIA5,
                 c,
                 asc,
                 grandeza:5,
@@ -201,6 +202,7 @@ export function criarOrdem(context,time){
     }
     return resp
 }
+
 export function fucarTabela(tabela,time){
     const resposta=[]
     for(let c=1;c<=3;c++){

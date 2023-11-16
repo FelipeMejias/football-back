@@ -3,18 +3,24 @@ export  function marcaPrimeiro(context,estadia){
     const resp=[]
     let cont
     for(let time of listaTimes){
-        const partidas=partidasTotais.filter(part=>(!estadia?(part.mandante==time||part.visitante==time):(
-            estadia==1?part.mandante==time:part.visitante==time
-        )))
+        const partidas=partidasTotais.filter(part=>{
+            const nome=part[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const visitante=nome[3]+nome[4]+nome[5]
+            return(!estadia?(mandante==time||visitante==time):(
+            estadia==1?mandante==time:visitante==time
+        ))})
         let pro=0;
         let sem=0;
         let con=0;
         cont=0
         for(let partida of partidas){
-            const gols=partida.gols
+            const nome=partida[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const gols=partida[2]
             if(gols.length>0){
                 const gol=gols[0]
-                if(partida.mandante==time?gol.mandante:!gol.mandante){
+                if(mandante==time?gol>0:gol<0){
                     pro++
                 }else{con++}
             }else{

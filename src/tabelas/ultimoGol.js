@@ -3,22 +3,29 @@ export  function ultimoGol(context,estadia){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
-        const partidas=partidasTotais.filter(part=>(!estadia?(part.mandante==time||part.visitante==time):(
-            estadia==1?part.mandante==time:part.visitante==time
-        )))
+        const partidas=partidasTotais.filter(part=>{
+            const nome=part[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const visitante=nome[3]+nome[4]+nome[5]
+            return(!estadia?(mandante==time||visitante==time):(
+            estadia==1?mandante==time:visitante==time
+        ))})
         let totalUltMeu=0;
         let totalUltDeles=0;
         let totalUlt=0;
         let c1=0;let c2=0;let c3=0;
         for(let partida of partidas){
-            const {mandante,visitante,gols}=partida
+            const nome=partida[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const gols=partida[2]
             let ultimoMeu=null;
             let ultimoDeles=null
             for(let gol of gols){
-                if(mandante==time?gol.mandante:!gol.mandante){
-                    ultimoMeu=gol.minuto
+                const minuto=gol>0?gol:-gol
+                if(mandante==time?gol>0:gol<0){
+                    ultimoMeu=minuto
                 }else{
-                    ultimoDeles=gol.minuto
+                    ultimoDeles=minuto
                 }
             }
             if(ultimoMeu){

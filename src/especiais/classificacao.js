@@ -1,19 +1,25 @@
-export  function classificacao(context,rodada,camp){
-    const {partidasTotais,listaTimes}=context
+export  function classificacao(partidasTotais,listaTimes,camp){
     const resp=[]
     let cont
     for(let time of listaTimes){
-        const partidas=partidasTotais.filter(part=>((part.mandante===time||part.visitante===time)&&part.rodada<=rodada))
+        const partidas=partidasTotais.filter(part=>{
+            const nome=part[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const visitante=nome[3]+nome[4]+nome[5]
+            return(mandante===time||visitante===time)
+        })
         let vitorias=0;let golsPro=0;
         let empates=0
         let derrotas=0;let golsContra=0;
         cont=0
         for(let partida of partidas){
+            const nome=partida[0]
+            const mandante=nome[0]+nome[1]+nome[2]
             let nosso=0
             let deles=0
-            const gols=partida.gols
+            const gols=partida[2]
             for(let gol of gols){
-                if(partida.mandante==time?gol.mandante:!gol.mandante){
+                if(mandante==time?gol>0:gol<0){
                     nosso++;golsPro++
                 }else{
                     deles++;golsContra++
