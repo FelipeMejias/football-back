@@ -77,7 +77,7 @@ export function criarOrdem(context,time,enxuta=false){
     frases=[
         [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
         [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
-        [['com mais escanteios contra',false],['com menos escanteios contrários',true]],
+        [['com mais escanteios contrários',false],['com menos escanteios contrários',true]],
     ]
     for(let i=0;i<=2;i++){
         const list=fucarTabela(escanteios(context,i),time)

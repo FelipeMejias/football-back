@@ -1,7 +1,6 @@
-import { buildFutura } from "../especiais/buildFutura.js";
 import { criarOrdem } from "./individual.js";
 
-export function criarOrdemDupla(context,mandante,visitante,odds,camp){
+export function criarOrdemDupla(context,mandante,visitante){
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
@@ -9,31 +8,11 @@ export function criarOrdemDupla(context,mandante,visitante,odds,camp){
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
         const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
         if(par){
-            if(pos<5&&par.pos<5&&false){
-                const apostaRaw=acharAposta(mandante,visitante,camp,est,par)
-                if(!apostaRaw||!odds){
-                    listao.push([est,par])
-                }else if(!apostaRaw.texto){
-                    listao.push([est,par])
-                }else{
-                    const {texto,valor}=apostaRaw
-                    let odd
-                    let finalIndex
-                    odds.forEach((odr,index)=>{
-                        const str=odr[1].toString()
-                        if(grandeza==str[0]&&c==str[1]&&asc==str[2]&&(metade?metade:0)==str[3]&&(valor==odr[2]||grandeza==1)){
-                            odd=(odr[0]/100).toFixed(2)
-                            finalIndex=index
-                        }
-                    })
-                    listao.push([est,par,{texto,odd,nome:camp+mandante+visitante+finalIndex}])
-                }
-            }else{
-                listao.push([est,par])
-            }
+            listao.push([est,par])
+        }else{
+            
         }
     })
-    //console.log(listaApo)
     return ordenarDupla(listao)
 }
 export function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
