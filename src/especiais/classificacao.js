@@ -1,4 +1,5 @@
-export  function classificacao(partidasTotais,listaTimes,camp){
+
+export  function classificacao(camp,partidasTotais,listaTimes){
     const resp=[]
     let cont
     for(let time of listaTimes){
@@ -12,7 +13,8 @@ export  function classificacao(partidasTotais,listaTimes,camp){
         let empates=0
         let derrotas=0;let golsContra=0;
         cont=0
-        for(let partida of partidas){
+        for(let k=0;k<partidas.length;k++){
+            const partida=partidas[k]
             const nome=partida[0]
             const mandante=nome[0]+nome[1]+nome[2]
             let nosso=0

@@ -1,11 +1,11 @@
-export function getPartida(banco,id){
-    for(let part of banco){
-        if(part[0]==id){
-            return create(part)
+export function getPartida(partidas,manvis){
+    for(let part of partidas){
+        if(part[0]==manvis){
+            return part
         }
     }
 }
-function create(part){
+export function create(part){
     const manvis=part[0]
     let data
     let escant

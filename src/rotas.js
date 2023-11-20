@@ -13,7 +13,9 @@ import { escanteios } from './tabelas/escanteios.js'
 import { marcaPrimeiro } from './tabelas/marcaPrimeiro.js'
 import { buildFutura } from './especiais/buildFutura.js'
 import { analisar } from './especiais/analise.js'
-import { getPartida } from './especiais/getPartida.js'
+import { create, getPartida } from './especiais/getPartida.js'
+import { classificacao } from './especiais/classificacao.js'
+import { partidasLiga } from './especiais/partidasLiga.js'
 
 export const router=Router()
 
@@ -47,30 +49,25 @@ router.get('/partidasgerais',async(req,res)=>{
 router.get('/partida/:camp/:manvis',async(req,res)=>{
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
-    console.log(partidasTotais)
-    const resp=getPartida(partidasTotais,manvis)
+    const partida=getPartida(partidasTotais,manvis)
+    const resp=create(partida)
     res.status(200).send(resp)
 })
 router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
     const context=buildContext(camp)
-    const banco=buildContext(camp,true)
     const resposta=criarOrdem(context,time)
     const stats=ordenarIndividual(resposta)
-    const partidas=partidasTime(banco,time)
+    const partidas=partidasTime(context,time)
     const resp={stats,partidas}
     res.status(200).send(resp)
 })
 router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
     const {camp,mandante,visitante}=req.params
-    const context=buildContext(camp,null)
-    const banco=buildContext(camp,true)
-    let data
-    banco[0].forEach(part=>{
-        if(part[0]==mandante+visitante){
-            data=part[1]
-        }
-    })
+    const context=buildContext(camp)
+    const {partidasTotais}=buildContext(camp,true)
+    const partida= getPartida(partidasTotais,mandante+visitante)
+    const data=partida[1]
     const resp=criarOrdemDupla(context,mandante,visitante)
     res.status(200).send({resp,data})
 })
@@ -81,4 +78,11 @@ router.get('/analise/:camp/:mandante/:visitante',async(req,res)=>{
     const resp=analisar(context,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
     res.status(200).send(resp)
 })
-
+router.get('/classificacao/:camp',async(req,res)=>{
+    const {camp}=req.params
+    const {partidasTotais,listaTimes}=buildContext(camp)
+    const classif=classificacao(camp,partidasTotais,listaTimes)
+    const parts=partidasLiga(partidasTotais)
+    const resp={classif,parts}
+    res.status(200).send(resp)
+})

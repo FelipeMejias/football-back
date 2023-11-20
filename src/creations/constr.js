@@ -6,7 +6,6 @@ import { criarOrdem } from "../profundo/individual"
 export const myPhase=0
 /*
 
-[
     ['','2311'],
     ['','2311'],
     ['','2311'],
@@ -17,7 +16,6 @@ export const myPhase=0
     ['','2311'],
     ['','2311'],
     ['','2311'],
-],[
 
 
 */
