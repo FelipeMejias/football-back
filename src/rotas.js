@@ -13,6 +13,7 @@ import { escanteios } from './tabelas/escanteios.js'
 import { marcaPrimeiro } from './tabelas/marcaPrimeiro.js'
 import { buildFutura } from './especiais/buildFutura.js'
 import { analisar } from './especiais/analise.js'
+import { getPartida } from './especiais/getPartida.js'
 
 export const router=Router()
 
@@ -42,6 +43,13 @@ router.get('/tabelas/:camp/:pagestr',async(req,res)=>{
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFutura()
     res.status(200).send(lista)
+})
+router.get('/partida/:camp/:manvis',async(req,res)=>{
+    const {camp,manvis}=req.params
+    const {partidasTotais}=buildContext(camp)
+    console.log(partidasTotais)
+    const resp=getPartida(partidasTotais,manvis)
+    res.status(200).send(resp)
 })
 router.get('/times/:camp/:time',async(req,res)=>{
     const {time,camp}=req.params
