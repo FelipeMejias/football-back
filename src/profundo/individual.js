@@ -93,7 +93,7 @@ export function criarOrdem(context,time,enxuta=false){
                 asc,
                 grandeza:6,
                 estadia:i,
-                metade:null,
+                metade:0,
                 handicap:null
             })
         })
