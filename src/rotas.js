@@ -16,6 +16,8 @@ import { analisar } from './especiais/analise.js'
 import { create, getPartida } from './especiais/getPartida.js'
 import { classificacao } from './especiais/classificacao.js'
 import { partidasLiga } from './especiais/partidasLiga.js'
+import { listaEsc } from './conferencias/listaEsc.js'
+import { listaAnalise } from './especiais/listaAnalise.js'
 
 export const router=Router()
 
@@ -76,6 +78,13 @@ router.get('/analise/:camp/:mandante/:visitante',async(req,res)=>{
     const {grandeza,c,asc,metade,valor}=req.query
     const context=buildContext(camp)
     const resp=analisar(context,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
+    res.status(200).send(resp)
+})
+router.get('/lista-analise/:camp/:time',async(req,res)=>{
+    const {camp,time}=req.params
+    const {grandeza,c,asc,metade,valor,estadia}=req.query
+    const context=buildContext(camp)
+    const resp=listaAnalise(context,parseInt(grandeza),parseInt(estadia),parseInt(metade),time,parseInt(c),parseInt(asc),parseFloat(valor))
     res.status(200).send(resp)
 })
 router.get('/classificacao/:camp',async(req,res)=>{
