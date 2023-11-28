@@ -1,7 +1,7 @@
-import { createIta1 } from "./creations/p4_ITA.js";
-import { createBra1 } from "./creations/p1_BRA.js";
-import { createEsp1 } from "./creations/p3_ESP.js";
-import { createIng1 } from "./creations/p2_ING.js";
+import { createIta1 } from "./adicionadas/p4_ITA.js";
+import { createBra1 } from "./adicionadas/p1_BRA.js";
+import { createEsp1 } from "./adicionadas/p3_ESP.js";
+import { createIng1 } from "./adicionadas/p2_ING.js";
 
 export function buildContext(camp,inteiro=false){
     if(camp=='bra1')return {partidasTotais:inteiro?createBra1:extrairFuturas(createBra1),listaTimes:timesBra1}
