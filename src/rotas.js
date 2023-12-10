@@ -16,7 +16,6 @@ import { analisar } from './especiais/analise.js'
 import { create, getPartida } from './especiais/getPartida.js'
 import { classificacao } from './especiais/classificacao.js'
 import { partidasLiga } from './especiais/partidasLiga.js'
-import { listaEsc } from './conferencias/listaEsc.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
 
 export const router=Router()

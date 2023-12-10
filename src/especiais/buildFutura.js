@@ -3,7 +3,7 @@ import { buildContext } from "../bancos.js"
 
 export function buildFutura(){
     let desordenada=[]
-    const camps=['bra1','ing1','esp1','ita1'/*,'ale1','bra2'*/]
+    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1'/*,'bra2'*/]
     camps.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })

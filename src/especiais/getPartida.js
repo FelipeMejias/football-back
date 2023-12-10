@@ -7,17 +7,8 @@ export function getPartida(partidas,manvis){
 }
 export function create(part){
     const manvis=part[0]
-    let data
-    let escant
-    let goals
-    if(part[1].length==2){
-        escant=part[1]
-        goals=part[2]
-    }else{
-        data=part[1]
-        escant=part[2]
-        goals=part[3]
-    }
+    const escant=part[1]
+    const goals=part[2]
     const mandante=manvis[0]+manvis[1]+manvis[2]
     const visitante=manvis[3]+manvis[4]+manvis[5]
     const gols=[]
@@ -32,7 +23,7 @@ export function create(part){
           gols.push({mandante:false,minuto:-goal})
        }
     }
-    const partida={data,mandante,visitante,escant,gols,placar:[man,vis]}
+    const partida={mandante,visitante,escant,gols,placar:[man,vis]}
     return partida
 }
 
