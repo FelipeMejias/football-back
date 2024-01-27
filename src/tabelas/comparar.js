@@ -1,3 +1,5 @@
+import filtrar, { elPushar } from "../especiais/filtrarPartidas.js"
+
 export  function comparar(context,handicap){
     const {partidasTotais,listaTimes}=context
     const resp=[]
@@ -5,11 +7,7 @@ export  function comparar(context,handicap){
         let fez=0
         let nada=0
         let tomou=0
-        const partidas=partidasTotais.filter(part=>{
-            const nome=part[0]
-            const mandante=nome[0]+nome[1]+nome[2]
-            const visitante=nome[3]+nome[4]+nome[5]
-            return (mandante==time||visitante==time)})
+        const partidas=filtrar(partidasTotais,time,0)
         for(let partida of partidas){
             const nome=partida[0]
             const mandante=nome[0]+nome[1]+nome[2]
@@ -43,17 +41,8 @@ export  function comparar(context,handicap){
             }
         }
         const cont=fez+nada+tomou
-        const v=fez*100/cont
-        const e=nada*100/cont
-        const d=tomou*100/cont
-        let vit=cont==0?0:parseFloat(v.toFixed(0))
-        let emp=cont==0?0:parseFloat(e.toFixed(0))
-        let der=cont==0?0:parseFloat(d.toFixed(0))
-        resp.push({time,
-            c1:vit,
-            c2:emp,
-            c3:der,
-        })
+        const elemento=elPushar(time,fez,nada,tomou,cont,0,true)
+        resp.push(elemento)
     }
     return resp
 }

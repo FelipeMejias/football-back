@@ -1,13 +1,9 @@
+import filtrar, { filtrarGols } from "../especiais/filtrarPartidas.js"
+
 export  function listaPlacar(context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context
     const resp=[]
-    const partidas=partidasTotais.filter(part=>{
-        const nome=part[0]
-        const mandante=nome[0]+nome[1]+nome[2]
-        const visitante=nome[3]+nome[4]+nome[5]
-        return(!estadia?(mandante==time||visitante==time):(
-        estadia==1?mandante==time:visitante==time
-    ))})
+    const partidas=filtrar(partidasTotais,time,estadia)
     for(let partida of partidas){
         let nos=0
         let el=0
@@ -15,11 +11,7 @@ export  function listaPlacar(context,estadia,metade,time,c,asc,valor){
         const mandante=nome[0]+nome[1]+nome[2]
         const visitante=nome[3]+nome[4]+nome[5]
         const golos=partida[2]
-        const gols=golos?golos?.filter(gol=>{
-            const minuto=gol>0?gol:-gol
-            return (!metade?true:(
-            metade==1?(minuto<=45):(minuto>45)
-        ))}):[]
+        const gols=filtrarGols(golos,metade)
         for(let gol of gols){
             if(mandante==time?gol>0:gol<0){
                 nos++

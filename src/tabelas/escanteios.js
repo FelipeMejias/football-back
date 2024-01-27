@@ -1,15 +1,11 @@
+import filtrar, { elPushar } from "../especiais/filtrarPartidas.js";
+
 export  function escanteios(context,estadia){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     let cont
     for(let time of listaTimes){
-        const partidas=partidasTotais.filter(part=>{
-            const nome=part[0]
-            const mandante=nome[0]+nome[1]+nome[2]
-            const visitante=nome[3]+nome[4]+nome[5]
-            return(!estadia?(mandante==time||visitante==time):(
-            estadia==1?mandante==time:visitante==time
-        ))})
+        const partidas=filtrar(partidasTotais,time,estadia)
         let golsPro=0;
         let golsTotal=0;
         let golsContra=0;
@@ -31,12 +27,8 @@ export  function escanteios(context,estadia){
             }
             cont++
         }
-     
-        resp.push({time,
-            c1:cont==0?'-':parseFloat((golsPro/cont).toFixed(1)),
-            c2:cont==0?'-':parseFloat((golsTotal/cont).toFixed(1)),
-            c3:cont==0?'-':parseFloat((golsContra/cont).toFixed(1))
-        })
+        const elemento=elPushar(time,golsPro,golsTotal,golsContra,cont,1,false)
+        resp.push(elemento)
     }
     return resp
 }

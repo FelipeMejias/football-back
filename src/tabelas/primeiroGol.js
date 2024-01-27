@@ -1,15 +1,10 @@
+import filtrar from "../especiais/filtrarPartidas.js"
 
 export  function primeiroGol(context,estadia){
     const {partidasTotais,listaTimes}=context
     const resp=[]
     for(let time of listaTimes){
-        const partidas=partidasTotais.filter(part=>{
-            const nome=part[0]
-            const mandante=nome[0]+nome[1]+nome[2]
-            const visitante=nome[3]+nome[4]+nome[5]
-            return(!estadia?(part.mandante==time||visitante==time):(
-            estadia==1?mandante==time:visitante==time
-        ))})
+        const partidas=filtrar(partidasTotais,time,estadia)
         let totalPrimMeu=0
         let totalPrimDeles=0
         let totalPrim=0

@@ -106,7 +106,7 @@ export function criarOrdem(context,time,enxuta=false){
 
     ]
     for(let i=0;i<=2;i++){
-        const list=fucarTabela(marcaPrimeiro(context,i),time)
+        const list=fucarTabela(marcaPrimeiro(context,i),time,true)
         list.forEach(item=>{
             const {pos,asc,valor,c,relev}=item
             resp.push({
@@ -182,7 +182,7 @@ export function criarOrdem(context,time,enxuta=false){
         ' quando está perdendo',' quando está empatando',' quando está vencendo'
     ]
     for(let i=-1;i<=1;i++){
-        const list=fucarTabela(comparar(context,i),time)
+        const list=fucarTabela(comparar(context,i),time,true)
         list.forEach(item=>{
             const {pos,asc,valor,c,relev}=item
             resp.push({
@@ -203,7 +203,7 @@ export function criarOrdem(context,time,enxuta=false){
     return resp
 }
 
-export function fucarTabela(tabela,time){
+export function fucarTabela(tabela,time,bloqueio_c2=false){
     const resposta=[]
     for(let c=1;c<=3;c++){
         const {pos,asc,valor,relev}=buscarPosicao(tabela,time,c)
@@ -211,7 +211,7 @@ export function fucarTabela(tabela,time){
         const objeto={
             pos,asc,valor,c,relev
         }
-        resposta.push(objeto)
+        if(!bloqueio_c2||c!=2)resposta.push(objeto)
     }
     return resposta
 }

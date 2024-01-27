@@ -1,13 +1,9 @@
+import filtrar from "../especiais/filtrarPartidas.js"
+
 export  function listaEsc(context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context
     const resp=[]
-    const partidas=partidasTotais.filter(part=>{
-        const nome=part[0]
-        const mandante=nome[0]+nome[1]+nome[2]
-        const visitante=nome[3]+nome[4]+nome[5]
-        return(!estadia?(mandante==time||visitante==time):(
-        estadia==1?mandante==time:visitante==time
-    ))})
+    const partidas=filtrar(partidasTotais,time,estadia)
     for(let partida of partidas){
         const nome=partida[0]
         const mandante=nome[0]+nome[1]+nome[2]
