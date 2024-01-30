@@ -1,96 +1,92 @@
 import { buildContext } from "../bancos.js"
-import { confEsc } from "../conferencias/confEsc.js"
-import { confGols } from "../conferencias/confGols.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
-import { getPartida } from "../especiais/getPartida.js"
-import { acharPar } from "../profundo/dupla.js"
-import { criarOrdem } from "../profundo/individual.js"
+import { confGols } from "../conferencias/confGols.js"
+import { confEsc } from "../conferencias/confEsc.js"
+export function buildApostas(aberto){
+    let desordenada=[]
+    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1'/*,'bra2'*/]
+    camps.forEach(camp=>{
+        desordenada=[...desordenada,...extrairFuturas(camp,aberto)]
+    })
+    return desordenada
+}
 
-/*
-
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-
-
-*/
-export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
-    let y='['
-    console.log(`==== ${mandante.toUpperCase()} x ${visitante.toUpperCase()} ====`)
-    const ordemMandante=criarOrdem(context,mandante,true)
-    const ordemVisitante=criarOrdem(context,visitante,true)
-    const listaApo=[]
-    const listao=[]
-    ordemMandante.forEach(est=>{
-        const {grandeza,c,asc,estadia,metade,handicap,pos}=est
-        if(pos<5){
-            const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
-            if(par){
-                if(par.pos<5){
-                    
-                    const aposta=acharAposta(mandante,visitante,camp,est,par,true)
-                    
-                    if(aposta){
-                        
-                        const {texto,valor,chance}=aposta
-                        if(!texto)console.log(aposta)
-                        let naoTa=true
-                        let index=0
-                        listaApo.forEach((apo,ind)=>{
-                            if(apo.texto==texto){
-                                naoTa=false
-                            }
-                            index++
-                        })
-                        if(naoTa){
-                            let odd=0
-                            let odr=1
-                            if(phase==2){
-                                const {partidasTotais}=buildContext(camp,true)
-                                const partola=getPartida(partidasTotais,mandante+visitante)
-                                const odds=partola[2]
-                                odr=odds[index]
-                            }
-                            if(phase==1)console.log(aposta.texto)
-                            listaApo.push({texto,odd})
-                            
-                            if(odr){
-                                if(phase==2&&odr)y+=`[${odr},${grandeza}${c}${asc}${metade?metade:0},${grandeza==1?0:valor},${chance}],`
-                                listao.push({texto,odr})
-                            }
-                        }
-                    }
-                }
+function extrairFuturas(camp,aberto){
+    const {partidasTotais}=buildContext(camp,true)
+    let resp=[]
+    let cont=0
+    for(let k=0;k<partidasTotais.length;k++){
+        if(cont>10)return resp
+        const part=partidasTotais[k]
+        if(aberto){
+            if(part[1].length!=2 && part.length==3){
+                cont=0
+                const nome=part[0]
+                const mandante=nome[0]+nome[1]+nome[2]
+                const visitante=nome[3]+nome[4]+nome[5]
+                const aps=part[2]
+                const lista=repassarApostas(camp,mandante,visitante,aps)
+                resp=[...resp,...lista]
+            }else{
+                cont++
+            }
+        }else{
+            if(part.length==5){
+                cont=0
+                const nome=part[0]
+                const mandante=nome[0]+nome[1]+nome[2]
+                const visitante=nome[3]+nome[4]+nome[5]
+    
+                const aps=part[4]
+                const lista=repassarApostas(camp,mandante,visitante,aps,part)
+                resp=[...resp,...lista]
+            }else{
+                cont++
             }
         }
-    })
-    y+=']'
-    
-    if(phase==2){
-        console.log(y)
+        
     }
-    console.log('===========================')
-    return listao
+    return resp
 }
-export function acharAposta(mand,visi,camp,stat,stat2){
-    const context=buildContext(camp)
+
+export function repassarApostas(camp,mandante,visitante,aps,part){
+    const lista=[]
+    for(let aposta of aps){
+        const oddRaiz=aposta[0]
+        const odd = parseFloat((oddRaiz/100).toFixed(2))
+        const info=aposta[1].toString()
+        const grandeza=parseInt(info[0])
+        const c=parseInt(info[1])
+        const asc=parseInt(info[2])
+        const metade=parseInt(info[3])
+        const valor=aposta[2]
+        const texto=darNomeAposta(camp,mandante,visitante,grandeza,c,asc,metade,valor)
+        const chance=aposta[3]
+        let green=undefined
+        if(part){
+            
+            const context={partidasTotais:[part]}
+            if(grandeza==1){
+                green=confPlacar(context,0,metade,mandante,c,asc,valor)
+            }else if(grandeza==2){
+                green=confGols(context,0,metade,mandante,c,asc,valor)
+            }else if(grandeza==6){
+                green=confEsc(context,0,metade,mandante,c,asc,valor)
+            }
+        }
+        lista.push({
+            camp,mandante,visitante,odd,info,valor,texto,chance,green
+        })
+    }
+    return lista
+}
+
+
+export function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade,valorFinal){
     const {listaNomes,listaTimes}=contexts[paths.indexOf(camp)]
     const mandante=listaNomes[listaTimes.indexOf(mand)]
     const visitante=listaNomes[listaTimes.indexOf(visi)]
     let texto
-    const {grandeza,c,asc,metade,valor:valor1}=stat
-    const {valor:valor2,c:ccomp}=stat2
-    
-    const primMaior=valor1-valor2>0
-    const valor=asc?(primMaior?valor1:valor2):(primMaior?valor2:valor1)
-    const valorFinal=asc?(valor%1>0.5?Math.ceil(valor)+0.5:Math.floor(valor)+0.5):(valor%1>0.5?Math.floor(valor)+0.5:Math.floor(valor)-0.5)
     if(grandeza==1){
         if(!asc){
             if(c==1){
@@ -107,10 +103,7 @@ export function acharAposta(mand,visi,camp,stat,stat2){
         if(metade==2){
             texto+=` o 2º tempo`
         }
-        const cha1=confPlacar(context,1,metade,mand,c,asc,0)
-        const cha2=confPlacar(context,2,metade,visi,ccomp,asc,0)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
         }
         
         
@@ -137,10 +130,7 @@ export function acharAposta(mand,visi,camp,stat,stat2){
         if(metade==0)texto+=` na partida`
         if(metade==1)texto+=` no 1º tempo`
         if(metade==2)texto+=` no 2º tempo`
-        const cha1=confGols(context,1,metade,mand,c,asc,valorFinal)
-        const cha2=confGols(context,2,metade,visi,ccomp,asc,valorFinal)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
     }else if(grandeza==6){
         if(camp=='ing1')return null//============================================================
         if(c==1){
@@ -162,10 +152,7 @@ export function acharAposta(mand,visi,camp,stat,stat2){
                 texto=`Mais de ${valorFinal} escanteios para ${visitante}`
             }
         }
-        const cha1=confEsc(context,1,metade,mand,c,asc,valorFinal)
-        const cha2=confEsc(context,2,metade,visi,ccomp,asc,valorFinal)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
     }
     return null
 }

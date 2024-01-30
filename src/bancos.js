@@ -14,7 +14,7 @@ export function buildContext(camp,inteiro=false){
 function extrairFuturas(array){
     const resp=[...array]
     for(let k=0;k<array.length;k++){
-        if(array[k].length==2){
+        if(array[k][1].length!=2){
             resp.shift()
         }else{
             return resp

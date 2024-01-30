@@ -1,5 +1,6 @@
 import { quantoTempoFalta } from "../utils.js"
 import { buildContext } from "../bancos.js"
+import { criarOrdemDuplaAposta } from "../adicionadas/constr.js"
 
 export function buildFutura(){
     let desordenada=[]
@@ -24,10 +25,15 @@ function extrairFuturas(camp){
     const resp=[]
     for(let k=0;k<partidasTotais.length;k++){
         const part=partidasTotais[k]
-        if(part.length==2){
+        if(part[1].length!=2){
+            
             const nome=part[0]
             const mandante=nome[0]+nome[1]+nome[2]
             const visitante=nome[3]+nome[4]+nome[5]
+            /*if(camp=='ale1'){
+                const context=buildContext(camp)
+                criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
+            }*/
             const data=part[1]
             const texto=quantoTempoFalta(data)
             resp.push({

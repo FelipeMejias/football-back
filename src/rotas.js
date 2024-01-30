@@ -17,6 +17,7 @@ import { create, getPartida } from './especiais/getPartida.js'
 import { classificacao } from './especiais/classificacao.js'
 import { partidasLiga } from './especiais/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
+import { buildApostas } from './especiais/buildAposta.js'
 
 export const router=Router()
 
@@ -45,6 +46,34 @@ router.get('/tabelas/:camp/:pagestr',async(req,res)=>{
 })
 router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFutura()
+    res.status(200).send(lista)
+})
+router.get('/apostasgerais/:aberto',async(req,res)=>{
+    const {aberto}=req.params
+    const lista=buildApostas(parseInt(aberto))
+    /*let apostas=0
+    let acertas=0
+    let erradas=0
+    let lucro=0
+    let inacabadas=0
+    for(let apo of lista){
+        if(apo.green===0){
+            apostas++
+            erradas++
+        }else if(apo.green===undefined){
+            apostas++
+            inacabadas++
+        }else if(apo.green==100){
+            apostas++
+            acertas++
+            lucro+=apo.odd
+        }
+    }
+    console.log(`apostas:${apostas}`)
+    console.log(`acertas:${acertas}`)
+    console.log(`erradas:${erradas}`)
+    console.log(`lucro:${lucro}`)
+    console.log(`inacabadas:${inacabadas}`)*/
     res.status(200).send(lista)
 })
 router.get('/partida/:camp/:manvis',async(req,res)=>{
