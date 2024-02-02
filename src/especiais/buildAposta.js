@@ -8,7 +8,12 @@ export function buildApostas(aberto){
     camps.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp,aberto)]
     })
-    return desordenada
+    const ordenada1= desordenada.sort((a,b)=>{
+        if(a.data<b.data){
+            return aberto?-1:true
+        }else{return aberto? true:-1}
+    })
+    return ordenada1
 }
 
 function extrairFuturas(camp,aberto){
@@ -25,7 +30,8 @@ function extrairFuturas(camp,aberto){
                 const mandante=nome[0]+nome[1]+nome[2]
                 const visitante=nome[3]+nome[4]+nome[5]
                 const aps=part[2]
-                const lista=repassarApostas(camp,mandante,visitante,aps)
+                const data=part[1]
+                const lista=repassarApostas(camp,mandante,visitante,data,aps)
                 resp=[...resp,...lista]
             }else{
                 cont++
@@ -36,9 +42,9 @@ function extrairFuturas(camp,aberto){
                 const nome=part[0]
                 const mandante=nome[0]+nome[1]+nome[2]
                 const visitante=nome[3]+nome[4]+nome[5]
-    
+                const data=part[3]
                 const aps=part[4]
-                const lista=repassarApostas(camp,mandante,visitante,aps,part)
+                const lista=repassarApostas(camp,mandante,visitante,data,aps,part)
                 resp=[...resp,...lista]
             }else{
                 cont++
@@ -49,7 +55,7 @@ function extrairFuturas(camp,aberto){
     return resp
 }
 
-export function repassarApostas(camp,mandante,visitante,aps,part){
+export function repassarApostas(camp,mandante,visitante,data,aps,part){
     const lista=[]
     for(let aposta of aps){
         const oddRaiz=aposta[0]
@@ -75,7 +81,7 @@ export function repassarApostas(camp,mandante,visitante,aps,part){
             }
         }
         lista.push({
-            camp,mandante,visitante,odd,info,valor,texto,chance,green
+            camp,mandante,visitante,odd,info,valor,texto,chance,green,data
         })
     }
     return lista
