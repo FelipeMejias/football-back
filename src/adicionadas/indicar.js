@@ -1,23 +1,19 @@
 import { buildContext } from "../bancos.js"
-import { confEsc } from "../conferencias/confEsc.js"
-import { confGols } from "../conferencias/confGols.js"
-import { confPlacar } from "../conferencias/confPlacar.js"
 import { getPartida } from "../especiais/getPartida.js"
 import { acharPar } from "../profundo/dupla.js"
 import { criarOrdem } from "../profundo/individual.js"
-
 /*
 
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
-    ['','2401'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
+    ['','2402'],
 
 
 */
@@ -35,16 +31,14 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
             if(par){
                 if(par.pos<5){
                     
-                    const aposta=acharAposta(mandante,visitante,camp,est,par,true)
+                    const aposta=acharAposta(mandante,visitante,camp,est)
                     
                     if(aposta){
                         
-                        const {texto,valor,chance}=aposta
-                        if(!texto)console.log(aposta)
                         let naoTa=true
                         let index=0
                         listaApo.forEach((apo,ind)=>{
-                            if(apo.texto==texto){
+                            if(apo.texto==aposta){
                                 naoTa=false
                             }
                             index++
@@ -58,12 +52,12 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
                                 const odds=partola[2]
                                 odr=odds[index]
                             }
-                            if(phase==1)console.log(aposta.texto)
-                            listaApo.push({texto,odd})
+                            if(phase==1)console.log(aposta)
+                            listaApo.push({texto:aposta,odd})
                             
                             if(odr){
-                                if(phase==2&&odr)y+=`[${odr},${grandeza}${c}${asc}${metade?metade:0},${grandeza==1?0:valor},${chance}],`
-                                listao.push({texto,odr})
+                                if(phase==2&&odr)y+=`'${grandeza}${c}${asc}${metade?metade:0}-${odr}',`
+                                listao.push({texto:aposta,odr})
                             }
                         }
                     }
@@ -79,18 +73,13 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
     console.log('===========================')
     return listao
 }
-export function acharAposta(mand,visi,camp,stat,stat2){
-    const context=buildContext(camp)
+
+export function acharAposta(mand,visi,camp,stat){
     const {listaNomes,listaTimes}=contexts[paths.indexOf(camp)]
     const mandante=listaNomes[listaTimes.indexOf(mand)]
     const visitante=listaNomes[listaTimes.indexOf(visi)]
     let texto
-    const {grandeza,c,asc,metade,valor:valor1}=stat
-    const {valor:valor2,c:ccomp}=stat2
-    
-    const primMaior=valor1-valor2>0
-    const valor=asc?(primMaior?valor1:valor2):(primMaior?valor2:valor1)
-    const valorFinal=asc?(valor%1>0.5?Math.ceil(valor)+0.5:Math.floor(valor)+0.5):(valor%1>0.5?Math.floor(valor)+0.5:Math.floor(valor)-0.5)
+    const {grandeza,c,asc,metade}=stat
     if(grandeza==1){
         if(!asc){
             if(c==1){
@@ -107,65 +96,57 @@ export function acharAposta(mand,visi,camp,stat,stat2){
         if(metade==2){
             texto+=` o 2º tempo`
         }
-        const cha1=confPlacar(context,1,metade,mand,c,asc,0)
-        const cha2=confPlacar(context,2,metade,visi,ccomp,asc,0)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
         }
         
         
     }else if(grandeza==2){//==============================================================
         if(c==1){
             if(asc){
-                texto=`Menos de ${valorFinal} gols para ${mandante}`
+                texto=`Menos gols para ${mandante}`
             }else{
-                texto=`Mais de ${valorFinal} gols para ${mandante}`
+                texto=`Mais gols para ${mandante}`
             }
         }else if(c==2){
             if(asc){
-                texto=`Menos de ${valorFinal} gols`
+                texto=`Menos gols`
             }else{
-                texto=`Mais de ${valorFinal} gols`
+                texto=`Mais gols`
             }
         }else if(c==3){
             if(asc){
-                texto=`Menos de ${valorFinal} gols para ${visitante}`
+                texto=`Menos gols para ${visitante}`
             }else{
-                texto=`Mais de ${valorFinal} gols para ${visitante}`
+                texto=`Mais gols para ${visitante}`
             }
         }
         if(metade==0)texto+=` na partida`
         if(metade==1)texto+=` no 1º tempo`
         if(metade==2)texto+=` no 2º tempo`
-        const cha1=confGols(context,1,metade,mand,c,asc,valorFinal)
-        const cha2=confGols(context,2,metade,visi,ccomp,asc,valorFinal)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
     }else if(grandeza==6){
-        if(camp=='ing1')return null//============================================================
         if(c==1){
+            return null
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios para ${mandante}`
+                texto=`Menos escanteios para ${mandante}`
             }else{
-                texto=`Mais de ${valorFinal} escanteios para ${mandante}`
+                texto=`Mais escanteios para ${mandante}`
             }
         }else if(c==2){
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios`
+                texto=`Menos escanteios`
             }else{
-                texto=`Mais de ${valorFinal} escanteios`
+                texto=`Mais escanteios`
             }
         }else if(c==3){
+            return null
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios para ${visitante}`
+                texto=`Menos escanteios para ${visitante}`
             }else{
-                texto=`Mais de ${valorFinal} escanteios para ${visitante}`
+                texto=`Mais escanteios para ${visitante}`
             }
         }
-        const cha1=confEsc(context,1,metade,mand,c,asc,valorFinal)
-        const cha2=confEsc(context,2,metade,visi,ccomp,asc,valorFinal)
-        const chance=parseInt((cha1+cha2)/2)
-        return {valor:valorFinal,texto,chance}
+        return texto
     }
     return null
 }

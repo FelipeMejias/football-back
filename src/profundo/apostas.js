@@ -1,94 +1,40 @@
 import { buildContext } from "../bancos.js"
-import { confPlacar } from "../conferencias/confPlacar.js"
-import { confGols } from "../conferencias/confGols.js"
-import { confEsc } from "../conferencias/confEsc.js"
-export function buildApostas(aberto){
-    let desordenada=[]
-    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1'/*,'bra2'*/]
-    camps.forEach(camp=>{
-        desordenada=[...desordenada,...extrairFuturas(camp,aberto)]
-    })
-    const ordenada1= desordenada.sort((a,b)=>{
-        if(a.data<b.data){
-            return aberto?-1:true
-        }else{return aberto? true:-1}
-    })
-    return ordenada1
-}
+import { getPartida } from "../especiais/getPartida.js"
 
-function extrairFuturas(camp,aberto){
+export function buscarApostasJogo(camp,mandante,visitante){
     const {partidasTotais}=buildContext(camp,true)
-    let resp=[]
-    let cont=0
-    for(let k=0;k<partidasTotais.length;k++){
-        if(cont>10)return resp
-        const part=partidasTotais[k]
-        if(aberto){
-            if(part[1].length!=2 && part.length==3){
-                cont=0
-                const nome=part[0]
-                const mandante=nome[0]+nome[1]+nome[2]
-                const visitante=nome[3]+nome[4]+nome[5]
-                const aps=part[2]
-                const data=part[1]
-                const lista=repassarApostas(camp,mandante,visitante,data,aps)
-                resp=[...resp,...lista]
-            }else{
-                cont++
-            }
-        }else{
-            if(part.length==5){
-                cont=0
-                const nome=part[0]
-                const mandante=nome[0]+nome[1]+nome[2]
-                const visitante=nome[3]+nome[4]+nome[5]
-                const data=part[3]
-                const aps=part[4]
-                const lista=repassarApostas(camp,mandante,visitante,data,aps,part)
-                resp=[...resp,...lista]
-            }else{
-                cont++
-            }
-        }
-        
-    }
-    return resp
-}
+    const partida=getPartida(partidasTotais,mandante+visitante)
+    const odr=partida[2]
+    if(!odr)return []
+    const apostas=[]
 
-export function repassarApostas(camp,mandante,visitante,data,aps,part){
-    const lista=[]
-    for(let aposta of aps){
-        const oddRaiz=aposta[0]
-        const odd = parseFloat((oddRaiz/100).toFixed(2))
-        const info=aposta[1].toString()
+    for(let caso of odr){
+        const lis=caso.split('-')
+        const info=lis[0]
+        const num=lis[1]
         const grandeza=parseInt(info[0])
         const c=parseInt(info[1])
         const asc=parseInt(info[2])
         const metade=parseInt(info[3])
-        const valor=aposta[2]
-        const texto=darNomeAposta(camp,mandante,visitante,grandeza,c,asc,metade,valor)
-        const chance=aposta[3]
-        let green=undefined
-        if(part){
-            
-            const context={partidasTotais:[part]}
-            if(grandeza==1){
-                green=confPlacar(context,0,metade,mandante,c,asc,valor)
-            }else if(grandeza==2){
-                green=confGols(context,0,metade,mandante,c,asc,valor)
-            }else if(grandeza==6){
-                green=confEsc(context,0,metade,mandante,c,asc,valor)
+        const texto=darNomeAposta(camp,mandante,visitante,grandeza,c,asc,metade)
+        let odd
+        if(grandeza==1){
+            odd=(num/100).toFixed(2)
+        }else{
+            odd=[]
+            const zerado=num.length%3==0
+            let qtd=zerado?0:parseInt(num[0])
+            for(let k=zerado?0:1;k<num.length;k+=3){
+                const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
+                odd.push({q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})
+                qtd++
             }
         }
-        lista.push({
-            camp,mandante,visitante,odd,info,valor,texto,chance,green,data
-        })
+        apostas.push({info,texto,odd})
     }
-    return lista
+    return apostas
 }
-
-
-export function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade,valorFinal){
+function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade){
     const {listaNomes,listaTimes}=contexts[paths.indexOf(camp)]
     const mandante=listaNomes[listaTimes.indexOf(mand)]
     const visitante=listaNomes[listaTimes.indexOf(visi)]
@@ -116,21 +62,21 @@ export function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade,valorFinal){
     }else if(grandeza==2){//==============================================================
         if(c==1){
             if(asc){
-                texto=`Menos de ${valorFinal} gols para ${mandante}`
+                texto=`Menos de X gols para ${mandante}`
             }else{
-                texto=`Mais de ${valorFinal} gols para ${mandante}`
+                texto=`Mais de X gols para ${mandante}`
             }
         }else if(c==2){
             if(asc){
-                texto=`Menos de ${valorFinal} gols`
+                texto=`Menos de X gols`
             }else{
-                texto=`Mais de ${valorFinal} gols`
+                texto=`Mais de X gols`
             }
         }else if(c==3){
             if(asc){
-                texto=`Menos de ${valorFinal} gols para ${visitante}`
+                texto=`Menos de X gols para ${visitante}`
             }else{
-                texto=`Mais de ${valorFinal} gols para ${visitante}`
+                texto=`Mais de X gols para ${visitante}`
             }
         }
         if(metade==0)texto+=` na partida`
@@ -138,24 +84,23 @@ export function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade,valorFinal){
         if(metade==2)texto+=` no 2º tempo`
         return texto
     }else if(grandeza==6){
-        if(camp=='ing1')return null//============================================================
         if(c==1){
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios para ${mandante}`
+                texto=`Menos de X escanteios para ${mandante}`
             }else{
-                texto=`Mais de ${valorFinal} escanteios para ${mandante}`
+                texto=`Mais de X escanteios para ${mandante}`
             }
         }else if(c==2){
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios`
+                texto=`Menos de X escanteios`
             }else{
-                texto=`Mais de ${valorFinal} escanteios`
+                texto=`Mais de X escanteios`
             }
         }else if(c==3){
             if(asc){
-                texto=`Menos de ${valorFinal} escanteios para ${visitante}`
+                texto=`Menos de X escanteios para ${visitante}`
             }else{
-                texto=`Mais de ${valorFinal} escanteios para ${visitante}`
+                texto=`Mais de X escanteios para ${visitante}`
             }
         }
         return texto
