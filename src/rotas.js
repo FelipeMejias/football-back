@@ -17,6 +17,7 @@ import { create, getPartida } from './especiais/getPartida.js'
 import { classificacao } from './especiais/classificacao.js'
 import { partidasLiga } from './especiais/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
+import { buildApostas } from './especiais/buildApostas.js'
 //import { buildApostas } from './especiais/buildAposta.js'
 
 export const router=Router()
@@ -48,13 +49,12 @@ router.get('/partidasgerais',async(req,res)=>{
     const lista=buildFutura()
     res.status(200).send(lista)
 })
-/*
 router.get('/apostasgerais/:aberto',async(req,res)=>{
     const {aberto}=req.params
-    const lista=0//buildApostas(parseInt(aberto))
+    const lista=buildApostas(parseInt(aberto))
 
     res.status(200).send(lista)
-})*/
+})
 router.get('/partida/:camp/:manvis',async(req,res)=>{
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
@@ -73,18 +73,16 @@ router.get('/times/:camp/:time',async(req,res)=>{
 })
 router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
     const {camp,mandante,visitante}=req.params
-    const context=buildContext(camp)
     const {partidasTotais}=buildContext(camp,true)
     const partida= getPartida(partidasTotais,mandante+visitante)
     const data=partida[1]
-    const resp=criarOrdemDupla(context,mandante,visitante,camp)
+    const resp=criarOrdemDupla(camp,mandante,visitante)
     res.status(200).send({resp,data})
 })
 router.get('/analise/:camp/:mandante/:visitante',async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
-    const context=buildContext(camp)
-    const resp=analisar(context,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
+    const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
     res.status(200).send(resp)
 })
 router.get('/lista-analise/:camp/:time',async(req,res)=>{

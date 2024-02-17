@@ -1,9 +1,37 @@
 import cors from 'cors'
 import Express, {json} from 'express'
 import { router } from './src/rotas.js'
+import { buildFutura } from './src/especiais/buildFutura.js'
+import { buildContext } from './src/bancos.js'
+import { criarOrdemDuplaAposta } from "./src/adicionadas/indicar.js"
+import detalhar from './src/adicionadas/detalhar.js'
 const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
+
+function auto(){
+    const futuras=buildFutura()
+    const lista=[]
+    for(let partida of futuras){
+        const {camp,mandante,visitante,data}=partida
+        if(camp=='1'){
+            const context=buildContext(camp)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
+        }
+        /*const apostas=detalhar(camp,mandante,visitante)
+        for(let ap of apostas){
+            lista.push(ap)
+        }*/
+    }
+    const ordenada= lista.sort((a,b)=>{
+        if(a.ch>b.ch){
+            return -1
+        }else{return true}
+    })
+    //console.log(ordenada)
+}
+auto()
+
 const port =process.env.PORT||4000
 app.listen(port,()=>console.log(`listening on port ${port}`))

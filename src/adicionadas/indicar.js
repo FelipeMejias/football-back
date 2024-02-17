@@ -126,7 +126,6 @@ export function acharAposta(mand,visi,camp,stat){
         return texto
     }else if(grandeza==6){
         if(c==1){
-            return null
             if(asc){
                 texto=`Menos escanteios para ${mandante}`
             }else{
@@ -139,7 +138,6 @@ export function acharAposta(mand,visi,camp,stat){
                 texto=`Mais escanteios`
             }
         }else if(c==3){
-            return null
             if(asc){
                 texto=`Menos escanteios para ${visitante}`
             }else{

@@ -1,7 +1,9 @@
+import { buildContext } from "../bancos.js";
 import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
 
-export function criarOrdemDupla(context,mandante,visitante,camp){
+export function criarOrdemDupla(camp,mandante,visitante){
+    const context=buildContext(camp)
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
@@ -14,7 +16,6 @@ export function criarOrdemDupla(context,mandante,visitante,camp){
                 listao.push([est,par])
         }
     })
-    //const ordenada=ordenarDupla(listao)
     const ordenada1= listao.sort((a,b)=>{
         const somaA=a[0].pos+a[1].pos
         const somaB=b[0].pos+b[1].pos
@@ -26,12 +27,10 @@ export function criarOrdemDupla(context,mandante,visitante,camp){
         if(parzinho[0].pos<5&&parzinho[1].pos<5){
             const {grandeza,c,asc,metade}=parzinho[0]
             const codigo=`${grandeza}${c}${asc}${metade}`
-            let naoTem=true
             for(let k=0;k<apostas.length;k++){
                 const ap=apostas[k]
                 if(ap.info==codigo){
                     apostas.splice(k,1)
-                    naoTem=false
                     parzinho.push(ap)
                 }
             }
@@ -62,32 +61,4 @@ export function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
     }
     return null
 }
-function ordenarDupla(lista){
-    const used=[]
-    const final=[]
-    for(let k=0;k<lista.length;k++){
-        let using
-        let melhorSoma=Infinity
-        let relev=-Infinity
-        let tamanho=1
-        let duplinha
-        for(let h=0;h<lista.length;h++){
-            if(used.includes(h))continue
-            const item=lista[h]
-            const mandante=item[0]
-            const visitante=item[1]
-            const len=item.length
-            const soma=mandante.pos+visitante.pos
-            if( len>tamanho||( len==tamanho &&soma<melhorSoma || ( len==tamanho &&soma==melhorSoma && mandante.relev>relev ))){
-                using=h
-                melhorSoma=soma
-                relev=mandante.relev
-                duplinha=item
-                tamanho=len
-            }
-        }
-        used.push(using)
-        final.push(duplinha)
-    }
-    return final
-}
+ 

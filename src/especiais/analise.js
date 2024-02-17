@@ -1,13 +1,41 @@
 import {confEsc} from '../conferencias/confEsc.js'
 import {confPlacar} from '../conferencias/confPlacar.js'
 import {confGols} from '../conferencias/confGols.js'
-export function analisar(context,mandante,visitante,grandeza,c,asc,metade,valor){
+import { buildContext } from '../bancos.js'
+import { buscarApostasJogo } from '../profundo/apostas.js'
+export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
+    const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1
     const mandantePuro=conferir(context,grandeza,c,asc,0,metade,valor,mandante)
     const visitantePuro=conferir(context,grandeza,cPar,asc,0,metade,valor,visitante)
     const mandanteEstadia=conferir(context,grandeza,c,asc,1,metade,valor,mandante)
     const visitanteEstadia=conferir(context,grandeza,cPar,asc,2,metade,valor,visitante)
-    return [[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia]]
+
+    const apostas=buscarApostasJogo(camp,mandante,visitante)
+    const codigo=`${grandeza}${c}${asc}${metade}`
+    let tex;let ode
+    for(let ap of apostas){
+        const {info,odd,texto}=ap
+        if(info==codigo){
+            if(grandeza!=1){
+                for(let esp of odd){
+                    const {o,q}=esp
+                    if(valor==q){
+                        tex=texto.replace('X',q)
+                        ode=o
+                    }
+                    
+                }
+            }else{
+                tex=texto
+                ode=odd
+            }
+        }
+
+    }
+    return [[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],ode?{
+        tex,ode,nome:`${camp+mandante+visitante}${codigo}${valor?valor:''}`
+    }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
     if(grandeza==1){
