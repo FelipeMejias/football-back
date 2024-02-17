@@ -8,44 +8,19 @@ export function buildApostas(pageBet){
     let ordenada
     const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1'/*,'bra2'*/]
     if(pageBet==1){
-        camps.forEach(camp=>{
-            desordenada=[...desordenada,...extrairFuturas(camp)]
-        })
-        ordenada= desordenada.sort((a,b)=>{
-            if(a.data<b.data){
-                return -1
-            }else{return true}
-        })
+        camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
+        ordenada= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
     }else if(pageBet==3){
-        camps.forEach(camp=>{
-            desordenada=[...desordenada,...extrairPassadas(camp)]
-        })
-        ordenada= desordenada.sort((a,b)=>{
-            if(a.data>b.data){
-                return -1
-            }else{return true}
-        })
+        camps.forEach(camp=>{desordenada=[...desordenada,...extrairPassadas(camp)]})
+        ordenada= desordenada.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
     }else{
-        camps.forEach(camp=>{
-            desordenada=[...desordenada,...extrairFuturas(camp)]
-        })
-        const lista1= desordenada.sort((a,b)=>{
-            if(a.data<b.data){
-                return -1
-            }else{return true}
-        })
+        camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
+        const lista1= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
         let lista2Desord=[]
-        camps.forEach(camp=>{
-            lista2Desord=[...lista2Desord,...extrairPassadas(camp)]
-        })
-        const lista2= lista2Desord.sort((a,b)=>{
-            if(a.data>b.data){
-                return -1
-            }else{return true}
-        })
+        camps.forEach(camp=>{lista2Desord=[...lista2Desord,...extrairPassadas(camp)]})
+        const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
     }
-    
     const resp=[]
     
     for(let partida of ordenada){

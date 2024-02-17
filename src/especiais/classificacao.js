@@ -30,7 +30,7 @@ export  function classificacao(camp,partidasTotais,listaTimes){
             if(nosso>deles){vitorias++}else if(nosso<deles){derrotas++}else{empates++}
             cont++
         }
-        const pontos=vitorias*3+empates
+        const pontos=vitorias*3+empates-(time=='eve'?10:0)
         resp.push({time,
             pontos,
             partidas:cont,
