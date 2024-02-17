@@ -59,7 +59,7 @@ router.get('/partida/:camp/:manvis',async(req,res)=>{
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
     const partida=getPartida(partidasTotais,manvis)
-    const resp=create(partida)
+    const resp=create(partida,camp)
     res.status(200).send(resp)
 })
 router.get('/times/:camp/:time',async(req,res)=>{

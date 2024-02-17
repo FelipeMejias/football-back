@@ -51,10 +51,11 @@ export function buildApostas(pageBet){
     for(let partida of ordenada){
         const {camp,mandante,visitante}=partida
         const apostas=buscarApostasJogo(camp,mandante,visitante)
+        const context=buildContext(camp,mandante+visitante)
         for(let ap of apostas){
             let ca;let fo;let tex;let ode;let valor;let green=undefined
             const {info,odd,texto}=ap
-            const context=buildContext(camp)
+            
             const grandeza=parseInt(info[0])
             const c=parseInt(info[1])
             const asc=parseInt(info[2])

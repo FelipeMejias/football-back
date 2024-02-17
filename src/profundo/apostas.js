@@ -4,7 +4,7 @@ import { getPartida } from "../especiais/getPartida.js"
 export function buscarApostasJogo(camp,mandante,visitante){
     const {partidasTotais}=buildContext(camp,true)
     const partida=getPartida(partidasTotais,mandante+visitante)
-    const odr=partida.length==3?partida[2]:partida[4]
+    const odr=partida.length==3?partida[1].length==2?false:partida[2]:partida[4]
     if(!odr)return []
     const apostas=[]
 

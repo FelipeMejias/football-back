@@ -4,12 +4,12 @@ import { createIng1 } from "./adicionadas/p2_ING.js";
 import { createAle1 } from "./adicionadas/p5_ALE.js";
 
 export function buildContext(camp,inteiro=false){
-    //if(camp=='bra1')return {partidasTotais:inteiro?createBra1:extrairFuturas(createBra1),listaTimes:timesBra1}
-    if(camp=='ing1')return {partidasTotais:inteiro?createIng1:extrairFuturas(createIng1),listaTimes:timesIng1}
-    if(camp=='esp1')return {partidasTotais:inteiro?createEsp1:extrairFuturas(createEsp1),listaTimes:timesEsp1}
-    if(camp=='ita1')return {partidasTotais:inteiro?createIta1:extrairFuturas(createIta1),listaTimes:timesIta1}
-    if(camp=='ale1')return {partidasTotais:inteiro?createAle1:extrairFuturas(createAle1),listaTimes:timesAle1}
-    //if(camp=='bra2')return {partidasTotais:inteiro?createBra2:extrairFuturas(createBra2),listaTimes:timesBra2}
+    //if(camp=='bra1')return {partidasTotais:inteiro===true?createBra1:inteiro?extrairPosteriores(createBra1,inteiro):extrairFuturas(createBra1),listaTimes:timesBra1}
+    if(camp=='ing1')return {partidasTotais:inteiro===true?createIng1:inteiro?extrairPosteriores(createIng1,inteiro):extrairFuturas(createIng1),listaTimes:timesIng1}
+    if(camp=='esp1')return {partidasTotais:inteiro===true?createEsp1:inteiro?extrairPosteriores(createEsp1,inteiro):extrairFuturas(createEsp1),listaTimes:timesEsp1}
+    if(camp=='ita1')return {partidasTotais:inteiro===true?createIta1:inteiro?extrairPosteriores(createIta1,inteiro):extrairFuturas(createIta1),listaTimes:timesIta1}
+    if(camp=='ale1')return {partidasTotais:inteiro===true?createAle1:inteiro?extrairPosteriores(createAle1,inteiro):extrairFuturas(createAle1),listaTimes:timesAle1}
+    //if(camp=='bra2')return {partidasTotais:inteiro===true?createBra2:inteiro?extrairPosteriores(createBra2,inteiro):extrairFuturas(createBra2),listaTimes:timesBra2}
 }
 function extrairFuturas(array){
     const resp=[...array]
@@ -18,6 +18,17 @@ function extrairFuturas(array){
             resp.shift()
         }else{
             return resp
+        }
+    }
+    return resp
+}
+function extrairPosteriores(array,manvis){
+    const resp=[]
+    let podeIr=false
+    for(let k=0;k<array.length;k++){
+        if(array[k][0]==manvis)podeIr=true
+        if(podeIr && array[k][1].length==2){
+            resp.push(array[k])
         }
     }
     return resp
