@@ -133,6 +133,7 @@ function extrairFuturas(camp){
     return resp
 }
 function extrairPassadas(camp){
+    console.log(camp)
     const {partidasTotais}=buildContext(camp)
     const resp=[]
     for(let k=0;k<partidasTotais.length;k++){
@@ -145,8 +146,6 @@ function extrairPassadas(camp){
             resp.push({
                 mandante,visitante,data,camp,part
             })
-        }else{
-            return resp
         }
     }
     return resp
