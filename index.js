@@ -5,6 +5,7 @@ import { buildFutura } from './src/especiais/buildFutura.js'
 import { buildContext } from './src/bancos.js'
 import { criarOrdemDuplaAposta } from "./src/adicionadas/indicar.js"
 import detalhar from './src/adicionadas/detalhar.js'
+import { buildApostas } from './src/especiais/buildApostas.js'
 const app=Express()
 app.use(cors())
 app.use(json())
@@ -19,17 +20,7 @@ function auto(){
             const context=buildContext(camp)
             criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
         }
-        /*const apostas=detalhar(camp,mandante,visitante)
-        for(let ap of apostas){
-            lista.push(ap)
-        }*/
     }
-    const ordenada= lista.sort((a,b)=>{
-        if(a.ch>b.ch){
-            return -1
-        }else{return true}
-    })
-    //console.log(ordenada)
 }
 auto()
 
