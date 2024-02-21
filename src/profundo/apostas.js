@@ -133,12 +133,17 @@ const contextBra1={
       listaTimes:['aug','bay','boc','bor','col','dar','ein','fre','hei','hof','lei','lev','mai','mon','stu','uni','wer','wol'],
       path:'ale1'
     }
+    const contextFra1={
+        listaNomes:['Brestois','Clermont','Le Havre','Lens','Lorient-Bretagne','LOSC','Lyon','Metz','Mônaco','Montpellier','Nantes','Nice','Olympique','PSG','Reims','Rennes','Strasbourg','Toulouse'],
+        listaTimes:['bre','cle','hav','len','lor','los','lyo','met','mon','mpl','nan','nic','oly','psg','rei','ren','str','tou'],
+        path:'fra1'
+      }
     const contextBra2={
       listaNomes:['ABC','Atlético GO','Avaí','Botafogo SP','Ceará','Chapecoense','CRB','Criciúma','Guarani','Ituano','Juventude','Londrina','Mirassol','Novorizontino','Ponte Preta','Sampaio Corrêa','Sport','Tombense','Vila Nova','Vitória'],
       listaTimes:['abc','ago','ava','bot','cea','cha','crb','cri','gua','itu','juv','lon','mir','nov','pon','sam','spo','tom','vil','vit'],
       path:'bra2'
     }
   const contexts=[
-    contextBra1,contextIng1,contextEsp1,contextIta1,contextAle1,contextBra2
+    contextIng1,contextEsp1,contextIta1,contextAle1,contextFra1
   ]
-  const paths=['bra1','ing1','esp1','ita1','ale1','bra2']
+  const paths=['ing1','esp1','ita1','ale1','fra1']

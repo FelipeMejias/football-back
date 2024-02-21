@@ -10,19 +10,89 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
+const port =process.env.PORT||4003
+app.listen(port,()=>console.log(`listening on port ${port}`))
 
 function auto(){
-    const futuras=buildFutura()
-    const lista=[]
-    for(let partida of futuras){
-        const {camp,mandante,visitante,data}=partida
-        if(camp=='1'){
-            const context=buildContext(camp)
-            criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
+    
+    const apostas=buildApostas(3)
+    
+    let din=0
+        let ganho=0
+        for(let ap of apostas){
+            if(ap.info[0]!=6){
+                din++
+                if(ap.green)ganho+=ap.odd
+            }
         }
+        console.log((ganho/din).toFixed(2),din)
+    
+    for(let k=35;k<90;k++){
+        let din=0
+        let ganho=1
+        for(let ap of apostas){
+            if(ap.chance>=k&&ap.info[0]!=6){
+                din++
+                if(ap.green){ganho*=ap.odd}else{ganho=0}
+            }
+        }
+        console.log(k,(ganho).toFixed(2),din)
     }
+    /*
+    for(let k=35;k<80;k++){
+        let din=0
+        let ganho=0
+        for(let ap of apostas){
+            if(ap.chance>=k){
+                din++
+                if(ap.green)ganho+=ap.odd
+            }
+        }
+        console.log(k,(ganho/din).toFixed(2),din)
+    }
+    */
+   /*
+    for(let camp of ['ing1','esp1','ita1','ale1']){
+        let din=0
+        let ganho=0
+        for(let ap of apostas.filter(a=>a.camp==camp)){
+                din++
+                if(ap.green)ganho+=ap.odd
+        }
+        console.log(camp,(ganho/din).toFixed(2),din)
+    }
+    */
+   /*
+    for(let tipo of [{nome:'vitoria',num:1},{nome:'gols',num:2},{nome:'escanteio',num:6}]){
+        let din=0
+        let ganho=0
+        for(let ap of apostas.filter(a=>a.info[0]==tipo.num)){
+                din++
+                if(ap.green)ganho+=ap.odd
+        }
+        console.log(tipo.nome,(ganho/din).toFixed(2),din)
+    }*/
+    /*
+    let green=0
+    let red=0
+    for(let ap of apostas.filter(a=>a.info[0]==6)){
+
+        if(ap.green){green++}else{red++}
+    }
+    console.log(green,red)*/
 }
 auto()
 
-const port =process.env.PORT||4003
-app.listen(port,()=>console.log(`listening on port ${port}`))
+
+function indicar(){
+    const futuras=buildFutura()
+    for(let partida of futuras){
+        const {camp,mandante,visitante}=partida
+        if(camp=='fra1'){
+            const context=buildContext(camp)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,1)
+        }
+    }
+}
+
+

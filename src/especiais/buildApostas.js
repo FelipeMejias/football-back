@@ -6,7 +6,7 @@ import { confPlacar } from "../conferencias/confPlacar.js"
 export function buildApostas(pageBet){
     let desordenada=[]
     let ordenada
-    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1'/*,'bra2'*/]
+    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1','fra1'/*,'bra2'*/]
     if(pageBet==1){
         camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
         ordenada= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
