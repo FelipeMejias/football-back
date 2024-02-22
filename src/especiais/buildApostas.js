@@ -54,8 +54,10 @@ export function buildApostas(pageBet){
                     tex=texto.replace('X',q)
                     ode=parseFloat(o)
                     valor=q
+                    const chance=(ca+fo)/2
                     resp.push({
-                        chance:(ca+fo)/2,
+                        ev:calcularEV(chance,ode),
+                        chance,
                         texto:tex,
                         odd:ode,
                         camp,mandante,visitante,
@@ -73,8 +75,11 @@ export function buildApostas(pageBet){
                 }
                 tex=texto
                 ode=parseFloat(odd)
+                const chance=(ca+fo)/2
+
                 resp.push({
-                    chance:(ca+fo)/2,
+                    ev:calcularEV(chance,ode),
+                    chance,
                     texto:tex,
                     odd:ode,
                     camp,mandante,visitante,
@@ -86,7 +91,11 @@ export function buildApostas(pageBet){
             }
         }
     }
-    return resp
+    return resp.sort((a,b)=>{
+        if(a.ev>b.ev){
+            return -1
+        }else{return true}
+    })
 }
 function extrairFuturas(camp){
     const {partidasTotais}=buildContext(camp,true)
@@ -123,4 +132,8 @@ function extrairPassadas(camp){
         }
     }
     return resp
+}
+function calcularEV(chance,odd){
+    const numero=odd*chance
+    return numero-(100-chance)
 }
