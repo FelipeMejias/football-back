@@ -17,7 +17,7 @@ function auto(){
     
     const apostas=buildApostas(3)
     
-    let din=0
+    /*let din=0
         let ganho=0
         for(let ap of apostas){
             if(ap.info[0]!=6){
@@ -26,7 +26,7 @@ function auto(){
             }
         }
         console.log((ganho/din).toFixed(2),din)
-    
+   */ 
     for(let k=35;k<90;k++){
         let din=0
         let ganho=1
@@ -36,10 +36,10 @@ function auto(){
                 if(ap.green){ganho*=ap.odd}else{ganho=0}
             }
         }
-        console.log(k,(ganho).toFixed(2),din)
+        console.log(`chance:${k} ganho:${(ganho).toFixed(2)} qtdApostas:${din}`)
     }
-    /*
-    for(let k=35;k<80;k++){
+    
+    for(let k=35;k<90;k++){
         let din=0
         let ganho=0
         for(let ap of apostas){
@@ -48,9 +48,20 @@ function auto(){
                 if(ap.green)ganho+=ap.odd
             }
         }
-        console.log(k,(ganho/din).toFixed(2),din)
+        console.log(`chance:${k} ganho:${(ganho/din).toFixed(2)} qtdApostas:${din}`)
     }
-    */
+    for(let k=90;k<200;k++){
+        let din=0
+        let ganho=0
+        for(let ap of apostas){
+            if(ap.ev>=k){
+                din++
+                if(ap.green)ganho+=ap.odd
+            }
+        }
+        if(ganho)console.log(`ev:${k} ganho:${(ganho/din).toFixed(2)} qtdApostas:${din}`)
+    }
+    
    /*
     for(let camp of ['ing1','esp1','ita1','ale1']){
         let din=0

@@ -13,28 +13,30 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
 
     const apostas=buscarApostasJogo(camp,mandante,visitante)
     const codigo=`${grandeza}${c}${asc}${metade}`
-    let tex;let ode
+    let tex;let ode;let green
     for(let ap of apostas){
-        const {info,odd,texto}=ap
+        const {info,odd,texto,green:grGrande}=ap
         if(info==codigo){
             if(grandeza!=1){
                 for(let esp of odd){
-                    const {o,q}=esp
+                    const {o,q,green:grPequeno}=esp
                     if(valor==q){
                         tex=texto.replace('X',q)
                         ode=o
+                        green=grPequeno
                     }
                     
                 }
             }else{
                 tex=texto
                 ode=odd
+                green=grGrande
             }
         }
 
     }
     return [[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],ode?{
-        tex,ode,nome:`${camp+mandante+visitante}${codigo}${valor?valor:''}`
+        tex,green,ode,nome:`${camp+mandante+visitante}${codigo}${valor?valor:''}`
     }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){

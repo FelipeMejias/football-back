@@ -1,10 +1,14 @@
 import { buildContext } from "../bancos.js"
+import { confEsc } from "../conferencias/confEsc.js"
+import { confGols } from "../conferencias/confGols.js"
+import { confPlacar } from "../conferencias/confPlacar.js"
 import { getPartida } from "../especiais/getPartida.js"
 
 export function buscarApostasJogo(camp,mandante,visitante){
     const {partidasTotais}=buildContext(camp,true)
     const partida=getPartida(partidasTotais,mandante+visitante)
-    const odr=partida.length==3?partida[1].length==2?false:partida[2]:partida[4]
+    const jogoAntigo=partida[1].length==2
+    const odr=partida.length==3?jogoAntigo?false:partida[2]:partida[4]
     if(!odr)return []
     const apostas=[]
 
@@ -20,17 +24,20 @@ export function buscarApostasJogo(camp,mandante,visitante){
         let odd
         if(grandeza==1){
             odd=(num/100).toFixed(2)
+            const green=jogoAntigo?confPlacar({partidasTotais:[partida]},0,metade,mandante,c,asc,null):undefined
+            apostas.push({info,texto,odd,green})
         }else{
             odd=[]
             const zerado=num.length%3==0
             let qtd=zerado?0:parseInt(num[0])
             for(let k=zerado?0:1;k<num.length;k+=3){
                 const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
-                odd.push({q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})
+                const green=jogoAntigo?(grandeza==2?confGols({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):confEsc({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)):undefined
+                odd.push({green,q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})
                 qtd++
             }
+            apostas.push({info,texto,odd})
         }
-        apostas.push({info,texto,odd})
     }
     return apostas
 }

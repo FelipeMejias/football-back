@@ -28,8 +28,8 @@ export function buildApostas(pageBet){
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
         for(let ap of apostas){
-            let ca;let fo;let tex;let ode;let valor;let green=undefined
-            const {info,odd,texto}=ap
+            let ca;let fo;let tex;let ode;let valor
+            const {info,odd,texto,green}=ap
             
             const grandeza=parseInt(info[0])
             const c=parseInt(info[1])
@@ -37,19 +37,13 @@ export function buildApostas(pageBet){
             const metade=parseInt(info[3])
             if(grandeza!=1){
                 for(let esp of odd){
-                    const {o,q}=esp
+                    const {o,q,green}=esp
                     if(grandeza==2){
                         ca=confGols(context,1,metade,mandante,c,asc,q)
                         fo=confGols(context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        if(partida.part){
-                            green=confGols({partidasTotais:[partida.part]},0,metade,mandante,c,asc,q)
-                        }
                     }else{
                         ca=confEsc(context,1,metade,mandante,c,asc,q)
                         fo=confEsc(context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        if(partida.part){
-                            green=confEsc({partidasTotais:[partida.part]},1,metade,mandante,c,asc,q)
-                        }
                     }
                     tex=texto.replace('X',q)
                     ode=parseFloat(o)
@@ -70,9 +64,6 @@ export function buildApostas(pageBet){
             }else{
                 ca=confPlacar(context,1,metade,mandante,c,asc,null)
                 fo=confPlacar(context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                if(partida.part){
-                    green=confPlacar({partidasTotais:[partida.part]},1,metade,mandante,c,asc,null)
-                }
                 tex=texto
                 ode=parseFloat(odd)
                 const chance=(ca+fo)/2
@@ -91,11 +82,7 @@ export function buildApostas(pageBet){
             }
         }
     }
-    return resp.sort((a,b)=>{
-        if(a.ev>b.ev){
-            return -1
-        }else{return true}
-    })
+    return resp
 }
 function extrairFuturas(camp){
     const {partidasTotais}=buildContext(camp,true)
