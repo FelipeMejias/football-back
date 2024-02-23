@@ -13,21 +13,87 @@ app.use(router)
 const port =process.env.PORT||4003
 app.listen(port,()=>console.log(`listening on port ${port}`))
 
+function indicar(){
+    const futuras=buildFutura()
+    for(let partida of futuras){
+        const {camp,mandante,visitante}=partida
+        if(camp=='fra1'||true){
+            const context=buildContext(camp)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,1)
+        }
+    }
+}
+export const tetoPosicao=5
+//indicar()
+
+//###################################################################
+function todas(){
+    const apostas=buildApostas(3)
+    const apostasAberto=buildApostas(1)
+}
 function auto(){
     
     const apostas=buildApostas(3)
     const apostasAberto=buildApostas(1)
-    /*let din=0
+    
+    for(let k=35;k<95;k++){
+        let din=0
         let ganho=0
         for(let ap of apostas){
-            if(ap.info[0]!=6){
+            if(ap.chance>=k){
                 din++
                 if(ap.green)ganho+=ap.odd
             }
         }
-        console.log((ganho/din).toFixed(2),din)
-   */ 
+        console.log(`${k}----${(ganho/din).toFixed(2)}----${din}`)
+    }
+    console.log('==========================================')
+    for(let k=0;k<200;k++){
+        let din=0
+        let ganho=0
+        for(let ap of apostas){
+            if(ap.ev>=k){
+                din++
+                if(ap.green)ganho+=ap.odd
+            }
+        }
+        if(din)console.log(`${k}----${(ganho/din).toFixed(2)}----${din}`)
+    }
+    
+    
+}
+function individual(){
+    const apostas=buildApostas(3)
+    for(let camp of ['ing1','esp1','ita1','ale1']){
+        let din=0
+        let ganho=0
+        for(let ap of apostas.filter(a=>a.camp==camp)){
+                din++
+                if(ap.green)ganho+=ap.odd
+        }
+        console.log(camp,(ganho/din).toFixed(2),din)
+    }
+    for(let tipo of [{nome:'vitoria',num:1},{nome:'gols',num:2},{nome:'escanteio',num:6}]){
+        let din=0
+        let ganho=0
+        for(let ap of apostas.filter(a=>a.info[0]==tipo.num)){
+                din++
+                if(ap.green)ganho+=ap.odd
+        }
+        console.log(tipo.nome,(ganho/din).toFixed(2),din)
+    }
+    
+    let green=0
+    let red=0
+    for(let ap of apostas.filter(a=>a.info[0]==6)){
 
+        if(ap.green){green++}else{red++}
+    }
+    console.log(green,red)
+}
+function multipla(){
+    const apostas=buildApostas(3)
+    const apostasAberto=buildApostas(1)
     for(let k=35;k<95;k++){
         let din=0
         let ganho=1
@@ -48,65 +114,9 @@ function auto(){
         }
         console.log(`${k}------${ganho.toFixed(2)}------${din}------${ganho2.toFixed(2)}-------${din2}`)
     }
-    /*
-    console.log('==========================================')
-    for(let k=35;k<95;k++){
-        let din=0
-        let ganho=0
-        for(let ap of apostas){
-            if(ap.chance>=k){
-                din++
-                if(ap.green)ganho+=ap.odd
-            }
-        }
-        ganho=((ganho/din).toFixed(2)-1)*100
-        console.log(`${k}----${ganho.toFixed(0)}----${din}`)
-    }*/
-    /*
-    console.log('==========================================')
-    for(let k=0;k<200;k++){
-        let din=0
-        let ganho=0
-        for(let ap of apostas){
-            if(ap.ev>=k){
-                din++
-                if(ap.green)ganho+=ap.odd
-            }
-        }
-        ganho=((ganho/din).toFixed(2)-1)*100
-        if(ganho)console.log(`${k}----${ganho.toFixed(0)}----${din}`)
-    }*/
-    
-   /*
-    for(let camp of ['ing1','esp1','ita1','ale1']){
-        let din=0
-        let ganho=0
-        for(let ap of apostas.filter(a=>a.camp==camp)){
-                din++
-                if(ap.green)ganho+=ap.odd
-        }
-        console.log(camp,(ganho/din).toFixed(2),din)
-    }
-    */
-   /*
-    for(let tipo of [{nome:'vitoria',num:1},{nome:'gols',num:2},{nome:'escanteio',num:6}]){
-        let din=0
-        let ganho=0
-        for(let ap of apostas.filter(a=>a.info[0]==tipo.num)){
-                din++
-                if(ap.green)ganho+=ap.odd
-        }
-        console.log(tipo.nome,(ganho/din).toFixed(2),din)
-    }*/
-    /*
-    let green=0
-    let red=0
-    for(let ap of apostas.filter(a=>a.info[0]==6)){
 
-        if(ap.green){green++}else{red++}
-    }
-    console.log(green,red)*/
-    const filtrada=apostasAberto.filter(ap=>ap.chance>=80)
+
+    const filtrada=apostasAberto.filter(ap=>ap.chance>=83)
     let total=0
     const qtd=filtrada.length
     for(let k=0;k<qtd;k++){
@@ -118,17 +128,7 @@ function auto(){
     }
     console.log(total/qtd)
 }
-auto()
+//multipla()
 
 
-function indicar(){
-    const futuras=buildFutura()
-    for(let partida of futuras){
-        const {camp,mandante,visitante}=partida
-        if(camp=='fra1'){
-            const context=buildContext(camp)
-            criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
-        }
-    }
-}
 

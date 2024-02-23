@@ -1,5 +1,7 @@
+import { tetoPosicao } from "../../index.js"
 import { buildContext } from "../bancos.js"
 import { getPartida } from "../especiais/getPartida.js"
+import { buscarApostasJogo } from "../profundo/apostas.js"
 import { acharPar } from "../profundo/dupla.js"
 import { criarOrdem } from "../profundo/individual.js"
 /*
@@ -26,14 +28,19 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
     const listao=[]
     ordemMandante.forEach(est=>{
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
-        if(pos<5){
+        if(pos<=tetoPosicao){
             const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
             if(par){
-                if(par.pos<5){
+                if(par.pos<=tetoPosicao){
                     
                     const aposta=acharAposta(mandante,visitante,camp,est)
-                    
-                    if(aposta){
+                    let ssss=true
+                    const apostasAntigas=buscarApostasJogo(camp,mandante,visitante)
+                    for(let nova of apostasAntigas){
+                        const {info}=nova
+                        if(info[0]==grandeza&&info[1]==c&&info[2]==asc&&info[3]==metade)ssss=false
+                    }
+                    if(aposta&&ssss){
                         
                         let naoTa=true
                         let index=0

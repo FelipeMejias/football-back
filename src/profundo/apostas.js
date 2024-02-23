@@ -29,8 +29,9 @@ export function buscarApostasJogo(camp,mandante,visitante){
         }else{
             odd=[]
             const zerado=num.length%3==0
-            let qtd=zerado?0:parseInt(num[0])
-            for(let k=zerado?0:1;k<num.length;k+=3){
+            const unidade=num.length%3==1
+            let qtd=zerado?0:unidade?parseInt(num[0]):parseInt(`${num[0]}${num[1]}`)
+            for(let k=(zerado?0:unidade?1:2);k<num.length;k+=3){
                 const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
                 const green=jogoAntigo?(grandeza==2?confGols({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):confEsc({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)):undefined
                 odd.push({green,q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})

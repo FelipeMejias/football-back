@@ -1,3 +1,4 @@
+import { tetoPosicao } from "../../index.js";
 import { buildContext } from "../bancos.js";
 import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
@@ -8,7 +9,6 @@ export function criarOrdemDupla(camp,mandante,visitante){
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
     const apostas=buscarApostasJogo(camp,mandante,visitante)
-    
     ordemMandante.forEach(est=>{
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
         const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
@@ -24,7 +24,7 @@ export function criarOrdemDupla(camp,mandante,visitante){
         }else{return true}
     })
     for(let parzinho of ordenada1){
-        if(parzinho[0].pos<5&&parzinho[1].pos<5){
+        if(parzinho[0].pos<=tetoPosicao&&parzinho[1].pos<=tetoPosicao){
             const {grandeza,c,asc,metade}=parzinho[0]
             const codigo=`${grandeza}${c}${asc}${metade}`
             for(let k=0;k<apostas.length;k++){
