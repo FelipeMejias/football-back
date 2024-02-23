@@ -85,10 +85,10 @@ router.get('/analise/:camp/:mandante/:visitante',async(req,res)=>{
     const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
     res.status(200).send(resp)
 })
-router.get('/lista-analise/:camp/:time',async(req,res)=>{
-    const {camp,time}=req.params
+router.get('/lista-analise/:camp/:time/:manvis',async(req,res)=>{
+    const {camp,time,manvis}=req.params
     const {grandeza,c,asc,metade,valor,estadia}=req.query
-    const context=buildContext(camp)
+    const context=buildContext(camp,manvis)
     const resp=listaAnalise(context,parseInt(grandeza),parseInt(estadia),parseInt(metade),time,parseInt(c),parseInt(asc),parseFloat(valor))
     res.status(200).send(resp)
 })

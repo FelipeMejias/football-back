@@ -1,8 +1,8 @@
 import { quantoTempoFalta } from "../utils.js"
-import { buildContext } from "../bancos.js"
+import { buildContext, paths } from "../bancos.js"
 export function buildFutura(){
     let desordenada=[]
-    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1','fra1'/*,'bra2'*/]
+    const camps=paths
     camps.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })

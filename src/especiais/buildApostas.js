@@ -1,4 +1,4 @@
-import { buildContext } from "../bancos.js"
+import { buildContext, paths } from "../bancos.js"
 import { buscarApostasJogo } from "../profundo/apostas.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
@@ -6,7 +6,7 @@ import { confPlacar } from "../conferencias/confPlacar.js"
 export function buildApostas(pageBet){
     let desordenada=[]
     let ordenada
-    const camps=[/*'bra1',*/'ing1','esp1','ita1','ale1','fra1'/*,'bra2'*/]
+    const camps=paths
     if(pageBet==1){
         camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
         ordenada= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
@@ -51,7 +51,7 @@ export function buildApostas(pageBet){
                     const chance=(ca+fo)/2
                     resp.push({
                         ev:calcularEV(chance,ode),
-                        chance,
+                        chance:chance==100?99:chance,
                         texto:tex,
                         odd:ode,
                         camp,mandante,visitante,
@@ -70,7 +70,7 @@ export function buildApostas(pageBet){
 
                 resp.push({
                     ev:calcularEV(chance,ode),
-                    chance,
+                    chance:chance==100?99:chance,
                     texto:tex,
                     odd:ode,
                     camp,mandante,visitante,

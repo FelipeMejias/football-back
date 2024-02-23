@@ -4,7 +4,7 @@ import {confGols} from '../conferencias/confGols.js'
 import { buildContext } from '../bancos.js'
 import { buscarApostasJogo } from '../profundo/apostas.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
-    const context=buildContext(camp)
+    const context=buildContext(camp,mandante+visitante)
     const cPar=c==1?3:c==2?2:1
     const mandantePuro=conferir(context,grandeza,c,asc,0,metade,valor,mandante)
     const visitantePuro=conferir(context,grandeza,cPar,asc,0,metade,valor,visitante)

@@ -16,7 +16,7 @@ app.listen(port,()=>console.log(`listening on port ${port}`))
 function auto(){
     
     const apostas=buildApostas(3)
-    
+    const apostasAberto=buildApostas(1)
     /*let din=0
         let ganho=0
         for(let ap of apostas){
@@ -27,19 +27,30 @@ function auto(){
         }
         console.log((ganho/din).toFixed(2),din)
    */ 
-    for(let k=35;k<90;k++){
+
+    for(let k=35;k<95;k++){
         let din=0
         let ganho=1
         for(let ap of apostas){
-            if(ap.chance>=k&&ap.info[0]!=6){
+            if(ap.chance>=k){
                 din++
                 if(ap.green){ganho*=ap.odd}else{ganho=0}
             }
         }
-        console.log(`chance:${k} ganho:${(ganho).toFixed(2)} qtdApostas:${din}`)
+        if(ganho==0)continue
+        let din2=0
+        let ganho2=1
+        for(let ap of apostasAberto){
+            if(ap.chance>=k){
+                din2++
+                ganho2*=ap.odd
+            }
+        }
+        console.log(`${k}------${ganho.toFixed(2)}------${din}------${ganho2.toFixed(2)}-------${din2}`)
     }
-    
-    for(let k=35;k<90;k++){
+    /*
+    console.log('==========================================')
+    for(let k=35;k<95;k++){
         let din=0
         let ganho=0
         for(let ap of apostas){
@@ -48,9 +59,12 @@ function auto(){
                 if(ap.green)ganho+=ap.odd
             }
         }
-        console.log(`chance:${k} ganho:${(ganho/din).toFixed(2)} qtdApostas:${din}`)
-    }
-    for(let k=90;k<200;k++){
+        ganho=((ganho/din).toFixed(2)-1)*100
+        console.log(`${k}----${ganho.toFixed(0)}----${din}`)
+    }*/
+    /*
+    console.log('==========================================')
+    for(let k=0;k<200;k++){
         let din=0
         let ganho=0
         for(let ap of apostas){
@@ -59,8 +73,9 @@ function auto(){
                 if(ap.green)ganho+=ap.odd
             }
         }
-        if(ganho)console.log(`ev:${k} ganho:${(ganho/din).toFixed(2)} qtdApostas:${din}`)
-    }
+        ganho=((ganho/din).toFixed(2)-1)*100
+        if(ganho)console.log(`${k}----${ganho.toFixed(0)}----${din}`)
+    }*/
     
    /*
     for(let camp of ['ing1','esp1','ita1','ale1']){
@@ -91,6 +106,17 @@ function auto(){
         if(ap.green){green++}else{red++}
     }
     console.log(green,red)*/
+    const filtrada=apostasAberto.filter(ap=>ap.chance>=80)
+    let total=0
+    const qtd=filtrada.length
+    for(let k=0;k<qtd;k++){
+        let ganho=1
+        for(let m=0;m<qtd;m++){
+            if(m!=k)ganho*=filtrada[m].odd
+        }
+        total+=ganho
+    }
+    console.log(total/qtd)
 }
 auto()
 
@@ -101,9 +127,8 @@ function indicar(){
         const {camp,mandante,visitante}=partida
         if(camp=='fra1'){
             const context=buildContext(camp)
-            criarOrdemDuplaAposta(context,camp,mandante,visitante,1)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,2)
         }
     }
 }
-
 
