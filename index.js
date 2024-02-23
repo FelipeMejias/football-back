@@ -128,7 +128,7 @@ function multipla(){
     }
     console.log(total/qtd)
 }
-//multipla()
+multipla()
 
 
 
