@@ -13,18 +13,21 @@ app.use(router)
 const port =process.env.PORT||4003
 app.listen(port,()=>console.log(`listening on port ${port}`))
 
-function indicar(){
+export const tetoPosicao=5
+indicar('',2)
+
+
+function indicar(campeonato,phase){
     const futuras=buildFutura()
     for(let partida of futuras){
         const {camp,mandante,visitante}=partida
-        if(camp=='fra1'||true){
+        if(camp==`${campeonato}1`){
             const context=buildContext(camp)
-            criarOrdemDuplaAposta(context,camp,mandante,visitante,1)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,phase)
         }
     }
 }
-export const tetoPosicao=5
-//indicar()
+
 
 //###################################################################
 function todas(){
@@ -64,33 +67,42 @@ function auto(){
 }
 function individual(){
     const apostas=buildApostas(3)
-    for(let camp of ['ing1','esp1','ita1','ale1']){
+    for(let camp of ['ing1','esp1','ita1','ale1','fra1']){
         let din=0
         let ganho=0
-        for(let ap of apostas.filter(a=>a.camp==camp)){
+        let red=0
+        let green=0
+        for(let ap of apostas.filter(a=>(a.camp==camp))){
                 din++
                 if(ap.green)ganho+=ap.odd
+                if(ap.green){green++}else{red++}
         }
-        console.log(camp,(ganho/din).toFixed(2),din)
+        console.log(camp,'lucro:'+(ganho/din).toFixed(2),'greens:'+green,'reds:'+red)
     }
     for(let tipo of [{nome:'vitoria',num:1},{nome:'gols',num:2},{nome:'escanteio',num:6}]){
         let din=0
         let ganho=0
+        let red=0
+        let green=0
         for(let ap of apostas.filter(a=>a.info[0]==tipo.num)){
                 din++
                 if(ap.green)ganho+=ap.odd
+                if(ap.green){green++}else{red++}
         }
-        console.log(tipo.nome,(ganho/din).toFixed(2),din)
+        console.log(tipo.nome,'lucro:'+(ganho/din).toFixed(2),'greens:'+green,'reds:'+red)
+        //console.log(tipo.nome,(ganho/din).toFixed(2),din)
     }
-    
-    let green=0
-    let red=0
-    for(let ap of apostas.filter(a=>a.info[0]==6)){
-
-        if(ap.green){green++}else{red++}
-    }
-    console.log(green,red)
-}
+    let din=0
+        let ganho=0
+        let red=0
+        let green=0
+        for(let ap of apostas.filter(a=>a.info[0]!=6)){
+                din++
+                if(ap.green)ganho+=ap.odd
+                if(ap.green){green++}else{red++}
+        }
+        console.log('lucro:'+(ganho/din).toFixed(2),'greens:'+green,'reds:'+red)
+}//individual()
 function multipla(){
     const apostas=buildApostas(3)
     const apostasAberto=buildApostas(1)
@@ -128,7 +140,7 @@ function multipla(){
     }
     console.log(total/qtd)
 }
-multipla()
+//multipla()
 
 
 

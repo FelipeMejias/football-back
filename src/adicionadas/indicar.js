@@ -34,12 +34,15 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
                 if(par.pos<=tetoPosicao){
                     
                     const aposta=acharAposta(mandante,visitante,camp,est)
+                    
                     let ssss=true
+                    /* QUANDO FUI ADICIONAR APOSTAS COM TETO MAIOR
                     const apostasAntigas=buscarApostasJogo(camp,mandante,visitante)
                     for(let nova of apostasAntigas){
                         const {info}=nova
                         if(info[0]==grandeza&&info[1]==c&&info[2]==asc&&info[3]==metade)ssss=false
-                    }
+                    }*/
+
                     if(aposta&&ssss){
                         
                         let naoTa=true
