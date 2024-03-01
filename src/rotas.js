@@ -100,3 +100,20 @@ router.get('/classificacao/:camp',async(req,res)=>{
     const resp={classif,parts}
     res.status(200).send(resp)
 })
+router.get('/resultados',async(req,res)=>{
+    const {camps:campsRaw,tipos:tiposRaw}=req.query
+    const camps=campsRaw.split('-')
+    const tipos=tiposRaw.split('-')
+    const apostas=buildApostas(3)
+    let din=0;let ganho=0;let red=0;let green=0
+    for(let ap of apostas.filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])))){
+        din++
+        if(ap.green)ganho+=ap.odd
+        if(ap.green){green++}else{red++}
+    }
+    const porc=Math.round((green/din)*100)
+    const lucroRaw=ganho/din
+    const lucroMedium=Math.round((lucroRaw%1)*100)
+    const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium)
+    res.status(200).send({porc,green,red,lucro})
+})
