@@ -3,6 +3,7 @@ import { buscarApostasJogo } from "../profundo/apostas.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
+import { quantoTempoFalta } from "../utils.js"
 export function buildApostas(pageBet){
     let desordenada=[]
     let ordenada
@@ -24,7 +25,7 @@ export function buildApostas(pageBet){
     const resp=[]
     
     for(let partida of ordenada){
-        const {camp,mandante,visitante}=partida
+        const {camp,mandante,visitante,cinza}=partida
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
         for(let ap of apostas){
@@ -55,7 +56,7 @@ export function buildApostas(pageBet){
                         texto:tex,
                         odd:ode,
                         camp,mandante,visitante,
-                        green,
+                        green:cinza?null:green,
                         info,
                         valor,
                         nome:`${camp+mandante+visitante}${info}${valor}`
@@ -74,7 +75,7 @@ export function buildApostas(pageBet){
                     texto:tex,
                     odd:ode,
                     camp,mandante,visitante,
-                    green,
+                    green:cinza?null:green,
                     info,
                     valor,
                     nome:`${camp+mandante+visitante}${info}`
@@ -94,7 +95,8 @@ function extrairFuturas(camp){
             const mandante=nome[0]+nome[1]+nome[2]
             const visitante=nome[3]+nome[4]+nome[5]
             const data=part[1]
-            resp.push({
+            const texto=quantoTempoFalta(data)
+            if(texto!='Finalizado')resp.push({
                 mandante,visitante,data,camp
             })
         }else{
@@ -104,7 +106,7 @@ function extrairFuturas(camp){
     return resp
 }
 function extrairPassadas(camp){
-    const {partidasTotais}=buildContext(camp)
+    const {partidasTotais}=buildContext(camp,true)
     const resp=[]
     for(let k=0;k<partidasTotais.length;k++){
         const part=partidasTotais[k]
@@ -116,6 +118,17 @@ function extrairPassadas(camp){
             resp.push({
                 mandante,visitante,data,camp,part
             })
+        }else if(part[1].length!=2&&part.length==3){
+            const nome=part[0]
+            const mandante=nome[0]+nome[1]+nome[2]
+            const visitante=nome[3]+nome[4]+nome[5]
+            const data=part[1]
+            const texto=quantoTempoFalta(data)
+            if(texto=='Finalizado'){
+                resp.push({
+                    mandante,visitante,data,camp,cinza:true
+                })
+            }
         }
     }
     return resp
