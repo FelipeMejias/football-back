@@ -101,19 +101,23 @@ router.get('/classificacao/:camp',async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/resultados',async(req,res)=>{
-    const {camps:campsRaw,tipos:tiposRaw}=req.query
+    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
     const camps=campsRaw.split('-')
     const tipos=tiposRaw.split('-')
-    const apostas=buildApostas(3)
+    const ev=parseInt(evRaw)
+    const apostasRaw=buildApostas(3)
+    const apostas=apostasRaw.filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])&&a.ev>=ev))
     let din=0;let ganho=0;let red=0;let green=0
-    for(let ap of apostas.filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])))){
+    for(let ap of apostas){
         din++
         if(ap.green)ganho+=ap.odd
         if(ap.green){green++}else{red++}
     }
+    const futurasRaw=buildApostas(1)
+    const futuras=futurasRaw.filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])&&a.ev>=ev))
     const porc=Math.round((green/din)*100)
     const lucroRaw=ganho/din
     const lucroMedium=Math.round((lucroRaw%1)*100)
     const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium)
-    res.status(200).send({porc,green,red,lucro})
+    res.status(200).send({porc,green,red,lucro,apostas:[apostas,futuras]})
 })
