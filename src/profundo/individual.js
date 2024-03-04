@@ -200,9 +200,27 @@ export function criarOrdem(context,time,enxuta=false){
             })
         })
     }
-    return resp
+    return ordenarIndividual(resp)
 }
-
+function ordenarIndividual(lista){
+    const used=[]
+    const final=[]
+    for(let k=0;k<lista.length;k++){
+        let using
+        let posi={pos:Infinity}
+        for(let h=0;h<lista.length;h++){
+            if(used.includes(h))continue
+            const item=lista[h]
+            if(item.pos<posi.pos || ( item.pos==posi.pos && item.relev>posi.relev )){
+                using=h
+                posi=item
+            }
+        }
+        used.push(using)
+        final.push(posi)
+    }
+    return final
+}
 export function fucarTabela(tabela,time,bloqueio_c2=false){
     const resposta=[]
     for(let c=1;c<=3;c++){
