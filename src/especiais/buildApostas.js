@@ -4,7 +4,7 @@ import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
 import { quantoTempoFalta } from "../utils.js"
-export function buildApostas(pageBet){
+export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]
     let ordenada
     const camps=paths
@@ -21,6 +21,7 @@ export function buildApostas(pageBet){
         camps.forEach(camp=>{lista2Desord=[...lista2Desord,...extrairPassadas(camp)]})
         const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
+        if(dataInicio)ordenada=ordenada.filter(j=>j.data>dataInicio&&j.data<dataFim)
     }
     const resp=[]
     

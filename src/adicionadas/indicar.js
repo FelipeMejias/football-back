@@ -99,7 +99,16 @@ export function acharAposta(mand,visi,camp,stat){
             }else if(c==3){
                 texto=`${visitante} vencer`
             }
-            if(metade==0)texto+=` a partida`
+        }else{if(metade!=0)return null
+            if(c==1){
+                texto=`${visitante} vencer ou empatar`
+            }else if(c==2){
+                texto=`${mandante} ou ${visitante} vencer`
+            }else if(c==3){
+                texto=`${mandante} vencer ou empatar`
+            }
+        }
+        if(metade==0)texto+=` a partida`
         if(metade==1){
             texto+=` o 1º tempo`
         }
@@ -107,9 +116,6 @@ export function acharAposta(mand,visi,camp,stat){
             texto+=` o 2º tempo`
         }
         return texto
-        }
-        
-        
     }else if(grandeza==2){
         if(c==1){
             if(asc){
@@ -134,7 +140,7 @@ export function acharAposta(mand,visi,camp,stat){
         if(metade==1)texto+=` no 1º tempo`
         if(metade==2)texto+=` no 2º tempo`
         return texto
-    }else if(grandeza==6){
+    }else if(grandeza==6){return null
         if(c==1){
             if(asc){
                 texto=`Menos escanteios para ${mandante}`

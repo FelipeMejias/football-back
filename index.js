@@ -10,15 +10,15 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
-const port =process.env.PORT||4003
+const port =process.env.PORT||4001
 app.listen(port,()=>console.log(`listening on port ${port}`))
 
 export const tetoPosicao=5
-indicar('',2)
+//indicar('ale',2)
 
 
 function indicar(campeonato,phase){
-    const futuras=buildFutura()
+    const futuras=buildFutura().filter(j=>j.data>'240305')
     for(let partida of futuras){
         const {camp,mandante,visitante}=partida
         if(camp==`${campeonato}1`){
