@@ -1,11 +1,11 @@
 import { tetoPosicao } from "../../index.js"
 import { buildContext } from "../bancos.js"
+import { buildFutura } from "../especiais/buildFutura.js"
 import { getPartida } from "../especiais/getPartida.js"
 import { buscarApostasJogo } from "../profundo/apostas.js"
 import { acharPar } from "../profundo/dupla.js"
 import { criarOrdem } from "../profundo/individual.js"
 /*
-
     ['','2402'],
     ['','2402'],
     ['','2402'],
@@ -16,9 +16,20 @@ import { criarOrdem } from "../profundo/individual.js"
     ['','2402'],
     ['','2402'],
     ['','2402'],
-
-
 */
+const campeonato='fra'
+const phase=1
+
+export function indicar(){return
+    const futuras=buildFutura()
+    for(let partida of futuras){
+        const {camp,mandante,visitante}=partida
+        if(camp==`${campeonato}1`){
+            const context=buildContext(camp)
+            criarOrdemDuplaAposta(context,camp,mandante,visitante,phase)
+        }
+    }
+}
 export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
     let y='['
     console.log(`==== ${mandante.toUpperCase()} x ${visitante.toUpperCase()} ====`)
