@@ -3,6 +3,7 @@ import { createEsp1 } from "./adicionadas/p3_ESP.js";
 import { createIng1 } from "./adicionadas/p2_ING.js";
 import { createAle1 } from "./adicionadas/p5_ALE.js";
 import { createFra1 } from "./adicionadas/p6_FRA.js";
+import { createAra1 } from "./adicionadas/p7_ARA.js";
 
 export function buildContext(camp,inteiro=false){
     //if(camp=='bra1')return {partidasTotais:inteiro===true?createBra1:inteiro?extrairPosteriores(createBra1,inteiro):extrairFuturas(createBra1),listaTimes:contextBra1.listaTimes}
@@ -11,6 +12,7 @@ export function buildContext(camp,inteiro=false){
     if(camp=='ita1')return {partidasTotais:inteiro===true?createIta1:inteiro?extrairPosteriores(createIta1,inteiro):extrairFuturas(createIta1),listaTimes:contextIta1.listaTimes}
     if(camp=='ale1')return {partidasTotais:inteiro===true?createAle1:inteiro?extrairPosteriores(createAle1,inteiro):extrairFuturas(createAle1),listaTimes:contextAle1.listaTimes}
     if(camp=='fra1')return {partidasTotais:inteiro===true?createFra1:inteiro?extrairPosteriores(createFra1,inteiro):extrairFuturas(createFra1),listaTimes:contextFra1.listaTimes}
+    if(camp=='ara1')return {partidasTotais:inteiro===true?createAra1:inteiro?extrairPosteriores(createAra1,inteiro):extrairFuturas(createAra1),listaTimes:contextAra1.listaTimes}
     //if(camp=='bra2')return {partidasTotais:inteiro===true?createBra2:inteiro?extrairPosteriores(createBra2,inteiro):extrairFuturas(createBra2),listaTimes:contextBra2.listaTimes}
 }
 function extrairFuturas(array){
@@ -71,7 +73,12 @@ const contextBra1={
       listaTimes:['abc','ago','ava','bot','cea','cha','crb','cri','gua','itu','juv','lon','mir','nov','pon','sam','spo','tom','vil','vit'],
       path:'bra2'
     }
+    const contextAra1={
+      listaNomes:['Abha','Al-Ahli','Al Akhdoud','Dhamk','Al Ettifaq','Al Fateh','Al Feiha','Al Hazm','Al-Hilal','Al-Ittihad','Al Khaleej','Al-Nassr','Al-Raed','Al-Riyadh','Al-Shabab','Al Taawon','Al Taee','Al Wehda'],
+      listaTimes:['abh','ahl','akh','dha','ett','fat','fei','haz','hil','itt','kha','nas','rae','riy','sha','taa','tae','weh'],
+      path:'ara1'
+    }
 export const contexts=[
-    contextIng1,contextEsp1,contextIta1,contextAle1,contextFra1
+    contextIng1,contextEsp1,contextIta1,contextAle1,contextFra1,contextAra1
   ]
-export  const paths=['ing1','esp1','ita1','ale1','fra1']
+export  const paths=['ing1','esp1','ita1','ale1','fra1','ara1']
