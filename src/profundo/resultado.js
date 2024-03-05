@@ -50,7 +50,11 @@ function porRodada(camps,tipos,ev){
         const dataInicio=data
         data=avanca7dias(data)
         const apostas=buildApostas(2,dataInicio,data).filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])&&a.ev>=ev))
-        if(apostas)resp.push(apostas)
+        if(apostas.length==0&&dataInicio>agora){
+            
+        }else{
+            resp.push(apostas)
+        }
         if(dataInicio>agora){
             aindaFalta=false
         }

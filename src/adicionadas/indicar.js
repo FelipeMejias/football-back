@@ -21,7 +21,7 @@ const campeonato=''
 const phase=1
 
 export function indicar(){
-    const futuras=buildFutura()
+    const futuras=buildFutura().filter(jogo=>!jogo.placar)
     for(let partida of futuras){
         const {camp,mandante,visitante}=partida
         if(camp==`${campeonato}1`){

@@ -19,6 +19,7 @@ import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
 import { colocarLabels } from './utils.js'
+import { preencher } from './profundo/preencher.js'
 
 export const router=Router()
 
@@ -108,4 +109,8 @@ router.get('/resultados',async(req,res)=>{
     const resp=buildResultado(camps,tipos,ev)
     res.status(200).send(resp)
 })
-    
+router.post('/preencher',async(req,res)=>{
+    const {camp,mandante,visitante,escant,gols}=req.body
+    const part=preencher(camp,mandante,visitante,escant,gols)
+    res.status(200).send(part)
+})
