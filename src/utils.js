@@ -1,14 +1,15 @@
 import dayjs from "dayjs"
 
 export function quantoTempoFalta(time){
+    const nowRaw=horario()
+    const now=dayjs(nowRaw)
     const ano='20'+time[0]+time[1]
     const mes=time[2]+time[3]
     const dia=time[4]+time[5]
     const hora=time[6]+time[7]
     const minuto=time[8]+time[9]
     const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
-    const hoje=dayjs()
-    const mt= date.diff(hoje, 'minute', true)
+    const mt= date.diff(now, 'minute', true)
     const dias=Math.floor(mt/1440)
     const horas=Math.floor(mt%1440/60)
     const minutos=Math.floor(mt%1440%60)
@@ -20,7 +21,7 @@ export function quantoTempoFalta(time){
         }
     }else{
         if(dias||horas){
-            const parte1=textoDia(date,hoje,dias)
+            const parte1=textoDia(date,now,dias)
             return `${parte1}-${hora}:${minuto}`
         }else{
             return `${minutos==1?'Falta':'Faltam'} ${minutos} ${minutos==1?'minuto':'minutos'} `
@@ -85,4 +86,18 @@ function textoDia(jogo,hoje,dias){
         return 'Sábado'
     }
 }
-
+function horario(){
+    const str=new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"})
+    const list=str.split(', ')
+    const date=list[0];
+    const arr=date.split('/')
+    const finalDate=`${arr[2]}-${arr[0].length==2?arr[0]:`0${arr[0]}`}-${arr[1].length==2?arr[1]:`0${arr[1]}`}`
+    const time=list[1].split(' ')
+    const parts=time[0].split(':')
+    let hour=parseInt(parts[0])
+    if(time[1]=='PM')hour+=hour==12?0:12
+    if(time[1]=='AM'&&time[0][0]==1&&time[0][1]==2)hour=0
+    const finalTime=`${hour>9?hour:`0${hour}`}:${parts[1].length==2?parts[1]:`0${parts[1]}`}:${parts[2].length==2?parts[2]:`0${parts[2]}`}`
+    const resp=`${finalDate} ${finalTime}`
+    return resp
+}
