@@ -4,6 +4,7 @@ import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
 
 export function criarOrdemDupla(camp,mandante,visitante){
+    const tetoReal=tetoPosicao+(camp=='arg1'?1:0)
     const context=buildContext(camp)
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
@@ -24,7 +25,7 @@ export function criarOrdemDupla(camp,mandante,visitante){
         }else{return true}
     })
     for(let parzinho of ordenada1){
-        if(parzinho[0].pos<=tetoPosicao&&parzinho[1].pos<=tetoPosicao){
+        if(parzinho[0].pos<=tetoReal&&parzinho[1].pos<=tetoReal){
             const {grandeza,c,asc,metade}=parzinho[0]
             const codigo=`${grandeza}${c}${asc}${metade}`
             for(let k=0;k<apostas.length;k++){

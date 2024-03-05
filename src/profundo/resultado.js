@@ -18,10 +18,16 @@ export function buildResultado(camps,tipos,ev){
     const rodadas=porRodada(camps,tipos,ev)
     const respRodadas=[]
     for(let k=rodadas.length-1;k>=0;k--){
-        let din2=0;let ganho2=0;let red2=0;let green2=0;let abertas=0
+        let din2=0;let ganho2=0;
+        let red2=0;let green2=0;
+        let abertas=0;
+        let ganhoAdd=0;let dinAdd=0
+
         for(let ap of rodadas[k]){
             if(ap.green===null||ap.green===undefined){
                 if(ap.green===undefined)abertas++
+                ganhoAdd+=ap.odd
+                dinAdd++
             }else{
                 din2++
             if(ap.green)ganho2+=ap.odd
@@ -33,7 +39,12 @@ export function buildResultado(camps,tipos,ev){
         const lucroRaw2=ganho2/din2
         const lucroMedium2=Math.round((lucroRaw2%1)*100)
         const lucro2=lucroRaw2>1?lucroMedium2:-(100-lucroMedium2)
-        respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:rodadas[k]})
+
+        const lucroPotRaw=(ganho2+ganhoAdd)/(din2+dinAdd)
+        const lucroPotMedium=Math.round((lucroPotRaw%1)*100)
+        const lucroPotencial=lucroPotRaw>1?lucroPotMedium:-(100-lucroPotMedium)
+
+        respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:rodadas[k],lucroPotencial})
     }
     const porc=Math.round((green/din)*100)
     const lucroRaw=ganho/din

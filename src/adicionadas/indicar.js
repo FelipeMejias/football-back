@@ -18,7 +18,7 @@ import { criarOrdem } from "../profundo/individual.js"
     ['','2403'],
 */
 const campeonato=''
-const phase=1
+const phase=2
 
 export function indicar(){
     const futuras=buildFutura().filter(jogo=>!jogo.placar)
@@ -31,6 +31,7 @@ export function indicar(){
     }
 }
 export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
+    const tetoReal=tetoPosicao+(camp=='arg1'?1:0)
     let y='['
     console.log(`==== ${mandante.toUpperCase()} x ${visitante.toUpperCase()} ====`)
     const ordemMandante=criarOrdem(context,mandante,true)
@@ -39,10 +40,10 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
     const listao=[]
     ordemMandante.forEach(est=>{
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
-        if(pos<=tetoPosicao){
+        if(pos<=tetoReal){
             const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
             if(par){
-                if(par.pos<=tetoPosicao){
+                if(par.pos<=tetoReal){
                     
                     const aposta=acharAposta(mandante,visitante,camp,est)
                     
