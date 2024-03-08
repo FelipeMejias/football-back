@@ -5,7 +5,7 @@ import { createAle1 } from "../adicionadas/p3_ALE.js"
 import { createFra1 } from "../adicionadas/p5_FRA.js"
 import { createAra1 } from "../adicionadas/p8_ARA.js"
 import { createArg1 } from "../adicionadas/p9_ARG.js"
-import { buildContext } from "../bancos.js"
+import { buildContext, ligas } from "../bancos.js"
 import { createPor1 } from "../adicionadas/p7_POR.js"
 import { createHol1 } from "../adicionadas/p6_HOL.js"
 
@@ -39,24 +39,7 @@ export function preencher(camp,mandante,visitante,escant,gols){
             novaPart.push(golsTraduzido)
         }
     }
-    if(camp=='ing1'){
-        createIng1.splice(indice, 1, novaPart)
-    }else if(camp=='esp1'){
-        createEsp1.splice(indice, 1, novaPart)
-    }else if(camp=='ita1'){
-        createIta1.splice(indice, 1, novaPart)
-    }else if(camp=='ale1'){
-        createAle1.splice(indice, 1, novaPart)
-    }else if(camp=='fra1'){
-        createFra1.splice(indice, 1, novaPart)
-    }else if(camp=='ara1'){
-        createAra1.splice(indice, 1, novaPart)
-    }else if(camp=='arg1'){
-        createArg1.splice(indice, 1, novaPart)
-    }else if(camp=='por1'){
-        createPor1.splice(indice, 1, novaPart)
-    }else if(camp=='hol1'){
-        createHol1.splice(indice, 1, novaPart)
-    }
+    const {paths,bancos}=ligas
+    bancos[paths.indexOf(camp)].splice(indice, 1, novaPart)
     return novaPart
 }
