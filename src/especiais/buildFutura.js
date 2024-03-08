@@ -1,10 +1,10 @@
 import { quantoTempoFalta } from "../utils.js"
-import { buildContext, paths } from "../bancos.js"
+import { buildContext, ligas } from "../bancos.js"
 import dayjs from "dayjs"
 export function buildFutura(){
     let desordenada=[]
-    const camps=paths
-    camps.forEach(camp=>{
+    const {paths}=ligas
+    paths.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })
     const ordenada1= desordenada.sort((a,b)=>{

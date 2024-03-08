@@ -1,8 +1,7 @@
 import { tetoPosicao } from "../../index.js"
-import { buildContext, contexts, paths } from "../bancos.js"
+import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"
 import { getPartida } from "../especiais/getPartida.js"
-import { buscarApostasJogo } from "../profundo/apostas.js"
 import { acharPar } from "../profundo/dupla.js"
 import { criarOrdem } from "../profundo/individual.js"
 /*
@@ -97,6 +96,7 @@ export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
 }
 
 export function acharAposta(mand,visi,camp,stat){
+    const {contexts,paths}=ligas
     const {listaNomes,listaTimes}=contexts[paths.indexOf(camp)]
     const mandante=listaNomes[listaTimes.indexOf(mand)]
     const visitante=listaNomes[listaTimes.indexOf(visi)]
@@ -111,15 +111,7 @@ export function acharAposta(mand,visi,camp,stat){
             }else if(c==3){
                 texto=`${visitante} vencer`
             }
-        }else{if(metade!=0)return null
-            if(c==1){
-                texto=`${visitante} vencer ou empatar`
-            }else if(c==2){
-                texto=`${mandante} ou ${visitante} vencer`
-            }else if(c==3){
-                texto=`${mandante} vencer ou empatar`
-            }
-        }
+        }else{return null}
         if(metade==0)texto+=` a partida`
         if(metade==1){
             texto+=` o 1º tempo`

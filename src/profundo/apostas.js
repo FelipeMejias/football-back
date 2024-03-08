@@ -1,4 +1,4 @@
-import { buildContext, contexts, paths } from "../bancos.js"
+import { buildContext, ligas } from "../bancos.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
@@ -43,6 +43,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
     return apostas
 }
 function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade){
+    const {paths,contexts}=ligas
     const {listaNomes,listaTimes}=contexts[paths.indexOf(camp)]
     const mandante=listaNomes[listaTimes.indexOf(mand)]
     const visitante=listaNomes[listaTimes.indexOf(visi)]

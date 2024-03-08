@@ -1,4 +1,4 @@
-import { buildContext, paths } from "../bancos.js"
+import { buildContext, ligas } from "../bancos.js"
 import { buscarApostasJogo } from "../profundo/apostas.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
@@ -7,18 +7,18 @@ import { quantoTempoFalta } from "../utils.js"
 export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]
     let ordenada
-    const camps=paths
+    const {paths}=ligas
     if(pageBet==1){
-        camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
+        paths.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
         ordenada= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
     }else if(pageBet==3){
-        camps.forEach(camp=>{desordenada=[...desordenada,...extrairPassadas(camp)]})
+        paths.forEach(camp=>{desordenada=[...desordenada,...extrairPassadas(camp)]})
         ordenada= desordenada.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
     }else{
-        camps.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
+        paths.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
         const lista1= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
         let lista2Desord=[]
-        camps.forEach(camp=>{lista2Desord=[...lista2Desord,...extrairPassadas(camp)]})
+        paths.forEach(camp=>{lista2Desord=[...lista2Desord,...extrairPassadas(camp)]})
         const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
         if(dataInicio)ordenada=ordenada.filter(j=>j.data>dataInicio&&j.data<dataFim)
