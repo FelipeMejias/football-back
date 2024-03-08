@@ -20,10 +20,13 @@ import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
 import { colocarLabels } from './utils.js'
 import { preencher } from './profundo/preencher.js'
+import { validateCamp } from './validators/campValidator.js'
+import { validateTime } from './validators/timeValidator.js'
+import { validatePost } from './validators/postValidator.js'
 
 export const router=Router()
 
-router.get('/tabelas/:camp/:pagestr',async(req,res)=>{
+router.get('/tabelas/:camp/:pagestr',validateCamp,async(req,res)=>{
     const {camp,pagestr}=req.params
     const page=parseInt(pagestr)
     const context=buildContext(camp)
@@ -59,14 +62,14 @@ router.get('/apostasgerais/:aberto',async(req,res)=>{
 
     res.status(200).send(lista)
 })
-router.get('/partida/:camp/:manvis',async(req,res)=>{
+router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
     const partida=getPartida(partidasTotais,manvis)
     const resp=create(partida,camp)
     res.status(200).send(resp)
 })
-router.get('/times/:camp/:time',async(req,res)=>{
+router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)=>{
     const {time,camp}=req.params
     const context=buildContext(camp)
     const stats=criarOrdem(context,time)
@@ -74,7 +77,7 @@ router.get('/times/:camp/:time',async(req,res)=>{
     const resp={stats,partidas}
     res.status(200).send(resp)
 })
-router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
+router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {partidasTotais}=buildContext(camp,true)
     const partida= getPartida(partidasTotais,mandante+visitante)
@@ -82,20 +85,20 @@ router.get('/guru/:camp/:mandante/:visitante',async(req,res)=>{
     const resp=criarOrdemDupla(camp,mandante,visitante)
     res.status(200).send({resp,data})
 })
-router.get('/analise/:camp/:mandante/:visitante',async(req,res)=>{
+router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
     const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),grandeza==1?0:parseInt(asc),parseInt(metade),parseFloat(valor))
     res.status(200).send(resp)
 })
-router.get('/lista-analise/:camp/:time/:manvis',async(req,res)=>{
+router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvis','time'),async(req,res)=>{
     const {camp,time,manvis}=req.params
     const {grandeza,c,asc,metade,valor,estadia}=req.query
     const context=buildContext(camp,manvis)
     const resp=listaAnalise(context,parseInt(grandeza),parseInt(estadia),parseInt(metade),time,parseInt(c),parseInt(asc),parseFloat(valor))
     res.status(200).send(resp)
 })
-router.get('/classificacao/:camp',async(req,res)=>{
+router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     const {camp}=req.params
     const {partidasTotais,listaTimes}=buildContext(camp)
     const classif=classificacao(camp,partidasTotais,listaTimes)
@@ -111,8 +114,9 @@ router.get('/resultados',async(req,res)=>{
     const resp=buildResultado(camps,tipos,ev)
     res.status(200).send(resp)
 })
-router.post('/preencher',async(req,res)=>{
-    const {camp,mandante,visitante,escant,gols}=req.body
+router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
+    const {escant,gols}=req.body
+    const {camp,mandante,visitante}=req.params
     const part=preencher(camp,mandante,visitante,escant,gols)
     res.status(200).send(part)
 })

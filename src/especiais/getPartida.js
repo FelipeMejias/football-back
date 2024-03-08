@@ -1,6 +1,3 @@
-import { confEsc } from "../conferencias/confEsc.js"
-import { confGols } from "../conferencias/confGols.js"
-import { confPlacar } from "../conferencias/confPlacar.js"
 import { buscarApostasJogo } from "../profundo/apostas.js"
 
 export function getPartida(partidas,manvis){
