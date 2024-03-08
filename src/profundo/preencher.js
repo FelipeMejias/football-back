@@ -6,6 +6,8 @@ import { createFra1 } from "../adicionadas/p5_FRA.js"
 import { createAra1 } from "../adicionadas/p8_ARA.js"
 import { createArg1 } from "../adicionadas/p9_ARG.js"
 import { buildContext } from "../bancos.js"
+import { createPor1 } from "../adicionadas/p7_POR.js"
+import { createHol1 } from "../adicionadas/p6_HOL.js"
 
 export function preencher(camp,mandante,visitante,escant,gols){
     const lisE=escant.split(' ')
@@ -51,6 +53,10 @@ export function preencher(camp,mandante,visitante,escant,gols){
         createAra1.splice(indice, 1, novaPart)
     }else if(camp=='arg1'){
         createArg1.splice(indice, 1, novaPart)
+    }else if(camp=='por1'){
+        createPor1.splice(indice, 1, novaPart)
+    }else if(camp=='hol1'){
+        createHol1.splice(indice, 1, novaPart)
     }
     return novaPart
 }
