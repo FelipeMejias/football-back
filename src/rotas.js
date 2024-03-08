@@ -107,11 +107,12 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/resultados',async(req,res)=>{
-    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
+    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,chance:chanceRaw}=req.query
     const camps=campsRaw.split('-')
     const tipos=tiposRaw.split('-')
     const ev=parseInt(evRaw)
-    const resp=buildResultado(camps,tipos,ev)
+    const chance=parseInt(chanceRaw)
+    const resp=buildResultado(camps,tipos,chance,ev)
     res.status(200).send(resp)
 })
 router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
