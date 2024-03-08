@@ -2,6 +2,7 @@ import cors from 'cors'
 import Express, {json} from 'express'
 import { router } from './src/rotas.js'
 import { indicar } from './src/adicionadas/indicar.js'
+import { buildApostas } from './src/especiais/buildApostas.js'
 const app=Express()
 app.use(cors())
 app.use(json())

@@ -1,5 +1,6 @@
 import dayjs from "dayjs";
 import { buildApostas } from "../especiais/buildApostas.js";
+import { avanca7dias, traduzirData } from "../utils.js";
 
 export function buildResultado(camps,tipos,ev){
     const apostasRaw=buildApostas(3).filter(a=>a.green!==null)
@@ -70,23 +71,5 @@ function porRodada(camps,tipos,ev){
             aindaFalta=false
         }
     }
-    return resp
-}
-function avanca7dias(time){
-    const ano='20'+time[0]+time[1]
-    const mes=time[2]+time[3]
-    const dia=time[4]+time[5]
-    const hora='00'
-    const minuto='00'
-    const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
-    const respRaw=date.add(7,'day')
-    const resp=traduzirData(respRaw)
-    return resp
-}
-function traduzirData(re){
-    const year=re['$y']
-    const month=re['$M']+1
-    const day=re['$D']
-    const resp=`${year%1000}${month<10?'0':''}${month}${day<10?'0':''}${day}`
     return resp
 }

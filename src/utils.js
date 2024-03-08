@@ -101,3 +101,32 @@ function horario(){
     const resp=`${finalDate} ${finalTime}`
     return resp
 }
+export function dataDaRodada(){
+    let data='240213'
+    const agora=traduzirData(dayjs())
+    let resp
+    while(data<agora){
+        const dataInicio=data
+        data=avanca7dias(data)
+        if(dataInicio<agora)resp=dataInicio
+    }
+    return resp
+}
+export function avanca7dias(time){
+    const ano='20'+time[0]+time[1]
+    const mes=time[2]+time[3]
+    const dia=time[4]+time[5]
+    const hora='00'
+    const minuto='00'
+    const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
+    const respRaw=date.add(7,'day')
+    const resp=traduzirData(respRaw)
+    return resp
+}
+export function traduzirData(re){
+    const year=re['$y']
+    const month=re['$M']+1
+    const day=re['$D']
+    const resp=`${year%1000}${month<10?'0':''}${month}${day<10?'0':''}${day}`
+    return resp
+}

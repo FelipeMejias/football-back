@@ -1,6 +1,5 @@
-import { quantoTempoFalta } from "../utils.js"
+import { dataDaRodada, quantoTempoFalta } from "../utils.js"
 import { buildContext, ligas } from "../bancos.js"
-import dayjs from "dayjs"
 export function buildFutura(){
     let desordenada=[]
     const {paths}=ligas
@@ -22,6 +21,7 @@ export function buildFutura(){
 function extrairFuturas(camp){
     const {partidasTotais}=buildContext(camp,true)
     const resp=[]
+    const dataRodada=dataDaRodada()
     let aindaFalta=true
     for(let k=0;k<30&&aindaFalta;k++){
         const part=partidasTotais[k]
@@ -30,7 +30,7 @@ function extrairFuturas(camp){
         const visitante=nome[3]+nome[4]+nome[5]
         if(part[1].length==2){
             const data=part[3]
-            if(part.length>3&&passouMenosDeUmDia(data)){
+            if(data>dataRodada){
                 const texto=quantoTempoFalta(data)
                 const gols=part[2]
                 let m=0;let v=0;for(let gol of gols){if(gol>0){m++}else{v++}}
@@ -50,6 +50,8 @@ function extrairFuturas(camp){
     }
     return resp
 }
+
+/*
 function passouMenosDeUmDia(time){
     const ano='20'+time[0]+time[1]
     const mes=time[2]+time[3]
@@ -60,4 +62,4 @@ function passouMenosDeUmDia(time){
     const hoje=dayjs()
     const mt= hoje.diff(date, 'day', true)
     return mt<1
-}
+}*/

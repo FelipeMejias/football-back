@@ -17,7 +17,7 @@ import { criarOrdem } from "../profundo/individual.js"
     ['','2403'],
 */
 const campeonato=''
-const phase=2
+const phase=1
 
 export function indicar(){
     const futuras=buildFutura().filter(jogo=>!jogo.placar)
@@ -102,7 +102,7 @@ export function acharAposta(mand,visi,camp,stat){
     const visitante=listaNomes[listaTimes.indexOf(visi)]
     let texto
     const {grandeza,c,asc,metade}=stat
-    if(grandeza==1){
+    if(grandeza==1){return null
         if(!asc){
             if(c==1){
                 texto=`${mandante} vencer`
@@ -120,7 +120,7 @@ export function acharAposta(mand,visi,camp,stat){
             texto+=` o 2º tempo`
         }
         return texto
-    }else if(grandeza==2){
+    }else if(grandeza==2){return null
         if(c==1){
             if(asc){
                 texto=`Menos gols para ${mandante}`

@@ -1,11 +1,11 @@
-import { createIta1 } from "./adicionadas/p4_ITA.js";
-import { createEsp1 } from "./adicionadas/p3_ESP.js";
-import { createIng1 } from "./adicionadas/p2_ING.js";
-import { createAle1 } from "./adicionadas/p5_ALE.js";
-import { createFra1 } from "./adicionadas/p6_FRA.js";
+import { createIta1 } from "./adicionadas/p2_ITA.js";
+import { createEsp1 } from "./adicionadas/p4_ESP.js";
+import { createIng1 } from "./adicionadas/p1_ING.js";
+import { createAle1 } from "./adicionadas/p3_ALE.js";
+import { createFra1 } from "./adicionadas/p5_FRA.js";
 import { createAra1 } from "./adicionadas/p7_ARA.js";
 import { createArg1 } from "./adicionadas/p8_ARG.js";
-import { createHol1 } from "./adicionadas/p9_HOL.js";
+import { createHol1 } from "./adicionadas/p6_HOL.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
