@@ -3,9 +3,10 @@ import { createEsp1 } from "./adicionadas/p4_ESP.js";
 import { createIng1 } from "./adicionadas/p1_ING.js";
 import { createAle1 } from "./adicionadas/p3_ALE.js";
 import { createFra1 } from "./adicionadas/p5_FRA.js";
-import { createAra1 } from "./adicionadas/p7_ARA.js";
-import { createArg1 } from "./adicionadas/p8_ARG.js";
+import { createAra1 } from "./adicionadas/p8_ARA.js";
+import { createArg1 } from "./adicionadas/p9_ARG.js";
 import { createHol1 } from "./adicionadas/p6_HOL.js";
+import { createPor1 } from "./adicionadas/p7_POR.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -69,6 +70,11 @@ function extrairPosteriores(array,manvis){
       listaTimes:['aja','alm','azz','exc','fey','for','goa','hee','her','nec','psv','rkc','spa','twe','utr','vit','vol','zwo'],
       path:'hol1'
     }
+    const contextPor1={
+      listaNomes:['Arouca','Benfica','Boavista','Braga','Casa Pia','Chaves','Estoril','Estrela Amadora','Famalicão','Farense','Gil Vicente','Moreirense','Portimonense','Porto','Rio Ave','Sporting','Vitória SC','Vizela'],
+      listaTimes:['aro','ben','boa','bra','cas','cha','est','ama','fam','far','gil','mor','ptm','por','rio','spo','vit','viz'],
+      path:'por1'
+    }
     const contextAra1={
       listaNomes:['Abha','Al-Ahli','Al Akhdoud','Dhamk','Al Ettifaq','Al Fateh','Al Feiha','Al Hazm','Al-Hilal','Al-Ittihad','Al Khaleej','Al-Nassr','Al-Raed','Al-Riyadh','Al-Shabab','Al Taawon','Al Taee','Al Wehda'],
       listaTimes:['abh','ahl','akh','dha','ett','fat','fei','haz','hil','itt','kha','nas','rae','riy','sha','taa','tae','weh'],
@@ -80,7 +86,7 @@ function extrairPosteriores(array,manvis){
       path:'arg1'
   }
 export const ligas={
-  paths:['ing1','ita1','ale1','fra1','esp1','hol1','ara1','arg1'],
-  contexts:[contextIng1,contextIta1,contextAle1,contextFra1,contextEsp1,contextHol1,contextAra1,contextArg1],
-  bancos:[createIng1,createIta1,createAle1,createFra1,createEsp1,createHol1,createAra1,createArg1]
+  paths:['ing1','ita1','ale1','fra1','esp1','hol1','por1','ara1','arg1'],
+  contexts:[contextIng1,contextIta1,contextAle1,contextFra1,contextEsp1,contextHol1,contextPor1,contextAra1,contextArg1],
+  bancos:[createIng1,createIta1,createAle1,createFra1,createEsp1,createHol1,createPor1,createAra1,createArg1]
 }

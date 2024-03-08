@@ -4,8 +4,6 @@ export async function validatePost(req, res, next) {
         const {escant,gols}=req.body
         const le=escant.split(' ')
         const lg=gols.split(' ')
-        console.log(escant)
-        console.log(gols)
         let erro=false
         if(le.length!=2)erro=true
         for(let item of le){if(item.length!=1&&item.length!=2)erro=true}
