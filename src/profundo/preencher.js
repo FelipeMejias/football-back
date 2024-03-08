@@ -4,6 +4,7 @@ import { createIta1 } from "../adicionadas/p4_ITA.js"
 import { createAle1 } from "../adicionadas/p5_ALE.js"
 import { createFra1 } from "../adicionadas/p6_FRA.js"
 import { createAra1 } from "../adicionadas/p7_ARA.js"
+import { createArg1 } from "../adicionadas/p8_ARG.js"
 import { buildContext } from "../bancos.js"
 
 export function preencher(camp,mandante,visitante,escant,gols){
@@ -48,6 +49,8 @@ export function preencher(camp,mandante,visitante,escant,gols){
         createFra1.splice(indice, 1, novaPart)
     }else if(camp=='ara1'){
         createAra1.splice(indice, 1, novaPart)
+    }else if(camp=='arg1'){
+        createArg1.splice(indice, 1, novaPart)
     }
     return novaPart
 }
