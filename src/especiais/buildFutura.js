@@ -1,9 +1,10 @@
 import { dataDaRodada, quantoTempoFalta } from "../utils.js"
 import { buildContext, ligas } from "../bancos.js"
-export function buildFutura(){
+export function buildFutura(camps){
     let desordenada=[]
     const {paths}=ligas
-    paths.forEach(camp=>{
+    const escolhidos=camps||paths
+    escolhidos.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })
     const ordenada1= desordenada.sort((a,b)=>{

@@ -47,7 +47,9 @@ router.get('/tabelas/:camp/:pagestr',async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/partidasgerais',async(req,res)=>{
-    const lista=buildFutura()
+    const {camps:campsRaw}=req.query
+    const camps=campsRaw.split('-')
+    const lista=buildFutura(camps)
     const resp=colocarLabels(lista)
     res.status(200).send(resp)
 })
