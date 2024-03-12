@@ -26,6 +26,7 @@ function extrairFuturas(camp){
     const resp=[]
     const dataRodada=dataDaRodada()
     let aindaFalta=true
+    let temFutura=false
     for(let k=0; k<qtdPartidas1rodada && aindaFalta ;k++){
         const part=partidasTotais[k]
         const nome=part[0]
@@ -37,13 +38,14 @@ function extrairFuturas(camp){
                 const texto=quantoTempoFalta(data)
                 const gols=part[2]
                 let m=0;let v=0;for(let gol of gols){if(gol>0){m++}else{v++}}
-                resp.push({
+                if(!temFutura)resp.push({
                     mandante,visitante,data,texto,camp,placar:[m,v]
                 })
             }else{
                 aindaFalta=false
             }
         }else{
+            temFutura=true
             const data=part[1]
             const texto=quantoTempoFalta(data)
             resp.push({

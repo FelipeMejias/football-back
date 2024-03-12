@@ -1,8 +1,8 @@
 import { createIta1 } from "./adicionadas/p2_ITA.js";
-import { createEsp1 } from "./adicionadas/p4_ESP.js";
+import { createEsp1 } from "./adicionadas/p5_ESP.js";
 import { createIng1 } from "./adicionadas/p1_ING.js";
 import { createAle1 } from "./adicionadas/p3_ALE.js";
-import { createFra1 } from "./adicionadas/p5_FRA.js";
+import { createFra1 } from "./adicionadas/p4_FRA.js";
 import { createAra1 } from "./adicionadas/p8_ARA.js";
 import { createArg1 } from "./adicionadas/p9_ARG.js";
 import { createHol1 } from "./adicionadas/p6_HOL.js";

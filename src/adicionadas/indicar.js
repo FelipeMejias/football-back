@@ -1,9 +1,3 @@
-import { tetoPosicao } from "../../index.js"
-import { buildContext, ligas } from "../bancos.js"
-import { buildFutura } from "../especiais/buildFutura.js"
-import { getPartida } from "../especiais/getPartida.js"
-import { acharPar } from "../profundo/dupla.js"
-import { criarOrdem } from "../profundo/individual.js"
 /*
     ['','2403'],
     ['','2403'],
@@ -19,6 +13,13 @@ import { criarOrdem } from "../profundo/individual.js"
 const campeonato=''
 const phase=2
 
+//sem escanteios=> italia, alemanha, frança
+import { tetoPosicao } from "../../index.js"
+import { buildContext, ligas } from "../bancos.js"
+import { buildFutura } from "../especiais/buildFutura.js"
+import { getPartida } from "../especiais/getPartida.js"
+import { acharPar } from "../profundo/dupla.js"
+import { criarOrdem } from "../profundo/individual.js"
 export function indicar(){
     const futuras=buildFutura().filter(jogo=>!jogo.placar)
     for(let partida of futuras){

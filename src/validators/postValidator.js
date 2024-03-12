@@ -9,7 +9,7 @@ export async function validatePost(req, res, next) {
         for(let item of le){if(item.length!=1&&item.length!=2)erro=true}
         for(let item of lg){
             if(item.length==1){}else if(item.length==2){
-            }else if(item.length==3&&item[0]=='0'){}else{erro=true}
+            }else if(item.length==3&&item[0]=='0'){}else if(lg.length==1&&item===''){}else{erro=true}
         }
         if (erro) {
             console.log('Invalid input')
