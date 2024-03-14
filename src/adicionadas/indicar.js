@@ -11,7 +11,7 @@
     ['','2403'],
 */
 const campeonato=''
-const phase=2
+const phase=1
 
 //sem escanteios=> italia, alemanha, frança
 import { tetoPosicao } from "../../index.js"
