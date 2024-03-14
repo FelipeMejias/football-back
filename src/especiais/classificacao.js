@@ -47,8 +47,8 @@ export  function classificacao(camp,partidasTotais,listaTimes){
 function ordenarClassificacao(arr,brazuca){
     let using;const resp=[];const hash={}
     for(let k=0;k<arr.length;k++){
-        const {time,pontos,vitorias,saldoGols,golsPro}=arr[k]
-        hash[time]=[pontos,vitorias,saldoGols,golsPro]
+        const {time,pontos,vitorias,saldoGols,golsPro,partidas}=arr[k]
+        hash[time]=[pontos,vitorias,saldoGols,golsPro,partidas]
     }
     let maior;
     for(let k=0;k<arr.length;k++){
@@ -60,18 +60,23 @@ function ordenarClassificacao(arr,brazuca){
             using=c
             maior=arr[c]
            }else if(l[0]==maior.pontos){
-                if(brazuca?l[1]>maior.vitorias:l[2]>maior.saldoGols){
+                if(l[4]<maior.partidas){
                     using=c
                     maior=arr[c]
-                }else if(brazuca?l[1]==maior.vitorias:l[2]==maior.saldoGols){
-                    if(brazuca?l[2]>maior.saldoGols:l[3]>maior.golsPro){
+                }else if(l[4]==maior.partidas){
+                    if(brazuca?l[1]>maior.vitorias:l[2]>maior.saldoGols){
                         using=c
                         maior=arr[c]
-                    }else if(brazuca?l[2]==maior.saldoGols:l[3]==maior.golsPro){
-                        if(brazuca?l[3]>maior.golsPro:l[1]>maior.vitorias){
+                    }else if(brazuca?l[1]==maior.vitorias:l[2]==maior.saldoGols){
+                        if(brazuca?l[2]>maior.saldoGols:l[3]>maior.golsPro){
                             using=c
                             maior=arr[c]
-                        }else if(l[1]==maior.vitorias){
+                        }else if(brazuca?l[2]==maior.saldoGols:l[3]==maior.golsPro){
+                            if(brazuca?l[3]>maior.golsPro:l[1]>maior.vitorias){
+                                using=c
+                                maior=arr[c]
+                            }else if(l[1]==maior.vitorias){
+                            }
                         }
                     }
                 }
