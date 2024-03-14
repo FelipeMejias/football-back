@@ -4,6 +4,7 @@ import { router } from './src/rotas.js'
 import { indicar } from './src/adicionadas/indicar.js'
 import { buildApostas } from './src/especiais/buildApostas.js'
 import { ligas } from './src/bancos.js'
+import { buildFutura } from './src/especiais/buildFutura.js'
 const app=Express()
 app.use(cors())
 app.use(json())
@@ -77,3 +78,6 @@ function nova(apostasRaw,k,g,evMinimo){
         amostra:din,
     }
 }
+function trtrt(){
+    const fut=buildFutura(['ara1'])
+}trtrt()

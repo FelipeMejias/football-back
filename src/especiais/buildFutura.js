@@ -1,4 +1,4 @@
-import { dataDaRodada, quantoTempoFalta } from "../utils.js"
+import { dataDaRodada, passouMenosDeUmDia, quantoTempoFalta } from "../utils.js"
 import { buildContext, ligas } from "../bancos.js"
 export function buildFutura(camps){
     let desordenada=[]
@@ -17,7 +17,12 @@ export function buildFutura(camps){
             return -1
         }else{return true}
     })
-    return ordenada2
+    const ordenada3= ordenada2.sort((a,b)=>{
+        if(a.texto=='Finalizado' && b.texto=='Finalizado' && a.data>b.data){
+            return -1
+        }else{return true}
+    })
+    return ordenada3
 }
 function extrairFuturas(camp){
     const {contexts,paths}=ligas
@@ -26,26 +31,24 @@ function extrairFuturas(camp){
     const resp=[]
     const dataRodada=dataDaRodada()
     let aindaFalta=true
-    let temFutura=false
-    for(let k=0; k<qtdPartidas1rodada && aindaFalta ;k++){
+    for(let k=0; aindaFalta ;k++){
         const part=partidasTotais[k]
         const nome=part[0]
         const mandante=nome[0]+nome[1]+nome[2]
         const visitante=nome[3]+nome[4]+nome[5]
         if(part[1].length==2){
             const data=part[3]
-            if(data>dataRodada){
+            if(data>dataRodada||passouMenosDeUmDia(data)){
                 const texto=quantoTempoFalta(data)
                 const gols=part[2]
                 let m=0;let v=0;for(let gol of gols){if(gol>0){m++}else{v++}}
-                if(!temFutura)resp.push({
+                resp.push({
                     mandante,visitante,data,texto,camp,placar:[m,v]
                 })
             }else{
                 aindaFalta=false
             }
         }else{
-            temFutura=true
             const data=part[1]
             const texto=quantoTempoFalta(data)
             resp.push({
@@ -56,15 +59,3 @@ function extrairFuturas(camp){
     return resp
 }
 
-/*
-function passouMenosDeUmDia(time){
-    const ano='20'+time[0]+time[1]
-    const mes=time[2]+time[3]
-    const dia=time[4]+time[5]
-    const hora=time[6]+time[7]
-    const minuto=time[8]+time[9]
-    const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
-    const hoje=dayjs()
-    const mt= hoje.diff(date, 'day', true)
-    return mt<1
-}*/
