@@ -66,6 +66,7 @@ router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(re
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
     const partida=getPartida(partidasTotais,manvis)
+    if(!partida)res.status(500).send({})
     const resp=create(partida,camp)
     res.status(200).send(resp)
 })
@@ -73,7 +74,8 @@ router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)
     const {time,camp}=req.params
     const context=buildContext(camp)
     const stats=criarOrdem(context,time)
-    const partidas=partidasTime(context,time)
+    const contextMaior=buildContext(camp,true)
+    const partidas=partidasTime(contextMaior,time)
     const resp={stats,partidas}
     res.status(200).send(resp)
 })

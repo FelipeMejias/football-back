@@ -1,3 +1,5 @@
+import { quantoTempoFalta } from "../utils.js"
+
 export  function partidasTime(context,time){
     const resp=[]
     const {partidasTotais}=context
@@ -6,8 +8,8 @@ export  function partidasTime(context,time){
         const mandante=nome[0]+nome[1]+nome[2]
         const visitante=nome[3]+nome[4]+nome[5]
         if(mandante==time||visitante==time){
-            const gols=partida[2]
-            if(gols){
+            if(partida[1].length==2){
+                const gols=partida[2]
                 let m=0
                 let v=0
                 for(let gol of gols){
@@ -24,9 +26,17 @@ export  function partidasTime(context,time){
                     sg:mandante==time?m-v:v-m
                 })
             }else{
+                const data=partida[1]
+                let texto=quantoTempoFalta(data)
+                if(texto.includes('-')){
+                    const lis=texto.split('-')
+                    texto=lis[0]+' '+lis[1]
+                }
+                const lis=
                 resp.push({
-                mandante,
-                visitante,
+                    mandante,
+                    visitante,
+                    texto
                 })
             }
         }

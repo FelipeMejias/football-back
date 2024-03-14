@@ -6,6 +6,7 @@ export function getPartida(partidas,manvis){
             return part
         }
     }
+    return false
 }
 export function create(part,camp){
     const manvis=part[0]
