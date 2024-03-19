@@ -21,7 +21,12 @@ export function quantoTempoFalta(time){
         }
     }else{
         if(dias||horas){
-            const parte1=textoDia(date,now,dias)
+            let parte1
+            if(dias>6){
+                parte1=`${dia}/${mes}`
+            }else{
+                parte1=textoDia(date,now,dias)
+            }
             return `${parte1}-${hora}:${minuto}`
         }else{
             return `${minutos==1?'Falta':'Faltam'} ${minutos} ${minutos==1?'minuto':'minutos'} `
