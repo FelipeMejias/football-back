@@ -9,7 +9,8 @@ tipos.includes(a.info[0])&&
 a.ev>=ev
     ))
     let din=0;let ganho=0;let red=0;let green=0;
-    for(let ap of apostas){
+    const realApostas=deixarSomenteAsMaioresDeGols(apostas)
+    for(let ap of realApostas){
         if(ap.green===null||ap.green===undefined){
             
         }else{
@@ -25,13 +26,10 @@ a.ev>=ev
         let din2=0;let ganho2=0;
         let red2=0;let green2=0;
         let abertas=0;
-        let ganhoAdd=0;let dinAdd=0
-
-        for(let ap of rodadas[k]){
+        const realRodadas=deixarSomenteAsMaioresDeGols(rodadas[k])
+        for(let ap of realRodadas){
             if(ap.green===null||ap.green===undefined){
                 if(ap.green===undefined)abertas++
-                ganhoAdd+=ap.odd
-                dinAdd++
             }else{
                 din2++
             if(ap.green)ganho2+=ap.odd
@@ -43,18 +41,13 @@ a.ev>=ev
         const lucroRaw2=ganho2/din2
         const lucroMedium2=((lucroRaw2%1)*100).toFixed(1)
         const lucro2=lucroRaw2>1?lucroMedium2:-(100-lucroMedium2).toFixed(1)
-
-        const lucroPotRaw=(ganho2+ganhoAdd)/(din2+dinAdd)
-        const lucroPotMedium=(lucroPotRaw%1+(lucroPotRaw>2?lucroPotRaw-1:0)*100).toFixed(1)
-        const lucroPotencial=lucroPotRaw>1?lucroPotMedium:-(100-lucroPotMedium).toFixed(1)
-
-        respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:rodadas[k],lucroPotencial})
+        respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:realRodadas})
     }
     const porc=Math.round((green/din)*100)
     const lucroRaw=ganho/din
     const lucroMedium=((lucroRaw%1)*100).toFixed(1)
     const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium).toFixed(1)
-    return {rodadas:respRodadas,porc,green,red,lucro,apostas}
+    return {rodadas:respRodadas,porc,green,red,lucro,apostas:realApostas}
 }
 function porRodada(camps,tipos,ev){
     const resp=[]
@@ -76,6 +69,28 @@ a.ev>=ev
         }
         if(dataInicio>agora){
             aindaFalta=false
+        }
+    }
+    return resp
+}
+export function deixarSomenteAsMaioresDeGols(lista){
+    const resp=[]
+    for(let aposta of lista){
+        if(resp.length==0){
+            resp.push(aposta)
+        }else{
+            const {info,ev,nome:w}=aposta
+            const thisGame=w[0]+w[1]+w[2]+w[3]+w[4]+w[5]+w[6]+w[7]+w[8]+w[9]
+            const {info:infoUltima,nome:q,ev:UltimaEv}=resp[resp.length-1]
+            const ultimaGame=q[0]+q[1]+q[2]+q[3]+q[4]+q[5]+q[6]+q[7]+q[8]+q[9]
+            if(info[0]=='2'&&thisGame==ultimaGame&&infoUltima==info){
+                if(ev>UltimaEv){
+                    resp.pop()
+                    resp.push(aposta)
+                }
+            }else{
+                resp.push(aposta)
+            }
         }
     }
     return resp

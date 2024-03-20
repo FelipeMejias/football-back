@@ -10,14 +10,30 @@ const peso_q2=0.3
 const qtd=7
 const qtd2=3
 
-const peso_N=0.40
-const peso_Q=0.15
-const peso_Q2=0.45
-const qTD=9
-const qTD2=6
+const cPlus=['ing1','ita1','ale1',]
 
-const coev1=1
-const coev2=0
+const plus={
+    peso_N:0.6,
+    peso_QsemE:0.20,
+    peso_Q2:0.20,
+    qTDsemE:5,
+    qTD2:7,
+}
+const noPlus={
+    peso_N:0.6,
+    peso_Q2:0.15,
+    peso_QsemE:0.25,
+    qTD2:3,
+    qTDsemE:10,
+}
+
+const PESO_N=0.5
+const PESO_Q2=0.25
+const PESO_Q=0.25
+const QTD2=7
+const QTD=15
+
+
 export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]
     let ordenada
@@ -57,11 +73,11 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     if(grandeza==2){
                         ca=confGols(100,context,1,metade,mandante,c,asc,q)
                         fo=confGols(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confGols(qTD,context,1,metade,mandante,c,asc,q)
-                        foQ=confGols(qTD,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confGols(qTD2,context,1,metade,mandante,c,asc,q)
-                        foQ2=confGols(qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        chance=((ca+fo)/2)*peso_N+((caQ+foQ)/2)*peso_Q+((caQ2+foQ2)/2)*peso_Q2
+                        caQ=confGols((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,mandante,c,asc,q)
+                        foQ=confGols((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confGols((cPlus.includes(camp)?plus:noPlus).qTD2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confGols((cPlus.includes(camp)?plus:noPlus).qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=((ca+fo)/2)*(cPlus.includes(camp)?plus:noPlus).peso_N+((caQ+foQ)/2)*(cPlus.includes(camp)?plus:noPlus).peso_QsemE+((caQ2+foQ2)/2)*(cPlus.includes(camp)?plus:noPlus).peso_Q2
                     }else{
                         ca=confEsc(100,context,1,metade,mandante,c,asc,q)
                         fo=confEsc(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
@@ -76,7 +92,7 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     valor=q
                     
                     resp.push({
-                        ev:calcularEV(chance,ode,grandeza==2),
+                        ev:calcularEV(chance,ode),
                         chance:chance==100?99:chance,
                         texto:tex,
                         odd:ode,
@@ -90,16 +106,16 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
             }else{
                 ca=confPlacar(100,context,1,metade,mandante,c,asc,null)
                 fo=confPlacar(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ=confPlacar(qTD,context,1,metade,mandante,c,asc,null)
-                foQ=confPlacar(qTD,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ2=confPlacar(qTD2,context,1,metade,mandante,c,asc,null)
-                foQ2=confPlacar(qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ=confPlacar(QTD,context,0,metade,mandante,c,asc,null)
+                foQ=confPlacar(QTD,context,0,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ2=confPlacar(QTD2,context,1,metade,mandante,c,asc,null)
+                foQ2=confPlacar(QTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
                 tex=texto
                 ode=parseFloat(odd)
-                chance=((ca+fo)/2)*peso_N+((caQ+foQ)/2)*peso_Q+((caQ2+foQ2)/2)*peso_Q2
+                chance=((ca+fo)/2)*PESO_N+((caQ+foQ)/2)*PESO_Q+((caQ2+foQ2)/2)*PESO_Q2
 
                 resp.push({
-                    ev:calcularEV(chance,ode,true),
+                    ev:calcularEV(chance,ode),
                     chance:chance==100?99:chance,
                     texto:tex,
                     odd:ode,
@@ -162,7 +178,7 @@ function extrairPassadas(camp){
     }
     return resp
 }
-function calcularEV(chance,odd,noEsc){
-    const numero=odd*chance*(noEsc?coev1:1)
-    return numero-(100-chance)-(noEsc?coev2:0)
+function calcularEV(chance,odd){
+    const numero=odd*chance
+    return numero-(100-chance)
 }

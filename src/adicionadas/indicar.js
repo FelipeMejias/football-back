@@ -11,7 +11,7 @@
     ['','2403'],
 */
 const campeonato=''
-const phase=2
+const phase=1
 
 const bloquearEscanteios=true
 //sem escanteios=> italia, alemanha, frança
