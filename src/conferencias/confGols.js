@@ -1,11 +1,16 @@
 import filtrar, { filtrarGols } from "../especiais/filtrarPartidas.js"
 
-export  function confGols(context,estadia,metade,time,c,asc,valor){
+export  function confGols(qtd,context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context
     const partidas=filtrar(partidasTotais,time,estadia)
     let contCertos=0
     let cont=0
-    for(let partida of partidas){
+    const partidasNew=[]
+    const qtdReal=qtd>partidas.length?partidas.length:qtd
+    for(let k=0;k<qtdReal;k++){
+        partidasNew.push(partidas[k])
+    }
+    for(let partida of partidasNew){
         let golBuscado=0
         const nome=partida[0]
         const mandante=nome[0]+nome[1]+nome[2]
@@ -21,5 +26,5 @@ export  function confGols(context,estadia,metade,time,c,asc,valor){
         if(asc?golBuscado<valor:golBuscado>valor)contCertos++
         cont++
     }
-    return parseInt((contCertos*100/cont).toFixed(0))
+    return parseFloat((contCertos*100/cont).toFixed(1))
 }

@@ -42,19 +42,19 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
     if(grandeza==1){
         return {
-            chance:confPlacar(context,estadia,metade,time,c,asc,valor),
+            chance:confPlacar(100,context,estadia,metade,time,c,asc,valor),
             texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
         }
     }
     if(grandeza==2){
         return {
-            chance:confGols(context,estadia,metade,time,c,asc,valor),
+            chance:confGols(100,context,estadia,metade,time,c,asc,valor),
             texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
         }
     }
     if(grandeza==6){
         return {
-            chance:confEsc(context,estadia,metade,time,c,asc,valor),
+            chance:confEsc(100,context,estadia,metade,time,c,asc,valor),
             texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
         }
     }    

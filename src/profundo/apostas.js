@@ -24,7 +24,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
         let odd
         if(grandeza==1){
             odd=(num/100).toFixed(2)
-            const green=jogoAntigo?confPlacar({partidasTotais:[partida]},0,metade,mandante,c,asc,null):undefined
+            const green=jogoAntigo?confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):undefined
             apostas.push({info,texto,odd,green})
         }else{
             odd=[]
@@ -33,7 +33,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
             let qtd=zerado?0:unidade?parseInt(num[0]):parseInt(`${num[0]}${num[1]}`)
             for(let k=(zerado?0:unidade?1:2);k<num.length;k+=3){
                 const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
-                const green=jogoAntigo?(grandeza==2?confGols({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):confEsc({partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)):undefined
+                const green=jogoAntigo?(grandeza==2?confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):confEsc(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)):undefined
                 odd.push({green,q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})
                 qtd++
             }

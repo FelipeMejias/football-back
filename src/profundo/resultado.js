@@ -41,19 +41,19 @@ a.ev>=ev
         }
         const porc2=Math.round((green2/din2)*100)
         const lucroRaw2=ganho2/din2
-        const lucroMedium2=Math.round((lucroRaw2%1)*100)
-        const lucro2=lucroRaw2>1?lucroMedium2:-(100-lucroMedium2)
+        const lucroMedium2=((lucroRaw2%1)*100).toFixed(1)
+        const lucro2=lucroRaw2>1?lucroMedium2:-(100-lucroMedium2).toFixed(1)
 
         const lucroPotRaw=(ganho2+ganhoAdd)/(din2+dinAdd)
-        const lucroPotMedium=Math.round((lucroPotRaw%1)*100)
-        const lucroPotencial=lucroPotRaw>1?lucroPotMedium:-(100-lucroPotMedium)
+        const lucroPotMedium=(lucroPotRaw%1+(lucroPotRaw>2?lucroPotRaw-1:0)*100).toFixed(1)
+        const lucroPotencial=lucroPotRaw>1?lucroPotMedium:-(100-lucroPotMedium).toFixed(1)
 
         respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:rodadas[k],lucroPotencial})
     }
     const porc=Math.round((green/din)*100)
     const lucroRaw=ganho/din
-    const lucroMedium=Math.round((lucroRaw%1)*100)
-    const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium)
+    const lucroMedium=((lucroRaw%1)*100).toFixed(1)
+    const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium).toFixed(1)
     return {rodadas:respRodadas,porc,green,red,lucro,apostas}
 }
 function porRodada(camps,tipos,ev){

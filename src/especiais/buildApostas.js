@@ -4,6 +4,20 @@ import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
 import { quantoTempoFalta } from "../utils.js"
+const peso_n=0.4
+const peso_q=0.3
+const peso_q2=0.3
+const qtd=7
+const qtd2=3
+
+const peso_N=0.40
+const peso_Q=0.15
+const peso_Q2=0.45
+const qTD=9
+const qTD2=6
+
+const coev1=1
+const coev2=0
 export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]
     let ordenada
@@ -29,10 +43,10 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
         const {camp,mandante,visitante,cinza}=partida
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
-        for(let ap of apostas){
+        for(let ap of apostas){let caQ;let foQ;let caQ2;let foQ2;
             let ca;let fo;let tex;let ode;let valor
             const {info,odd,texto,green}=ap
-            
+            let chance
             const grandeza=parseInt(info[0])
             const c=parseInt(info[1])
             const asc=parseInt(info[2])
@@ -41,18 +55,28 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                 for(let esp of odd){
                     const {o,q,green}=esp
                     if(grandeza==2){
-                        ca=confGols(context,1,metade,mandante,c,asc,q)
-                        fo=confGols(context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        ca=confGols(100,context,1,metade,mandante,c,asc,q)
+                        fo=confGols(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confGols(qTD,context,1,metade,mandante,c,asc,q)
+                        foQ=confGols(qTD,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confGols(qTD2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confGols(qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=((ca+fo)/2)*peso_N+((caQ+foQ)/2)*peso_Q+((caQ2+foQ2)/2)*peso_Q2
                     }else{
-                        ca=confEsc(context,1,metade,mandante,c,asc,q)
-                        fo=confEsc(context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        ca=confEsc(100,context,1,metade,mandante,c,asc,q)
+                        fo=confEsc(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confEsc(qtd,context,1,metade,mandante,c,asc,q)
+                        foQ=confEsc(qtd,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confEsc(qtd2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confEsc(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=((ca+fo)/2)*peso_n+((caQ+foQ)/2)*peso_q+((caQ2+foQ2)/2)*peso_q2
                     }
                     tex=texto.replace('X',q)
                     ode=parseFloat(o)
                     valor=q
-                    const chance=(ca+fo)/2
+                    
                     resp.push({
-                        ev:calcularEV(chance,ode),
+                        ev:calcularEV(chance,ode,grandeza==2),
                         chance:chance==100?99:chance,
                         texto:tex,
                         odd:ode,
@@ -64,14 +88,18 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     }) 
                 }
             }else{
-                ca=confPlacar(context,1,metade,mandante,c,asc,null)
-                fo=confPlacar(context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                ca=confPlacar(100,context,1,metade,mandante,c,asc,null)
+                fo=confPlacar(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ=confPlacar(qTD,context,1,metade,mandante,c,asc,null)
+                foQ=confPlacar(qTD,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ2=confPlacar(qTD2,context,1,metade,mandante,c,asc,null)
+                foQ2=confPlacar(qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
                 tex=texto
                 ode=parseFloat(odd)
-                const chance=(ca+fo)/2
+                chance=((ca+fo)/2)*peso_N+((caQ+foQ)/2)*peso_Q+((caQ2+foQ2)/2)*peso_Q2
 
                 resp.push({
-                    ev:calcularEV(chance,ode),
+                    ev:calcularEV(chance,ode,true),
                     chance:chance==100?99:chance,
                     texto:tex,
                     odd:ode,
@@ -134,7 +162,7 @@ function extrairPassadas(camp){
     }
     return resp
 }
-function calcularEV(chance,odd){
-    const numero=odd*chance
-    return numero-(100-chance)
+function calcularEV(chance,odd,noEsc){
+    const numero=odd*chance*(noEsc?coev1:1)
+    return numero-(100-chance)-(noEsc?coev2:0)
 }

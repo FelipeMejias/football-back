@@ -11,8 +11,9 @@
     ['','2403'],
 */
 const campeonato=''
-const phase=1
+const phase=2
 
+const bloquearEscanteios=true
 //sem escanteios=> italia, alemanha, frança
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
@@ -145,7 +146,7 @@ export function acharAposta(mand,visi,camp,stat){
         if(metade==1)texto+=` no 1º tempo`
         if(metade==2)texto+=` no 2º tempo`
         return texto
-    }else if(grandeza==6){
+    }else if(grandeza==6){if(bloquearEscanteios)return null
         if(c==1){
             if(asc){
                 texto=`Menos escanteios para ${mandante}`
