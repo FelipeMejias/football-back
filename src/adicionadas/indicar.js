@@ -14,13 +14,15 @@ const campeonato=''
 const phase=1
 
 const bloquearEscanteios=true
-//sem escanteios=> italia, alemanha, frança
+const bloquearPlacarGols=false
+
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"
 import { getPartida } from "../especiais/getPartida.js"
 import { acharPar } from "../profundo/dupla.js"
 import { criarOrdem } from "../profundo/individual.js"
+
 export function indicar(){
     const futuras=buildFutura().filter(jogo=>!jogo.placar)
     for(let partida of futuras){
@@ -105,7 +107,7 @@ export function acharAposta(mand,visi,camp,stat){
     let texto
     const {grandeza,c,asc,metade}=stat
     if(grandeza==1){
-        if(!asc){
+        if(!asc){if(bloquearPlacarGols)return null
             if(c==1){
                 texto=`${mandante} vencer`
             }else if(c==2){
@@ -113,7 +115,16 @@ export function acharAposta(mand,visi,camp,stat){
             }else if(c==3){
                 texto=`${visitante} vencer`
             }
-        }else{return null}
+        }else{
+            if(metade!=0)return null
+            if(c==1){
+                texto=`${visitante} vencer ou empatar`
+            }else if(c==2){
+                return null
+            }else if(c==3){
+                texto=`${mandante} vencer ou empatar`
+            }  
+        }
         if(metade==0)texto+=` a partida`
         if(metade==1){
             texto+=` o 1º tempo`
@@ -122,7 +133,7 @@ export function acharAposta(mand,visi,camp,stat){
             texto+=` o 2º tempo`
         }
         return texto
-    }else if(grandeza==2){
+    }else if(grandeza==2){if(bloquearPlacarGols)return null
         if(c==1){
             if(asc){
                 texto=`Menos gols para ${mandante}`

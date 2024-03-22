@@ -68,7 +68,7 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
     ]
     if(grandeza==1){
         const frases=[
-            [['vitórias',true],['empate ou derrota',false]],
+            [['vitórias',true],['derrota ou empate',false]],
             [['empates',null],['vitória ou derrota',null]],
             [['derrotas',false],['vitória ou empate',true]],
         ]
