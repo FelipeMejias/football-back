@@ -15,7 +15,7 @@ app.listen(port,()=>console.log(`listening on port ${port}`))
 
 export const tetoPosicao=5
 indicar()
-grande()
+//grande()
 function grande(){
     const camps=[
         'ing1',
