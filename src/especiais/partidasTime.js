@@ -32,7 +32,6 @@ export  function partidasTime(context,time){
                     const lis=texto.split('-')
                     texto=lis[0]+' '+lis[1]
                 }
-                const lis=
                 resp.push({
                     mandante,
                     visitante,

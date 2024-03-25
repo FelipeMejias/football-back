@@ -106,8 +106,9 @@ router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvi
 router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     const {camp}=req.params
     const {partidasTotais,listaTimes}=buildContext(camp)
+    const {partidasTotais:comFuturas}=buildContext(camp,true)
     const classif=classificacao(camp,partidasTotais,listaTimes)
-    const parts=partidasLiga(partidasTotais)
+    const parts=partidasLiga(comFuturas)
     const resp={classif,parts}
     res.status(200).send(resp)
 })
