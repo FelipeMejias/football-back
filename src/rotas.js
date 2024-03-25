@@ -23,6 +23,7 @@ import { preencher } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
+import { marcaUltimo } from './tabelas/marcaUltimo.js'
 
 export const router=Router()
 
@@ -46,6 +47,8 @@ router.get('/tabelas/:camp/:pagestr',validateCamp,async(req,res)=>{
         resp= escanteios(context,parseInt(estadia))
     }else if(page==7){
         resp= marcaPrimeiro(context,parseInt(estadia))
+    }else if(page==8){
+        resp= marcaUltimo(context,parseInt(estadia))
     }
     res.status(200).send(resp)
 })

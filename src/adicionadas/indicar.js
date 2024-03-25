@@ -11,10 +11,11 @@
     ['','2403'],
 */
 const campeonato=''
+const apos=['ing1','ita1','ale1','fra1','esp1','hol1','por1']
 const phase=1
 
 const bloquearEscanteios=true
-const bloquearPlacarGols=false
+const bloquearPlacarGols=true
 
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
@@ -106,8 +107,8 @@ export function acharAposta(mand,visi,camp,stat){
     const visitante=listaNomes[listaTimes.indexOf(visi)]
     let texto
     const {grandeza,c,asc,metade}=stat
-    if(grandeza==1){
-        if(!asc){if(bloquearPlacarGols)return null
+    if(grandeza==1){if(bloquearPlacarGols)return null
+        if(!asc){
             if(c==1){
                 texto=`${mandante} vencer`
             }else if(c==2){
@@ -175,6 +176,36 @@ export function acharAposta(mand,visi,camp,stat){
                 texto=`Menos escanteios para ${visitante}`
             }else{
                 texto=`Mais escanteios para ${visitante}`
+            }
+        }
+        return texto
+    }else if(grandeza==7){
+        if(c==1){
+            if(asc){
+                return null
+            }else{
+                texto=`${mandante} marca primeiro`
+            }
+        }else if(c==3){
+            if(asc){
+                return null
+            }else{
+                texto=`${visitante} marca primeiro`
+            }
+        }
+        return texto
+    }else if(grandeza==8){
+        if(c==1){
+            if(asc){
+                return null
+            }else{
+                texto=`${mandante} marca por último`
+            }
+        }else if(c==3){
+            if(asc){
+                return null
+            }else{
+                texto=`${visitante} marca por último`
             }
         }
         return texto

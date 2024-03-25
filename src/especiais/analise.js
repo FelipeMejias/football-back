@@ -3,6 +3,8 @@ import {confPlacar} from '../conferencias/confPlacar.js'
 import {confGols} from '../conferencias/confGols.js'
 import { buildContext } from '../bancos.js'
 import { buscarApostasJogo } from '../profundo/apostas.js'
+import { confPrimGol } from '../conferencias/confPrimGol.js'
+import { confUltimoGol } from '../conferencias/confUltimoGol.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const context=buildContext(camp,mandante+visitante)
     const cPar=c==1?3:c==2?2:1
@@ -57,6 +59,18 @@ function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
             chance:confEsc(100,context,estadia,metade,time,c,asc,valor),
             texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
         }
+    }  
+    if(grandeza==7){
+        return {
+            chance:confPrimGol(100,context,estadia,metade,time,c,asc,valor),
+            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
+        }
+    }  
+    if(grandeza==8){
+        return {
+            chance:confUltimoGol(100,context,estadia,metade,time,c,asc,valor),
+            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
+        }
     }    
 }
 export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
@@ -87,6 +101,20 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
             [[`mais de ${valor} escanteios a favor`,true],[`menos de ${valor} escanteios a favor`,false]],
             [[`mais de ${valor} escanteios`,null],[`menos de ${valor} escanteios`,null]],
             [[`mais de ${valor} escanteios contrários`,false],[`menos de ${valor} escanteios contrários`,true]],
+        ]
+        return frases[c-1][asc][0]+complementos2[estadia]
+    }if(grandeza==7){
+        const frases=[
+            [[`marcou o primeiro gol`,true],[`------`,false]],
+            [[`----`,null],[`----`,null]],
+            [[`sofreu o primeiro gol`,false],[`------`,true]],
+        ]
+        return frases[c-1][asc][0]+complementos2[estadia]
+    } if(grandeza==8){
+        const frases=[
+            [[`marcou o último gol`,true],[`------`,false]],
+            [[`----`,null],[`----`,null]],
+            [[`sofreu o último gol`,false],[`------`,true]],
         ]
         return frases[c-1][asc][0]+complementos2[estadia]
     }    

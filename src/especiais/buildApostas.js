@@ -4,6 +4,8 @@ import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
 import { quantoTempoFalta } from "../utils.js"
+import { confPrimGol } from "../conferencias/confPrimGol.js"
+import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 const peso_n=0.4
 const peso_q=0.3
 const peso_q2=0.3
@@ -77,6 +79,22 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                         foQ=confGols((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
                         caQ2=confGols((cPlus.includes(camp)?plus:noPlus).qTD2,context,1,metade,mandante,c,asc,q)
                         foQ2=confGols((cPlus.includes(camp)?plus:noPlus).qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=((ca+fo)/2)*(cPlus.includes(camp)?plus:noPlus).peso_N+((caQ+foQ)/2)*(cPlus.includes(camp)?plus:noPlus).peso_QsemE+((caQ2+foQ2)/2)*(cPlus.includes(camp)?plus:noPlus).peso_Q2
+                    }else if(grandeza==7){
+                        ca=confPrimGol(100,context,1,metade,mandante,c,asc,q)
+                        fo=confPrimGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confPrimGol((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,mandante,c,asc,q)
+                        foQ=confPrimGol((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confPrimGol((cPlus.includes(camp)?plus:noPlus).qTD2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confPrimGol((cPlus.includes(camp)?plus:noPlus).qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=((ca+fo)/2)*(cPlus.includes(camp)?plus:noPlus).peso_N+((caQ+foQ)/2)*(cPlus.includes(camp)?plus:noPlus).peso_QsemE+((caQ2+foQ2)/2)*(cPlus.includes(camp)?plus:noPlus).peso_Q2
+                    }else if(grandeza==8){
+                        ca=confUltimoGol(100,context,1,metade,mandante,c,asc,q)
+                        fo=confUltimoGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confUltimoGol((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,mandante,c,asc,q)
+                        foQ=confUltimoGol((cPlus.includes(camp)?plus:noPlus).qTDsemE,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confUltimoGol((cPlus.includes(camp)?plus:noPlus).qTD2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confUltimoGol((cPlus.includes(camp)?plus:noPlus).qTD2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
                         chance=((ca+fo)/2)*(cPlus.includes(camp)?plus:noPlus).peso_N+((caQ+foQ)/2)*(cPlus.includes(camp)?plus:noPlus).peso_QsemE+((caQ2+foQ2)/2)*(cPlus.includes(camp)?plus:noPlus).peso_Q2
                     }else{
                         ca=confEsc(100,context,1,metade,mandante,c,asc,q)

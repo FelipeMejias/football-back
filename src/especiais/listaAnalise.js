@@ -1,6 +1,8 @@
 import { listaEsc } from "../conferencias/listaEsc.js"
 import { listaGols } from "../conferencias/listaGols.js"
 import { listaPlacar } from "../conferencias/listaPlacar.js"
+import { listaPrimGol } from "../conferencias/listaPrimGol.js"
+import { listaUltimoGol } from "../conferencias/listaUltimoGol.js"
 import { frasesAnalise } from "./analise.js"
 
 export function listaAnalise(context,grandeza,estadia,metade,time,c,asc,valor){
@@ -26,6 +28,20 @@ export function listaAnalise(context,grandeza,estadia,metade,time,c,asc,valor){
             titulo:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
             subtitulo:`escanteios${c==1?' a favor':c==3?' contrários':''}`,
             resp:listaEsc(context,estadia,metade,time,c,asc,valor)
+        }
+    }  
+    if(grandeza==7){
+        return {
+            titulo:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
+            subtitulo:`${(c==1&&!asc)||(c==3&&asc)?'marcou':'sofreu'} primeiro`,
+            resp:listaPrimGol(context,estadia,metade,time,c,asc,valor)
+        }
+    }  
+    if(grandeza==8){
+        return {
+            titulo:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
+            subtitulo:`${(c==1&&!asc)||(c==3&&asc)?'marcou':'sofreu'} por último`,
+            resp:listaUltimoGol(context,estadia,metade,time,c,asc,valor)
         }
     }    
 }

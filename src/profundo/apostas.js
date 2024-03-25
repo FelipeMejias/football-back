@@ -118,6 +118,20 @@ function darNomeAposta(camp,mand,visi,grandeza,c,asc,metade){
             }
         }
         return texto
+    }else if(grandeza==7){
+        if(c==1 && !asc){
+            texto=`${mandante} marca o primeiro gol`
+        }else if(c==3 &&!asc){
+            texto=`${visitante} marca o primeiro gol`
+        }
+        return texto
+    }else if(grandeza==8){
+        if(c==1 && !asc){
+            texto=`${mandante} marca o último gol`
+        }else if(c==3 &&!asc){
+            texto=`${visitante} marca o último gol`
+        }
+        return texto
     }
     return null
 }

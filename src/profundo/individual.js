@@ -1,6 +1,7 @@
 import { comparar } from "../tabelas/comparar.js"
 import { escanteios } from "../tabelas/escanteios.js"
 import { marcaPrimeiro } from "../tabelas/marcaPrimeiro.js"
+import { marcaUltimo } from "../tabelas/marcaUltimo.js"
 import { mediaGols } from "../tabelas/mediaGols.js"
 import { placar } from "../tabelas/placar.js"
 import { primeiroGol } from "../tabelas/primeiroGol.js"
@@ -98,10 +99,9 @@ export function criarOrdem(context,time,enxuta=false){
             })
         })
     }
-    if(enxuta)return resp
     frases=[
         [['que mais marca o primeiro gol',true],['que menos marca o primeiro gol',false]],
-        [['com mais 0x0',null],['com menos 0x0',null]],
+        [['partida sem gols',null],['partida sem gols',null]],
         [['que mais sofre o primeiro gol',false],['que menos sofre o primeiro gol',true]],
 
     ]
@@ -109,7 +109,7 @@ export function criarOrdem(context,time,enxuta=false){
         const list=fucarTabela(marcaPrimeiro(context,i),time,true)
         list.forEach(item=>{
             const {pos,asc,valor,c,relev}=item
-            resp.push({
+            if(c!=2)resp.push({
                 pos,
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
@@ -119,11 +119,37 @@ export function criarOrdem(context,time,enxuta=false){
                 asc,
                 grandeza:7,
                 estadia:i,
-                metade:null,
+                metade:0,
                 handicap:null
             })
         })
     }
+    frases=[
+        [['que mais marca o último gol',true],['que menos marca o último gol',false]],
+        [['partida sem gols',null],['partida sem gols',null]],
+        [['que mais sofre o último gol',false],['que menos sofre o último gol',true]],
+
+    ]
+    for(let i=0;i<=2;i++){
+        const list=fucarTabela(marcaUltimo(context,i),time,true)
+        list.forEach(item=>{
+            const {pos,asc,valor,c,relev}=item
+            if(c!=2)resp.push({
+                pos,
+                descricao:frases[c-1][asc][0]+complementos2[i],
+                bom:frases[c-1][asc][1],
+                valor,
+                relev:RELEVANCIA7-(i?1:0),
+                c,
+                asc,
+                grandeza:8,
+                estadia:i,
+                metade:0,
+                handicap:null
+            })
+        })
+    }
+    if(enxuta)return resp
     frases=[
         [['com primeiro gol marcado mais tarde',false],['com primeiro gol marcado mais cedo',true]],
         [['com primeiro gol da partida mais tarde',null],['com primeiro gol da partida mais cedo',null]],
