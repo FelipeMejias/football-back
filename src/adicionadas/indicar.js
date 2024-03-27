@@ -13,10 +13,10 @@
 const campeonato=''
 const apos=['ing1','ita1','ale1','fra1','esp1','hol1','por1']
 const phase=1
-
-const bloquearEscanteios=true
+// ITA FRA ESP(cadiz ja foi) HOL POR(so falta braga)- escanteios para time
+const bloquearEscanteios=false
 const bloquearPlacarGols=true
-
+const bloquearPrimUltimoGol=true
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"
@@ -179,7 +179,7 @@ export function acharAposta(mand,visi,camp,stat){
             }
         }
         return texto
-    }else if(grandeza==7){
+    }else if(grandeza==7){if(bloquearPrimUltimoGol)return null
         if(c==1){
             if(asc){
                 return null
@@ -194,7 +194,7 @@ export function acharAposta(mand,visi,camp,stat){
             }
         }
         return texto
-    }else if(grandeza==8){
+    }else if(grandeza==8){if(bloquearPrimUltimoGol)return null
         if(c==1){
             if(asc){
                 return null
