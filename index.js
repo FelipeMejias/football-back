@@ -18,16 +18,11 @@ indicar()
 //grande()
 function grande(){
     const camps=[
-        'ing1',
-        'ale1',
-        'fra1',
-        'ita1',
         'esp1',
-
     ]
-    const tipos=['1',]
+    const tipos=['1','2','6']
     const resposta=[]
-    for(let k=85;k<95;k++){
+    for(let k=70;k<110;k++){
         const ev=k
         const apostas=buildApostas(3).filter(a=>(camps.includes(a.camp)&&tipos.includes(a.info[0])&&a.ev>=ev))
         let din=0;let ganho=0;let red=0;let green=0;
@@ -44,16 +39,16 @@ function grande(){
         const lucro2=calcularLucro(ganho2,din2)
         resposta.push({ev,amostra:din,lucro:parseFloat(lucro)})
         //console.log(`ev ${ev} antigo[ ${din2} lucro ${lucro2}]`)
-    }
+    }/*
     let cont=0
     for(let item of resposta)cont+=item.lucro
-    console.log(cont)
-    /*const ordenada= resposta.sort((a,b)=>{
+    console.log(cont)*/
+    const ordenada= resposta.sort((a,b)=>{
         let caso=false
         if(a.lucro==b.lucro&&a.amostra>b.amostra){caso=true}else if(a.lucro>b.lucro){caso=true}
         if(caso){return -1}else{return true}
     })
-    console.log(ordenada)  */
+    console.log(ordenada) 
 }
 
 
