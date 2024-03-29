@@ -11,10 +11,11 @@
     ['','2403'],
 */
 const campeonato=''
-const apos=['ing1','ita1','ale1','fra1','esp1','hol1','por1']
+const apos=['ita1','fra1','esp1','hol1','por1']
 const phase=1
-// ITA FRA ESP(cadiz ja foi) HOL POR(so falta braga)- escanteios para time
+// FRA - escanteios para time
 const bloquearEscanteios=false
+const bloquearEscanteiosAmbos=true
 const bloquearPlacarGols=true
 const bloquearPrimUltimoGol=true
 import { tetoPosicao } from "../../index.js"
@@ -165,7 +166,7 @@ export function acharAposta(mand,visi,camp,stat){
             }else{
                 texto=`Mais escanteios para ${mandante}`
             }
-        }else if(c==2){
+        }else if(c==2){if(bloquearEscanteiosAmbos)return null
             if(asc){
                 texto=`Menos escanteios`
             }else{
