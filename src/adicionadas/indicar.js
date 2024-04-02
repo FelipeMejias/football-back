@@ -10,14 +10,14 @@
     ['','2403'],
     ['','2403'],
 */
-const campeonato=''
+const campeonato='ing'
 const apos=['ita1','fra1','esp1','hol1','por1']
-const phase=1
+const phase=2
 // FRA - escanteios para time
 const bloquearEscanteios=false
-const bloquearEscanteiosAmbos=true
-const bloquearPlacarGols=true
-const bloquearPrimUltimoGol=true
+const bloquearEscanteiosAmbos=false
+const bloquearPlacarGols=false
+const bloquearPrimUltimoGol=false
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"
