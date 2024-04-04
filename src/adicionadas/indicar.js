@@ -10,7 +10,7 @@
     ['','2403'],
     ['','2403'],
 */
-const campeonato='ing'
+const campeonato='por'
 const apos=['ita1','fra1','esp1','hol1','por1']
 const phase=2
 // FRA - escanteios para time
