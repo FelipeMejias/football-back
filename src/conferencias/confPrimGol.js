@@ -19,7 +19,7 @@ export  function confPrimGol(qtd,context,estadia,metade,time,c,asc,valor){
             const gol=golos[0]
             if(mandante==time?gol>0:gol<0){
                 golChave=1
-            }else{
+            }else if(mandante==time?gol<0:gol>0){
                 golChave=-1
             }
         }

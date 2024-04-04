@@ -2,6 +2,8 @@ import { buildContext, ligas } from "../bancos.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
+import { confPrimGol } from "../conferencias/confPrimGol.js"
+import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 import { getPartida } from "../especiais/getPartida.js"
 
 export function buscarApostasJogo(camp,mandante,visitante){
@@ -33,7 +35,12 @@ export function buscarApostasJogo(camp,mandante,visitante){
             let qtd=zerado?0:unidade?parseInt(num[0]):parseInt(`${num[0]}${num[1]}`)
             for(let k=(zerado?0:unidade?1:2);k<num.length;k+=3){
                 const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
-                const green=jogoAntigo?(grandeza==2?confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):confEsc(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)):undefined
+                const green=jogoAntigo?(
+                    grandeza==2?confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
+                    grandeza==6?confEsc(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
+                    grandeza==7?confPrimGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
+                    confUltimoGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)
+                    ):undefined
                 odd.push({green,q:qtd,o,t:`${asc?'Menos de ':'Mais de '}${qtd}`})
                 qtd++
             }

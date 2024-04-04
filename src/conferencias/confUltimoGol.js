@@ -19,7 +19,7 @@ export  function confUltimoGol(qtd,context,estadia,metade,time,c,asc,valor){
             const gol=golos[golos.length-1]
             if(mandante==time?gol>0:gol<0){
                 golChave=1
-            }else{
+            }else if(mandante==time?gol<0:gol>0){
                 golChave=-1
             }
         }
