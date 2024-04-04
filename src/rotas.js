@@ -126,3 +126,33 @@ router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('m
     const part=preencher(camp,mandante,visitante,escant,gols)
     res.status(200).send(part)
 })
+router.get('/apostascriar/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
+    const {camp,manvis}=req.params
+    const todas=buildApostas(1)
+    const resp=todas.filter(apo=>(
+        apo.camp==camp&&
+        apo.mandante==manvis[0]+manvis[1]+manvis[2]&&
+        apo.visitante==manvis[3]+manvis[4]+manvis[5]
+    ))
+    res.status(200).send(resp)
+})
+router.get('/infoscriar/:camp/:manvis/:infovalor',validateCamp,validateTime('manvis'),async(req,res)=>{
+    const {camp,manvis,infovalor}=req.params
+    const lis=infovalor.split('-')
+    const info=lis[0]
+    const valor=lis[1]
+    const mandante=manvis[0]+manvis[1]+manvis[2]
+    const visitante=manvis[3]+manvis[4]+manvis[5]
+    const {partidasTotais}=buildContext(camp,true)
+    const partida= getPartida(partidasTotais,mandante+visitante)
+    const data=partida[1]
+    const guruRaw=criarOrdemDupla(camp,mandante,visitante)
+    const guruCerto=guruRaw.filter(cada=>{
+        const {grandeza,c,asc,metade}=cada[0]
+        const codigo=`${grandeza}${c}${asc}${metade}`
+        return(cada.length==3&&codigo==info)
+    })
+    const guru=guruCerto[0]
+    const analise=analisar(camp,mandante,visitante,parseInt(info[0]),parseInt(info[1]),parseInt(info[2]),parseInt(info[3]),parseFloat(valor))
+    res.status(200).send({guru,analise})
+})
