@@ -1,20 +1,19 @@
 /*
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
-    ['','240406'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
+    ['','240414'],
 */
 const campeonato=''
-const apos=['ita1','fra1','esp1','hol1','por1']
 const phase=1
-// FRA - escanteios para time
-const bloquearEscanteios=false
+
+const bloquearEscanteios=true
 const bloquearEscanteiosAmbos=false
 const bloquearPlacarGols=false
 const bloquearPrimUltimoGol=false
