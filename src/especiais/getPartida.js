@@ -15,6 +15,7 @@ export function create(part,camp){
     const mandante=manvis[0]+manvis[1]+manvis[2]
     const visitante=manvis[3]+manvis[4]+manvis[5]
     const apostas=buscarApostasJogo(camp,mandante,visitante)
+    
     const gols=[]
     let man=0
     let vis=0
