@@ -3,7 +3,7 @@ import { buildApostas } from "../especiais/buildApostas.js";
 import { avanca7dias, traduzirData } from "../utils.js";
 
 export function buildResultado(camps,tipos,ev){
-    //let t=1
+    let t=1
     const apostas=buildApostas(3).filter(a=>(
 camps.includes(a.camp)&&
 tipos.includes(a.info[0])&&
@@ -43,17 +43,17 @@ a.ev>=ev
         const lucroMedium2=((lucroRaw2-(lucroRaw2>1?1:0))*100).toFixed(1)
         const lucro2=lucroRaw2>1?lucroMedium2:-(100-lucroMedium2).toFixed(1)
         
-        /*
+        
         const trueLucro=parseFloat(lucro2)
         if(trueLucro>0)t*=(1+trueLucro/100)
-        */
+        
         respRodadas.push({numero:k+1,abertas,porc:porc2,green:green2,red:red2,lucro:lucro2,apostas:realRodadas})
     }
     const porc=Math.round((green/din)*100)
     const lucroRaw=ganho/din
     const lucroMedium=((lucroRaw-(lucroRaw>1?1:0))*100).toFixed(1)
     const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium).toFixed(1)
-    //console.log(parseFloat(t.toFixed(2)))
+    console.log(parseFloat(t.toFixed(2)))
     return {rodadas:respRodadas,porc,green,red,lucro,apostas:realApostas}
 }
 function porRodada(camps,tipos,ev){

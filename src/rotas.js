@@ -18,7 +18,7 @@ import { partidasLiga } from './especiais/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
-import { colocarLabels } from './utils.js'
+import { colocarLabels, quantoTempoFalta } from './utils.js'
 import { preencher } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
@@ -146,6 +146,11 @@ router.get('/infoscriar/:camp/:manvis/:infovalor',validateCamp,validateTime('man
     const {partidasTotais}=buildContext(camp,true)
     const partida= getPartida(partidasTotais,mandante+visitante)
     const data=partida[1]
+    let texto=quantoTempoFalta(data)
+                if(texto.includes('-')){
+                    const lis=texto.split('-')
+                    texto=lis[1]
+                }
     const guruRaw=criarOrdemDupla(camp,mandante,visitante)
     const guruCerto=guruRaw.filter(cada=>{
         const {grandeza,c,asc,metade}=cada[0]
@@ -154,5 +159,5 @@ router.get('/infoscriar/:camp/:manvis/:infovalor',validateCamp,validateTime('man
     })
     const guru=guruCerto[0]
     const analise=analisar(camp,mandante,visitante,parseInt(info[0]),parseInt(info[1]),parseInt(info[2]),parseInt(info[3]),parseFloat(valor))
-    res.status(200).send({guru,analise})
+    res.status(200).send({guru,analise,data:texto})
 })
