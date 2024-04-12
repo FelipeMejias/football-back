@@ -7,35 +7,9 @@ import { quantoTempoFalta } from "../utils.js"
 import { confPrimGol } from "../conferencias/confPrimGol.js"
 import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 
-const qtdEsc={
-    'ing1':[2,15],
-    'ita1':[2,11],
-    'ale1':[2,8],
-    'fra1':[5,10],
-    'esp1':[3,10],
-    'hol1':[10,10],
-    'por1':[6,6],
-}
-const qtdGols={
-    'ing1':[1,14],
-    'ita1':[1,13],
-    'ale1':[4,9],
-    'fra1':[1,11],
-    'esp1':[2,10],
-    'hol1':[2,6],
-    'por1':[7,12],
-}
-const qtdPlacar={
-    'ing1':[2,2],
-    'ita1':[5,4],
-    'ale1':[1,8],//1,9
-    'fra1':[10,6],//11,6 2,6 10,6
-    'esp1':[2,1],
-    'hol1':[1,13],
-    'por1':[1,5],
-}
 
-export function buildApostas(pageBet,dataInicio=false,dataFim=false){
+export function buildApostas(qtd1,qtd2){
+    const pageBet=3
     let desordenada=[]
     let ordenada
     const {paths}=ligas
@@ -74,36 +48,40 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     if(grandeza==2){
                         ca=confGols(100,context,1,metade,mandante,c,asc,q)
                         fo=confGols(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confGols(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confGols(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confGols(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confGols(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confGols(qtd1,context,0,metade,mandante,c,asc,q)
+                        foQ=confGols(qtd1,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confGols(qtd2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confGols(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
                     }else if(grandeza==7){
                         ca=confPrimGol(100,context,1,metade,mandante,c,asc,q)
                         fo=confPrimGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confPrimGol(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confPrimGol(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confPrimGol(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confPrimGol(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confPrimGol(qtd1,context,0,metade,mandante,c,asc,q)
+                        foQ=confPrimGol(qtd1,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confPrimGol(qtd2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confPrimGol(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
                     }else if(grandeza==8){
                         ca=confUltimoGol(100,context,1,metade,mandante,c,asc,q)
                         fo=confUltimoGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confUltimoGol(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confUltimoGol(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confUltimoGol(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confUltimoGol(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confUltimoGol(qtd1,context,0,metade,mandante,c,asc,q)
+                        foQ=confUltimoGol(qtd1,context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confUltimoGol(qtd2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confUltimoGol(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
                     }else{
                         ca=confEsc(100,context,1,metade,mandante,c,asc,q)
                         fo=confEsc(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confEsc(qtdEsc[camp][0],context,1,metade,mandante,c,asc,q)
-                        foQ=confEsc(qtdEsc[camp][0],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confEsc(qtdEsc[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confEsc(qtdEsc[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ=confEsc(qtd1,context,1,metade,mandante,c,asc,q)
+                        foQ=confEsc(qtd1,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        caQ2=confEsc(qtd2,context,1,metade,mandante,c,asc,q)
+                        foQ2=confEsc(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
                     }
                     tex=texto.replace('X',q)
                     ode=parseFloat(o)
                     valor=q
-                    chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
+                    
                     resp.push({
                         ev:calcularEV(chance,ode),
                         chance:chance==100?99:chance,
@@ -119,10 +97,10 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
             }else{
                 ca=confPlacar(100,context,1,metade,mandante,c,asc,null)
                 fo=confPlacar(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ=confPlacar(qtdPlacar[camp][0],context,0,metade,mandante,c,asc,null)
-                foQ=confPlacar(qtdPlacar[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ2=confPlacar(qtdPlacar[camp][1],context,1,metade,mandante,c,asc,null)
-                foQ2=confPlacar(qtdPlacar[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ=confPlacar(qtd1,context,0,metade,mandante,c,asc,null)
+                foQ=confPlacar(qtd1,context,0,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                caQ2=confPlacar(qtd2,context,1,metade,mandante,c,asc,null)
+                foQ2=confPlacar(qtd2,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
                 tex=texto
                 ode=parseFloat(odd)
                 chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)

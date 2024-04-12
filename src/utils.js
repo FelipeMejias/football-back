@@ -126,6 +126,11 @@ export function avanca7dias(time){
     const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
     const respRaw=date.add(7,'day')
     const resp=traduzirData(respRaw)
+    if(resp=='240326'){
+        const newRespRaw=date.add(14,'day')
+        const newResp=traduzirData(newRespRaw)
+        return newResp
+    }
     return resp
 }
 export function traduzirData(re){
