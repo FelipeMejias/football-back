@@ -53,7 +53,7 @@ a.ev>=ev
     const lucroRaw=ganho/din
     const lucroMedium=((lucroRaw-(lucroRaw>1?1:0))*100).toFixed(1)
     const lucro=lucroRaw>1?lucroMedium:-(100-lucroMedium).toFixed(1)
-    console.log(parseFloat(t.toFixed(2)))
+    //console.log(parseFloat(t.toFixed(2)))
     return {rodadas:respRodadas,porc,green,red,lucro,apostas:realApostas}
 }
 function porRodada(camps,tipos,ev){

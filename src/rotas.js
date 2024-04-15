@@ -113,12 +113,12 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/resultados',async(req,res)=>{
-    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
+    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
     const camps=campsRaw.split('-')
     const tipos=tiposRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=buildResultado(camps,tipos,ev)
-    res.status(200).send(resp)
+    res.status(200).send({resp,cont:parseInt(contagem)})
 })
 router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
     const {escant,gols}=req.body
