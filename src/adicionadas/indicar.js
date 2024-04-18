@@ -11,12 +11,12 @@
     ['','240414'],
 */
 const campeonato=''
-const phase=1
+const phase=2
 
 const bloquearEscanteios=false
 const bloquearEscanteiosAmbos=false
-const bloquearPlacarGols=true
-const bloquearPrimUltimoGol=true
+const bloquearPlacarGols=false
+const bloquearPrimUltimoGol=false
 import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"

@@ -163,7 +163,7 @@ function extrairFuturas(camp){
     }
     return resp
 }
-function extrairPassadas(camp){
+export function extrairPassadas(camp){
     const {partidasTotais}=buildContext(camp,true)
     const resp=[]
     for(let k=0;k<partidasTotais.length;k++){

@@ -4,16 +4,17 @@ import { router } from './src/rotas.js'
 import { indicar } from './src/adicionadas/indicar.js'
 import { buildApostas } from './src/especiais/buildApostaNovo.js'
 import { deixarSomenteAsMaioresDeGols } from './src/profundo/resultado.js'
+import { maisOuMenos } from './teste.js'
 const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
-const port =process.env.PORT||4000
+const port =process.env.PORT||4001
 app.listen(port,()=>console.log(`listening on port ${port}`))
 
 export const tetoPosicao=5
 indicar()
-
+//maisOuMenos()
 //lancarTodas()
 function lancarTodas(){
     const camps=['ing1','ita1','ale1','fra1','esp1','hol1','por1']
