@@ -134,7 +134,6 @@ router.get('/apostascriar/:camp/:manvis',validateCamp,validateTime('manvis'),asy
         apo.mandante==manvis[0]+manvis[1]+manvis[2]&&
         apo.visitante==manvis[3]+manvis[4]+manvis[5]
     ))
-    console.log(resp)
     res.status(200).send(resp)
 })
 router.get('/infoscriar/:camp/:manvis/:infovalor',validateCamp,validateTime('manvis'),async(req,res)=>{
