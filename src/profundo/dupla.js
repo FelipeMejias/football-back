@@ -14,7 +14,8 @@ export function criarOrdemDupla(camp,mandante,visitante){
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
         const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
         if(par){
-                listao.push([est,par])
+            if(!(grandeza==7||grandeza==8)||!asc)listao.push([est,par])
+            
         }
     })
     const ordenada1= listao.sort((a,b)=>{
