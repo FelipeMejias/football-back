@@ -33,6 +33,7 @@ function extrairFuturas(camp){
     let aindaFalta=true
     for(let k=0; aindaFalta ;k++){
         const part=partidasTotais[k]
+        if(!part)console.log(k)
         const nome=part[0]
         const mandante=nome[0]+nome[1]+nome[2]
         const visitante=nome[3]+nome[4]+nome[5]

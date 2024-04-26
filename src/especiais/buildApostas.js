@@ -196,6 +196,6 @@ function calcularEV(chance,odd){
     return numero-(100-chance)
 }
 function calcularChance(ca,fo,caQ,foQ,caQ2,foQ2){
-    const resp=(((ca+fo)/2)+((caQ+foQ)/2)+((caQ2+foQ2)/2))/3
+    const resp=/*(*/((ca+fo)/2)//+((caQ+foQ)/2)+((caQ2+foQ2)/2))/3
     return resp
 }
