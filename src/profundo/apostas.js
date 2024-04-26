@@ -18,6 +18,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
     const apostas=[]
     //const apostasAdicionais=[]
     for(let caso of odr){
+        if(!caso)console.log(mandante,visitante)
         const lis=caso.split('-')
         const info=lis[0]
         const num=lis[1]
