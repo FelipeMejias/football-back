@@ -24,6 +24,7 @@ import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
 import { marcaUltimo } from './tabelas/marcaUltimo.js'
+import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 
 export const router=Router()
 
@@ -113,12 +114,18 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/resultados',async(req,res)=>{
-    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
-    const camps=campsRaw.split('-')
+    const {camp,tipos:tiposRaw,ev:evRaw,contagem}=req.query
     const tipos=tiposRaw.split('-')
     const ev=parseInt(evRaw)
-    const resp=buildResultado(camps,tipos,ev)
+    const resp=buildResultado(camp,tipos,ev)
     res.status(200).send({resp,cont:parseInt(contagem)})
+})
+router.get('/resultadosSemanas',async(req,res)=>{
+    const {camp,tipos:tiposRaw,ev:evRaw}=req.query
+    const tipos=tiposRaw.split('-')
+    const ev=parseInt(evRaw)
+    const resp=resultadoSemanas(camp,tipos,ev)
+    res.status(200).send(resp)
 })
 router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
     const {escant,gols}=req.body

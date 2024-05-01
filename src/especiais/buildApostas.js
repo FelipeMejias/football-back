@@ -7,34 +7,6 @@ import { quantoTempoFalta } from "../utils.js"
 import { confPrimGol } from "../conferencias/confPrimGol.js"
 import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 
-const qtdEsc={
-    'ing1':[2,15],
-    'ita1':[2,11],
-    'ale1':[2,8],
-    'fra1':[5,10],
-    'esp1':[3,10],
-    'hol1':[10,10],
-    'por1':[6,6],
-}
-const qtdGols={
-    'ing1':[1,14],
-    'ita1':[1,13],
-    'ale1':[4,9],
-    'fra1':[1,11],
-    'esp1':[2,10],
-    'hol1':[2,6],
-    'por1':[7,12],
-}
-const qtdPlacar={
-    'ing1':[2,2],
-    'ita1':[5,4],
-    'ale1':[1,8],//1,9
-    'fra1':[10,6],//11,6 2,6 10,6
-    'esp1':[2,1],
-    'hol1':[1,13],
-    'por1':[1,5],
-}
-
 export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]
     let ordenada
@@ -60,8 +32,8 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
         const {camp,mandante,visitante,cinza}=partida
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
-        for(let ap of apostas){let caQ;let foQ;let caQ2;let foQ2;
-            let ca;let fo;let tex;let ode;let valor
+        for(let ap of apostas){
+            let tex;let ode;let valor
             const {info,odd,texto,green}=ap
             let chance
             const grandeza=parseInt(info[0])
@@ -71,39 +43,21 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
             if(grandeza!=1){
                 for(let esp of odd){
                     const {o,q,green}=esp
+                    let func
                     if(grandeza==2){
-                        ca=confGols(100,context,1,metade,mandante,c,asc,q)
-                        fo=confGols(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confGols(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confGols(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confGols(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confGols(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        func=confGols
                     }else if(grandeza==7){
-                        ca=confPrimGol(100,context,1,metade,mandante,c,asc,q)
-                        fo=confPrimGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confPrimGol(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confPrimGol(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confPrimGol(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confPrimGol(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        func=confPrimGol
                     }else if(grandeza==8){
-                        ca=confUltimoGol(100,context,1,metade,mandante,c,asc,q)
-                        fo=confUltimoGol(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confUltimoGol(qtdGols[camp][0],context,0,metade,mandante,c,asc,q)
-                        foQ=confUltimoGol(qtdGols[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confUltimoGol(qtdGols[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confUltimoGol(qtdGols[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        func=confUltimoGol
                     }else{
-                        ca=confEsc(100,context,1,metade,mandante,c,asc,q)
-                        fo=confEsc(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ=confEsc(qtdEsc[camp][0],context,1,metade,mandante,c,asc,q)
-                        foQ=confEsc(qtdEsc[camp][0],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
-                        caQ2=confEsc(qtdEsc[camp][1],context,1,metade,mandante,c,asc,q)
-                        foQ2=confEsc(qtdEsc[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+                        func=confEsc
                     }
+                    const preCh=preChance(func,context,mandante,visitante,metade,c,asc,q)
                     tex=texto.replace('X',q)
                     ode=parseFloat(o)
                     valor=q
-                    chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
+                    chance=calcularChance(preCh)
                     resp.push({
                         ev:calcularEV(chance,ode),
                         chance:chance==100?99:chance,
@@ -117,15 +71,10 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     }) 
                 }
             }else{
-                ca=confPlacar(100,context,1,metade,mandante,c,asc,null)
-                fo=confPlacar(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ=confPlacar(qtdPlacar[camp][0],context,0,metade,mandante,c,asc,null)
-                foQ=confPlacar(qtdPlacar[camp][0],context,0,metade,visitante,c==1?3:c==2?2:1,asc,null)
-                caQ2=confPlacar(qtdPlacar[camp][1],context,1,metade,mandante,c,asc,null)
-                foQ2=confPlacar(qtdPlacar[camp][1],context,2,metade,visitante,c==1?3:c==2?2:1,asc,null)
+                const preCh=preChance(confPlacar,context,mandante,visitante,metade,c,asc,null)
                 tex=texto
                 ode=parseFloat(odd)
-                chance=calcularChance(ca,fo,caQ,foQ,caQ2,foQ2)
+                chance=calcularChance(preCh)
 
                 resp.push({
                     ev:calcularEV(chance,ode),
@@ -195,7 +144,13 @@ function calcularEV(chance,odd){
     const numero=odd*chance
     return numero-(100-chance)
 }
-function calcularChance(ca,fo,caQ,foQ,caQ2,foQ2){
-    const resp=/*(*/((ca+fo)/2)//+((caQ+foQ)/2)+((caQ2+foQ2)/2))/3
+function preChance(func,context,mandante,visitante,metade,c,asc,q){
+    const ca=func(100,context,1,metade,mandante,c,asc,q)
+    const fo=func(100,context,2,metade,visitante,c==1?3:c==2?2:1,asc,q)
+    return {ca,fo}
+}
+function calcularChance(preCh){
+    const {ca,fo}=preCh
+    const resp=(ca+fo)/2
     return resp
 }
