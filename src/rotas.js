@@ -57,13 +57,12 @@ router.get('/partidasgerais',async(req,res)=>{
     const {camps:campsRaw}=req.query
     const camps=campsRaw.split('-')
     const lista=buildFutura(camps)
-    const resp=colocarLabels(lista)
+    const resp=lista.length>0?colocarLabels(lista):[]
     res.status(200).send(resp)
 })
 router.get('/apostasgerais/:aberto',async(req,res)=>{
     const {aberto}=req.params
     const lista=buildApostas(parseInt(aberto))
-
     res.status(200).send(lista)
 })
 router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{

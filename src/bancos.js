@@ -5,8 +5,8 @@ import { createAle1 } from "./adicionadas/p3_ALE.js";
 import { createFra1 } from "./adicionadas/p4_FRA.js";
 import { createAra1 } from "./validators/wwwwww_ARA.js";
 import { createArg1 } from "./validators/wwwwww_ARG.js";
-import { createHol1 } from "./adicionadas/p6_HOL.js";
-import { createPor1 } from "./adicionadas/p7_POR.js";
+import { createHol1 } from "./validators/p6_HOL.js";
+import { createPor1 } from "./validators/p7_POR.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -86,7 +86,7 @@ function extrairPosteriores(array,manvis){
       path:'arg1'
   }
 export const ligas={
-  paths:['ing1','ita1','ale1','fra1','esp1','hol1','por1','ara1','arg1'],
-  contexts:[contextIng1,contextIta1,contextAle1,contextFra1,contextEsp1,contextHol1,contextPor1,contextAra1,contextArg1],
-  bancos:[createIng1,createIta1,createAle1,createFra1,createEsp1,createHol1,createPor1,createAra1,createArg1]
+  paths:['ing1','ita1','ale1','fra1','esp1'],//,'hol1','por1','ara1','arg1'],
+  contexts:[contextIng1,contextIta1,contextAle1,contextFra1,contextEsp1],//,contextHol1,contextPor1,contextAra1,contextArg1],
+  bancos:[createIng1,createIta1,createAle1,createFra1,createEsp1]//,createHol1,createPor1,createAra1,createArg1]
 }
