@@ -10,9 +10,9 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
-const port =process.env.PORT||4001
+const port =process.env.PORT||4005
 app.listen(port,()=>console.log(`listening on port ${port}`))
-bla()
+//bla()
 export const tetoPosicao=5
 indicar()
 //maisOuMenos()
