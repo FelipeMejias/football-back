@@ -149,7 +149,7 @@ export function criarOrdem(context,time,enxuta=false){
             })
         })
     }
-    if(enxuta)return resp
+    /*if(enxuta)*/return resp
     frases=[
         [['com primeiro gol marcado mais tarde',false],['com primeiro gol marcado mais cedo',true]],
         [['com primeiro gol da partida mais tarde',null],['com primeiro gol da partida mais cedo',null]],

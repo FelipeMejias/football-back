@@ -126,6 +126,12 @@ router.get('/resultadosSemanas',async(req,res)=>{
     const resp=resultadoSemanas(camp,tipos,ev)
     res.status(200).send(resp)
 })
+
+
+
+
+
+
 router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
     const {escant,gols}=req.body
     const {camp,mandante,visitante}=req.params

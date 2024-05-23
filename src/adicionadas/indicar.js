@@ -10,7 +10,7 @@
     ['','240511'],
     ['','240511'],
 */
-const campeonato='esp'
+const campeonato=''
 const phase=2
 
 const bloquearEscanteios=false

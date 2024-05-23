@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { avanca7dias, traduzirData } from "../utils.js";
-import { buildApostas } from "../especiais/buildApostaNovo.js";
+import { buildApostas } from "../especiais/buildApostas.js";
 
 export function resultadoSemanas(camp,tipos,ev){
     const rodadas=porRodada(camp,tipos,ev)
@@ -34,7 +34,7 @@ function porRodada(camp,tipos,ev){
     while(aindaFalta){
         const dataInicio=data
         data=avanca7dias(data)
-        const apostas=buildApostas(2,dataInicio,data).filter(a=>(
+        const apostas=buildApostas(2,dataInicio+'0000',data+'0000').filter(a=>(
 camp==a.camp&&
 tipos.includes(a.info[0])&&
 a.ev>=ev
