@@ -10,7 +10,7 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
-const port =process.env.PORT||4001
+const port =process.env.PORT||4000
 app.listen(port,()=>console.log(`listening on port ${port}`))
 //bla()
 export const tetoPosicao=5
@@ -121,4 +121,23 @@ function calcularLucro(ganho,din){
     const lucroMedium=((lucroRaw%1)*100)
     const resp=lucroRaw>1?lucroMedium:-(100-lucroMedium)
     return resp
+}
+function carro(){
+    const lista=[
+        'ferrari',
+        'fiat',
+        'ford',
+        'kia',
+        'lamborghini',
+        'landrover',
+        'maserati',
+        'mitsubishi',
+        'porsche',
+        'ram',
+        'suzuki',
+        'volvo'
+    ]
+    for(let item of lista){
+        console.log(`import ${item} from './imgs/${item}.jpg'`)
+    }
 }

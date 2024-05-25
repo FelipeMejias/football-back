@@ -97,11 +97,36 @@ router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mand
         const frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
         if(resposta.includes(frase)){
             cont++
-            const novaFrase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
-            resposta.push({frase:novaFrase,analise:resp[cont][0],comOdds:resp[cont].length==3})
+            const stat=resp[cont]
+            let num=null
+            if(stat.length==3){
+                const listaOdd=stat[2].odd
+                if(typeof(listaOdd)=='array'){
+                    if(stat[0].asc){
+                        num=listaOdd[listaOdd.length-1].q
+                    }else{
+                        num=listaOdd[0].q
+                    }
+                }
+            }
+            const novaFrase=nomePreFlop(mandante,visitante,camp,stat[0])
+            resposta.push({frase:novaFrase,num,analise:stat[0],comOdds:stat.length==3})
             cont++
         }else{
-            resposta.push({frase,analise:resp[cont][0],comOdds:resp[cont].length==3})
+            const stat=resp[cont]
+            let num=null
+            if(stat.length==3){
+                const listaOdd=stat[2].odd
+                if(typeof(listaOdd)!='string'){
+
+                    if(stat[0].asc){
+                        num=listaOdd[listaOdd.length-1].q
+                    }else{
+                        num=listaOdd[0].q
+                    }
+                }
+            }
+            resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
             cont++
         }
     }
