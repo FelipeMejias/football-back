@@ -25,6 +25,7 @@ import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
 import { marcaUltimo } from './tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
+import { nomePreFlop } from './especiais/preflop.js'
 
 export const router=Router()
 
@@ -84,11 +85,27 @@ router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)
 })
 router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
-    const {partidasTotais}=buildContext(camp,true)
-    const partida= getPartida(partidasTotais,mandante+visitante)
-    const data=partida[1]
     const resp=criarOrdemDupla(camp,mandante,visitante)
-    res.status(200).send({resp,data})
+    res.status(200).send(resp)
+})
+router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
+    const {camp,mandante,visitante}=req.params
+    const resp=criarOrdemDupla(camp,mandante,visitante)
+    const resposta=[]
+    let cont=0
+    while(resposta.length<3){
+        const frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
+        if(resposta.includes(frase)){
+            cont++
+            const novaFrase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
+            resposta.push({frase:novaFrase,analise:resp[cont][0],comOdds:resp[cont].length==3})
+            cont++
+        }else{
+            resposta.push({frase,analise:resp[cont][0],comOdds:resp[cont].length==3})
+            cont++
+        }
+    }
+    res.status(200).send(resposta)
 })
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params

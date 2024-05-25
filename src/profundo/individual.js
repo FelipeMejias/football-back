@@ -33,7 +33,7 @@ export function criarOrdem(context,time,enxuta=false){
             const list=fucarTabela(placar(context,i,j),time)
             list.forEach(item=>{
                 const {pos,asc,valor,c,relev}=item
-                resp.push({
+                if(c!=2&&!asc)resp.push({
                     pos,
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
