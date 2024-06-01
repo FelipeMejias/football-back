@@ -1,10 +1,11 @@
-import { createIta1 } from "./adicionadas/p2_ITA.js";
-import { createEsp1 } from "./adicionadas/p5_ESP.js";
-import { createIng1 } from "./adicionadas/p1_ING.js";
-import { createAle1 } from "./adicionadas/p3_ALE.js";
-import { createFra1 } from "./adicionadas/p4_FRA.js";
+import { createIta1 } from "./validators/p2_ITA.js";
+import { createEsp1 } from "./validators/p5_ESP.js";
+import { createIng1 } from "./validators/p1_ING.js";
+import { createBra1 } from "./adicionadas/p1_BRA.js";
+import { createAle1 } from "./validators/p3_ALE.js";
+import { createFra1 } from "./validators/p4_FRA.js";
 import { createAra1 } from "./validators/wwwwww_ARA.js";
-import { createArg1 } from "./validators/wwwwww_ARG.js";
+import { createArg1 } from "./adicionadas/p6_ARG.js";
 import { createHol1 } from "./validators/p6_HOL.js";
 import { createPor1 } from "./validators/p7_POR.js";
 
@@ -85,8 +86,13 @@ function extrairPosteriores(array,manvis){
       listaTimes:['arg','ban','bar','bel','boc','cen','def','dep','est','gim','god','hur','ind','ins','iri','lan','new','pla','rac','riv','ros','san','sar','tal','tig','tuc','uni','vel'],
       path:'arg1'
   }
+  const contextBra1={
+    listaNomes:['Atlético GO','Athlético PR','Atlético MG','Criciúma','Bahia','Botafogo','Bragantino','Corinthians','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Grêmio','Internacional','Juventude','Palmeiras','São Paulo','Vasco da Gama','Vitória'],
+    listaTimes:['ago','cap','cam','cri','bah','bot','bra','cor','cru','cui','fla','flu','for','gre','int','juv','pal','sao','vas','vit'],
+    path:'bra1'
+  }
 export const ligas={
-  paths:['ing1','ita1','ale1','fra1','esp1'],//,'hol1','por1','ara1','arg1'],
-  contexts:[contextIng1,contextIta1,contextAle1,contextFra1,contextEsp1],//,contextHol1,contextPor1,contextAra1,contextArg1],
-  bancos:[createIng1,createIta1,createAle1,createFra1,createEsp1]//,createHol1,createPor1,createAra1,createArg1]
+  paths:['bra1','arg1'],
+  contexts:[contextBra1,contextArg1],
+  bancos:[createBra1,createArg1]
 }

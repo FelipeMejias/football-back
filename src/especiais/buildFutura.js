@@ -25,9 +25,7 @@ export function buildFutura(camps){
     return ordenada3
 }
 function extrairFuturas(camp){
-    const {contexts,paths}=ligas
     const {partidasTotais}=buildContext(camp,true)
-    const qtdPartidas1rodada=contexts[paths.indexOf(camp)].listaTimes.length/2
     const resp=[]
     const dataRodada=dataDaRodada()
     let aindaFalta=true
