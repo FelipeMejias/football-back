@@ -64,6 +64,7 @@ router.get('/partidasgerais',async(req,res)=>{
 router.get('/apostasgerais/:aberto',async(req,res)=>{
     const {aberto}=req.params
     const lista=buildApostas(parseInt(aberto))
+    console.log(lista)
     res.status(200).send(lista)
 })
 router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
@@ -95,7 +96,11 @@ router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mand
     let cont=0
     while(resposta.length<3){
         const frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
-        if(resposta.includes(frase)){
+        let pode=true
+        for(let item of resposta){
+            if(item.frase==frase)pode=false
+        }
+        if(!pode){
             cont++
             const stat=resp[cont]
             let num=null
@@ -135,7 +140,7 @@ router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mand
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
-    const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),parseInt(asc),parseInt(metade),parseFloat(valor))
+    const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),parseInt(asc),parseInt(metade),valor?parseFloat(valor):false)
     res.status(200).send(resp)
 })
 router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvis','time'),async(req,res)=>{

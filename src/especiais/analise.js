@@ -6,6 +6,7 @@ import { buscarApostasJogo } from '../profundo/apostas.js'
 import { confPrimGol } from '../conferencias/confPrimGol.js'
 import { confUltimoGol } from '../conferencias/confUltimoGol.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
+    console.log(valor)
     const context=buildContext(camp,mandante+visitante)
     const cPar=c==1?3:c==2?2:1
     const mandantePuro=conferir(context,grandeza,c,asc,0,metade,valor,mandante)
@@ -38,7 +39,7 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
 
     }
     return [[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],ode?{
-        tex,green,ode,nome:`${camp+mandante+visitante}${codigo}${valor?valor:''}`
+        tex,green,ode,nome:`${camp+mandante+visitante}${codigo}${valor||valor==0?valor:''}`
     }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){

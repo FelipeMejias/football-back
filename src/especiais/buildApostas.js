@@ -67,7 +67,7 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                         green:cinza?null:green,
                         info,
                         valor,
-                        nome:`${camp+mandante+visitante}${info}${valor}`
+                        nome:`${camp+mandante+visitante}${info}${info[0]==2||info[0]==6?valor:''}`
                     }) 
                 }
             }else{
