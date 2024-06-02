@@ -64,7 +64,6 @@ router.get('/partidasgerais',async(req,res)=>{
 router.get('/apostasgerais/:aberto',async(req,res)=>{
     const {aberto}=req.params
     const lista=buildApostas(parseInt(aberto))
-    console.log(lista)
     res.status(200).send(lista)
 })
 router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
