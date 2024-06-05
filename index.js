@@ -36,4 +36,11 @@ function carro(){
     for(let item of lista){
         console.log(`import ${item} from './animais/${item}.jpg'`)
     }
+}function invert(){
+    const lista=[
+      
+    ]
+    for(let item of lista.reverse()){
+        console.log(item)
+    }
 }
