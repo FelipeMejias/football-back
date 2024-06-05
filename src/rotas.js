@@ -19,7 +19,7 @@ import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
 import { colocarLabels, quantoTempoFalta } from './utils.js'
-import { preencher, preencherOdds } from './profundo/preencher.js'
+import { preencher, preencherOdds, preencherPartidas } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
@@ -148,6 +148,14 @@ router.post('/preencherOdds/:camp/:mandante/:visitante',validateCamp,validateTim
     const part=preencherOdds(camp,mandante,visitante,infos)
     res.status(200).send(part)
 })
+router.post('/preencherParts/:camp',validateCamp,async(req,res)=>{
+    const {lista}=req.body
+    const {camp}=req.params
+    const foi=preencherPartidas(camp,lista)
+    res.sendStatus(foi?200:500)
+})
+
+
 router.get('/apostascriar/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
     const {camp,manvis}=req.params
     const todas=buildApostas(2)

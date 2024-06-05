@@ -64,3 +64,10 @@ export function preencherOdds(camp,mandante,visitante,infos){
     bancos[paths.indexOf(camp)].splice(indice, 1, novaPart)
     return novaPart
 }
+export function preencherPartidas(camp,infos){
+    const {bancos,paths}=ligas
+    for(let item of infos){
+        bancos[paths.indexOf(camp)].unshift(item)
+    }
+    return true
+}
