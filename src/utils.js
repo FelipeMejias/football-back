@@ -107,7 +107,7 @@ function horario(){
     return resp
 }
 export function dataDaRodada(){
-    let data='240213'
+    let data='240530'
     const agora=traduzirData(dayjs())
     let resp
     while(data<agora){
@@ -126,11 +126,7 @@ export function avanca7dias(time){
     const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
     const respRaw=date.add(7,'day')
     const resp=traduzirData(respRaw)
-    if(resp=='240326'){
-        const newRespRaw=date.add(14,'day')
-        const newResp=traduzirData(newRespRaw)
-        return newResp
-    }
+    
     return resp
 }
 export function traduzirData(re){

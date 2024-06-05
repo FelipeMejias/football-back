@@ -19,13 +19,14 @@ import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
 import { colocarLabels, quantoTempoFalta } from './utils.js'
-import { preencher } from './profundo/preencher.js'
+import { preencher, preencherOdds } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
 import { marcaUltimo } from './tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 import { nomePreFlop } from './especiais/preflop.js'
+import { preFlop } from './profundo/preflop.js'
 
 export const router=Router()
 
@@ -90,50 +91,7 @@ router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandant
 })
 router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
-    const resp=criarOrdemDupla(camp,mandante,visitante)
-    const resposta=[]
-    let cont=0
-    while(resposta.length<3){
-        const frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
-        let pode=true
-        for(let item of resposta){
-            if(item.frase==frase)pode=false
-        }
-        if(!pode){
-            cont++
-            const stat=resp[cont]
-            let num=null
-            if(stat.length==3){
-                const listaOdd=stat[2].odd
-                if(typeof(listaOdd)=='array'){
-                    if(stat[0].asc){
-                        num=listaOdd[listaOdd.length-1].q
-                    }else{
-                        num=listaOdd[0].q
-                    }
-                }
-            }
-            const novaFrase=nomePreFlop(mandante,visitante,camp,stat[0])
-            resposta.push({frase:novaFrase,num,analise:stat[0],comOdds:stat.length==3})
-            cont++
-        }else{
-            const stat=resp[cont]
-            let num=null
-            if(stat.length==3){
-                const listaOdd=stat[2].odd
-                if(typeof(listaOdd)!='string'){
-
-                    if(stat[0].asc){
-                        num=listaOdd[listaOdd.length-1].q
-                    }else{
-                        num=listaOdd[0].q
-                    }
-                }
-            }
-            resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
-            cont++
-        }
-    }
+    const resposta=preFlop(camp,mandante,visitante)
     res.status(200).send(resposta)
 })
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
@@ -182,6 +140,12 @@ router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('m
     const {escant,gols}=req.body
     const {camp,mandante,visitante}=req.params
     const part=preencher(camp,mandante,visitante,escant,gols)
+    res.status(200).send(part)
+})
+router.post('/preencherOdds/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
+    const {infos}=req.body
+    const {camp,mandante,visitante}=req.params
+    const part=preencherOdds(camp,mandante,visitante,infos)
     res.status(200).send(part)
 })
 router.get('/apostascriar/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{

@@ -13,6 +13,7 @@ export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
   const index=paths.indexOf(camp)
   const banco=bancos[index]
+  if(!contexts[index])console.log(camp)
   return {
     partidasTotais:inteiro===true?banco:inteiro?extrairPosteriores(banco,inteiro):extrairFuturas(banco),
     listaTimes:contexts[index].listaTimes

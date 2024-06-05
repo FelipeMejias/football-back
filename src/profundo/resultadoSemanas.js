@@ -28,7 +28,7 @@ export function resultadoSemanas(camp,tipos,ev){
 }
 function porRodada(camp,tipos,ev){
     const resp=[]
-    let data='240213'
+    let data='240530'
     let aindaFalta=true
     const agora=traduzirData(dayjs())
     while(aindaFalta){
