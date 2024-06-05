@@ -8,6 +8,7 @@ import { createAra1 } from "./validators/wwwwww_ARA.js";
 import { createArg1 } from "./adicionadas/p6_ARG.js";
 import { createHol1 } from "./validators/p6_HOL.js";
 import { createPor1 } from "./validators/p7_POR.js";
+import { createEua1 } from "./adicionadas/p3_EUA.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -92,8 +93,23 @@ function extrairPosteriores(array,manvis){
     listaTimes:['ago','cap','cam','cri','bah','bot','bra','cor','cru','cui','fla','flu','for','gre','int','juv','pal','sao','vas','vit'],
     path:'bra1'
   }
+  const contextEua1={
+    listaNomes:['Atlanta United','Austin','Columbus Crew','Charlote FC','Chicago Fire',
+    'Cincinnati','Colorado Rapids','FC Dallas','DC United','Houston Dynamo',
+    'Inter Miami','LAFC','LA Galaxy','Minnesota Union','Montréal',
+    'Nashville SC','New England','New York City FC','Orlando City','Philadelphia Union',
+    'Portland Timbers','Real Salt Lake','NY Red Bulls','San José','Seattle Sounders',
+    'St Louis City','Sporting KC','Toronto','Whitecaps',],
+    listaTimes:['atl','aus','ccc','cha','chi',
+    'cin','col','dal','dcu','hou',
+    'int','laf','lag','min','mon',
+    'nas','new','nyc','orl','phi',
+    'por','rea','red','san','sea',
+    'slc','spo','tor','whi',],
+    path:'eua1'
+  }
 export const ligas={
-  paths:['bra1','arg1'],
-  contexts:[contextBra1,contextArg1],
-  bancos:[createBra1,createArg1]
+  paths:['bra1','arg1','eua1'],
+  contexts:[contextBra1,contextArg1,contextEua1],
+  bancos:[createBra1,createArg1,createEua1]
 }

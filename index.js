@@ -13,30 +13,25 @@ app.use(json())
 app.use(router)
 const port =process.env.PORT||4001
 app.listen(port,()=>console.log(`listening on port ${port}`))
-export const tetoPosicao=5
-indicar()
-function d(){
-    return console.log(createArg1.length)
-    for( let p of createArg1){
-        const n=p[0]
-        if(n[0]+n[1]+n[2]=='riv'||n[3]+n[4]+n[5]=='riv')console.log(p)
-    }
-}d()
+
 
 function carro(){
     const lista=[
-        'aguia',
-        'elefante','formiga',
-        'girafa','golfinho',
-        'leao','orca','orni',
-        'pinguim','rino','sapo','tigre',
-        'canguru','cobra','estrela','foca','marin',
-        'pato','tartaruga','dino'
+        'Atlanta United','Austin','Columbus Crew','Charlote FC','Chicago Fire',
+        'Cincinnati','Colorado Rapids','FC Dallas','DC United','Houston Dynamo',
+        'Inter Miami','LAFC','LA Galaxy','Minnesota Union','Montréal',
+        'Nashville SC','New England','New York City FC','Orlando City','Philadelphia Union',
+        'Portland Timbers','Real Salt Lake','NY Red Bulls','San José','Seattle Sounders',
+        'St Louis City','Sporting KC','Toronto','Whitecaps',
     ]
+    let string=''
     for(let item of lista){
-        console.log(`import ${item} from './animais/${item}.jpg'`)
+        console.log(`import ${item} from '../escudos/${item}.png'`)
+        string+=`${item},`
     }
-}function invert(){
+    console.log(string)
+}
+function invert(){
     const lista=[
       
     ]

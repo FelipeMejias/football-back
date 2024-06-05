@@ -17,7 +17,6 @@ const bloquearEscanteios=false
 const bloquearEscanteiosAmbos=false
 const bloquearPlacarGols=false
 const bloquearPrimUltimoGol=false
-import { tetoPosicao } from "../../index.js"
 import { buildContext, ligas } from "../bancos.js"
 import { buildFutura } from "../especiais/buildFutura.js"
 import { getPartida } from "../especiais/getPartida.js"
@@ -35,7 +34,7 @@ export function indicar(){
     }
 }
 export function criarOrdemDuplaAposta(context,camp,mandante,visitante,phase){
-    const tetoReal=tetoPosicao+(camp=='arg1'?1:0)
+    const tetoReal=5
     let y='['
     console.log(`==== ${mandante.toUpperCase()} x ${visitante.toUpperCase()} ====`)
     const ordemMandante=criarOrdem(context,mandante,true)

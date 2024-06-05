@@ -1,10 +1,8 @@
-import { tetoPosicao } from "../../index.js";
 import { buildContext } from "../bancos.js";
 import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
 
 export function criarOrdemDupla(camp,mandante,visitante){
-    const tetoReal=tetoPosicao+(camp=='arg1'?1:0)
     const context=buildContext(camp)
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
