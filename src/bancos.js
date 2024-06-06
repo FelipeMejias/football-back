@@ -9,6 +9,7 @@ import { createArg1 } from "./adicionadas/p6_ARG.js";
 import { createHol1 } from "./validators/p6_HOL.js";
 import { createPor1 } from "./validators/p7_POR.js";
 import { createEua1 } from "./adicionadas/p3_EUA.js";
+import { createBra2 } from "./adicionadas/p4_BRA-serieB.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -108,8 +109,15 @@ function extrairPosteriores(array,manvis){
     'slc','spo','tor','whi',],
     path:'eua1'
   }
+  const contextBra2={
+    listaNomes:['Amazonas FC','América MG','Avaí','Botafogo SP','Brusque','Ceará','Chapecoense','Coritiba','CRB','Goiás',
+    'Guarani','Ituano','Mirassol','Novorizontino','Operário','Paysandu','Ponte Preta','Santos','Sport Recife','Vila Nova'],
+    listaTimes:['ama','amg','ava','bot','bru','cea','cha','cor','crb','goi',
+                'gua','itu','mir','nov','ope','pay','pon','san','spo','vil'],
+    path:'bra2'
+  }
 export const ligas={
-  paths:['bra1','arg1','eua1'],
-  contexts:[contextBra1,contextArg1,contextEua1],
-  bancos:[createBra1,createArg1,createEua1]
+  paths:['bra1','arg1','eua1','bra2'],
+  contexts:[contextBra1,contextArg1,contextEua1,contextBra2],
+  bancos:[createBra1,createArg1,createEua1,createBra2]
 }
