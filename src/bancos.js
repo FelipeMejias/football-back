@@ -1,16 +1,17 @@
 import { createIta1 } from "./validators/p2_ITA.js";
 import { createEsp1 } from "./validators/p5_ESP.js";
 import { createIng1 } from "./validators/p1_ING.js";
-import { createBra1 } from "./adicionadas/p1_BRA.js";
 import { createAle1 } from "./validators/p3_ALE.js";
 import { createFra1 } from "./validators/p4_FRA.js";
 import { createAra1 } from "./validators/wwwwww_ARA.js";
-import { createArg1 } from "./adicionadas/p6_ARG.js";
 import { createHol1 } from "./validators/p6_HOL.js";
 import { createPor1 } from "./validators/p7_POR.js";
-import { createEua1 } from "./adicionadas/p3_EUA.js";
-import { createBra2 } from "./adicionadas/p4_BRA-serieB.js";
-import { createJap1 } from "./adicionadas/p4_JAP.js";
+
+import { createBra1 } from "./adicionadas/a_BRA.js";
+import { createArg1 } from "./adicionadas/b_ARG.js";
+import { createEua1 } from "./adicionadas/c_EUA.js";
+import { createBra2 } from "./adicionadas/d_BRA2.js";
+import { createJap1 } from "./adicionadas/e_JAP.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas

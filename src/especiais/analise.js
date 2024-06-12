@@ -15,9 +15,9 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const umTime=mandante==visitante?conferir(context,grandeza,c,asc,2,metade,valor,mandante):null
     const apostas=umTime?null:buscarApostasJogo(camp,mandante,visitante)
     const codigo=`${grandeza}${c}${asc}${metade}`
-    const objetoAposta=umTime||apostas.length==0?false:objetoApostas(apostas,codigo,grandeza)
+    const objetoAposta=umTime||apostas.length==0?false:objetoApostas(apostas,codigo,grandeza,valor)
     return umTime?[[mandantePuro],[mandanteEstadia,umTime]]:[[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],objetoAposta?{
-        ...objetoAposta,nome:`${camp+mandante+visitante}${codigo}${valor||valor==0?valor:''}`
+        ...objetoAposta,nome:`${camp+mandante+visitante}${codigo}${valor||valor===0?valor:''}`
     }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
@@ -100,7 +100,7 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
 }
 
 
-function objetoApostas(apostas,codigo,grandeza){
+function objetoApostas(apostas,codigo,grandeza,valor){
     let tex ;let ode;let green
     for(let ap of apostas){
         const {info,odd,texto,green:grGrande}=ap

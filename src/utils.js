@@ -1,4 +1,7 @@
 import dayjs from "dayjs"
+import { buildContext } from "./bancos.js"
+import { getPartida } from "./especiais/getPartida.js"
+import { buildFutura } from "./especiais/buildFutura.js"
 
 export function quantoTempoFalta(time){
     const nowRaw=horario()
@@ -20,7 +23,7 @@ export function quantoTempoFalta(time){
             return 'Em andamento'
         }
     }else{
-        if(dias||horas){
+        if(true||dias||horas){
             let parte1
             if(dias>6){
                 parte1=`${dia}/${mes}`
@@ -31,6 +34,12 @@ export function quantoTempoFalta(time){
         }else{
             return `${minutos==1?'Falta':'Faltam'} ${minutos} ${minutos==1?'minuto':'minutos'} `
         }
+    }
+}
+export function dataParaTopo(camp,mandante,visitante){
+    const futuras=buildFutura([camp])
+    for(let item of futuras){
+        if(mandante==item.mandante&&visitante==item.visitante)return item.texto
     }
 }
 export function colocarLabels(lista){

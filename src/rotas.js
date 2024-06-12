@@ -18,7 +18,7 @@ import { partidasLiga } from './especiais/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
-import { colocarLabels, quantoTempoFalta } from './utils.js'
+import { colocarLabels, dataParaTopo, quantoTempoFalta } from './utils.js'
 import { preencher, preencherOdds, preencherPartidas } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
@@ -87,7 +87,8 @@ router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)
 router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const resp=criarOrdemDupla(camp,mandante,visitante)
-    res.status(200).send(resp)
+    const data=dataParaTopo(camp,mandante,visitante)
+    res.status(200).send({resp,data})
 })
 router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
@@ -98,7 +99,8 @@ router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mand
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
     const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),parseInt(asc),parseInt(metade),valor?parseFloat(valor):false)
-    res.status(200).send(resp)
+    const data=dataParaTopo(camp,mandante,visitante)
+    res.status(200).send({resp,data})
 })
 router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvis','time'),async(req,res)=>{
     const {camp,time,manvis}=req.params
@@ -131,11 +133,24 @@ router.get('/resultadosSemanas',async(req,res)=>{
     res.status(200).send(resp)
 })
 
+//================
+//CONTROLE EXTERNO
 
-
-
-
-
+router.get('/preencher',async(req,res)=>{
+    const lista=buildFutura()
+    const resposta=lista.map(part=>{
+        const {camp,mandante,visitante}=part
+        const pf=preFlop(camp,mandante,visitante)
+        
+        return {...part,pf}
+    })
+    const resp=resposta.sort((a,b)=>{
+        if(!a.pf[0].comOdds&&b.pf[0].comOdds){
+            return -1
+        }else{return true}
+    })
+    res.status(200).send(resp)
+})
 router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
     const {escant,gols}=req.body
     const {camp,mandante,visitante}=req.params
@@ -155,6 +170,8 @@ router.post('/preencherParts/:camp',validateCamp,async(req,res)=>{
     res.sendStatus(foi?200:500)
 })
 
+//=================
+//POSTS AUTOMATICOS
 
 router.get('/apostascriar/:camp/:manvis',validateCamp,validateTime('manvis'),async(req,res)=>{
     const {camp,manvis}=req.params
