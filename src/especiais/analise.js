@@ -6,40 +6,18 @@ import { buscarApostasJogo } from '../profundo/apostas.js'
 import { confPrimGol } from '../conferencias/confPrimGol.js'
 import { confUltimoGol } from '../conferencias/confUltimoGol.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
-    console.log(valor)
-    const context=buildContext(camp,mandante+visitante)
+    const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1
     const mandantePuro=conferir(context,grandeza,c,asc,0,metade,valor,mandante)
     const visitantePuro=conferir(context,grandeza,cPar,asc,0,metade,valor,visitante)
     const mandanteEstadia=conferir(context,grandeza,c,asc,1,metade,valor,mandante)
     const visitanteEstadia=conferir(context,grandeza,cPar,asc,2,metade,valor,visitante)
-
-    const apostas=buscarApostasJogo(camp,mandante,visitante)
+    const umTime=mandante==visitante?conferir(context,grandeza,c,asc,2,metade,valor,mandante):null
+    const apostas=umTime?null:buscarApostasJogo(camp,mandante,visitante)
     const codigo=`${grandeza}${c}${asc}${metade}`
-    let tex;let ode;let green
-    for(let ap of apostas){
-        const {info,odd,texto,green:grGrande}=ap
-        if(info==codigo){
-            if(grandeza!=1){
-                for(let esp of odd){
-                    const {o,q,green:grPequeno}=esp
-                    if(valor==q){
-                        tex=texto.replace('X',q)
-                        ode=o
-                        green=grPequeno
-                    }
-                    
-                }
-            }else{
-                tex=texto
-                ode=odd
-                green=grGrande
-            }
-        }
-
-    }
-    return [[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],ode?{
-        tex,green,ode,nome:`${camp+mandante+visitante}${codigo}${valor||valor==0?valor:''}`
+    const objetoAposta=umTime||apostas.length==0?false:objetoApostas(apostas,codigo,grandeza)
+    return umTime?[[mandantePuro],[mandanteEstadia,umTime]]:[[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],objetoAposta?{
+        ...objetoAposta,nome:`${camp+mandante+visitante}${codigo}${valor||valor==0?valor:''}`
     }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
@@ -119,4 +97,31 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
         ]
         return frases[c-1][asc][0]+complementos2[estadia]
     }    
+}
+
+
+function objetoApostas(apostas,codigo,grandeza){
+    let tex ;let ode;let green
+    for(let ap of apostas){
+        const {info,odd,texto,green:grGrande}=ap
+        if(info==codigo){
+            if(grandeza!=1){
+                for(let esp of odd){
+                    const {o,q,green:grPequeno}=esp
+                    if(valor==q){
+                        tex=texto.replace('X',q)
+                        ode=o
+                        green=grPequeno
+                    }
+                    
+                }
+            }else{
+                tex=texto
+                ode=odd
+                green=grGrande
+            }
+        }
+
+    }
+    return {tex,ode,green}
 }

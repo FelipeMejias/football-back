@@ -103,7 +103,7 @@ router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mand
 router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvis','time'),async(req,res)=>{
     const {camp,time,manvis}=req.params
     const {grandeza,c,asc,metade,valor,estadia}=req.query
-    const context=buildContext(camp,manvis)
+    const context=buildContext(camp)
     const resp=listaAnalise(context,parseInt(grandeza),parseInt(estadia),parseInt(metade),time,parseInt(c),parseInt(asc),parseFloat(valor))
     res.status(200).send(resp)
 })

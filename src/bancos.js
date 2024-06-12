@@ -10,6 +10,7 @@ import { createHol1 } from "./validators/p6_HOL.js";
 import { createPor1 } from "./validators/p7_POR.js";
 import { createEua1 } from "./adicionadas/p3_EUA.js";
 import { createBra2 } from "./adicionadas/p4_BRA-serieB.js";
+import { createJap1 } from "./adicionadas/p4_JAP.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -116,8 +117,15 @@ function extrairPosteriores(array,manvis){
                 'gua','itu','mir','nov','ope','pay','pon','san','spo','vil'],
     path:'bra2'
   }
+  const contextJap1={
+    listaNomes:['Albirex Nigata','Kashiwa Antlers','Avispa','Cerezo Osaka','Consadole Sapporo','Frontale','Gamba Osaka','Júbilo Iwata','Kashiwa Reysol','Kyoto Sanga',
+          'Machida Zelvia','Nagoya Grampus','Sagan Tosu','Sanfrecce Hiroshima','Shonan','FC Tokyo','Urawa Reds','Tokyo Verdy','Vissel Kobe','Yokohama Marinos'],
+    listaTimes:[ 'alb','ant','avi','cer','con','fro','gam','jub','kas','kyo',
+      'mac','nag','sag','san','sho','tok','ura','ver','vis','yok',],
+    path:'jap1'
+  }
 export const ligas={
-  paths:['bra1','arg1','eua1','bra2'],
-  contexts:[contextBra1,contextArg1,contextEua1,contextBra2],
-  bancos:[createBra1,createArg1,createEua1,createBra2]
+  paths:['bra1','arg1','eua1','bra2','jap1'],
+  contexts:[contextBra1,contextArg1,contextEua1,contextBra2,contextJap1],
+  bancos:[createBra1,createArg1,createEua1,createBra2,createJap1]
 }

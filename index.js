@@ -5,18 +5,18 @@ const app=Express()
 app.use(cors())
 app.use(json())
 app.use(router)
-const port =process.env.PORT||4001
+const port =process.env.PORT||4000
 app.listen(port,()=>console.log(`listening on port ${port}`))
 
 
 function carro(){
     const lista=[
-        'Amazonas FC','América MG','Avaí','Botafogo SP','Brusque','Ceará','Chapecoense','Coritiba','CRB','Goiás',
-        'Guarani','Ituano','Mirassol','Novorizontino','Operário','Paysandu','Ponte Preta','Santos','Sport Recife','Vila Nova',
+        'Albirex Nigata','Kashiwa Antlers','Avispa','Cerezo Osaka','Consadole Sapporo','Frontale','Gamba Osaka','Júbilo Iwata','Kashiwa Reysol','Kyoto Sanga',
+        'Machida Zelvia','Nagoya Grampus','Sagan Tosu','Sanfrecce Hiroshima','Shonan','FC Tokyo','Urawa Reds','Tokyo Verdy','Vissel Kobe','Yokohama Marinos',
     ]
     let string=''
     for(let item of lista){
-        console.log(`import ${item} from '../escudos/bra2/${item}.png'`)
+        console.log(`import ${item} from '../escudos/jap1/${item}.png'`)
         string+=`${item},`
     }
     console.log(string)
