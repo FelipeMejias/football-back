@@ -19,7 +19,7 @@ import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
 import { colocarLabels, dataParaTopo, quantoTempoFalta } from './utils.js'
-import { preencher, preencherOdds, preencherPartidas } from './profundo/preencher.js'
+import { preencher, preencherPartidas } from './profundo/preencher.js'
 import { validateCamp } from './validators/campValidator.js'
 import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
@@ -119,53 +119,37 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
     res.status(200).send(resp)
 })
 router.get('/resultados',async(req,res)=>{
-    const {camp,tipos:tiposRaw,ev:evRaw,contagem}=req.query
+    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
     const tipos=tiposRaw.split('-')
+    const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
-    const resp=buildResultado(camp,tipos,ev)
+    const resp=buildResultado(camps,tipos,ev)
     res.status(200).send({resp,cont:parseInt(contagem)})
 })
 router.get('/resultadosSemanas',async(req,res)=>{
-    const {camp,tipos:tiposRaw,ev:evRaw}=req.query
+    const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
     const tipos=tiposRaw.split('-')
+    const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
-    const resp=resultadoSemanas(camp,tipos,ev)
+    const resp=resultadoSemanas(camps,tipos,ev)
     res.status(200).send(resp)
 })
 
 //================
 //CONTROLE EXTERNO
 
-router.get('/preencher',async(req,res)=>{
-    const lista=buildFutura()
-    const resposta=lista.map(part=>{
-        const {camp,mandante,visitante}=part
-        const pf=preFlop(camp,mandante,visitante)
-        
-        return {...part,pf}
-    })
-    const resp=resposta.sort((a,b)=>{
-        if(!a.pf[0].comOdds&&b.pf[0].comOdds){
-            return -1
-        }else{return true}
-    })
-    res.status(200).send(resp)
-})
-router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),validatePost,async(req,res)=>{
-    const {escant,gols}=req.body
+
+router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
+    const {partida}=req.body
     const {camp,mandante,visitante}=req.params
-    const part=preencher(camp,mandante,visitante,escant,gols)
+    const part=preencher(camp,mandante,visitante,partida)
     res.status(200).send(part)
 })
-router.post('/preencherOdds/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
-    const {infos}=req.body
-    const {camp,mandante,visitante}=req.params
-    const part=preencherOdds(camp,mandante,visitante,infos)
-    res.status(200).send(part)
-})
+
 router.post('/preencherParts/:camp',validateCamp,async(req,res)=>{
     const {lista}=req.body
     const {camp}=req.params
+    console.log(lista)
     const foi=preencherPartidas(camp,lista)
     res.sendStatus(foi?200:500)
 })

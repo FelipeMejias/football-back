@@ -20,7 +20,7 @@ export function criarOrdemDupla(camp,mandante,visitante){
     const ordenada1= listao.sort((a,b)=>{
         const somaA=a[0].pos+a[1].pos
         const somaB=b[0].pos+b[1].pos
-        if(somaA<somaB || (somaA==somaB && a[0].relev>b[0].relev)){
+        if(somaA<somaB){
             return -1
         }else{return true}
     })

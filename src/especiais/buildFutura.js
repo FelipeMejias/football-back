@@ -4,8 +4,9 @@ export function buildFutura(camps){
     let desordenada=[]
     const {paths}=ligas
     const escolhidos=camps||paths
+    const dataRodada=dataDaRodada()
     escolhidos.forEach(camp=>{
-        desordenada=[...desordenada,...extrairFuturas(camp)]
+        desordenada=[...desordenada,...extrairFuturas(camp,dataRodada)]
     })
     const ordenada1= desordenada.sort((a,b)=>{
         if(a.data<b.data){
@@ -24,10 +25,10 @@ export function buildFutura(camps){
     })
     return ordenada3
 }
-function extrairFuturas(camp){
+function extrairFuturas(camp,dataRodada){
     const {partidasTotais}=buildContext(camp,true)
     const resp=[]
-    const dataRodada=dataDaRodada()
+    
     let aindaFalta=true
     for(let k=0; aindaFalta ;k++){
         const part=partidasTotais[k]
@@ -40,18 +41,20 @@ function extrairFuturas(camp){
             if(data>dataRodada||passouMenosDeUmDia(data)){
                 const texto=quantoTempoFalta(data)
                 const gols=part[2]
+                const aps=part[4]
                 let m=0;let v=0;for(let gol of gols){if(gol>0){m++}else{v++}}
                 resp.push({
-                    mandante,visitante,data,texto,camp,placar:[m,v]
+                    mandante,visitante,data,texto,camp,placar:[m,v],aps
                 })
             }else{
-                if(true||camp!='jap1')aindaFalta=false
+                if(camp!='uru1')aindaFalta=false
             }
         }else{
             const data=part[1]
+            const aps=part[2]
             const texto=quantoTempoFalta(data)
             resp.push({
-                mandante,visitante,data,texto,camp
+                mandante,visitante,data,texto,camp,aps
             })
         }
     }

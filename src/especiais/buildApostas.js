@@ -29,7 +29,9 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     const resp=[]
     
     for(let partida of ordenada){
+        
         const {camp,mandante,visitante,cinza}=partida
+        
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
         for(let ap of apostas){
@@ -103,7 +105,7 @@ function extrairFuturas(camp){
             const visitante=nome[3]+nome[4]+nome[5]
             const data=part[1]
             const texto=quantoTempoFalta(data)
-            if(texto!='Finalizado')resp.push({
+            if(texto[0]!='F'&&texto[0]!='C')resp.push({
                 mandante,visitante,data,camp
             })
         }else{
@@ -131,7 +133,7 @@ export function extrairPassadas(camp){
             const visitante=nome[3]+nome[4]+nome[5]
             const data=part[1]
             const texto=quantoTempoFalta(data)
-            if(texto=='Finalizado'){
+            if(texto[0]=='F'||texto[0]=='C'){
                 resp.push({
                     mandante,visitante,data,camp,cinza:true
                 })

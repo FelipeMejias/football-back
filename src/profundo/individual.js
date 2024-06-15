@@ -7,14 +7,6 @@ import { placar } from "../tabelas/placar.js"
 import { primeiroGol } from "../tabelas/primeiroGol.js"
 import { ultimoGol } from "../tabelas/ultimoGol.js"
 
-const RELEVANCIA1=16 //PLACAR
-const RELEVANCIA2=15 //MEDIA GOLS
-const RELEVANCIA3=1  //1o GOL
-const RELEVANCIA4=1  //Uo GOL
-const RELEVANCIA5=5  //VANTAGEM
-const RELEVANCIA6=10 //ESCANTEIOS
-const RELEVANCIA7=12 //PRIMEIRO A MARCAR
-
 export function criarOrdem(context,time,enxuta=false){
     const resp=[]
     let frases=[
@@ -32,13 +24,12 @@ export function criarOrdem(context,time,enxuta=false){
         for(let j=0;j<=2;j++){
             const list=fucarTabela(placar(context,i,j),time)
             list.forEach(item=>{
-                const {pos,asc,valor,c,relev}=item
+                const {pos,asc,valor,c}=item
                 if(c!=2&&!asc)resp.push({
                     pos,
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA1-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:1,
@@ -58,13 +49,12 @@ export function criarOrdem(context,time,enxuta=false){
         for(let j=0;j<=2;j++){
             const list=fucarTabela(mediaGols(context,i,j),time)
             list.forEach(item=>{
-                const {pos,asc,valor,c,relev}=item
+                const {pos,asc,valor,c}=item
                 resp.push({
                     pos,
                     descricao:frases[c-1][asc][0]+complementos[j]+complementos2[i],
                     bom:frases[c-1][asc][1],
                     valor,
-                    relev:RELEVANCIA2-(i?1:0)-(j?1:0),
                     c,
                     asc,
                     grandeza:2,
@@ -83,13 +73,12 @@ export function criarOrdem(context,time,enxuta=false){
     for(let i=0;i<=2;i++){
         const list=fucarTabela(escanteios(context,i),time)
         list.forEach(item=>{
-            const {pos,asc,valor,c,relev}=item
+            const {pos,asc,valor,c}=item
             resp.push({
                 pos,
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:RELEVANCIA6-(i?1:0),
                 c,
                 asc,
                 grandeza:6,
@@ -108,13 +97,12 @@ export function criarOrdem(context,time,enxuta=false){
     for(let i=0;i<=2;i++){
         const list=fucarTabela(marcaPrimeiro(context,i),time,true)
         list.forEach(item=>{
-            const {pos,asc,valor,c,relev}=item
+            const {pos,asc,valor,c}=item
             if(c!=2)resp.push({
                 pos,
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:RELEVANCIA7-(i?1:0),
                 c,
                 asc,
                 grandeza:7,
@@ -133,13 +121,12 @@ export function criarOrdem(context,time,enxuta=false){
     for(let i=0;i<=2;i++){
         const list=fucarTabela(marcaUltimo(context,i),time,true)
         list.forEach(item=>{
-            const {pos,asc,valor,c,relev}=item
+            const {pos,asc,valor,c}=item
             if(c!=2)resp.push({
                 pos,
                 descricao:frases[c-1][asc][0]+complementos2[i],
                 bom:frases[c-1][asc][1],
                 valor,
-                relev:RELEVANCIA7-(i?1:0),
                 c,
                 asc,
                 grandeza:8,
@@ -154,10 +141,10 @@ export function criarOrdem(context,time,enxuta=false){
 export function fucarTabela(tabela,time,bloqueio_c2=false){
     const resposta=[]
     for(let c=1;c<=3;c++){
-        const {pos,asc,valor,relev}=buscarPosicao(tabela,time,c)
+        const {pos,asc,valor}=buscarPosicao(tabela,time,c)
         if(valor=='-')continue
         const objeto={
-            pos,asc,valor,c,relev
+            pos,asc,valor,c
         }
         if(!bloqueio_c2||c!=2)resposta.push(objeto)
     }

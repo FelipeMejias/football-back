@@ -2,11 +2,11 @@ import dayjs from "dayjs";
 import { buildApostas } from "../especiais/buildApostas.js";
 import { avanca7dias, traduzirData } from "../utils.js";
 
-export function buildResultado(camp,tipos,ev){
+export function buildResultado(camps,tipos,ev){
     const abertas=[]
     const antigas=[]
     const apostas=buildApostas(2).filter(a=>(
-a.camp==camp&&
+camps.includes(a.camp)&&
 tipos.includes(a.info[0])&&
 a.odd>1.3&&
 a.ev>=ev

@@ -20,7 +20,7 @@ export function quantoTempoFalta(time){
         if(mt<-120){
             return 'Finalizado'
         }else{
-            return 'Em andamento'
+            return `Começou!Hoje-${hora}:${minuto}`
         }
     }else{
         if(true||dias||horas){
@@ -62,11 +62,11 @@ export function colocarLabels(lista){
             respRaw.push({...item,texto:hora})
         }else if(label==texto){
             respRaw.push({...item,texto:hora})
-        }else if(label!=texto&&texto[0]!='E'&&texto[0]!='F'){
+        }else if(label!=texto&&texto[0]!='C'&&texto[0]!='F'){
             respRaw.push({label})
             label=texto
             respRaw.push({...item,texto:hora})
-        }else if((texto[0]!='E'||texto[0]!='F')&&label!='Hoje'){
+        }else if((texto[0]!='C'||texto[0]!='F')&&label!='Hoje'){
             respRaw.push({label})
             label='Hoje'
             respRaw.push({...item,texto})
@@ -116,7 +116,7 @@ function horario(){
     return resp
 }
 export function dataDaRodada(){
-    let data='240530'
+    let data='240611'
     const agora=traduzirData(dayjs())
     let resp
     while(data<agora){

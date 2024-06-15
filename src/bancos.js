@@ -9,9 +9,11 @@ import { createPor1 } from "./validators/p7_POR.js";
 
 import { createBra1 } from "./adicionadas/a_BRA.js";
 import { createArg1 } from "./adicionadas/b_ARG.js";
-import { createEua1 } from "./adicionadas/c_EUA.js";
-import { createBra2 } from "./adicionadas/d_BRA2.js";
-import { createJap1 } from "./adicionadas/e_JAP.js";
+import { createEua1 } from "./adicionadas/d_EUA.js";
+import { createBra2 } from "./adicionadas/e_BRA2.js";
+import { createJap1 } from "./adicionadas/f_JAP.js";
+import { createKor1 } from "./adicionadas/g_KOR.js";
+import { createUru1 } from "./adicionadas/c_URU.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -125,8 +127,21 @@ function extrairPosteriores(array,manvis){
       'mac','nag','sag','san','sho','tok','ura','ver','vis','yok',],
     path:'jap1'
   }
+  const contextKor1={
+    listaNomes:['Daegu','Daejon Citizen','Gangwon','Gimcheon Sangmu','Gwangju FC','Incheon United','Jeju United','Jeonbuk Hyundai','Seoul','Steelers','Suwon','Ulsan Hyundai'],
+    listaTimes:['dae','djc','gan','gim','gwa','inc','jej','jeo','seo','ste','suw','uls'],
+    path:'kor1'
+  }
+  const contextUru1={
+    listaNomes:['Boston River','Cerro','Danubio','Defensor','Deportivo Maldonado','Fênix','Cerro Largo','Liverpool',
+        'Miramar Misiones','Montevideo Wanderers','Nacional','Peñarol','Progreso','Racing','Rampla','River Plate'],
+    listaTimes:['bos','cer','dan','def','dep','fen','lar','liv',
+        'mir','mon','nac','pen','pro','rac','ram','riv'],
+    path:'uru1'
+  }
 export const ligas={
-  paths:['bra1','arg1','eua1','bra2','jap1'],
-  contexts:[contextBra1,contextArg1,contextEua1,contextBra2,contextJap1],
-  bancos:[createBra1,createArg1,createEua1,createBra2,createJap1]
+  posMinima:[8,10,7,10,8,8,6],
+  paths:['bra1','arg1','uru1','eua1','bra2','jap1','kor1'],
+  contexts:[contextBra1,contextArg1,contextUru1,contextEua1,contextBra2,contextJap1,contextKor1],
+  bancos:[createBra1,createArg1,createUru1,createEua1,createBra2,createJap1,createKor1]
 }
