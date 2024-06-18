@@ -5,6 +5,8 @@ import { buildContext } from '../bancos.js'
 import { buscarApostasJogo } from '../profundo/apostas.js'
 import { confPrimGol } from '../conferencias/confPrimGol.js'
 import { confUltimoGol } from '../conferencias/confUltimoGol.js'
+import { getPartida } from './getPartida.js'
+import { quantoTempoFalta } from '../utils.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1
@@ -14,11 +16,18 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const visitanteEstadia=conferir(context,grandeza,cPar,asc,2,metade,valor,visitante)
     const umTime=mandante==visitante?conferir(context,grandeza,c,asc,2,metade,valor,mandante):null
     const apostas=umTime?null:buscarApostasJogo(camp,mandante,visitante)
-    
     const codigo=`${grandeza}${c}${asc}${metade}`
     const objetoAposta=umTime||apostas.length==0?false:objetoApostas(apostas,codigo,grandeza,valor)
+    let comecou=null
+    if(objetoAposta){
+        const {partidasTotais}=buildContext(camp,true)
+        const part=getPartida(partidasTotais,mandante+visitante)
+        const data=part[1]
+        const tempo=quantoTempoFalta(data)
+        if(tempo[0]=='F'||tempo[0]=='C')comecou=true
+    }
     return umTime?[[mandantePuro],[mandanteEstadia,umTime]]:[[mandantePuro,visitantePuro],[mandanteEstadia,visitanteEstadia],objetoAposta?{
-        ...objetoAposta,nome:`${camp+mandante+visitante}${codigo}${valor||valor===0?valor:''}`
+        ...objetoAposta,comecou,nome:`${camp+mandante+visitante}${codigo}${valor||valor===0?valor:''}`
     }:null]
 }
 function conferir(context,grandeza,c,asc,estadia,metade,valor,time){

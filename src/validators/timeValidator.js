@@ -6,9 +6,7 @@ export function validateTime(palavra1,palavra2='unico'){
             const camp=req.params.camp
             const {paths,contexts}=ligas
             const times=contexts[paths.indexOf(camp)].listaTimes
-            console.log(camp)
             const caso1=req.params[palavra1]
-            console.log(caso1)
             if(palavra1==='manvis'){
                 const mandante=caso1[0]+caso1[1]+caso1[2]
                 const visitante=caso1[3]+caso1[4]+caso1[5]

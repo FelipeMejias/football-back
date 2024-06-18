@@ -149,7 +149,6 @@ router.post('/preencher/:camp/:mandante/:visitante',validateCamp,validateTime('m
 router.post('/preencherParts/:camp',validateCamp,async(req,res)=>{
     const {lista}=req.body
     const {camp}=req.params
-    console.log(lista)
     const foi=preencherPartidas(camp,lista)
     res.sendStatus(foi?200:500)
 })

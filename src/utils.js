@@ -55,16 +55,16 @@ export function colocarLabels(lista){
             respRaw.push({...item,texto:''})
         }else if(label=='Finalizadas'&&texto!='Finalizado'){
             respRaw.push({label})
-            label=texto
+            label=texto.replace('Começou!','')
             respRaw.push({...item,texto:hora})
         }else if(label==''){
-            label=texto
+            label=texto.replace('Começou!','')
             respRaw.push({...item,texto:hora})
         }else if(label==texto){
             respRaw.push({...item,texto:hora})
         }else if(label!=texto&&texto[0]!='C'&&texto[0]!='F'){
             respRaw.push({label})
-            label=texto
+            label=texto.replace('Começou!','')
             respRaw.push({...item,texto:hora})
         }else if((texto[0]!='C'||texto[0]!='F')&&label!='Hoje'){
             respRaw.push({label})
