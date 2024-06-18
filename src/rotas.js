@@ -25,7 +25,6 @@ import { validateTime } from './validators/timeValidator.js'
 import { validatePost } from './validators/postValidator.js'
 import { marcaUltimo } from './tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
-import { nomePreFlop } from './especiais/preflop.js'
 import { preFlop } from './profundo/preflop.js'
 
 export const router=Router()
