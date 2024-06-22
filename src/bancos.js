@@ -14,6 +14,7 @@ import { createBra2 } from "./adicionadas/e_BRA2.js";
 import { createJap1 } from "./adicionadas/f_JAP.js";
 import { createKor1 } from "./adicionadas/g_KOR.js";
 import { createUru1 } from "./adicionadas/c_URU.js";
+import { createSue1 } from "./adicionadas/h_SUE.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -139,9 +140,16 @@ function extrairPosteriores(array,manvis){
         'mir','mon','nac','pen','pro','rac','ram','riv'],
     path:'uru1'
   }
+  const contextSue1={
+    listaNomes:['AIK','Brommapojkarna','Djurgarden','Elfsborg','GAIS','Gotemburgo','Hacken','Halmstad',
+          'Hammarby','Kalmar','Malmo','Mjallby','Norrkoping','Sirius','Varnamo','Vasteras'],
+    listaTimes:['aik','bro','dju','elf','gai','got','hac','hal',
+          'ham','kal','mal','mja','nor','sir','var','vas'],
+    path:'sue1'
+  }
 export const ligas={
-  posMinima:[8,10,7,10,8,8,6],
-  paths:['bra1','arg1','uru1','eua1','bra2','jap1','kor1'],
-  contexts:[contextBra1,contextArg1,contextUru1,contextEua1,contextBra2,contextJap1,contextKor1],
-  bancos:[createBra1,createArg1,createUru1,createEua1,createBra2,createJap1,createKor1]
+  posMinima:[8,10,7,10,8,8,6,7],
+  paths:['bra1','arg1','uru1','eua1','bra2','jap1','kor1','sue1'],
+  contexts:[contextBra1,contextArg1,contextUru1,contextEua1,contextBra2,contextJap1,contextKor1,contextSue1],
+  bancos:[createBra1,createArg1,createUru1,createEua1,createBra2,createJap1,createKor1,createSue1]
 }

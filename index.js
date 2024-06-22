@@ -11,8 +11,8 @@ app.listen(port,()=>console.log(`listening on port ${port}`))
 
 function carro(){
     const lista=[
-        'Boston River','Cerro','Danubio','Defensor','Deportivo Maldonado','Fênix','Cerro Largo','Liverpool',
-        'Miramar Misiones','Montevideo Wanderers','Nacional','Peñarol','Progreso','Racing','Rampla','River Plate'
+        'AIK','Brommapojkarna','Djurgarden','Elfsborg','GAIS','Gotemburgo','Hacken','Halmstad',
+        'Hammarby','Kalmar','Malmo','Mjallby','Norrkoping','Sirius','Varnamo','Vasteras'
     ]
     let string=''
     for(let item of lista){
@@ -38,4 +38,18 @@ function invert(){
     for(let item of lista.reverse()){
         console.log(`['${item[0]}','${item[1]}'],`)
     }
+}
+function onda(){
+    let str='['
+    for(let k=1;k<=191;k++){
+        let numero=k
+        if(k<10){
+            numero=`00${k}`
+        }else if(k<100){
+            numero=`0${k}`
+        }
+        str+=`onda${numero},`
+    }
+    str+=']'
+    console.log(str)
 }
