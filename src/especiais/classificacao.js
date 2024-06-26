@@ -30,7 +30,7 @@ export  function classificacao(camp,partidasTotais,listaTimes){
             if(nosso>deles){vitorias++}else if(nosso<deles){derrotas++}else{empates++}
             cont++
         }
-        const pontos=vitorias*3+empates-(time=='eve'?6:0)
+        const pontos=vitorias*3+empates
         resp.push({time,
             pontos,
             partidas:cont,
@@ -42,7 +42,7 @@ export  function classificacao(camp,partidasTotais,listaTimes){
             saldoGols:golsPro-golsContra
         })
     }
-    return ordenarClassificacao(resp,camp=='bra1'||camp=='bra2')
+    return ordenarClassificacao(resp,true||camp=='bra1'||camp=='bra2')
 }
 function ordenarClassificacao(arr,brazuca){
     let using;const resp=[];const hash={}

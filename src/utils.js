@@ -115,17 +115,7 @@ function horario(){
     const resp=`${finalDate} ${finalTime}`
     return resp
 }
-export function dataDaRodada(){
-    let data='240611'
-    const agora=traduzirData(dayjs())
-    let resp
-    while(data<agora){
-        const dataInicio=data
-        data=avanca7dias(data)
-        if(dataInicio<agora)resp=dataInicio
-    }
-    return resp
-}
+
 export function avanca7dias(time){
     const ano='20'+time[0]+time[1]
     const mes=time[2]+time[3]
@@ -145,7 +135,7 @@ export function traduzirData(re){
     const resp=`${year%1000}${month<10?'0':''}${month}${day<10?'0':''}${day}`
     return resp
 }
-export function passouMenosDeUmDia(time){
+export function passouMenosDeUmaSemana(time){
     const ano='20'+time[0]+time[1]
     const mes=time[2]+time[3]
     const dia=time[4]+time[5]
@@ -154,5 +144,5 @@ export function passouMenosDeUmDia(time){
     const date=dayjs(`${ano}-${mes}-${dia} ${hora}:${minuto}`)
     const hoje=dayjs()
     const mt= hoje.diff(date, 'day', true)
-    return mt<1
+    return mt<7
 }

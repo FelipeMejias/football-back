@@ -1,12 +1,11 @@
-import { dataDaRodada, passouMenosDeUmDia, quantoTempoFalta } from "../utils.js"
+import {  passouMenosDeUmaSemana, quantoTempoFalta } from "../utils.js"
 import { buildContext, ligas } from "../bancos.js"
 export function buildFutura(camps){
     let desordenada=[]
     const {paths}=ligas
     const escolhidos=camps||paths
-    const dataRodada=dataDaRodada()
     escolhidos.forEach(camp=>{
-        desordenada=[...desordenada,...extrairFuturas(camp,dataRodada)]
+        desordenada=[...desordenada,...extrairFuturas(camp)]
     })
     const ordenada1= desordenada.sort((a,b)=>{
         if(a.data<b.data){
@@ -25,7 +24,7 @@ export function buildFutura(camps){
     })
     return ordenada3
 }
-function extrairFuturas(camp,dataRodada){
+function extrairFuturas(camp){
     const {partidasTotais}=buildContext(camp,true)
     const resp=[]
     
@@ -38,7 +37,7 @@ function extrairFuturas(camp,dataRodada){
         const visitante=nome[3]+nome[4]+nome[5]
         if(part[1].length==2){
             const data=part[3]
-            if(data>dataRodada||passouMenosDeUmDia(data)){
+            if(passouMenosDeUmaSemana(data)){
                 const texto=quantoTempoFalta(data)
                 const gols=part[2]
                 const aps=part[4]
