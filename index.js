@@ -17,7 +17,7 @@ async function buscar(){
         })
         //console.log(data.competitions.filter(it=>it.area.code=='BRA'))
         console.log(data)
-}await buscar()
+}
 
 
 
