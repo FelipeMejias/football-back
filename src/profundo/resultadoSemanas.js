@@ -36,6 +36,8 @@ function porRodada(camps,tipos,ev){
         data=avanca7dias(data)
         const apostas=buildApostas(2,dataInicio+'0000',data+'0000').filter(a=>(
 camps.includes(a.camp)&&
+a.odd<=2.3&&
+a.odd>=1.4&&
 tipos.includes(a.info[0])&&
 a.ev>=ev
         ))
