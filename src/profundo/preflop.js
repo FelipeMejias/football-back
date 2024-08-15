@@ -29,7 +29,10 @@ export function preFlop(camp,mandante,visitante){
                     }
                 }
             }
-            if(resp[cont][0].estadia!=0)resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
+            if(
+                (resp[cont][0].estadia!=0)&&
+                (resp[cont][0].grandeza!=6||resp[cont][0].c==2)
+            )resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
             cont++
         }
     }
