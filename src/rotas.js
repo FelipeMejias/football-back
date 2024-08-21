@@ -58,6 +58,7 @@ router.get('/partidasgerais',async(req,res)=>{
     const {camps:campsRaw}=req.query
     const camps=campsRaw.split('-')
     const lista=buildFutura(camps)
+    console.log(camps)
     const resp=lista.length>0?colocarLabels(lista):[]
     res.status(200).send(resp)
 })
@@ -94,7 +95,6 @@ router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mand
     const resposta=preFlop(camp,mandante,visitante)
     res.status(200).send(resposta)
 })
-console.log(preFlop('bra1','pal','sao'))
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
