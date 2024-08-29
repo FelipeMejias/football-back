@@ -7,7 +7,7 @@ export function preFlop(camp,mandante,visitante){
     let cont=0
     const {paths,posMinima}=ligas
     const pm=posMinima[paths.indexOf(camp)]
-    while(resp[cont]&&resposta.length<4&&(resposta.length<2||(resp[cont][0].pos+resp[cont][1].pos<=pm))){
+    while(resp[cont]&&((resp[cont][0].pos+resp[cont][1].pos<=pm))){
         let frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
         let pode=true
         for(let item of resposta){
@@ -29,10 +29,7 @@ export function preFlop(camp,mandante,visitante){
                     }
                 }
             }
-            if(
-                (resp[cont][0].estadia!=0)&&
-                (resp[cont][0].grandeza!=6||resp[cont][0].c==2)
-            )resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
+            resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
             cont++
         }
     }
