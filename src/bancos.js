@@ -148,7 +148,7 @@ function extrairPosteriores(array,manvis){
     path:'sue1'
   }
 export const ligas={
-  posMinima:[8,8,8,8,8,8,8,8,8,8,],
+  posMinima:[9,9,9,9,9,9,9,9],
   paths:['bra1','arg1','uru1','eua1','bra2','jap1','kor1','sue1'],
   contexts:[contextBra1,contextArg1,contextUru1,contextEua1,contextBra2,contextJap1,contextKor1,contextSue1],
   bancos:[createBra1,createArg1,createUru1,createEua1,createBra2,createJap1,createKor1,createSue1]
