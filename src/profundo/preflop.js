@@ -4,12 +4,22 @@ import { criarOrdemDupla } from "./dupla.js"
 export function preFlop(camp,mandante,visitante){
     const resp=criarOrdemDupla(camp,mandante,visitante)
     const resposta=[]
+
+    const listadas=[]
+
     let cont=0
     const {paths,posMinima}=ligas
     const pm=posMinima[paths.indexOf(camp)]
-    while(resp[cont]&&((resp[cont][0].pos+resp[cont][1].pos<=pm))){
+    while(resp[cont]&&((resp[cont][0].pos+resp[cont][1].pos<=9))){
         let frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
         let pode=true
+        if(resp[cont][0].pos+resp[cont][1].pos<8){
+            listadas.push({frase})
+            pode=false
+        }
+        for(let item of listadas){
+            if(item.frase==frase)pode=false
+        }
         for(let item of resposta){
             if(item.frase==frase)pode=false
         }
