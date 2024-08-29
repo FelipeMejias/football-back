@@ -1,4 +1,5 @@
 import Router from 'express'
+import bcrypt from "bcrypt";
 import { buildContext } from './bancos.js'
 import { criarOrdem } from './profundo/individual.js'
 import { criarOrdemDupla } from './profundo/dupla.js'
@@ -26,6 +27,7 @@ import { validatePost } from './validators/postValidator.js'
 import { marcaUltimo } from './tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 import { preFlop } from './profundo/preflop.js'
+import { acharUsuario, cadastrar, login, torneiosUsuario } from './bancoTorneios.js'
 
 export const router=Router()
 
@@ -203,4 +205,70 @@ router.get('/postresultadocamp/:camp',validateCamp,async(req,res)=>{
         resp.push({mandante,visitante})
     }
     res.status(200).send(resp)
+})
+
+//=================
+//TORNEIOS
+
+router.post('/cadastro',async (req,res)=>{
+    const {usuario,senha}=req.body
+    if( usuario && senha ){
+        try{
+            const user = acharUsuario(usuario)
+            if(user){
+                console.log('erro cadastro: usuario ja existe')
+                res.sendStatus(422)
+            }
+            const senhaCript = bcrypt.hashSync(senha, 10);
+            const objUsu=cadastrar(usuario,senhaCript)
+            res.status(200).send(objUsu)
+        } catch (e) {
+            console.log(e)
+            console.log('erro cadastro')
+            res.sendStatus(500)
+        }
+        
+    }else{
+        console.log('erro cadastro: nome ou email ou senha ou icone nao foram enviados')
+        res.sendStatus(500)
+    }
+})
+router.post('/login',async (req,res)=>{
+    const {usuario,senha}=req.body
+    try {
+        const user = acharUsuario(usuario)
+        if(user && bcrypt.compareSync(senha, user.senhaCript)){
+            const {nome,id}=user
+            res.status(200).send({nome,id})
+        }else{
+            console.log('erro login: usuario nao existe ou senha está incorreta')
+            res.sendStatus(422)
+        }
+    } catch (e) {
+        console.log('erro login')
+        res.sendStatus(500)
+    }
+})
+
+
+router.get('/torneios/:idStr',async(req,res)=>{
+    const {idStr}=req.params
+    const id=parseInt(idStr)
+    const resp=torneiosUsuario(id)
+    res.status(200).send(resp)
+})
+router.get('/podeconvidar/:usuario',async(req,res)=>{
+    const {usuario}=req.params
+    try {
+        const user = acharUsuario(usuario)
+        if(user){
+            res.status(200).send(user)
+        }else{
+            console.log('erro convidar: usuario nao existe')
+            res.sendStatus(422)
+        }
+    } catch (e) {
+        console.log('erro convidar')
+        res.sendStatus(500)
+    }
 })
