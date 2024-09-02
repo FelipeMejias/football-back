@@ -30,10 +30,11 @@ export function preFlop(camp,mandante,visitante){
                 }
             }
             resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
+            console.log(stat[0])
             cont++
         }
     }
-    return resposta
+    return resposta.sort((a,b)=>{if(a.analise.grandeza<b.analise.grandeza){return -1}else{return true}})
 }
 function nomePreFlop(mand,visi,camp,stat){
     const {contexts,paths}=ligas
