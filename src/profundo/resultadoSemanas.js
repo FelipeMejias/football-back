@@ -31,13 +31,14 @@ function porRodada(camps,tipos,ev){
     let data='240530'
     let aindaFalta=true
     const agora=traduzirData(dayjs())
+
     while(aindaFalta){
         const dataInicio=data
-        data=avanca7dias(data)
+        data='241212'//avanca7dias(data)
         const apostas=buildApostas(2,dataInicio+'0000',data+'0000').filter(a=>(
 camps.includes(a.camp)&&
-a.odd<=2.3&&
-a.odd>=1.4&&
+//a.odd<=2.7&&
+//a.odd>=1.2&&
 tipos.includes(a.info[0])&&
 a.ev>=ev
         ))

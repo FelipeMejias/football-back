@@ -7,9 +7,9 @@ export function buildResultado(camps,tipos,ev){
     const antigas=[]
     const apostas=buildApostas(2).filter(a=>(
 camps.includes(a.camp)&&
+//a.odd<=2.7&&
+//a.odd>=1.2&&
 tipos.includes(a.info[0])&&
-a.odd<=2.3&&
-a.odd>=1.4&&
 a.ev>=ev
     ))
     let din=0;let ganho=0;let red=0;let green=0;
