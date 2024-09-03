@@ -28,6 +28,7 @@ import { marcaUltimo } from './tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 import { preFlop } from './profundo/preflop.js'
 import { acharUsuario, cadastrar, login, torneiosUsuario } from './bancoTorneios.js'
+import { bancoUsuarios } from './adicionadas/1_____usuarios.js';
 
 export const router=Router()
 
@@ -60,7 +61,6 @@ router.get('/partidasgerais',async(req,res)=>{
     const {camps:campsRaw}=req.query
     const camps=campsRaw.split('-')
     const lista=buildFutura(camps)
-    console.log(camps)
     const resp=lista.length>0?colocarLabels(lista):[]
     res.status(200).send(resp)
 })
@@ -249,7 +249,9 @@ router.post('/login',async (req,res)=>{
         res.sendStatus(500)
     }
 })
-
+router.get('/usuarios',async(req,res)=>{
+    res.status(200).send(bancoUsuarios)
+})
 
 router.get('/torneios/:idStr',async(req,res)=>{
     const {idStr}=req.params

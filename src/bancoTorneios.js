@@ -1,12 +1,11 @@
-export const bancoUsuarios=[
+import { bancoUsuarios } from "./adicionadas/1_____usuarios.js"
 
-]
 export const bancoTorneios=[
-    {id:0,nome:'geral',jogadores:[]}
+    {id:1,nome:'geral',jogadores:[]}
 ]
 
 export function cadastrar(nome,senhaCript){
-    const id=bancoUsuarios.length
+    const id=bancoUsuarios.length+1
     const novoUsu={id,nome,senhaCript}
     bancoUsuarios.push(novoUsu)
     return {id,nome}

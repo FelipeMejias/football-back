@@ -30,7 +30,6 @@ export function preFlop(camp,mandante,visitante){
                 }
             }
             resposta.push({frase,num,analise:stat[0],comOdds:stat.length==3})
-            console.log(stat[0])
             cont++
         }
     }
