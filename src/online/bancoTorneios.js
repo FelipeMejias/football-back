@@ -1,4 +1,4 @@
-import { bancoUsuarios } from "./adicionadas/1_____usuarios.js"
+import { bancoUsuarios } from "./1_____usuarios.js"
 
 export const bancoTorneios=[
     {id:1,nome:'geral',jogadores:[]}

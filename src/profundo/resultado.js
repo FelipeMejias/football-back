@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { buildApostas } from "../especiais/buildApostas.js";
-import { avanca7dias, traduzirData } from "../utils.js";
+import { avanca7dias, traduzirData } from "../essencials/utils.js";
 
 export function buildResultado(camps,tipos,ev){
     const abertas=[]

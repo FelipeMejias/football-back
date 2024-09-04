@@ -6,7 +6,7 @@ import { buscarApostasJogo } from '../profundo/apostas.js'
 import { confPrimGol } from '../conferencias/confPrimGol.js'
 import { confUltimoGol } from '../conferencias/confUltimoGol.js'
 import { getPartida } from './getPartida.js'
-import { quantoTempoFalta } from '../utils.js'
+import { quantoTempoFalta } from '../essencials/utils.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1

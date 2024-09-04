@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { avanca7dias, traduzirData } from "../utils.js";
+import { avanca7dias, traduzirData } from "../essencials/utils.js";
 import { buildApostas } from "../especiais/buildApostas.js";
 
 export function resultadoSemanas(camps,tipos,ev){

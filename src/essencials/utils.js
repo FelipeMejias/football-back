@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
-import { buildContext } from "./bancos.js"
-import { getPartida } from "./especiais/getPartida.js"
-import { buildFutura } from "./especiais/buildFutura.js"
+import { buildContext } from "../bancos.js"
+import { getPartida } from "../especiais/getPartida.js"
+import { buildFutura } from "../especiais/buildFutura.js"
 
 export function quantoTempoFalta(time){
     const nowRaw=horario()

@@ -1,4 +1,4 @@
-import {  passouMenosDeUmaSemana, quantoTempoFalta } from "../utils.js"
+import {  passouMenosDeUmaSemana, quantoTempoFalta } from "../essencials/utils.js"
 import { buildContext, ligas } from "../bancos.js"
 export function buildFutura(camps){
     let desordenada=[]

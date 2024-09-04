@@ -3,7 +3,7 @@ import { buscarApostasJogo } from "../profundo/apostas.js"
 import { confGols } from "../conferencias/confGols.js"
 import { confEsc } from "../conferencias/confEsc.js"
 import { confPlacar } from "../conferencias/confPlacar.js"
-import { quantoTempoFalta } from "../utils.js"
+import { quantoTempoFalta } from "../essencials/utils.js"
 import { confPrimGol } from "../conferencias/confPrimGol.js"
 import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 
