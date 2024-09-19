@@ -1,5 +1,5 @@
 export const createBra1=[
-    ['corago','2409211600']
+    ['corago','2409211600'],
     ['intcui','2409162000'],
     ['crusao','2409151830'],
     ['flavas','2409151830'],
