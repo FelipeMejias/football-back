@@ -29,6 +29,7 @@ import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 import { preFlop } from './profundo/preflop.js'
 import { acharUsuario, cadastrar, login, torneiosUsuario } from './online/bancoTorneios.js'
 import { bancoUsuarios } from './online/1_____usuarios.js';
+import { criarOrdemDuplaPreflop } from './profundo/duplaPreFlop.js';
 
 export const router=Router()
 
@@ -93,7 +94,11 @@ router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandant
     console.log(resp)
     res.status(200).send({resp,data})
 })
-
+router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
+    const {camp,mandante,visitante}=req.params
+    const resp=preFlop(camp,mandante,visitante)
+    res.status(200).send(resp)
+})
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query

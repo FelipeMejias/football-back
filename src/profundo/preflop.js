@@ -1,8 +1,9 @@
 import { ligas } from "../bancos.js"
 import { criarOrdemDupla } from "./dupla.js"
+import { criarOrdemDuplaPreflop } from "./duplaPreFlop.js"
 
 export function preFlop(camp,mandante,visitante){
-    const resp=criarOrdemDupla(camp,mandante,visitante)
+    const resp=criarOrdemDuplaPreflop(camp,mandante,visitante)
     const resposta=[]
     let cont=0
     const {paths,posMinima}=ligas
