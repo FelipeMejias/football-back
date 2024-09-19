@@ -90,13 +90,10 @@ router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandant
     const {camp,mandante,visitante}=req.params
     const resp=criarOrdemDupla(camp,mandante,visitante)
     const data=dataParaTopo(camp,mandante,visitante)
+    console.log(resp)
     res.status(200).send({resp,data})
 })
-router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
-    const {camp,mandante,visitante}=req.params
-    const resposta=preFlop(camp,mandante,visitante)
-    res.status(200).send(resposta)
-})
+
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
