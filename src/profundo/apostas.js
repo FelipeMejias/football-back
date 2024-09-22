@@ -33,6 +33,9 @@ export function buscarApostasJogo(camp,mandante,visitante){
             odd=(num/100).toFixed(2)
             const green=jogoAntigo?confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):undefined
             apostas.push({info,texto,odd,green})
+        }else if(grandeza==7||grandeza==8){
+            grandeza==7?confPrimGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):
+                    confUltimoGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null)
         }else{
             odd=[]
             const zerado=num.length%3==0

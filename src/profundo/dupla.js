@@ -5,7 +5,6 @@ import { criarOrdem } from "./individual.js";
 
 export function criarOrdemDupla(camp,mandante,visitante){
     const apostas=buscarApostasJogo(camp,mandante,visitante)
-    console.log(apostas)
     const resposta=[]
     for(let aposta of apostas){
         const {info,odd}=aposta
@@ -16,7 +15,7 @@ export function criarOrdemDupla(camp,mandante,visitante){
         let valor=null
         if(grandeza==2||grandeza==6){
             let melhorQtd=0
-            let melhorMod=0.61
+            let melhorMod=0.80
             for(let item of odd){
                 const dif=2.0-parseFloat(item.o)
                 const mod=dif>0?dif:-dif
@@ -28,7 +27,14 @@ export function criarOrdemDupla(camp,mandante,visitante){
             valor=melhorQtd
         }
         const analise=analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor)
-        console.log(analise)
+        //console.log(analise)
+        const {tex,ode,green,comecou,nome}=analise[2]
+        const novo={
+            mandante:[analise[0][0].chance,analise[1][0].chance],
+            aposta:{tex,ode,green,comecou,nome},
+            visitante:[analise[0][1].chance,analise[1][1].chance],
+        }
+        console.log(novo)
         resposta.push(analise)
     }
     return resposta

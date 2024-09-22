@@ -18,7 +18,6 @@ export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const apostas=umTime?null:buscarApostasJogo(camp,mandante,visitante)
     const codigo=`${grandeza}${c}${asc}${metade}`
     const objetoAposta=umTime||apostas.length==0?false:objetoApostas(apostas,codigo,grandeza,valor)
-    console.log(objetoAposta)
     let comecou=null
     if(objetoAposta){
         const {partidasTotais}=buildContext(camp,true)
@@ -112,7 +111,6 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
 
 
 function objetoApostas(apostas,codigo,grandeza,valor){
-
     for(let ap of apostas){
         const {info,odd,texto,green:grGrande}=ap
         if(info==codigo){
@@ -120,14 +118,13 @@ function objetoApostas(apostas,codigo,grandeza,valor){
                 for(let esp of odd){
                     const {o,q,green:grPequeno}=esp
                     if(valor==q){
-                        console.log(valor,q)
                         const tex=texto.replace('X',q)
-                        return {tex,ode:o,green:grPequeno}
+                        return {tex,ode:o,green:grPequeno,codigo}
                     }
                     
                 }
             }else{
-                return {tex:texto,ode:odd,green:grGrande}
+                return {tex:texto,ode:odd,green:grGrande,codigo}
             }
         }
 

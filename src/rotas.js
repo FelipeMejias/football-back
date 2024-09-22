@@ -89,9 +89,9 @@ router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)
 })
 router.get('/guru/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
-    const resp=criarOrdemDupla(camp,mandante,visitante)
+    const resp=criarOrdemDuplaPreflop(camp,mandante,visitante)
+    const novaResp=criarOrdemDupla(camp,mandante,visitante)
     const data=dataParaTopo(camp,mandante,visitante)
-    console.log(resp)
     res.status(200).send({resp,data})
 })
 router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
