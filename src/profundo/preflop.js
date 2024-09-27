@@ -10,7 +10,7 @@ export function preFlop(camp,mandante,visitante){
     const pm=posMinima[paths.indexOf(camp)]
     while(resp[cont]&&resposta.length<10&&(resp[cont][0].pos+resp[cont][1].pos<=13)){
         let frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
-        let pode=true
+        let pode=frase?true:false
         for(let item of resposta){
             if(item.frase==frase)pode=false
         }
@@ -70,7 +70,7 @@ function nomePreFlop(mand,visi,camp,stat){
             texto+=` o 2º tempo`
         }
         return texto
-    }else if(grandeza==2){
+    }else if(grandeza==2){return null
         if(c==1){
             if(asc){
                 texto=`Poucos gols para ${mandante}`
@@ -94,7 +94,7 @@ function nomePreFlop(mand,visi,camp,stat){
         if(metade==1)texto+=` no 1º tempo`
         if(metade==2)texto+=` no 2º tempo`
         return texto
-    }else if(grandeza==6){
+    }else if(grandeza==6){return null
         if(c==1){
             if(asc){
                 texto=`Poucos escanteios para ${mandante}`
