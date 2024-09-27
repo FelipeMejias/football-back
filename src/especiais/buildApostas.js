@@ -42,16 +42,13 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
             const c=parseInt(info[1])
             const asc=parseInt(info[2])
             const metade=parseInt(info[3])
-            if(grandeza!=1){
+            if(grandeza==2||grandeza==6){
                 for(let esp of odd){
                     const {o,q,green}=esp
                     let func
                     if(grandeza==2){
                         func=confGols
-                    }else if(grandeza==7){
-                        func=confPrimGol
-                    }else if(grandeza==8){
-                        func=confUltimoGol
+                    
                     }else{
                         func=confEsc
                     }
@@ -73,11 +70,19 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
                     }) 
                 }
             }else{
-                const preCh=preChance(confPlacar,context,mandante,visitante,metade,c,asc,null)
+                let func
+                if(grandeza==1){
+                    func=confPlacar
+                }else if(grandeza==7){
+                    func=confPrimGol
+                }else if(grandeza==8){
+                    func=confUltimoGol
+                }
+                const preCh=preChance(func,context,mandante,visitante,metade,c,asc,null)
                 tex=texto
                 ode=parseFloat(odd)
                 chance=calcularChance(preCh)
-
+            
                 resp.push({
                     ev:calcularEV(chance,ode),
                     chance:chance==100?99:chance,

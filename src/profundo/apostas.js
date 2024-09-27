@@ -29,13 +29,15 @@ export function buscarApostasJogo(camp,mandante,visitante){
         const texto=darNomeAposta(camp,mandante,visitante,grandeza,c,asc,metade)
         let odd
         
-        if(grandeza==1){
+        if(grandeza==1||grandeza==7||grandeza==8){
             odd=(num/100).toFixed(2)
-            const green=jogoAntigo?confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):undefined
-            apostas.push({info,texto,odd,green})
-        }else if(grandeza==7||grandeza==8){
+            const green=jogoAntigo?(
+            grandeza==1?
+            confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):
             grandeza==7?confPrimGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):
                     confUltimoGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null)
+            ):undefined
+            apostas.push({info,texto,odd,green})
         }else{
             odd=[]
             const zerado=num.length%3==0

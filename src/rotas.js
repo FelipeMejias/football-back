@@ -138,7 +138,12 @@ router.get('/resultadosSemanas',async(req,res)=>{
     const resp=resultadoSemanas(camps,tipos,ev)
     res.status(200).send(resp)
 })
-
+function retirar(tip){
+    const n=[]
+    for (let k of tip){
+        if( k!='2')n.push(k)
+    }return n
+}
 //================
 //CONTROLE EXTERNO
 
