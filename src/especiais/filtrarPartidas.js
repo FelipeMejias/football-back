@@ -1,6 +1,8 @@
 export default function filtrar(partidas,time,estadia){
     return partidas.filter(part=>{
+
         const nome=part[0]
+        
         const mandante=nome[0]+nome[1]+nome[2]
         const visitante=nome[3]+nome[4]+nome[5]
         return(!estadia?(mandante==time||visitante==time):(
