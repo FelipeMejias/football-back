@@ -124,7 +124,7 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
 })
 router.get('/resultados',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
-    const tipos=retirar(tiposRaw.split('-'))
+    const tipos=tiposRaw.split('-')
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=buildResultado(camps,tipos,ev)
@@ -132,7 +132,8 @@ router.get('/resultados',async(req,res)=>{
 })
 router.get('/resultadosSemanas',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
-    const tipos=retirar(tiposRaw.split('-'))
+    const tipos=tiposRaw.split('-')
+    //const tipos=retirar(tiposRaw.split('-'))
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=resultadoSemanas(camps,tipos,ev)

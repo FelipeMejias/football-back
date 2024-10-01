@@ -1,20 +1,19 @@
-import { createIta1 } from "./validators/p2_ITA.js";
-import { createEsp1 } from "./validators/p5_ESP.js";
-import { createIng1 } from "./validators/p1_ING.js";
-import { createAle1 } from "./validators/p3_ALE.js";
-import { createFra1 } from "./validators/p4_FRA.js";
-import { createAra1 } from "./validators/wwwwww_ARA.js";
-import { createHol1 } from "./validators/p6_HOL.js";
-import { createPor1 } from "./validators/p7_POR.js";
+import { createIta1 } from "./adicionadas/guardado/l_ITA.js";
+import { createEsp1 } from "./adicionadas/guardado/k_ESP.js";
+import { createIng1 } from  "./adicionadas/i_ING.js";
+import { createAle1 } from "./adicionadas/j_ALE.js";
+import { createFra1 } from "./adicionadas/m_FRA.js";
+import { createHol1 } from "./adicionadas/guardado/n_HOL.js";
+import { createPor1 } from "./adicionadas/guardado/o_POR.js";
 
 import { createBra1 } from "./adicionadas/a_BRA.js";
-import { createArg1 } from "./validators/b_ARG.js";
-import { createEua1 } from "./validators/d_EUA.js";
+import { createArg1 } from "./adicionadas/guardado/b_ARG.js";
+import { createEua1 } from "./adicionadas/guardado/d_EUA.js";
 import { createBra2 } from "./adicionadas/e_BRA2.js";
-import { createJap1 } from "./adicionadas/f_JAP.js";
-import { createKor1 } from "./validators/g_KOR.js";
-import { createUru1 } from "./adicionadas/c_URU.js";
-import { createSue1 } from "./validators/h_SUE.js";
+import { createJap1 } from "./adicionadas/guardado/f_JAP.js";
+import { createKor1 } from "./adicionadas/guardado/g_KOR.js";
+import { createUru1 } from "./adicionadas/guardado/c_URU.js";
+import { createSue1 } from "./adicionadas/guardado/h_SUE.js";
 
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
@@ -49,11 +48,17 @@ function extrairPosteriores(array,manvis){
     }
     return resp
 }
-    const contextIng1={
+    const contextIng1antigo={
       listaNomes:['Arsenal','Aston Villa','Bournemouth','Brentford','Brighton','Burnley','Chelsea','Crystal Palace','Everton','Fulham','Liverpool','Luton Town','Manchester City','Manchester United','Newcastle','Nottingham Forest','Sheffield United','Tottenham','West Ham','Wolverhampton'],
       listaTimes:['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','liv','lut','cit','man','new','not','she','tot','wes','wol'],
       path:'ing1'
     }
+    const contextIng1={
+      listaNomes:['Arsenal','Aston Villa','Bournemouth','Brentford','Brighton','Ipswich Town','Chelsea','Crystal Palace','Everton','Fulham','Liverpool','Leicester','Manchester City','Manchester United','Newcastle','Nottingham Forest','Southampton','Tottenham','West Ham','Wolverhampton'],
+      listaTimes:['ars','ast','bou','bre','bri','ips','che','cry','eve','ful','liv','lei','cit','man','new','not','sou','tot','wes','wol'],
+      path:'ing1'
+    }
+
     const contextEsp1={
       listaNomes:['Alavés','Almeria','Athletico Bilbao','Athletico Madrid','Barcelona','Bétis','Cádiz','Celta de Vigo','Getafe','Girona','Granada','Las Palmas','Mallorca','Osasuna','Rayo Vallecano','Real Madrid','Real Sociedad','Sevilla','Valencia','Villareal'],
       listaTimes:['ala','alm','atb','atm','bar','bet','cad','cel','get','gir','gra','las','mal','osa','ray','rem','res','sev','val','vil'],
@@ -64,16 +69,30 @@ function extrairPosteriores(array,manvis){
       listaTimes:['ata','bol','cag','emp','fio','fro','gen','int','juv','laz','lec','mil','mon','nap','rom','sal','sas','tor','udi','ver'],
       path:'ita1'
     }
-    const contextAle1={
+
+    const contextAle1antigo={
       listaNomes:['Augsburg','Bayern','Bochum','Borussia','Colônia','Darmstadt','Eintracht','Freiburg','Heidenheim','Hoffenheim','Leipzig','Leverkusen','Mainz','Mönchengladbach','Stuttgart','Union Berlin','Werder Bremen','Wolfsburg'],
       listaTimes:['aug','bay','boc','bor','col','dar','ein','fre','hei','hof','lei','lev','mai','mon','stu','uni','wer','wol'],
       path:'ale1'
     }
-    const contextFra1={
+    const contextAle1={
+      listaNomes:['Augsburg','Bayern','Bochum','Borussia','Holstein Kiel','St. Pauli','Eintracht','Freiburg','Heidenheim','Hoffenheim','Leipzig','Leverkusen','Mainz','Mönchengladbach','Stuttgart','Union Berlin','Werder Bremen','Wolfsburg'],
+      listaTimes:['aug','bay','boc','bor','hol','stp','ein','fre','hei','hof','lei','lev','mai','mon','stu','uni','wer','wol'],
+      path:'ale1'
+    }
+    
+
+    const contextFra1antigo={
       listaNomes:['Brestois','Clermont','Le Havre','Lens','Lorient-Bretagne','LOSC','Lyon','Metz','Mônaco','Montpellier','Nantes','Nice','Olympique','PSG','Reims','Rennes','Strasbourg','Toulouse'],
       listaTimes:['bre','cle','hav','len','lor','los','lyo','met','mon','mpl','nan','nic','oly','psg','rei','ren','str','tou'],
       path:'fra1'
     }
+    const contextFra1={
+      listaNomes:['Brestois','Angers','Auxerre','Le Havre','Lens','Lille','Lyon','Saint-Étienne','Mônaco','Montpellier','Nantes','Nice','Olympique','PSG','Reims','Rennes','Strasbourg','Toulouse'],
+      listaTimes:['bre','ang','aux','hav','len','los','lyo','ste','mon','mpl','nan','nic','oly','psg','rei','ren','str','tou'],
+      path:'fra1'
+    }
+
     const contextHol1={
       listaNomes:['Ajax','Almere','AZ','Escelsior','Feyenoord','Fortuna Sittard','Go Ahead Eagles','Heerenveen','Heracles','NEC','PSV','RKC','Sparta Roterdã','Twente','Utrecht','Vitesse','Volendam','Zwolle'],
       listaTimes:['aja','alm','azz','exc','fey','for','goa','hee','her','nec','psv','rkc','spa','twe','utr','vit','vol','zwo'],
@@ -148,8 +167,22 @@ function extrairPosteriores(array,manvis){
     path:'sue1'
   }
 export const ligas={
-  posMinima:[9,9,9,9,9,9,9,9],
-  paths:['bra1','arg1','uru1','eua1','bra2','jap1','kor1','sue1'],
-  contexts:[contextBra1,contextArg1,contextUru1,contextEua1,contextBra2,contextJap1,contextKor1,contextSue1],
-  bancos:[createBra1,createArg1,createUru1,createEua1,createBra2,createJap1,createKor1,createSue1]
-}
+  paths:[
+    'bra1',//'arg1','uru1','eua1',
+    'bra2',//'jap1','kor1','sue1',
+    'ing1','ale1',//'esp1','ita1',
+    'fra1',//'hol1','por1'
+  ],
+  contexts:[
+    contextBra1,//contextArg1,contextUru1,contextEua1,
+    contextBra2,//contextJap1,contextKor1,contextSue1,
+    contextIng1,contextAle1,//contextEsp1,contextIta1,
+    contextFra1,//contextHol1,contextPor1,
+    ],
+  bancos:[
+    createBra1,//createArg1,createUru1,createEua1,
+    createBra2,//createJap1,createKor1,createSue1,
+    createIng1,createAle1,//createEsp1,createIta1,
+    createFra1,//createHol1,createPor1,
+  ]
+  }
