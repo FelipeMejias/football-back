@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { avanca7dias, traduzirData } from "../mu/utils.js";
-import { buildApostas } from "../especiais/buildApostas.js";
+import { buildApostas } from "./buildApostas.js";
 import { maiorOdd, menorOdd } from "../bancos.js";
 
 export function resultadoSemanas(camps,tipos,ev){
@@ -29,7 +29,7 @@ export function resultadoSemanas(camps,tipos,ev){
 }
 function porRodada(camps,tipos,ev){
     const resp=[]
-    let data='240530'
+    let data='240827'
     let aindaFalta=true
     const agora=traduzirData(dayjs())
 

@@ -1,8 +1,8 @@
 import Router from 'express'
 import bcrypt from "bcrypt";
 import { buildContext } from './bancos.js'
-import { criarOrdem } from './profundo/individual.js'
-import { criarOrdemDupla } from './profundo/dupla.js'
+import { criarOrdem } from './especiais/individual.js'
+import { criarOrdemDupla } from './especiais/dupla.js'
 import { partidasTime } from './mu/tabelas/partidasTime.js'
 import { ultimoGol } from './mu/tabelas/ultimoGol.js'
 import { primeiroGol } from './mu/tabelas/primeiroGol.js'
@@ -18,18 +18,18 @@ import { classificacao } from './mu/tabelas/classificacao.js'
 import { partidasLiga } from './mu/tabelas/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
-import { buildResultado } from './profundo/resultado.js'
+import { buildResultado } from './especiais/resultado.js'
 import { colocarLabels, dataParaTopo, quantoTempoFalta } from './mu/utils.js'
 import { preencher, preencherPartidas } from './mu/2-online/preencher.js'
 import { validateCamp } from './mu/1-validators/campValidator.js'
 import { validateTime } from './mu/1-validators/timeValidator.js'
 import { validatePost } from './mu/1-validators/postValidator.js'
 import { marcaUltimo } from './mu/tabelas/marcaUltimo.js'
-import { resultadoSemanas } from './profundo/resultadoSemanas.js'
-import { preFlop } from './profundo/preflop.js'
+import { resultadoSemanas } from './especiais/resultadoSemanas.js'
+import { preFlop } from './especiais/preflop.js'
 import { acharUsuario, cadastrar, login, torneiosUsuario } from './mu/2-online/bancoTorneios.js'
 import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
-import { criarOrdemDuplaPreflop } from './profundo/duplaPreFlop.js';
+import { criarOrdemDuplaPreflop } from './especiais/duplaPreFlop.js';
 
 export const router=Router()
 
@@ -124,8 +124,7 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
 })
 router.get('/resultados',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
-    //const tipos=tiposRaw.split('-')
-    const tipos=retirar(tiposRaw.split('-'))
+    const tipos=tiposRaw.split('-')
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=buildResultado(camps,tipos,ev)
@@ -133,19 +132,13 @@ router.get('/resultados',async(req,res)=>{
 })
 router.get('/resultadosSemanas',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
-    //const tipos=tiposRaw.split('-')
-    const tipos=retirar(tiposRaw.split('-'))
+    const tipos=tiposRaw.split('-')
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=resultadoSemanas(camps,tipos,ev)
     res.status(200).send(resp)
 })
-function retirar(tip){
-    const n=[]
-    for (let k of tip){
-        if( k!='2')n.push(k)
-    }return n
-}
+
 //================
 //CONTROLE EXTERNO
 

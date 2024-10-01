@@ -6,9 +6,7 @@ export function preFlop(camp,mandante,visitante){
     const resp=criarOrdemDuplaPreflop(camp,mandante,visitante)
     const resposta=[]
     let cont=0
-    const {paths,posMinima}=ligas
-    const pm=posMinima[paths.indexOf(camp)]
-    while(resp[cont]&&resposta.length<10&&(resp[cont][0].pos+resp[cont][1].pos<=13)){
+    while(resp[cont]&&resposta.length<10&&(resp[cont][0].pos+resp[cont][1].pos<=10)){
         let frase=nomePreFlop(mandante,visitante,camp,resp[cont][0])
         let pode=frase?true:false
         for(let item of resposta){

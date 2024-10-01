@@ -8,12 +8,11 @@ export function criarOrdemDuplaPreflop(camp,mandante,visitante){
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]
     const apostas=buscarApostasJogo(camp,mandante,visitante)
-    let cont=1
     ordemMandante.forEach(est=>{
         const {grandeza,c,asc,estadia,metade,handicap,pos}=est
         const par=acharPar(ordemVisitante,grandeza,c,asc,estadia,metade,handicap)
         if(par){
-            if((!(grandeza==7||grandeza==8)||!asc)&&pos+par.pos<=13)listao.push([est,par])
+            if((!(grandeza==7||grandeza==8)||!asc)&&pos+par.pos<=10)listao.push([est,par])
             
         }
     })

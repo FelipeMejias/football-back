@@ -1,4 +1,4 @@
-import { buscarApostasJogo } from "../profundo/apostas.js"
+import { buscarApostasJogo } from "./apostas.js"
 
 export function getPartida(partidas,manvis){
     for(let part of partidas){

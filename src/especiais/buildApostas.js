@@ -1,5 +1,5 @@
 import { buildContext, ligas } from "../bancos.js"
-import { buscarApostasJogo } from "../profundo/apostas.js"
+import { buscarApostasJogo } from "./apostas.js"
 import { confGols } from "../mu/conferencias/confGols.js"
 import { confEsc } from "../mu/conferencias/confEsc.js"
 import { confPlacar } from "../mu/conferencias/confPlacar.js"

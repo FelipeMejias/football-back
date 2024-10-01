@@ -1,6 +1,6 @@
 import { ligas } from "./src/bancos.js";
 import { extrairPassadas } from "./src/especiais/buildApostas.js";
-import { buscarApostasJogo } from "./src/profundo/apostas.js";
+import { buscarApostasJogo } from "./src/apostas.js";
 
 export function maisOuMenos(){
     let adicionais=[]

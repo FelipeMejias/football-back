@@ -1,5 +1,5 @@
 import { buildContext } from "../bancos.js";
-import { analisar } from "../especiais/analise.js";
+import { analisar } from "./analise.js";
 import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
 

@@ -1,4 +1,4 @@
-import { buildResultado } from "./src/profundo/resultado.js"
+import { buildResultado } from "./src/especiais/resultado.js"
 
 export function bla(){
     const lista=[]

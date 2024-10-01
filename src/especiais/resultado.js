@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { buildApostas } from "../especiais/buildApostas.js";
+import { buildApostas } from "./buildApostas.js";
 import { avanca7dias, traduzirData } from "../mu/utils.js";
 import { maiorOdd, menorOdd } from "../bancos.js";
 

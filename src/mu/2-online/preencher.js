@@ -1,5 +1,5 @@
 import { buildContext, ligas } from "../../bancos.js"
-import { preFlop } from "../../profundo/preflop.js"
+import { preFlop } from "../../especiais/preflop.js"
 
 export function preencher(camp,mandante,visitante,part){
     const createCerto=buildContext(camp,true).partidasTotais
