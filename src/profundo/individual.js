@@ -1,11 +1,11 @@
-import { comparar } from "../tabelas/comparar.js"
-import { escanteios } from "../tabelas/escanteios.js"
-import { marcaPrimeiro } from "../tabelas/marcaPrimeiro.js"
-import { marcaUltimo } from "../tabelas/marcaUltimo.js"
-import { mediaGols } from "../tabelas/mediaGols.js"
-import { placar } from "../tabelas/placar.js"
-import { primeiroGol } from "../tabelas/primeiroGol.js"
-import { ultimoGol } from "../tabelas/ultimoGol.js"
+import { comparar } from "../mu/tabelas/comparar.js"
+import { escanteios } from "../mu/tabelas/escanteios.js"
+import { marcaPrimeiro } from "../mu/tabelas/marcaPrimeiro.js"
+import { marcaUltimo } from "../mu/tabelas/marcaUltimo.js"
+import { mediaGols } from "../mu/tabelas/mediaGols.js"
+import { placar } from "../mu/tabelas/placar.js"
+import { primeiroGol } from "../mu/tabelas/primeiroGol.js"
+import { ultimoGol } from "../mu/tabelas/ultimoGol.js"
 
 export function criarOrdem(context,time,enxuta=false){
     const resp=[]

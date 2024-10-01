@@ -1,4 +1,4 @@
-import filtrar, { elPushar } from "../especiais/filtrarPartidas.js"
+import filtrar, { elPushar } from "../../especiais/filtrarPartidas.js"
 
 export  function comparar(context,handicap){
     const {partidasTotais,listaTimes}=context

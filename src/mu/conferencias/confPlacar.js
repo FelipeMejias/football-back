@@ -1,4 +1,4 @@
-import filtrar, { filtrarGols } from "../especiais/filtrarPartidas.js"
+import filtrar, { filtrarGols } from "../../especiais/filtrarPartidas.js"
 
 export  function confPlacar(qtd,context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context

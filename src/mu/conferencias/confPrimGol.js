@@ -1,4 +1,4 @@
-import filtrar, { filtrarGols } from "../especiais/filtrarPartidas.js"
+import filtrar, { filtrarGols } from "../../especiais/filtrarPartidas.js"
 
 export  function confPrimGol(qtd,context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context

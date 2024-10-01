@@ -1,4 +1,4 @@
-import filtrar, { elPushar } from "../especiais/filtrarPartidas.js";
+import filtrar, { elPushar } from "../../especiais/filtrarPartidas.js";
 
 export  function marcaPrimeiro(context,estadia){
     const {partidasTotais,listaTimes}=context

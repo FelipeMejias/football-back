@@ -1,11 +1,11 @@
 import { buildContext, ligas } from "../bancos.js"
 import { buscarApostasJogo } from "../profundo/apostas.js"
-import { confGols } from "../conferencias/confGols.js"
-import { confEsc } from "../conferencias/confEsc.js"
-import { confPlacar } from "../conferencias/confPlacar.js"
-import { quantoTempoFalta } from "../essencials/utils.js"
-import { confPrimGol } from "../conferencias/confPrimGol.js"
-import { confUltimoGol } from "../conferencias/confUltimoGol.js"
+import { confGols } from "../mu/conferencias/confGols.js"
+import { confEsc } from "../mu/conferencias/confEsc.js"
+import { confPlacar } from "../mu/conferencias/confPlacar.js"
+import { quantoTempoFalta } from "../mu/utils.js"
+import { confPrimGol } from "../mu/conferencias/confPrimGol.js"
+import { confUltimoGol } from "../mu/conferencias/confUltimoGol.js"
 
 export function buildApostas(pageBet,dataInicio=false,dataFim=false){
     let desordenada=[]

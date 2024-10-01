@@ -1,8 +1,8 @@
-import { listaEsc } from "../conferencias/listaEsc.js"
-import { listaGols } from "../conferencias/listaGols.js"
-import { listaPlacar } from "../conferencias/listaPlacar.js"
-import { listaPrimGol } from "../conferencias/listaPrimGol.js"
-import { listaUltimoGol } from "../conferencias/listaUltimoGol.js"
+import { listaEsc } from "../mu/conferencias/listaEsc.js"
+import { listaGols } from "../mu/conferencias/listaGols.js"
+import { listaPlacar } from "../mu/conferencias/listaPlacar.js"
+import { listaPrimGol } from "../mu/conferencias/listaPrimGol.js"
+import { listaUltimoGol } from "../mu/conferencias/listaUltimoGol.js"
 import { frasesAnalise } from "./analise.js"
 
 export function listaAnalise(context,grandeza,estadia,metade,time,c,asc,valor){

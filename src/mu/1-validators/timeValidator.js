@@ -1,4 +1,4 @@
-import { ligas } from "../bancos.js";
+import { ligas } from "../../bancos.js";
 
 export function validateTime(palavra1,palavra2='unico'){
     return async(req, res, next) => {

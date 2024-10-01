@@ -3,32 +3,32 @@ import bcrypt from "bcrypt";
 import { buildContext } from './bancos.js'
 import { criarOrdem } from './profundo/individual.js'
 import { criarOrdemDupla } from './profundo/dupla.js'
-import { partidasTime } from './tabelas/partidasTime.js'
-import { ultimoGol } from './tabelas/ultimoGol.js'
-import { primeiroGol } from './tabelas/primeiroGol.js'
-import { placar } from './tabelas/placar.js'
-import { mediaGols } from './tabelas/mediaGols.js'
-import { comparar } from './tabelas/comparar.js'
-import { escanteios } from './tabelas/escanteios.js'
-import { marcaPrimeiro } from './tabelas/marcaPrimeiro.js'
+import { partidasTime } from './mu/tabelas/partidasTime.js'
+import { ultimoGol } from './mu/tabelas/ultimoGol.js'
+import { primeiroGol } from './mu/tabelas/primeiroGol.js'
+import { placar } from './mu/tabelas/placar.js'
+import { mediaGols } from './mu/tabelas/mediaGols.js'
+import { comparar } from './mu/tabelas/comparar.js'
+import { escanteios } from './mu/tabelas/escanteios.js'
+import { marcaPrimeiro } from './mu/tabelas/marcaPrimeiro.js'
 import { buildFutura } from './especiais/buildFutura.js'
 import { analisar } from './especiais/analise.js'
 import { create, getPartida } from './especiais/getPartida.js'
-import { classificacao } from './tabelas/classificacao.js'
-import { partidasLiga } from './tabelas/partidasLiga.js'
+import { classificacao } from './mu/tabelas/classificacao.js'
+import { partidasLiga } from './mu/tabelas/partidasLiga.js'
 import { listaAnalise } from './especiais/listaAnalise.js'
 import { buildApostas } from './especiais/buildApostas.js'
 import { buildResultado } from './profundo/resultado.js'
-import { colocarLabels, dataParaTopo, quantoTempoFalta } from './essencials/utils.js'
-import { preencher, preencherPartidas } from './online/preencher.js'
-import { validateCamp } from './validators/campValidator.js'
-import { validateTime } from './validators/timeValidator.js'
-import { validatePost } from './validators/postValidator.js'
-import { marcaUltimo } from './tabelas/marcaUltimo.js'
+import { colocarLabels, dataParaTopo, quantoTempoFalta } from './mu/utils.js'
+import { preencher, preencherPartidas } from './mu/2-online/preencher.js'
+import { validateCamp } from './mu/1-validators/campValidator.js'
+import { validateTime } from './mu/1-validators/timeValidator.js'
+import { validatePost } from './mu/1-validators/postValidator.js'
+import { marcaUltimo } from './mu/tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './profundo/resultadoSemanas.js'
 import { preFlop } from './profundo/preflop.js'
-import { acharUsuario, cadastrar, login, torneiosUsuario } from './online/bancoTorneios.js'
-import { bancoUsuarios } from './online/1_____usuarios.js';
+import { acharUsuario, cadastrar, login, torneiosUsuario } from './mu/2-online/bancoTorneios.js'
+import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
 import { criarOrdemDuplaPreflop } from './profundo/duplaPreFlop.js';
 
 export const router=Router()
@@ -124,7 +124,8 @@ router.get('/classificacao/:camp',validateCamp,async(req,res)=>{
 })
 router.get('/resultados',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw,contagem}=req.query
-    const tipos=tiposRaw.split('-')
+    //const tipos=tiposRaw.split('-')
+    const tipos=retirar(tiposRaw.split('-'))
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=buildResultado(camps,tipos,ev)
@@ -132,8 +133,8 @@ router.get('/resultados',async(req,res)=>{
 })
 router.get('/resultadosSemanas',async(req,res)=>{
     const {camps:campsRaw,tipos:tiposRaw,ev:evRaw}=req.query
-    const tipos=tiposRaw.split('-')
-    //const tipos=retirar(tiposRaw.split('-'))
+    //const tipos=tiposRaw.split('-')
+    const tipos=retirar(tiposRaw.split('-'))
     const camps=campsRaw.split('-')
     const ev=parseInt(evRaw)
     const resp=resultadoSemanas(camps,tipos,ev)

@@ -1,4 +1,4 @@
-import filtrar from "../especiais/filtrarPartidas.js"
+import filtrar from "../../especiais/filtrarPartidas.js"
 
 export  function primeiroGol(context,estadia){
     const {partidasTotais,listaTimes}=context

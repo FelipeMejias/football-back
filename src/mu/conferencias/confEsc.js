@@ -1,13 +1,15 @@
-import filtrar from "../especiais/filtrarPartidas.js"
+import filtrar from "../../especiais/filtrarPartidas.js"
 
-export  function listaEsc(context,estadia,metade,time,c,asc,valor){
+export  function confEsc(qtd,context,estadia,metade,time,c,asc,valor){
     const {partidasTotais}=context
-    const resp=[]
     const partidas=filtrar(partidasTotais,time,estadia)
-    for(let partida of partidas){
+    let contCertos=0
+    let cont=0
+    const partidasNew=[]
+    for(let k=0;k<qtd&&k<partidas.length;k++)partidasNew.push(partidas[k])
+    for(let partida of partidasNew){
         const nome=partida[0]
         const mandante=nome[0]+nome[1]+nome[2]
-        const visitante=nome[3]+nome[4]+nome[5]
         const escanteios=partida[1]
         let escBuscado
         if(c==1){
@@ -17,11 +19,8 @@ export  function listaEsc(context,estadia,metade,time,c,asc,valor){
         }if(c==3){
             escBuscado=mandante==time?escanteios[1]:escanteios[0]
         }
-        resp.push({
-            mandante,visitante,
-            numero:escBuscado,
-            sg:asc?escBuscado<valor:escBuscado>valor
-        })
+        if(asc?escBuscado<valor:escBuscado>valor)contCertos++
+        cont++
     }
-    return resp
+    return parseFloat((contCertos*100/cont).toFixed(1))
 }

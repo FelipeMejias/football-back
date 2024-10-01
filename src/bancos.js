@@ -14,7 +14,8 @@ import { createJap1 } from "./adicionadas/guardado/f_JAP.js";
 import { createKor1 } from "./adicionadas/guardado/g_KOR.js";
 import { createUru1 } from "./adicionadas/guardado/c_URU.js";
 import { createSue1 } from "./adicionadas/guardado/h_SUE.js";
-
+export const menorOdd=1.3
+export const maiorOdd=3
 export function buildContext(camp,inteiro=false){
   const {paths,contexts,bancos}=ligas
   const index=paths.indexOf(camp)

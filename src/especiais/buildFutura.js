@@ -1,9 +1,10 @@
-import {  passouMenosDeUmaSemana, quantoTempoFalta } from "../essencials/utils.js"
+import {  passouMenosDeUmaSemana, quantoTempoFalta } from "../mu/utils.js"
 import { buildContext, ligas } from "../bancos.js"
 export function buildFutura(camps){
     let desordenada=[]
     const {paths}=ligas
-    const escolhidos=['bra1','bra2']//camps||paths
+    //const escolhidos=['bra1','bra2']
+    const escolhidos=camps||paths
     escolhidos.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })

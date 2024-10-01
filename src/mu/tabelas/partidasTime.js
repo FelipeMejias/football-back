@@ -1,4 +1,4 @@
-import { quantoTempoFalta } from "../essencials/utils.js"
+import { quantoTempoFalta } from "../utils.js"
 
 export  function partidasTime(context,time){
     const resp=[]

@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { buildApostas } from "../especiais/buildApostas.js";
-import { avanca7dias, traduzirData } from "../essencials/utils.js";
+import { avanca7dias, traduzirData } from "../mu/utils.js";
+import { maiorOdd, menorOdd } from "../bancos.js";
 
 export function buildResultado(camps,tipos,ev){
     const abertas=[]
@@ -8,8 +9,8 @@ export function buildResultado(camps,tipos,ev){
     const apostas=buildApostas(2).filter(a=>(
 camps.includes(a.camp)&&
 tipos.includes(a.info[0])&&
-a.odd<3&&
-a.odd>=1.2&&
+a.odd<maiorOdd&&
+a.odd>=menorOdd&&
 a.ev>=ev
     ))
     let din=0;let ganho=0;let red=0;let green=0;

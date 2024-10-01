@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
-import { avanca7dias, traduzirData } from "../essencials/utils.js";
+import { avanca7dias, traduzirData } from "../mu/utils.js";
 import { buildApostas } from "../especiais/buildApostas.js";
+import { maiorOdd, menorOdd } from "../bancos.js";
 
 export function resultadoSemanas(camps,tipos,ev){
     const rodadas=porRodada(camps,tipos,ev)
@@ -34,11 +35,11 @@ function porRodada(camps,tipos,ev){
 
     while(aindaFalta){
         const dataInicio=data
-        data='241212'//avanca7dias(data)
+        data=/*'241212'*/avanca7dias(data)
         const apostas=buildApostas(2,dataInicio+'0000',data+'0000').filter(a=>(
 camps.includes(a.camp)&&
-//a.odd<=2.7&&
-//a.odd>=1.2&&
+a.odd<=maiorOdd&&
+a.odd>=menorOdd&&
 tipos.includes(a.info[0])&&
 a.ev>=ev
         ))

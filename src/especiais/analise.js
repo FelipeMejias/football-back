@@ -1,12 +1,12 @@
-import {confEsc} from '../conferencias/confEsc.js'
-import {confPlacar} from '../conferencias/confPlacar.js'
-import {confGols} from '../conferencias/confGols.js'
+import {confEsc} from '../mu/conferencias/confEsc.js'
+import {confPlacar} from '../mu/conferencias/confPlacar.js'
+import {confGols} from '../mu/conferencias/confGols.js'
 import { buildContext } from '../bancos.js'
 import { buscarApostasJogo } from '../profundo/apostas.js'
-import { confPrimGol } from '../conferencias/confPrimGol.js'
-import { confUltimoGol } from '../conferencias/confUltimoGol.js'
+import { confPrimGol } from '../mu/conferencias/confPrimGol.js'
+import { confUltimoGol } from '../mu/conferencias/confUltimoGol.js'
 import { getPartida } from './getPartida.js'
-import { quantoTempoFalta } from '../essencials/utils.js'
+import { quantoTempoFalta } from '../mu/utils.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1

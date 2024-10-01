@@ -1,4 +1,4 @@
-import { ligas } from "../bancos.js";
+import { ligas } from "../../bancos.js";
 
 export async function validateCamp(req, res, next) {
     try {
