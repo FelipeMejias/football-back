@@ -172,18 +172,18 @@ export const ligas={
     'bra1',//'arg1','uru1','eua1',
     'bra2',//'jap1','kor1','sue1',
     'ing1','ale1',//'esp1','ita1',
-    'fra1',//'hol1','por1'
+    //'fra1',//'hol1','por1'
   ],
   contexts:[
     contextBra1,//contextArg1,contextUru1,contextEua1,
     contextBra2,//contextJap1,contextKor1,contextSue1,
     contextIng1,contextAle1,//contextEsp1,contextIta1,
-    contextFra1,//contextHol1,contextPor1,
+    //contextFra1,//contextHol1,contextPor1,
     ],
   bancos:[
     createBra1,//createArg1,createUru1,createEua1,
     createBra2,//createJap1,createKor1,createSue1,
     createIng1,createAle1,//createEsp1,createIta1,
-    createFra1,//createHol1,createPor1,
+    //createFra1,//createHol1,createPor1,
   ]
   }
