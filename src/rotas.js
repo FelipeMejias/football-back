@@ -99,6 +99,7 @@ router.get('/preflop/:camp/:mandante/:visitante',validateCamp,validateTime('mand
     const resp=preFlop(camp,mandante,visitante)
     res.status(200).send(resp)
 })
+//reconect
 router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mandante','visitante'),async(req,res)=>{
     const {camp,mandante,visitante}=req.params
     const {grandeza,c,asc,metade,valor}=req.query
