@@ -63,6 +63,7 @@ router.get('/partidasgerais',async(req,res)=>{
     const camps=campsRaw.split('-')
     const lista=buildFutura(camps)
     const resp=lista.length>0?colocarLabels(lista):[]
+    console.log('oi')
     res.status(200).send(resp)
 })
 router.get('/apostasgerais/:aberto',async(req,res)=>{

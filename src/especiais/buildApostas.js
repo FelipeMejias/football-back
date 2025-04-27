@@ -7,7 +7,7 @@ import { quantoTempoFalta } from "../mu/utils.js"
 import { confPrimGol } from "../mu/conferencias/confPrimGol.js"
 import { confUltimoGol } from "../mu/conferencias/confUltimoGol.js"
 
-export function buildApostas(pageBet,dataInicio=false,dataFim=false){
+export function buildApostas(pageBet,dataInicio=false,dataFim=false){/*
     let desordenada=[]
     let ordenada
     const {paths}=ligas
@@ -25,9 +25,9 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){
         const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
         if(dataInicio)ordenada=ordenada.filter(j=>j.data>dataInicio&&j.data<dataFim)
-    }
+    }*/const paths=['ing1'];const ordenada=extrairFuturas('ing1')
     const resp=[]
-    
+    console.log(ordenada)
     for(let partida of ordenada){
         
         const {camp,mandante,visitante,cinza}=partida
