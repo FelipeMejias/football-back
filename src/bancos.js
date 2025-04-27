@@ -1,20 +1,20 @@
 import { createIta1 } from "./adicionadas/guardado/l_ITA.js";
 import { createEsp1 } from "./adicionadas/guardado/k_ESP.js";
-import { createIng1 } from  "./adicionadas/i_ING.js";
+import { createIng1 } from  "./adicionadas/guardado/i_ING.js";
 import { createAle1 } from "./adicionadas/j_ALE.js";
-import { createFra1 } from "./adicionadas/m_FRA.js";
+import { createFra1 } from "./adicionadas/guardado/m_FRA.js";
 import { createHol1 } from "./adicionadas/guardado/n_HOL.js";
 import { createPor1 } from "./adicionadas/guardado/o_POR.js";
 
-import { createBra1 } from "./adicionadas/a_BRA.js";
+import { createBra1 } from "./adicionadas/guardado/a_BRA.js";
 import { createArg1 } from "./adicionadas/guardado/b_ARG.js";
 import { createEua1 } from "./adicionadas/guardado/d_EUA.js";
-import { createBra2 } from "./adicionadas/e_BRA2.js";
+import { createBra2 } from "./adicionadas/guardado/e_BRA2.js";
 import { createJap1 } from "./adicionadas/guardado/f_JAP.js";
 import { createKor1 } from "./adicionadas/guardado/g_KOR.js";
 import { createUru1 } from "./adicionadas/guardado/c_URU.js";
 import { createSue1 } from "./adicionadas/guardado/h_SUE.js";
-import { createIng2024 } from "./adicionadas/inglaterra.js";
+import { createIng2024 } from "./adicionadas/guardado/inglaterra.js";
 export const menorOdd=1.3
 export const maiorOdd=3
 export function buildContext(camp,inteiro=false){
@@ -169,22 +169,25 @@ function extrairPosteriores(array,manvis){
     path:'sue1'
   }
 export const ligas={
-  paths:['ing1',
-    'bra1',//'arg1','uru1','eua1',
-    'bra2',//'jap1','kor1','sue1',
-    'ing1','ale1',//'esp1','ita1',
+  paths:[
+    //'bra1',//'arg1','uru1','eua1',
+    //'bra2',//'jap1','kor1','sue1',
+    //'ing1',
+    'ale1',//'esp1','ita1',
     //'fra1',//'hol1','por1'
   ],
-  contexts:[contextIng1antigo,
-    contextBra1,//contextArg1,contextUru1,contextEua1,
-    contextBra2,//contextJap1,contextKor1,contextSue1,
-    contextIng1,contextAle1,//contextEsp1,contextIta1,
+  contexts:[
+    //contextBra1,//contextArg1,contextUru1,contextEua1,
+    //contextBra2,//contextJap1,contextKor1,contextSue1,
+    //contextIng1,
+    contextAle1,//contextEsp1,contextIta1,
     //contextFra1,//contextHol1,contextPor1,
     ],
-  bancos:[createIng2024,
-    createBra1,//createArg1,createUru1,createEua1,
-    createBra2,//createJap1,createKor1,createSue1,
-    createIng1,createAle1,//createEsp1,createIta1,
+  bancos:[
+    //createBra1,//createArg1,createUru1,createEua1,
+    //createBra2,//createJap1,createKor1,createSue1,
+    //createIng1,
+    createAle1,//createEsp1,createIta1,
     //createFra1,//createHol1,createPor1,
   ]
   }
