@@ -15,6 +15,8 @@ import { createKor1 } from "./adicionadas/guardado/g_KOR.js";
 import { createUru1 } from "./adicionadas/guardado/c_URU.js";
 import { createSue1 } from "./adicionadas/guardado/h_SUE.js";
 import { createIng2024 } from "./adicionadas/guardado/inglaterra.js";
+import { createBra1y25 } from "./adicionadas/bra.js";
+import { createBra2y25 } from "./adicionadas/bra2.js";
 export const menorOdd=1.3
 export const maiorOdd=3
 export function buildContext(camp,inteiro=false){
@@ -168,26 +170,42 @@ function extrairPosteriores(array,manvis){
           'ham','kal','mal','mja','nor','sir','var','vas'],
     path:'sue1'
   }
+
+  const contextBra1y25={
+    listaNomes:['Atlético MG','Bahia','Botafogo','Bragantino','Ceará','Corinthians','Cruzeiro','Flamengo','Fluminense','Fortaleza',
+      'Grêmio','Internacional','Juventude','Mirassol','Palmeiras','São Paulo','Santos','Sport Recife','Vasco da Gama','Vitória'],
+    listaTimes:['cam','bah','bot','bra','cea','cor','cru','fla','flu','for','gre','int','juv','mir','pal','sao','san','spo','vas','vit'],
+    path:'bra1'
+  }
+  const contextBra2y25={
+      listaNomes:['Atlético GO','Athletic','Athlético PR','Amazonas FC','América MG','Avaí','Botafogo SP',
+        'Chapecoense','Coritiba','CRB','Criciúma','Cuiabá','Ferroviária','Goiás',
+     'Novorizontino','Operário','Paysandu','Remo','Vila Nova','Volta Redonda'],
+      listaTimes:['ago','ath','cap','ama','amg','ava','bot','cha','cor','crb','cri','cui','fer','goi',
+                  'nov','ope','pay','rem','vil','vol'],
+    path:'bra2'
+  }
+
 export const ligas={
   paths:[
-    //'bra1',//'arg1','uru1','eua1',
-    //'bra2',//'jap1','kor1','sue1',
+    'bra1',//'arg1','uru1','eua1',
+    'bra2',//'jap1','kor1','sue1',
     //'ing1',
-    'ale1',//'esp1','ita1',
+    //'ale1',//'esp1','ita1',
     //'fra1',//'hol1','por1'
   ],
   contexts:[
-    //contextBra1,//contextArg1,contextUru1,contextEua1,
-    //contextBra2,//contextJap1,contextKor1,contextSue1,
+    contextBra1y25,//contextArg1,contextUru1,contextEua1,
+    contextBra2y25,//contextJap1,contextKor1,contextSue1,
     //contextIng1,
-    contextAle1,//contextEsp1,contextIta1,
+    //contextAle1,//contextEsp1,contextIta1,
     //contextFra1,//contextHol1,contextPor1,
     ],
   bancos:[
-    //createBra1,//createArg1,createUru1,createEua1,
-    //createBra2,//createJap1,createKor1,createSue1,
+    createBra1y25,//createArg1,createUru1,createEua1,
+    createBra2y25,//createJap1,createKor1,createSue1,
     //createIng1,
-    createAle1,//createEsp1,createIta1,
+    //createAle1,//createEsp1,createIta1,
     //createFra1,//createHol1,createPor1,
   ]
   }
