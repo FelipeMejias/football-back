@@ -2,8 +2,8 @@ import { buildContext } from "../bancos.js";
 import { buscarApostasJogo } from "./apostas.js";
 import { criarOrdem } from "./individual.js";
 
-export function criarOrdemDuplaPreflop(camp,mandante,visitante){
-    const context=buildContext(camp)
+export function criarOrdemDuplaPreflop(camp,mandante,visitante,inteiro=false){
+    const context=buildContext(camp,inteiro?1:false)
     const ordemMandante=criarOrdem(context,mandante)
     const ordemVisitante=criarOrdem(context,visitante)
     const listao=[]

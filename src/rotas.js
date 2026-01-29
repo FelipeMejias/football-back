@@ -32,7 +32,9 @@ import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
 import { criarOrdemDuplaPreflop } from './especiais/duplaPreFlop.js';
 
 export const router=Router()
-
+router.get('/',async(req,res)=>{
+    res.sendStatus(200)
+})
 router.get('/tabelas/:camp/:pagestr',validateCamp,async(req,res)=>{
     const {camp,pagestr}=req.params
     const page=parseInt(pagestr)
@@ -74,9 +76,11 @@ router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(re
     const {camp,manvis}=req.params
     const {partidasTotais}=buildContext(camp)
     const partida=getPartida(partidasTotais,manvis)
+    const respGuru=criarOrdemDuplaPreflop(camp,manvis[0]+manvis[1]+manvis[2],manvis[3]+manvis[4]+manvis[5])
     if(!partida)res.status(500).send({})
     const resp=create(partida,camp)
-    res.status(200).send(resp)
+console.log(respGuru)
+    res.status(200).send({resp,respGuru})
 })
 router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)=>{
     const {time,camp}=req.params
