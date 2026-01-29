@@ -30,11 +30,11 @@ import { preFlop } from './especiais/preflop.js'
 import { acharUsuario, cadastrar, login, torneiosUsuario } from './mu/2-online/bancoTorneios.js'
 import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
 import { criarOrdemDuplaPreflop } from './especiais/duplaPreFlop.js';
-/*
+
 export const router=Router()
 router.get('/',async(req,res)=>{
     res.sendStatus(200)
-})*/
+})
 router.get('/tabelas/:camp/:pagestr',validateCamp,async(req,res)=>{
     const {camp,pagestr}=req.params
     const page=parseInt(pagestr)
