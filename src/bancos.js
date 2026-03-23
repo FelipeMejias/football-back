@@ -169,6 +169,11 @@ function extrairPosteriores(array,manvis){
     path:'bra2'
   }
 */
+const contextAle1={
+    listaNomes:['Augsburg','Bayern','Borussia','Colônia','St. Pauli','Eintracht','Freiburg','Hamburg','Heidenheim','Hoffenheim','Leipzig','Leverkusen','Mainz','Mönchengladbach','Stuttgart','Union Berlin','Werder Bremen','Wolfsburg'],
+    listaTimes:['aug','bay','bor','col','stp','ein','fre','ham','hei','hof','lei','lev','mai','mon','stu','uni','wer','wol'],
+    path:'ale1'
+  }
 const contextIng1={
       listaNomes:['Arsenal','Aston Villa','Bournemouth','Brentford','Brighton','Burnley','Chelsea','Crystal Palace','Everton','Fulham','Leeds','Liverpool','Manchester City','Manchester United','Newcastle','Nottingham Forest','Sunderland','Tottenham','West Ham','Wolverhampton'],
       listaTimes:['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','lee','liv','cit','man','new','not','sun','tot','wes','wol'],
