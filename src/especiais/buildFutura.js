@@ -3,8 +3,7 @@ import { buildContext, ligas } from "../bancos.js"
 export function buildFutura(camps){
     let desordenada=[]
     const {paths}=ligas
-    const escolhidos=['ing1']
-    //const escolhidos=camps||paths
+    const escolhidos=paths//camps||paths
     escolhidos.forEach(camp=>{
         desordenada=[...desordenada,...extrairFuturas(camp)]
     })

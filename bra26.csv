@@ -1,0 +1,178 @@
+Data,Horário,Rodada,Mandante,Visitante,Gols_Mandante,Gols_Visitante,Resultado Final,Total_Gols,Gols_Mandante_Primeiro_Tempo,Gols_Visitante_Primeiro_Tempo,Resultado_Primeiro_Tempo,Total_Gols_Primeiro_Tempo,Posição_Mandante,Posição_Visitante,Minuto_Gols_Mandante,Minuto_Gols_Visitante,Jogador_Mandante_Gols,Jogador_Visitante_Gols,Gols_Mandante_Prorrogação,Gols_Visitante_Prorrogação,Gols_Mandante_Pênaltis,Gols_Visitante_Pênaltis,Primeiro_Time_Marcador,Árbitro,Público
+28/01/2026,19:00,1,Atlético-MG,Palmeiras,2,2,E,4,1,1,E,2,0,0,"44, 74","27, 84","Victor Hugo, Khellven","José Manuel López, Vitor Roque",0,0,0,0,Palmeiras,Bruno Arleu de Araújo,25770
+28/01/2026,19:00,1,Internacional,Athletico-PR,0,1,V,1,0,1,V,1,0,0,,9,,Stiven Mendoza,0,0,0,0,Athletico-PR,Flavio Rodrigues de Souza,17264
+28/01/2026,19:00,1,Coritiba,Bragantino,0,1,V,1,0,0,E,0,0,0,,90+3,,Juninho Capixaba,0,0,0,0,Bragantino,Paulo Cesar Zanovelli,19637
+28/01/2026,19:00,1,Vitória,Remo,2,0,M,2,0,0,E,0,0,0,"58, 77",,"Renato Kayzer, Baralhas",,0,0,0,0,Vitória,Ramon Abatti Abel,16603
+28/01/2026,19:30,1,Fluminense,Grêmio,2,1,M,3,0,0,E,0,0,0,"46, 59",75,"Nonato, Luciano Acosta",Carlos Vinícius,0,0,0,0,Fluminense,Davi de Oliveira Lacerda,22986
+28/01/2026,20:00,1,Corinthians,Bahia,1,2,V,3,1,2,V,3,0,0,12,"32, 45+1",Breno Bidon,"Jean Lucas, Willian José",0,0,0,0,Corinthians,Anderson Daronco,13788
+28/01/2026,20:00,1,Chapecoense,Santos,4,2,M,6,1,1,E,2,0,0,"16, 73, 80, 90","45+1, 67","Walter Clar, Higor Meritão, Jean Carlos, Carvalheira","Gabriel Menino, Álvaro Barreal",0,0,0,0,Chapecoense,Sávio Pereira Sampaio,17551
+28/01/2026,21:30,1,São Paulo,Flamengo,2,1,M,3,0,0,E,0,0,0,"61, 71",54,"Luciano, Danielzinho",Gonzalo Plata,0,0,0,0,Flamengo,Wilton Pereira Sampaio,27203
+29/01/2026,20:00,1,Mirassol,Vasco da Gama,2,1,M,3,1,1,E,2,0,0,"32, 54",21,"Carlos Cuesta, Eduardo",Philippe Coutinho,0,0,0,0,Vasco da Gama,Rodrigo José Pereira de Lima,5883
+29/01/2026,21:30,1,Botafogo,Cruzeiro,4,0,M,4,0,0,E,0,0,0,"48, 76, 85, 90+1",,"Danilo, Matheus Martins, Danilo, Artur",,0,0,0,0,Botafogo,Matheus Delgado Candançan,15307
+04/02/2026,19:00,2,Flamengo,Internacional,1,1,E,2,0,1,V,1,13,17,68,45+2,Giorgian de Arrascaeta,Rafael Borré,0,0,0,0,Internacional,Rodrigo José Pereira de Lima,56421
+04/02/2026,19:00,2,Bragantino,Atlético-MG,1,0,M,1,1,0,M,1,9,10,38,,Gustavo Neves,,0,0,0,0,Bragantino,Lucas Paulo Torezin,3459
+04/02/2026,20:00,2,Santos,São Paulo,1,1,E,2,1,0,M,1,18,7,45+5,66,Zé Rafael,Jonathan Calleri,0,0,0,0,Santos,Anderson Daronco,10280
+04/02/2026,20:00,2,Remo,Mirassol,2,2,E,4,2,0,M,2,19,6,"8, 39","81, 89","João Pedro, Alef Manga","Igor Formiga, Nathan Fogaça",0,0,0,0,Remo,Alex Gomes Stefano,21118
+04/02/2026,21:30,2,Palmeiras,Vitória,5,1,M,6,3,0,M,3,11,3,"24, 28, 45+5, 63, 80",56,"Murilo, Gustavo Gómez, Mauricio, Allan, Ramón Sosa",Dudu,0,0,0,0,Palmeiras,Sávio Pereira Sampaio,8953
+04/02/2026,21:30,2,Grêmio,Botafogo,5,3,M,8,1,2,V,3,14,1,"26, 50, 57, 60, 79","17, 36, 86","Carlos Vinícius, Carlos Vinícius, Carlos Vinícius, Tetê, Edenilson","Arthur Cabral, Danilo, Danilo",0,0,0,0,Botafogo,Felipe Fernandes de Lima,18573
+05/02/2026,19:00,2,Bahia,Fluminense,1,1,E,2,0,1,V,1,4,5,78,20,Cristian Olivera,John Kennedy,0,0,0,0,Fluminense,Matheus Delgado Candançan,40310
+05/02/2026,20:00,2,Vasco da Gama,Chapecoense,1,1,E,2,0,0,E,0,15,2,55,90+1,José Luis Rodríguez,Jean Carlos,0,0,0,0,Vasco da Gama,Wilton Pereira Sampaio,15702
+05/02/2026,21:30,2,Cruzeiro,Coritiba,1,2,V,3,1,1,E,2,20,16,19,"45, 53",Matheus Pereira,"Joaquín Lavega, Breno Lopes",0,0,0,0,Cruzeiro,Bruno Arleu de Araújo,15270
+19/02/2026,19:30,2,Athletico-PR,Corinthians,0,1,V,1,0,1,V,1,8,12,,20,,Rodrigo Garro,0,0,0,0,Corinthians,Rodrigo José Pereira de Lima,16804
+10/02/2026,21:30,3,Vitória,Flamengo,1,2,V,3,0,2,V,2,13,15,51,"15, 45+4",Matheuzinho,"Erick Pulgar, Everton",0,0,0,0,Flamengo,Raphael Claus,27080
+11/02/2026,19:00,3,Mirassol,Cruzeiro,2,2,E,4,1,1,E,2,4,20,"38, 53","23, 85","Nathan Fogaça, Negueba","Wanderson, Kaio Jorge",0,0,0,0,Cruzeiro,Bráulio da Silva Machado,5134
+11/02/2026,19:00,3,Chapecoense,Coritiba,3,3,E,6,1,1,E,2,3,11,"45, 71, 90+1","41, 57, 59","Walter Clar, Doma, Rubens","Breno Lopes, Breno Lopes, Pedro Rocha",0,0,0,0,Coritiba,Wagner do Nascimento Magalhães,10578
+11/02/2026,20:00,3,Atlético-MG,Remo,3,3,E,6,1,1,E,2,14,19,"22, 70, 90+8","42, 87, 90+2","Hulk, Ruan, Dudu","Vitor Bueno, Yago Pikachu, Alef Manga",0,0,0,0,Atlético-MG,Matheus Delgado Candançan,16056
+11/02/2026,21:30,3,Vasco da Gama,Bahia,0,1,V,1,0,1,V,1,16,5,,22,,Luciano Juba,0,0,0,0,Bahia,Paulo Cesar Zanovelli,11477
+11/02/2026,21:30,3,São Paulo,Grêmio,2,0,M,2,1,0,M,1,7,9,"24, 59",,"Lucas Moura, Jonathan Calleri",,0,0,0,0,São Paulo,Sávio Pereira Sampaio,18491
+12/02/2026,19:00,3,Athletico-PR,Santos,2,1,M,3,1,1,E,2,12,18,"6, 90+1",17,"Julimar, Kevin Viveros",Thaciano,0,0,0,0,Athletico-PR,Ramon Abatti Abel,27083
+12/02/2026,19:30,3,Fluminense,Botafogo,1,0,M,1,0,0,E,0,6,8,55,,Luciano Acosta,,0,0,0,0,Fluminense,Rafael Rodrigo Klein,30397
+12/02/2026,20:00,3,Corinthians,Bragantino,2,0,M,2,0,0,E,0,10,1,"47, 74",,"Gabriel Paulista, Matheus Bidu",,0,0,0,0,Corinthians,Felipe Fernandes de Lima,26985
+12/02/2026,21:30,3,Internacional,Palmeiras,1,3,V,4,1,1,E,2,17,2,36,"23, 52, 82",Ronaldo,"Gustavo Gómez, Vitor Roque, Andreas Pereira",0,0,0,0,Palmeiras,Davi de Oliveira Lacerda,20082
+25/02/2026,19:00,4,Bragantino,Athletico-PR,1,1,E,2,1,0,M,1,7,6,43,79,Juninho Capixaba,Julimar,0,0,0,0,Bragantino,Wagner do Nascimento Magalhães,2378
+25/02/2026,19:00,4,Remo,Internacional,1,1,E,2,1,1,E,2,16,19,14,4,Leonel Picco,Alan Patrick,0,0,0,0,Internacional,Bruno Arleu de Araújo,21687
+25/02/2026,19:30,4,Coritiba,São Paulo,0,1,V,1,0,0,E,0,10,2,,57,,Cauly,0,0,0,0,São Paulo,Wilton Pereira Sampaio,21687
+25/02/2026,20:00,4,Cruzeiro,Corinthians,1,1,E,2,1,0,M,1,20,5,9,82,Matheus Pereira,Tchoca,0,0,0,0,Cruzeiro,Davi de Oliveira Lacerda,20267
+25/02/2026,21:30,4,Palmeiras,Fluminense,2,1,M,3,2,1,M,3,1,4,"9, 13",40,"Vitor Roque, Allan",Luciano Acosta,0,0,0,0,Palmeiras,Felipe Fernandes de Lima,10329
+25/02/2026,21:30,4,Grêmio,Atlético-MG,2,1,M,3,0,0,E,0,13,15,"51, 66",56,"Erick Noriega, Marlon",Victor Hugo,0,0,0,0,Grêmio,Raphael Claus,15714
+26/02/2026,19:00,4,Santos,Vasco da Gama,2,1,M,3,1,1,E,2,18,17,"25, 61",43,"Neymar, Neymar",Cauan Barros,0,0,0,0,Santos,Rafael Rodrigo Klein,8808
+10/03/2026,21:30,5,Mirassol,Santos,2,2,E,4,1,0,M,1,10,13,"21, 71","80, 88","Igor Formiga, Negueba","Gabriel Barbosa, Gabriel Barbosa",0,0,0,0,Mirassol,Raphael Claus,8152
+11/03/2026,19:00,5,Atlético-MG,Internacional,1,0,M,1,1,0,M,1,17,18,2,,Tomás Cuello,,0,0,0,0,Atlético-MG,Ramon Abatti Abel,10132
+11/03/2026,20:00,5,Bahia,Vitória,1,1,E,2,1,1,E,2,4,15,45+6,45+2,Jean Lucas,Ramon,0,0,0,0,Vitória,Rafael Rodrigo Klein,43632
+11/03/2026,21:30,5,Flamengo,Cruzeiro,2,0,M,2,1,0,M,1,11,19,"5, 90+8",,"Pedro, Jorge Carrascal",,0,0,0,0,Flamengo,Flavio Rodrigues de Souza,56421
+11/03/2026,21:30,5,Corinthians,Coritiba,0,2,V,2,0,1,V,1,3,12,,"37, 53",,"Jacy, Lucas Ronier",0,0,0,0,Coritiba,Paulo Cesar Zanovelli,35125
+12/03/2026,19:00,5,Remo,Fluminense,0,2,V,2,0,1,V,1,16,5,,"16, 63",,"John Kennedy, Agustín Canobbio",0,0,0,0,Fluminense,Wilton Pereira Sampaio,26528
+12/03/2026,19:30,5,Vasco da Gama,Palmeiras,2,1,M,3,0,1,V,1,20,1,"63, 74",40,"Thiago Mendes, Cuiabano",José Manuel López,0,0,0,0,Palmeiras,Sávio Pereira Sampaio,17291
+12/03/2026,20:00,5,São Paulo,Chapecoense,2,0,M,2,0,0,E,0,2,9,"47, 60",,"Luciano, Jonathan Calleri",,0,0,0,0,São Paulo,Lucas Casagrande,13493
+12/03/2026,21:30,5,Grêmio,Bragantino,1,1,E,2,1,0,M,1,8,7,7,66,Carlos Vinícius,Rodriguinho,0,0,0,0,Grêmio,Davi de Oliveira Lacerda,19472
+29/03/2026,19:30,5,Athletico-PR,Botafogo,4,1,M,5,2,1,M,3,6,14,"4, 45+3, 49, 81",43,"Kevin Viveros, Kevin Viveros, Juan Felipe Aguirre, Lucas Esquivel",Edenilson,0,0,0,0,Athletico-PR,Paulo Cesar Zanovelli,22625
+14/03/2026,18:30,6,Vitória,Atlético-MG,2,0,M,2,1,0,M,1,16,13,"20, 68",,"Renato Kayzer, Erick",,0,0,0,0,Vitória,João Vitor Gobi,16533
+14/03/2026,20:30,6,Botafogo,Flamengo,0,3,V,3,0,2,V,2,17,7,,"13, 45+2, 49",,"Samuel Lino, Léo Pereira, Pedro",0,0,0,0,Flamengo,Anderson Daronco,16176
+15/03/2026,16:00,6,Fluminense,Athletico-PR,3,2,M,5,2,1,M,3,4,3,"9, 37, 90+4","5, 75","Hércules, Agustín Canobbio, Guilherme Arana","Stiven Mendoza, Luiz Gustavo",0,0,0,0,Athletico-PR,Matheus Delgado Candançan,24675
+15/03/2026,16:00,6,Santos,Corinthians,1,1,E,2,1,1,E,2,14,10,21,18,Gabriel Barbosa,Memphis Depay,0,0,0,0,Corinthians,Flavio Rodrigues de Souza,15008
+15/03/2026,16:00,6,Internacional,Bahia,0,1,V,1,0,1,V,1,19,5,,23,,Willian José,0,0,0,0,Bahia,Fernando Antonio Mendes,16574
+15/03/2026,18:30,6,Palmeiras,Mirassol,1,0,M,1,1,0,M,1,2,11,26,,José Manuel López,,0,0,0,0,Palmeiras,Rodrigo José Pereira de Lima,35360
+15/03/2026,18:30,6,Coritiba,Remo,1,0,M,1,1,0,M,1,8,18,24,,Pedro Rocha,,0,0,0,0,Coritiba,Rafael Rodrigo Klein,28404
+15/03/2026,20:30,6,Bragantino,São Paulo,1,2,V,3,1,0,M,1,6,1,36,"53, 68",José Herrera,"Sabino, Jonathan Calleri",0,0,0,0,Bragantino,Bruno Arleu de Araújo,5400
+15/03/2026,20:30,6,Cruzeiro,Vasco da Gama,3,3,E,6,1,0,M,1,20,15,"8, 70, 90+4","52, 54, 86","Christian, Néiser Villarreal, Japa","Cauan Barros, Cauan Barros, Brenner",0,0,0,0,Cruzeiro,Lucas Paulo Torezin,22352
+16/03/2026,20:00,6,Chapecoense,Grêmio,1,1,E,2,1,1,E,2,12,9,28,45+3,Walter Clar,Juan Nardoni,0,0,0,0,Chapecoense,Bruno Pereira Vasconcelos,19307
+18/03/2026,19:00,7,Palmeiras,Botafogo,2,1,M,3,1,0,M,1,2,17,"9, 53",59,"Allan, Jhon Arias",Danilo,0,0,0,0,Palmeiras,Rafael Rodrigo Klein,29450
+18/03/2026,19:00,7,Bahia,Bragantino,2,0,M,2,2,0,M,2,4,10,"17, 40",,"Luciano Juba, Erick",,0,0,0,0,Bahia,Ramon Abatti Abel,27857
+18/03/2026,19:30,7,Athletico-PR,Cruzeiro,2,1,M,3,2,0,M,2,6,19,"1, 10",58,"Stiven Mendoza, Kevin Viveros",Néiser Villarreal,0,0,0,0,Athletico-PR,Rodrigo José Pereira de Lima,20733
+18/03/2026,20:00,7,Mirassol,Coritiba,0,1,V,1,0,0,E,0,13,7,,64,,Joaquín Lavega,0,0,0,0,Coritiba,Bruno Arleu de Araújo,4129
+18/03/2026,20:00,7,Atlético-MG,São Paulo,1,0,M,1,0,0,E,0,16,1,64,,Iván Román,,0,0,0,0,Atlético-MG,Fernando Antonio Mendes,36830
+18/03/2026,21:30,7,Vasco da Gama,Fluminense,3,2,M,5,0,1,V,1,15,3,"59, 88, 90+5","1, 54","Nuno Moreira, Claudio Spinelli, Thiago Mendes","Agustín Canobbio, Hércules",0,0,0,0,Fluminense,Raphael Claus,38449
+18/03/2026,21:30,7,Santos,Internacional,1,2,V,3,0,0,E,0,14,20,56,"46, 90+5",Neymar,"Zé Ivaldo, Johan Carbonero",0,0,0,0,Internacional,Davi de Oliveira Lacerda,10031
+19/03/2026,19:00,7,Grêmio,Vitória,2,0,M,2,1,0,M,1,8,11,"27, 54",,"Camutanga, Francis Amuzu",,0,0,0,0,Grêmio,Alex Gomes Stefano,20206
+19/03/2026,20:00,7,Flamengo,Remo,3,0,M,3,1,0,M,1,5,18,"19, 48, 54",,"Léo Ortiz, Samuel Lino, Luiz Araújo",,0,0,0,0,Flamengo,Paulo Cesar Zanovelli,62075
+19/03/2026,21:30,7,Chapecoense,Corinthians,0,0,E,0,0,0,E,0,12,9,,,,,0,0,0,0,-,Wilton Pereira Sampaio,18031
+21/03/2026,16:00,8,Bragantino,Botafogo,1,2,V,3,1,1,E,2,12,18,15,"8, 71",Lucas Barbosa,"Alex Telles, Alexander Barboza",0,0,0,0,Botafogo,Lucas Casagrande,4080
+21/03/2026,18:30,8,Fluminense,Atlético-MG,1,0,M,1,1,0,M,1,6,11,29,,Rodrigo Castillo,,0,0,0,0,Fluminense,Flavio Rodrigues de Souza,22025
+21/03/2026,21:00,8,São Paulo,Palmeiras,0,1,V,1,0,1,V,1,2,1,,6,,Jhon Arias,0,0,0,0,Palmeiras,Anderson Daronco,54210
+22/03/2026,16:00,8,Vasco da Gama,Grêmio,2,1,M,3,2,1,M,3,10,8,"7, 34",38,"Cuiabano, David",Carlos Vinícius,0,0,0,0,Vasco da Gama,Davi de Oliveira Lacerda,20650
+22/03/2026,16:00,8,Cruzeiro,Santos,0,0,E,0,0,0,E,0,19,16,,,,,0,0,0,0,-,Ramon Abatti Abel,43252
+22/03/2026,16:00,8,Athletico-PR,Coritiba,2,0,M,2,1,0,M,1,5,7,"22, 56",,"Dudu, Kevin Viveros",,0,0,0,0,Athletico-PR,Raphael Claus,31885
+22/03/2026,16:00,8,Remo,Bahia,4,1,M,5,1,1,E,2,20,3,"45+9, 49, 58, 83",32,"Vitor Bueno, Gabriel Taliari, Gabriel Taliari, Jajá",Everaldo,0,0,0,0,Bahia,João Vitor Gobi,22447
+22/03/2026,18:30,8,Internacional,Chapecoense,2,0,M,2,1,0,M,1,17,14,"28, 51",,"Gabriel Mercado, Alan Patrick",,0,0,0,0,Internacional,Bruno Arleu de Araújo,16736
+22/03/2026,18:30,8,Vitória,Mirassol,1,0,M,1,1,0,M,1,13,15,28,,Baralhas,,0,0,0,0,Vitória,Wagner do Nascimento Magalhães,17837
+22/03/2026,20:30,8,Corinthians,Flamengo,1,1,E,2,1,1,E,2,9,4,19,3,Yuri Alberto,Lucas Paquetá,0,0,0,0,Flamengo,Rodrigo José Pereira de Lima,41896
+01/04/2026,19:30,9,Botafogo,Mirassol,3,2,M,5,2,1,M,3,17,18,"11, 43, 66","21, 90+2","Arthur Cabral, Alex Telles, Júnior Santos","Shaylon, Igor Formiga",0,0,0,0,Botafogo,Wilton Pereira Sampaio,4572
+01/04/2026,19:30,9,Internacional,São Paulo,1,1,E,2,1,0,M,1,12,3,23,87,Alerrandro,Jonathan Calleri,0,0,0,0,Internacional,Lucas Casagrande,14780
+01/04/2026,20:00,9,Cruzeiro,Vitória,3,0,M,3,3,0,M,3,20,10,"33, 36, 39",,"Christian, Kauã Moraes, Kaio Jorge",,0,0,0,0,Cruzeiro,Yuri Elino Ferreira da Cruz,23907
+01/04/2026,20:00,9,Bahia,Athletico-PR,3,0,M,3,2,0,M,2,6,2,"3, 35, 90+3",,"Everaldo, Everaldo, Luciano Juba",,0,0,0,0,Bahia,Jonathan Benkenstein Pinheiro,29316
+01/04/2026,20:30,9,Coritiba,Vasco da Gama,1,1,E,2,0,1,V,1,7,9,90,24,Alan Saldivia,Tchê Tchê,0,0,0,0,Vasco da Gama,Ramon Abatti Abel,27224
+01/04/2026,21:30,9,Fluminense,Corinthians,3,1,M,4,2,0,M,2,4,11,"20, 45+3, 83",89,"John Kennedy, Hércules, Rodrigo Castillo",André,0,0,0,0,Fluminense,Davi de Oliveira Lacerda,24701
+02/04/2026,19:00,9,Santos,Remo,2,0,M,2,1,0,M,1,16,19,"40, 82",,"Thaciano, Moisés",,0,0,0,0,Santos,Sávio Pereira Sampaio,12242
+02/04/2026,19:00,9,Chapecoense,Atlético-MG,0,4,V,4,0,3,V,3,15,13,,"23, 30, 35, 90+5",,"Bernard, Reinier, Tomás Cuello, Dudu",0,0,0,0,Atlético-MG,João Vitor Gobi,10614
+02/04/2026,21:30,9,Palmeiras,Grêmio,2,1,M,3,1,0,M,1,1,8,"44, 72",54,"Marlon Freitas, Marlon Freitas",Carlos Vinícius,0,0,0,0,Palmeiras,Bruno Arleu de Araújo,13572
+02/04/2026,21:30,9,Bragantino,Flamengo,3,0,M,3,2,0,M,2,14,5,"17, 39, 55",,"Isidro Pitta, Gabriel, Lucas Barbosa",,0,0,0,0,Bragantino,Fernando Antonio Mendes,5854
+04/04/2026,18:30,10,São Paulo,Cruzeiro,4,1,M,5,2,0,M,2,4,17,"12, 16, 62, 90+1",47,"Jonathan Calleri, Ferreirinha, Ferreirinha, Ferreirinha",Christian,0,0,0,0,São Paulo,Rodrigo José Pereira de Lima,36550
+04/04/2026,20:30,10,Coritiba,Fluminense,1,1,E,2,0,0,E,0,7,2,74,81,Tiago Cóser,John Kennedy,0,0,0,0,Coritiba,Rafael Rodrigo Klein,24693
+04/04/2026,21:00,10,Vasco da Gama,Botafogo,1,2,V,3,0,0,E,0,8,15,61,"66, 79",David,"Lucas Villalba, Matheus Martins",0,0,0,0,Vasco da Gama,Wagner do Nascimento Magalhães,20072
+05/04/2026,16:00,10,Chapecoense,Vitória,1,1,E,2,0,0,E,0,18,12,87,90+3,Neto Pessoa,Matheuzinho,0,0,0,0,Chapecoense,Jonathan Benkenstein Pinheiro,9484
+05/04/2026,17:30,10,Flamengo,Santos,3,1,M,4,0,0,E,0,6,13,"64, 71, 89",48,"Pedro, Jorginho, Lucas Paquetá",Lautaro Díaz,0,0,0,0,Santos,Anderson Daronco,68615
+05/04/2026,17:30,10,Atlético-MG,Athletico-PR,2,1,M,3,1,0,M,1,9,5,"6, 80",88,"Victor Hugo, Gustavo Scarpa",Julimar,0,0,0,0,Atlético-MG,Matheus Delgado Candançan,29356
+05/04/2026,19:30,10,Corinthians,Internacional,0,1,V,1,0,0,E,0,14,16,,78,,Alexandro Bernabei,0,0,0,0,Internacional,Felipe Fernandes de Lima,32213
+05/04/2026,19:30,10,Bahia,Palmeiras,1,2,V,3,0,1,V,1,3,1,58,"42, 88",David Duarte,"Jhon Arias, Santiago Ramos Mingo",0,0,0,0,Palmeiras,Lucas Casagrande,41387
+05/04/2026,20:00,10,Mirassol,Bragantino,0,1,V,1,0,0,E,0,19,11,,51,,Isidro Pitta,0,0,0,0,Bragantino,Flavio Rodrigues de Souza,3597
+05/04/2026,20:30,10,Grêmio,Remo,0,0,E,0,0,0,E,0,10,20,,,,,0,0,0,0,-,Edina Alves Batista,23251
+11/04/2026,16:30,11,Vitória,São Paulo,2,0,M,2,1,0,M,1,14,2,"35, 83",,"Cacá, Ramon",,0,0,0,0,Vitória,Anderson Daronco,18102
+11/04/2026,16:30,11,Remo,Vasco da Gama,1,1,E,2,0,0,E,0,18,12,84,54,Marllon,Andrés Gómez,0,0,0,0,Vasco da Gama,Rodrigo José Pereira de Lima,35305
+11/04/2026,18:30,11,Mirassol,Bahia,1,2,V,3,1,0,M,1,20,5,14,"65, 89",David Duarte,"Luciano Juba, Mateo Sanabria",0,0,0,0,Mirassol,Paulo Cesar Zanovelli,4276
+11/04/2026,20:00,11,Santos,Atlético-MG,1,0,M,1,0,0,E,0,15,8,63,,Moisés,,0,0,0,0,Santos,Rafael Rodrigo Klein,12175
+11/04/2026,20:30,11,Internacional,Grêmio,0,0,E,0,0,0,E,0,13,11,,,,,0,0,0,0,-,Bruno Arleu de Araújo,39135
+12/04/2026,11:00,11,Athletico-PR,Chapecoense,2,0,M,2,0,0,E,0,6,17,"57, 81",,"Stiven Mendoza, Kevin Viveros",,0,0,0,0,Athletico-PR,André Luiz Skettino Policarpo Bento,24630
+12/04/2026,16:00,11,Botafogo,Coritiba,2,2,E,4,0,1,V,1,10,7,"55, 77","33, 79","Danilo, Arthur Cabral","Breno Lopes, Joaquín Lavega",0,0,0,0,Coritiba,Davi de Oliveira Lacerda,14695
+12/04/2026,18:00,11,Fluminense,Flamengo,1,2,V,3,0,1,V,1,3,4,76,"7, 51",Jefferson Savarino,"Pedro, Pedro",0,0,0,0,Flamengo,Raphael Claus,44833
+12/04/2026,18:30,11,Corinthians,Palmeiras,0,0,E,0,0,0,E,0,16,1,,,,,0,0,0,0,-,Flavio Rodrigues de Souza,46263
+12/04/2026,18:30,11,Cruzeiro,Bragantino,2,1,M,3,1,1,E,2,19,9,"18, 50",6,"Néiser Villarreal, Christian",José Andrés Hurtado,0,0,0,0,Bragantino,Ramon Abatti Abel,38674
+18/04/2026,18:30,12,Vasco da Gama,São Paulo,2,1,M,3,0,1,V,1,13,3,"72, 88",10,"José Luis Rodríguez, Andrés Gómez",Luciano,0,0,0,0,São Paulo,Sávio Pereira Sampaio,20067
+18/04/2026,18:30,12,Chapecoense,Botafogo,1,4,V,5,1,3,V,4,19,11,45+3,"10, 14, 20, 80",Marcinho,"Edenilson, Matheus Martins, Edenilson, Matheus Martins",0,0,0,0,Botafogo,Matheus Delgado Candançan,10184
+18/04/2026,20:00,12,Vitória,Corinthians,0,0,E,0,0,0,E,0,10,16,,,,,0,0,0,0,-,Alex Gomes Stefano,21991
+18/04/2026,20:30,12,Cruzeiro,Grêmio,2,0,M,2,0,0,E,0,17,12,"51, 66",,"Christian, Lucas Romero",,0,0,0,0,Cruzeiro,Raphael Claus,28279
+19/04/2026,11:00,12,Internacional,Mirassol,1,2,V,3,0,2,V,2,14,20,90+3,"22, 45",Alan Patrick,"Lucas Oliveira, André Luis",0,0,0,0,Mirassol,Davi de Oliveira Lacerda,30052
+19/04/2026,16:00,12,Santos,Fluminense,2,3,V,5,1,1,E,2,15,4,"9, 57","24, 60, 86","Gabriel Barbosa, Álvaro Barreal","Jefferson Savarino, Rodrigo Castillo, John Kennedy",0,0,0,0,Santos,Wilton Pereira Sampaio,14179
+19/04/2026,16:00,12,Coritiba,Atlético-MG,2,0,M,2,1,0,M,1,7,8,"7, 58",,"Breno Lopes, Pedro Rocha",,0,0,0,0,Coritiba,Fernando Antonio Mendes,28426
+19/04/2026,18:30,12,Palmeiras,Athletico-PR,1,0,M,1,1,0,M,1,1,6,15,,Gustavo Gómez,,0,0,0,0,Palmeiras,Felipe Fernandes de Lima,39714
+19/04/2026,18:30,12,Bragantino,Remo,4,2,M,6,2,2,E,4,9,18,"19, 37, 47, 51","28, 39","Isidro Pitta, Isidro Pitta, Tchamba, Tchamba","Gabriel Taliari, Marcelinho",0,0,0,0,Bragantino,Jonathan Benkenstein Pinheiro,4163
+19/04/2026,19:30,12,Flamengo,Bahia,2,0,M,2,1,0,M,1,2,5,"17, 80",,"Giorgian de Arrascaeta, Lucas Paquetá",,0,0,0,0,Flamengo,Flavio Rodrigues de Souza,64565
+25/04/2026,18:30,13,Botafogo,Internacional,2,2,E,4,0,0,E,0,9,14,"54, 65","59, 74","Danilo, Cristian Medina","Johan Carbonero, Alexandro Bernabei",0,0,0,0,Botafogo,Fernando Antonio Mendes,16332
+25/04/2026,18:30,13,Bahia,Santos,2,2,E,4,0,2,V,2,5,15,"76, 83","22, 45+4","Luciano Juba, Willian José","Benjamín Rollheiser, Benjamín Rollheiser",0,0,0,0,Santos,Ramon Abatti Abel,45813
+25/04/2026,18:30,13,Remo,Cruzeiro,0,1,V,1,0,1,V,1,19,16,,34,,Keny Arroyo,0,0,0,0,Cruzeiro,Wilton Pereira Sampaio,12993
+25/04/2026,21:00,13,São Paulo,Mirassol,1,0,M,1,0,0,E,0,4,18,76,,Luciano,,0,0,0,0,São Paulo,Raphael Claus,15700
+26/04/2026,16:00,13,Corinthians,Vasco da Gama,1,0,M,1,1,0,M,1,17,10,38,,Matheus Bidu,,0,0,0,0,Corinthians,Davi de Oliveira Lacerda,42352
+26/04/2026,16:00,13,Grêmio,Coritiba,1,0,M,1,1,0,M,1,13,7,43,,Gabriel Mec,,0,0,0,0,Grêmio,Felipe Fernandes de Lima,35443
+26/04/2026,18:30,13,Bragantino,Palmeiras,0,1,V,1,0,1,V,1,8,1,,21,,José Manuel López,0,0,0,0,Palmeiras,João Vitor Gobi,6284
+26/04/2026,18:30,13,Athletico-PR,Vitória,3,1,M,4,1,1,E,2,6,11,"34, 90+2, 90+8",22,"Kevin Viveros, Kevin Viveros, Luiz Gustavo",Renê,0,0,0,0,Vitória,Bruno Arleu de Araújo,18736
+26/04/2026,20:30,13,Fluminense,Chapecoense,2,1,M,3,0,0,E,0,3,20,"56, 86",78,"Jefferson Savarino, John Kennedy",Ênio,0,0,0,0,Fluminense,Sávio Pereira Sampaio,13885
+26/04/2026,20:30,13,Atlético-MG,Flamengo,0,4,V,4,0,3,V,3,12,2,,"8, 31, 45+1, 84",,"Pedro, Gonzalo Plata, Giorgian de Arrascaeta, Pedro",0,0,0,0,Flamengo,Rafael Rodrigo Klein,28148
+02/05/2026,16:00,14,Botafogo,Remo,1,2,V,3,1,0,M,1,8,19,13,"70, 90+3",Nahuel Ferraresi,"Alef Manga, Jajá",0,0,0,0,Botafogo,Rodrigo José Pereira de Lima,22116
+02/05/2026,18:30,14,Palmeiras,Santos,1,1,E,2,0,1,V,1,1,17,64,26,José Manuel López,Benjamín Rollheiser,0,0,0,0,Santos,Raphael Claus,41282
+02/05/2026,18:30,14,Vitória,Coritiba,4,1,M,5,2,1,M,3,13,7,"15, 28, 55, 61",45+3,"Renê, Zé Vitor, Diego Tarzia, Erick",Pedro Rocha,0,0,0,0,Vitória,Rafael Rodrigo Klein,18012
+02/05/2026,20:30,14,Athletico-PR,Grêmio,0,0,E,0,0,0,E,0,5,11,,,,,0,0,0,0,-,Sávio Pereira Sampaio,26753
+02/05/2026,21:00,14,Cruzeiro,Atlético-MG,1,3,V,4,0,2,V,2,12,15,86,"12, 32, 72",Kaio Jorge,"Alan Minda, Maycon, Mateo Cassierra",0,0,0,0,Atlético-MG,Flavio Rodrigues de Souza,53921
+03/05/2026,16:00,14,Flamengo,Vasco da Gama,2,2,E,4,1,0,M,1,2,10,"8, 60","84, 90+7","Pedro, Jorginho","Robert Renan, Hugo Moura",0,0,0,0,Flamengo,Wilton Pereira Sampaio,61872
+03/05/2026,16:00,14,São Paulo,Bahia,2,2,E,4,1,0,M,1,4,6,"17, 73","62, 90+7","Artur, Ferreirinha","Luciano Juba, Erick",0,0,0,0,São Paulo,Davi de Oliveira Lacerda,9390
+03/05/2026,18:30,14,Internacional,Fluminense,2,0,M,2,1,0,M,1,16,3,"39, 49",,"Alexandro Bernabei, Alerrandro",,0,0,0,0,Internacional,Felipe Fernandes de Lima,16173
+03/05/2026,18:30,14,Chapecoense,Bragantino,1,2,V,3,1,1,E,2,20,9,23,"41, 73",Yannick Bolasie,"Gabriel, Lucas Barbosa",0,0,0,0,Chapecoense,Paulo Cesar Zanovelli,8065
+03/05/2026,20:30,14,Mirassol,Corinthians,2,1,M,3,2,0,M,2,18,14,"23, 33",80,"Carlos Eduardo, Edson Carioca",Dieguinho,0,0,0,0,Mirassol,Matheus Delgado Candançan,9943
+09/05/2026,16:00,15,Coritiba,Internacional,2,2,E,4,1,0,M,1,8,12,"28, 84","69, 90+6","Joaquín Lavega, Rodrigo Moledo","Rafael Borré, Félix Torres",0,0,0,0,Coritiba,Wagner do Nascimento Magalhães,15878
+09/05/2026,18:00,15,Fluminense,Vitória,2,2,E,4,1,0,M,1,3,9,"36, 90","63, 67","John Kennedy, Kevin Serna","Renato Kayzer, Renê",0,0,0,0,Fluminense,Bráulio da Silva Machado,17670
+09/05/2026,21:00,15,Bahia,Cruzeiro,1,2,V,3,1,1,E,2,6,15,27,"41, 86",Luciano Juba,"Kauã Moraes, Kaique Kenji",0,0,0,0,Bahia,Rodrigo José Pereira de Lima,30423
+10/05/2026,16:00,15,Atlético-MG,Botafogo,1,1,E,2,1,0,M,1,11,10,23,90,Mateo Cassierra,Arthur Cabral,0,0,0,0,Atlético-MG,Ramon Abatti Abel,33043
+10/05/2026,16:00,15,Remo,Palmeiras,1,1,E,2,1,1,E,2,19,1,2,24,Alef Manga,Ramón Sosa,0,0,0,0,Remo,Rafael Rodrigo Klein,36649
+10/05/2026,18:30,15,Santos,Bragantino,2,0,M,2,1,0,M,1,16,7,"45+5, 76",,"Neymar, Adonis Frías",,0,0,0,0,Santos,Alex Gomes Stefano,6291
+10/05/2026,18:30,15,Corinthians,São Paulo,3,2,M,5,1,1,E,2,17,4,"17, 52, 57","41, 89","Raniele, Matheuzinho, Breno Bidon","Luciano, Matheuzinho",0,0,0,0,Corinthians,Anderson Daronco,37791
+10/05/2026,18:30,15,Mirassol,Chapecoense,1,1,E,2,0,0,E,0,18,20,71,81,Eduardo,João Victor,0,0,0,0,Mirassol,Felipe Fernandes de Lima,2343
+10/05/2026,19:30,15,Grêmio,Flamengo,0,1,V,1,0,0,E,0,14,2,,68,,Jorge Carrascal,0,0,0,0,Flamengo,Davi de Oliveira Lacerda,30891
+10/05/2026,20:30,15,Vasco da Gama,Athletico-PR,1,0,M,1,1,0,M,1,13,5,37,,Thiago Mendes,,0,0,0,0,Vasco da Gama,Raphael Claus,13917
+16/05/2026,18:30,16,Atlético-MG,Mirassol,3,1,M,4,1,1,E,2,13,18,"17, 61, 82",40,"Alan Minda, Maycon, Mamady Cissé",Willian Machado,0,0,0,0,Atlético-MG,Lucas Casagrande,20027
+16/05/2026,18:30,16,Internacional,Vasco da Gama,4,1,M,5,2,0,M,2,14,8,"21, 24, 62, 71",85,"Johan Carbonero, Alerrandro, Alexandro Bernabei, Johan Carbonero",Andrés Gómez,0,0,0,0,Internacional,Ramon Abatti Abel,21411
+16/05/2026,19:00,16,Fluminense,São Paulo,2,1,M,3,2,0,M,2,3,4,"19, 44",79,"John Kennedy, Agustín Canobbio",Matheus Dória,0,0,0,0,Fluminense,Wilton Pereira Sampaio,28218
+16/05/2026,21:00,16,Palmeiras,Cruzeiro,1,1,E,2,1,1,E,2,1,11,20,11,Felipe Anderson,Keny Arroyo,0,0,0,0,Cruzeiro,Sávio Pereira Sampaio,27657
+17/05/2026,11:00,16,Santos,Coritiba,0,3,V,3,0,3,V,3,15,9,,"5, 20, 39",,"Breno Lopes, Breno Lopes, Josué",0,0,0,0,Coritiba,Paulo Cesar Zanovelli,45360
+17/05/2026,16:00,16,Botafogo,Corinthians,3,1,M,4,2,1,M,3,12,16,"7, 32, 70",11,"Arthur Cabral, Arthur Cabral, Arthur Cabral",Rodrigo Garro,0,0,0,0,Botafogo,Felipe Fernandes de Lima,17556
+17/05/2026,16:00,16,Bahia,Grêmio,1,1,E,2,0,0,E,0,6,17,72,62,Mateo Sanabria,Viery,0,0,0,0,Grêmio,Fernando Antonio Mendes,26927
+17/05/2026,18:30,16,Bragantino,Vitória,2,0,M,2,1,0,M,1,7,10,"41, 90+10",,"Tiago Volpi, Lucas Barbosa",,0,0,0,0,Bragantino,Wagner do Nascimento Magalhães,1793
+17/05/2026,18:30,16,Chapecoense,Remo,2,3,V,5,1,1,E,2,20,19,"24, 47","16, 51, 87","Neto Pessoa, Carvalheira","Yago Pikachu, Jajá, Bruno Leonardo",0,0,0,0,Remo,Alex Gomes Stefano,9202
+17/05/2026,19:30,16,Athletico-PR,Flamengo,1,1,E,2,1,0,M,1,5,2,11,84,Stiven Mendoza,Pedro,0,0,0,0,Athletico-PR,Rafael Rodrigo Klein,34197
+23/05/2026,17:00,17,São Paulo,Botafogo,1,1,E,2,1,0,M,1,4,9,4,90,Luciano,Jordan Barrera,0,0,0,0,São Paulo,Lucas Casagrande,25338
+23/05/2026,17:00,17,Vitória,Internacional,2,0,M,2,1,0,M,1,14,11,"29, 90+7",,"Renê, Diego Tarzia",,0,0,0,0,Vitória,Felipe Fernandes de Lima,25114
+23/05/2026,19:00,17,Mirassol,Fluminense,1,0,M,1,1,0,M,1,19,3,36,,Denilson,,0,0,0,0,Mirassol,Sávio Pereira Sampaio,7085
+23/05/2026,19:00,17,Grêmio,Santos,3,2,M,5,1,1,E,2,15,16,"40, 59, 63","32, 55","Carlos Vinícius, Carlos Vinícius, Tetê","Gabriel Barbosa, Gabriel Barbosa",0,0,0,0,Santos,Bruno Arleu de Araújo,37385
+23/05/2026,21:00,17,Flamengo,Palmeiras,0,3,V,3,0,1,V,1,2,1,,"38, 57, 90+5",,"José Manuel López, Allan, Paulinho",0,0,0,0,Palmeiras,Davi de Oliveira Lacerda,71205
+24/05/2026,16:00,17,Cruzeiro,Chapecoense,2,1,M,3,1,0,M,1,13,20,"27, 73",79,"Kaio Jorge, Luis Sinisterra",João Paulo,0,0,0,0,Cruzeiro,Flavio Rodrigues de Souza,44625
+24/05/2026,16:00,17,Remo,Athletico-PR,1,2,V,3,1,1,E,2,18,5,14,"45, 53",Jajá,"Kevin Viveros, Kevin Viveros",0,0,0,0,Remo,Rodrigo José Pereira de Lima,25290
+24/05/2026,18:30,17,Corinthians,Atlético-MG,1,0,M,1,0,0,E,0,17,10,88,,Zakaria Labyad,,0,0,0,0,Corinthians,Rafael Rodrigo Klein,42508
+24/05/2026,20:30,17,Vasco da Gama,Bragantino,0,3,V,3,0,1,V,1,12,6,,"45+1, 60, 77",,"Rodriguinho, Isidro Pitta, Fernando",0,0,0,0,Bragantino,Fernando Antonio Mendes,13805
+25/05/2026,20:00,17,Coritiba,Bahia,3,2,M,5,0,1,V,1,8,7,"56, 65, 68","26, 90+1","Bruno Melo, Joaquín Lavega, Breno Lopes","Tiago Cóser, Everaldo",0,0,0,0,Bahia,Anderson Daronco,20680
+30/05/2026,16:00,18,Athletico-PR,Mirassol,1,0,M,1,0,0,E,0,4,18,88,,Kevin Viveros,,0,0,0,0,Athletico-PR,Fernando Antonio Mendes,27927
+30/05/2026,16:00,18,Flamengo,Coritiba,3,0,M,3,1,0,M,1,2,6,"11, 60, 70",,"Samuel Lino, Pedro, Samuel Lino",,0,0,0,0,Flamengo,Flavio Rodrigues de Souza,51270
+30/05/2026,17:30,18,Grêmio,Corinthians,1,3,V,4,1,1,E,2,14,15,7,"45+2, 65, 67",Gabriel Mec,"André, André, Kaio César",0,0,0,0,Grêmio,Lucas Paulo Torezin,42359
+30/05/2026,17:30,18,Bahia,Botafogo,2,1,M,3,0,1,V,1,8,10,"57, 90+2",7,"Nahuel Ferraresi, David Duarte",Huguinho,0,0,0,0,Botafogo,Davi de Oliveira Lacerda,25249
+30/05/2026,20:00,18,Santos,Vitória,3,1,M,4,1,0,M,1,17,11,"19, 54, 56",74,"Miguelito, Álvaro Barreal, Gabriel Barbosa",Renê,0,0,0,0,Santos,Rafael Rodrigo Klein,11172
+31/05/2026,11:00,18,Bragantino,Internacional,3,1,M,4,2,0,M,2,5,13,"18, 45+7, 52",79,"Fernando, Juninho Capixaba, Tiago Volpi",Braian Aguirre,0,0,0,0,Bragantino,Alex Gomes Stefano,5559
+31/05/2026,16:00,18,Vasco da Gama,Atlético-MG,0,1,V,1,0,1,V,1,16,12,,32,,Vitor Hugo,0,0,0,0,Atlético-MG,Anderson Daronco,20133
+31/05/2026,16:00,18,Palmeiras,Chapecoense,1,0,M,1,0,0,E,0,1,20,65,,Paulinho,,0,0,0,0,Palmeiras,Felipe Fernandes de Lima,36543
+31/05/2026,20:30,18,Remo,São Paulo,1,0,M,1,0,0,E,0,19,7,90+4,,Marcelinho,,0,0,0,0,Remo,Jonathan Benkenstein Pinheiro,25649
+31/05/2026,20:30,18,Cruzeiro,Fluminense,1,1,E,2,0,1,V,1,9,3,75,43,Matheus Pereira,John Kennedy,0,0,0,0,Fluminense,Lucas Casagrande,29662

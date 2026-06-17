@@ -1,5 +1,7 @@
 
 import { createIng1 } from "./adicionadas/a_ing.js";
+import { createAle1 } from "./adicionadas/b_ale.js";
+import { createBra1 } from "./adicionadas/bra.js";
 export const menorOdd=1.3
 export const maiorOdd=3
 export function buildContext(camp,inteiro=false){
@@ -100,7 +102,7 @@ function extrairPosteriores(array,manvis){
       listaTimes:['arg','ban','bar','bel','boc','cen','def','dep','est','gim','god','hur','ind','ins','iri','lan','new','pla','rac','riv','ros','san','sar','tal','tig','tuc','uni','vel'],
       path:'arg1'
   }
-  const contextBra1={
+  const contextBra126={
     listaNomes:['Atlético GO','Athlético PR','Atlético MG','Criciúma','Bahia','Botafogo','Bragantino','Corinthians','Cruzeiro','Cuiabá','Flamengo','Fluminense','Fortaleza','Grêmio','Internacional','Juventude','Palmeiras','São Paulo','Vasco da Gama','Vitória'],
     listaTimes:['ago','cap','cam','cri','bah','bot','bra','cor','cru','cui','fla','flu','for','gre','int','juv','pal','sao','vas','vit'],
     path:'bra1'
@@ -179,26 +181,34 @@ const contextIng1={
       listaTimes:['ars','ast','bou','bre','bri','bur','che','cry','eve','ful','lee','liv','cit','man','new','not','sun','tot','wes','wol'],
       path:'ing1'
     }
+    const contextBra1={
+    listaNomes:['Athlético PR','Atlético MG','Bahia','Botafogo','Bragantino','Chapecoense','Corinthians','Coritiba','Cruzeiro','Flamengo','Fluminense','Grêmio','Internacional','Mirassol','Palmeiras','Remo','Santos','São Paulo','Vasco da Gama','Vitória'],
+    listaTimes:['cap','cam','bah','bot','bra','cha','cor','ctb','cru','fla','flu','gre','int','mir','pal','rem','san','sao','vas','vit'],
+    path:'bra1'
+  }
 export const ligas={
   paths:[
-    //'bra1',//'arg1','uru1','eua1',
+    'bra1',//'arg1','uru1','eua1',
     //'bra2',//'jap1','kor1','sue1',
-    'ing1',
+    //'ing1',
     //'ale1',//'esp1','ita1',
     //'fra1',//'hol1','por1'
   ],
+
   contexts:[
-    //contextBra1y25,//contextArg1,contextUru1,contextEua1,
+    contextBra1,//contextArg1,contextUru1,contextEua1,
     //contextBra2y25,//contextJap1,contextKor1,contextSue1,
-    contextIng1,
+    //contextIng1,
     //contextAle1,//contextEsp1,contextIta1,
     //contextFra1,//contextHol1,contextPor1,
     ],
   bancos:[
-    //createBra1y25,//createArg1,createUru1,createEua1,
+    createBra1,//createArg1,createUru1,createEua1,
     //createBra2y25,//createJap1,createKor1,createSue1,
-    createIng1,
-    //createAle1,//createEsp1,createIta1,
+    //createIng1,
+   // createAle1,//createEsp1,createIta1,
     //createFra1,//createHol1,createPor1,
   ]
   }
+
+
