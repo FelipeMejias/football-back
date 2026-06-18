@@ -65,7 +65,7 @@ export function criarOrdem(context,time,enxuta=false){
             })
         }
     }
-    frases=[
+    /*frases=[
         [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
         [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
         [['com mais escanteios contrários',false],['com menos escanteios contrários',true]],
@@ -135,7 +135,7 @@ export function criarOrdem(context,time,enxuta=false){
                 handicap:null
             })
         })
-    }
+    }*/
     return resp.sort((a,b)=>{if(a.pos<b.pos){return -1}else{return true}})
 }
 export function fucarTabela(tabela,time,bloqueio_c2=false){

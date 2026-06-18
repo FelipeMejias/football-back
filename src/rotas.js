@@ -79,7 +79,6 @@ router.get('/partida/:camp/:manvis',validateCamp,validateTime('manvis'),async(re
     const respGuru=criarOrdemDuplaPreflop(camp,manvis[0]+manvis[1]+manvis[2],manvis[3]+manvis[4]+manvis[5])
     if(!partida)res.status(500).send({})
     const resp=create(partida,camp)
-console.log(respGuru)
     res.status(200).send({resp,respGuru})
 })
 router.get('/times/:camp/:time',validateCamp,validateTime('time'),async(req,res)=>{
