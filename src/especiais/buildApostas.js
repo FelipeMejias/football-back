@@ -25,9 +25,8 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){/*
         const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
         if(dataInicio)ordenada=ordenada.filter(j=>j.data>dataInicio&&j.data<dataFim)
-    }*/const paths=['ing1'];const ordenada=extrairFuturas('ing1')
+    }*/const paths=['bra1'];const ordenada=extrairFuturas('bra1')
     const resp=[]
-    console.log(ordenada)
     for(let partida of ordenada){
         
         const {camp,mandante,visitante,cinza}=partida

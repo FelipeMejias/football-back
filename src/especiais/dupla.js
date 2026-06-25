@@ -34,7 +34,7 @@ export function criarOrdemDupla(camp,mandante,visitante){
             aposta:{tex,ode,green,comecou,nome},
             visitante:[analise[0][1].chance,analise[1][1].chance],
         }
-        console.log(novo)
+        //console.log(novo)
         resposta.push(analise)
     }
     return resposta

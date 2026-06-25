@@ -110,6 +110,7 @@ router.get('/analise/:camp/:mandante/:visitante',validateCamp,validateTime('mand
     const {grandeza,c,asc,metade,valor}=req.query
     const resp=analisar(camp,mandante,visitante,parseInt(grandeza),parseInt(c),parseInt(asc),parseInt(metade),valor?parseFloat(valor):false)
     const data=dataParaTopo(camp,mandante,visitante)
+    console.log(resp)
     res.status(200).send({resp,data})
 })
 router.get('/lista-analise/:camp/:time/:manvis',validateCamp,validateTime('manvis','time'),async(req,res)=>{

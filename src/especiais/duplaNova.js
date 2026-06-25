@@ -1,5 +1,5 @@
 import { buildContext, ligas } from "../bancos.js";
-import { buscarApostasJogo } from "./apostas.js";
+import { buscarApostasJogo } from "./apostasNovo.js";
 import { criarOrdem } from "./individualPraDupla.js";
 
 export function criarOrdemDuplaPreflop(camp,mandante,visitante,inteiro=false){
