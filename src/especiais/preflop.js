@@ -32,7 +32,9 @@ export function preFlop(camp,mandante,visitante){
             cont++
         }
     }
-    return resposta.sort((a,b)=>{if(a.analise.grandeza<b.analise.grandeza){return -1}else{return true}})
+    const r=resposta.sort((a,b)=>{if(a.analise.grandeza<b.analise.grandeza){return -1}else{return true}})
+    console.log(r)
+        return r
 }
 function nomePreFlop(mand,visi,camp,stat){
     const {contexts,paths}=ligas

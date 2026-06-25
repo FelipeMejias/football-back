@@ -26,10 +26,12 @@ import { validateTime } from './mu/1-validators/timeValidator.js'
 import { validatePost } from './mu/1-validators/postValidator.js'
 import { marcaUltimo } from './mu/tabelas/marcaUltimo.js'
 import { resultadoSemanas } from './especiais/resultadoSemanas.js'
-import { preFlop } from './especiais/preflop.js'
+
 import { acharUsuario, cadastrar, login, torneiosUsuario } from './mu/2-online/bancoTorneios.js'
 import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
-import { criarOrdemDuplaPreflop } from './especiais/duplaPreFlop.js';
+
+import { criarOrdemDuplaPreflop } from './especiais/duplaNova.js';
+import { preFlop } from './especiais/preFlopNovo.js'
 
 export const router=Router()
 router.get('/',async(req,res)=>{
