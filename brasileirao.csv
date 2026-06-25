@@ -1,0 +1,611 @@
+,Unnamed: 0.1,Unnamed: 0,ID,Rodada,Data,Casa,Fora,Gol_Casa,Gol_Fora,Escanteios_Casa,Escanteios_Fora,Cartao_Amarelo_Casa,Cartao_Amarelo_Fora,Cartao_Vermelho_Casa,Cartao_Vermelho_Fora,PrimeiroGol,Posse_De_Bola_Casa,Posse_De_Bola_Fora,AtaquePerigoso_Casa,AtaquePerigoso_Fora,Ataque_Casa,Ataque_Fora,Finalizacao_Gol_Casa,Finalizacao_Gol_Fora,Finalizacao_Casa,Finalizacao_Fora
+0,0.0,1.0,2024-24FlamengoBragantino,24,2024/08/25 20:00,Flamengo,Bragantino,2,1,6,10,1,1,0,0,16' - 1st Goal - Michael (Flamengo) - Header,50,50,73,75,110,104,7,2,6,9
+1,1.0,2.0,2024-24InternacionalCruzeiro,24,2024/08/25 19:00,Internacional,Cruzeiro,1,0,12,3,2,2,0,0,70' - 1st Goal - Borre (Internacional) - Shot (Assist: Tabata),44,56,54,26,126,84,9,3,10,2
+2,2.0,3.0,2024-24São PauloVitória,24,2024/08/25 18:30,São Paulo,Vitória,2,1,4,3,0,2,0,0,6' - 1st Goal - William (Sao Paulo) - Shot,58,42,39,34,81,77,3,4,9,6
+3,3.0,4.0,2024-24EC BahiaBotafogo,24,2024/08/25 16:00,EC Bahia,Botafogo,0,0,4,7,4,4,0,0,,53,47,47,38,83,84,7,3,10,9
+4,4.0,5.0,2024-24Fortaleza ECCorinthians,24,2024/08/25 16:00,Fortaleza EC,Corinthians,1,0,3,9,3,2,0,0,78' - 1st Goal - Yago Pikachu (Fortaleza) - Shot,45,55,32,34,89,84,5,2,2,7
+5,5.0,6.0,2024-24CriciúmaGrêmio,24,2024/08/25 16:00,Criciúma,Grêmio,0,1,6,9,2,1,0,0,86' - 1st Goal - Monsalve (Gremio) - Shot,47,53,44,61,104,111,4,4,15,10
+6,6.0,7.0,2024-24Atlético MineiroFluminense,24,2024/08/24 21:00,Atlético Mineiro,Fluminense,0,2,5,2,5,3,0,0,23' - 1st Goal - Serna (Fluminense) - Shot,60,40,52,28,129,72,0,6,17,2
+7,7.0,8.0,2024-24PalmeirasCuiabá EC,24,2024/08/24 18:30,Palmeiras,Cuiabá EC,5,0,7,1,1,1,0,0,15' - 1st Goal - Murilo (Palmeiras) - Shot,58,42,43,21,86,86,9,3,5,7
+8,8.0,9.0,2024-24Atlético GOJuventude,24,2024/08/24 16:00,Atlético GO,Juventude,2,1,4,6,4,5,1,1,47' - 1st Goal - Hurtado (Atletico GO) - Shot,40,60,32,37,79,86,7,3,11,10
+9,9.0,10.0,2024-23VitóriaCruzeiro,23,2024/08/19 20:00,Vitória,Cruzeiro,2,2,4,7,1,3,1,0,25' - 1st Goal - Osvaldo (Vitoria) - Penalty,30,70,28,75,66,115,5,12,9,13
+10,10.0,11.0,2024-23Athletico ParanaenseJuventude,23,2024/08/18 18:30,Athletico Paranaense,Juventude,1,2,10,4,4,2,0,0,30' - 1st Goal - Nene (Juventude) - Shot,59,41,50,26,119,92,7,5,16,3
+11,11.0,12.0,2024-23BotafogoFlamengo,23,2024/08/18 18:30,Botafogo,Flamengo,4,1,5,2,4,2,0,0,3' - 1st Goal - Ponte (Botafogo) - Header (Assist: Marlon Freitas),55,45,50,33,92,79,9,4,10,6
+12,12.0,13.0,2024-23PalmeirasSão Paulo,23,2024/08/18 16:00,Palmeiras,São Paulo,2,1,6,1,4,2,0,1,52' - 1st Goal - Lopez (Palmeiras) - Shot,53,47,46,24,98,70,8,4,16,4
+13,13.0,14.0,2024-23Atlético GOInternacional,23,2024/08/18 16:00,Atlético GO,Internacional,1,0,4,7,2,0,0,0,69' - 1st Goal - Hurtado (Atletico GO) - Shot,42,58,51,61,90,129,5,6,8,13
+14,14.0,15.0,2024-23CriciúmaVasco da Gama,23,2024/08/18 16:00,Criciúma,Vasco da Gama,2,2,9,10,3,1,0,0,6' - 1st Goal - Bolasie (Criciuma) - Shot (Assist: Allano),50,50,40,41,127,84,8,4,11,9
+15,15.0,16.0,2024-23FluminenseCorinthians,23,2024/08/17 21:00,Fluminense,Corinthians,0,0,6,2,2,2,0,0,,55,45,47,36,98,78,4,2,11,6
+16,16.0,17.0,2024-23BragantinoFortaleza EC,23,2024/08/17 18:30,Bragantino,Fortaleza EC,1,2,9,2,4,3,0,0,26' - 1st Goal - Pochettino (Fortaleza) - Shot,61,39,75,37,108,100,9,7,4,7
+17,17.0,18.0,2024-23GrêmioEC Bahia,23,2024/08/17 16:00,Grêmio,EC Bahia,0,2,1,5,3,1,0,0,45' - 1st Goal - Thaciano (Bahia) - Header,40,60,51,46,105,99,5,5,9,7
+18,18.0,19.0,2024-23Atlético MineiroCuiabá EC,23,2024/08/17 16:00,Atlético Mineiro,Cuiabá EC,1,1,8,6,3,6,0,0,11' - 1st Goal - Igor Gomes (Atletico Mineiro) - Penalty,60,40,48,27,96,68,4,6,9,5
+19,19.0,20.0,2024-6InternacionalJuventude,6,2024/08/14 19:30,Internacional,Juventude,2,1,8,1,2,4,0,0,45+4' - 1st Goal - Nene (Juventude) - Shot,48,52,54,16,110,82,10,3,11,5
+20,20.0,21.0,2024-22InternacionalAthletico Paranaense,22,2024/08/11 19:00,Internacional,Athletico Paranaense,2,2,9,0,1,2,0,0,12' - 1st Goal - Wesley (Internacional) - Shot,54,46,66,34,132,100,4,5,19,7
+21,21.0,22.0,2024-22EC BahiaVitória,22,2024/08/11 16:00,EC Bahia,Vitória,2,0,3,7,3,4,0,0,15' - 1st Goal - Everton Ribeiro (Bahia) - Shot,57,43,32,40,80,106,3,5,4,8
+22,22.0,23.0,2024-22FlamengoPalmeiras,22,2024/08/11 16:00,Flamengo,Palmeiras,1,1,4,2,1,3,0,1,69' - 1st Goal - De Arrascaeta (Flamengo) - Shot,51,49,42,35,96,90,7,6,4,3
+23,23.0,24.0,2024-22São PauloAtlético GO,22,2024/08/11 16:00,São Paulo,Atlético GO,1,0,3,2,1,2,0,0,15' - 1st Goal - Andre Silva (Sao Paulo) - Header,45,55,36,45,92,117,7,6,5,7
+24,24.0,25.0,2024-22JuventudeBotafogo,22,2024/08/11 11:00,Juventude,Botafogo,3,2,6,12,3,5,0,0,9' - 1st Goal - Danilo Boza (Juventude) - Header,37,63,26,64,58,120,8,10,8,14
+25,25.0,26.0,2024-22CorinthiansBragantino,22,2024/08/10 21:30,Corinthians,Bragantino,1,1,6,6,3,6,0,0,39' - 1st Goal - Helinho (Bragantino) - Shot,63,37,80,28,124,78,5,6,15,5
+26,26.0,27.0,2024-22CruzeiroAtlético Mineiro,22,2024/08/10 21:30,Cruzeiro,Atlético Mineiro,0,0,4,4,3,1,0,0,,35,65,26,34,107,96,1,4,5,8
+27,27.0,28.0,2024-22Vasco da GamaFluminense,22,2024/08/10 21:30,Vasco da Gama,Fluminense,2,0,6,3,3,3,0,0,23' - 1st Goal - Vegetti (Vasco da Gama) - Shot,43,57,34,44,96,94,3,3,5,9
+28,28.0,29.0,2024-22Cuiabá ECGrêmio,22,2024/08/10 19:00,Cuiabá EC,Grêmio,1,3,5,5,1,2,0,0,23' - 1st Goal - Gomes (Gremio) - Header,60,40,58,39,128,72,3,6,12,3
+29,29.0,30.0,2024-22Fortaleza ECCriciúma,22,2024/08/10 16:00,Fortaleza EC,Criciúma,1,0,4,6,2,4,0,0,47' - 1st Goal - Moises (Fortaleza) - Shot,50,50,29,28,96,104,4,2,12,10
+30,30.0,31.0,2024-21CruzeiroFortaleza EC,21,2024/08/05 21:00,Cruzeiro,Fortaleza EC,1,2,5,1,3,3,0,0,9' - 1st Goal - Breno (Fortaleza) - Shot,68,32,61,24,137,75,7,4,8,7
+31,31.0,32.0,2024-21InternacionalPalmeiras,21,2024/08/04 17:00,Internacional,Palmeiras,1,1,4,11,2,0,0,0,31' - 1st Goal - Bruno Henrique (Internacional) - Shot,41,59,51,68,93,130,7,5,9,12
+32,32.0,33.0,2024-21Athletico ParanaenseGrêmio,21,2024/08/04 16:00,Athletico Paranaense,Grêmio,0,2,9,0,2,0,0,0,18' - 1st Goal - Martins (Gremio) - Header,75,25,82,17,176,74,3,7,11,2
+33,33.0,34.0,2024-21CorinthiansJuventude,21,2024/08/04 16:00,Corinthians,Juventude,1,1,11,3,2,6,0,2,4' - 1st Goal - Alan Ruschel (Juventude) - Shot,64,36,75,11,152,50,10,3,24,3
+34,34.0,35.0,2024-21FluminenseEC Bahia,21,2024/08/04 16:00,Fluminense,EC Bahia,1,0,3,3,3,2,0,0,45' - 1st Goal - Kaua Elias (Fluminense) - Header,49,51,52,30,104,100,6,3,6,8
+35,35.0,36.0,2024-21São PauloFlamengo,21,2024/08/03 21:30,São Paulo,Flamengo,1,0,8,3,1,2,0,0,62' - 1st Goal - Calleri (Sao Paulo) - Header,59,41,49,28,107,83,3,0,12,8
+36,36.0,37.0,2024-21Atlético GOBotafogo,21,2024/08/03 20:00,Atlético GO,Botafogo,1,4,3,7,3,3,1,1,21' - 1st Goal - Carlos Alberto (Botafogo) - Shot,48,52,52,31,87,89,3,9,6,4
+37,37.0,38.0,2024-21CriciúmaAtlético Mineiro,21,2024/08/03 20:00,Criciúma,Atlético Mineiro,2,1,5,1,1,2,0,0,58' - 1st Goal - Higor Meritao (Criciuma) - Shot,28,72,22,50,66,124,5,3,8,16
+38,38.0,39.0,2024-21Vasco da GamaBragantino,21,2024/08/03 19:00,Vasco da Gama,Bragantino,2,2,4,3,4,1,0,0,5' - 1st Goal - Jhonatan (Bragantino) - Shot,63,37,62,23,130,72,3,3,8,4
+39,39.0,40.0,2024-21VitóriaCuiabá EC,21,2024/08/03 16:00,Vitória,Cuiabá EC,1,0,4,5,3,3,0,0,71' - 1st Goal - Wagner Leonardo (Vitoria) - Header,47,53,49,40,90,120,3,2,14,7
+40,40.0,41.0,2024-20Atlético MineiroCorinthians,20,2024/07/28 19:00,Atlético Mineiro,Corinthians,2,1,4,4,2,3,1,0,32' - 1st Goal - Hulk (Atletico Mineiro) - Penalty,67,33,44,32,110,87,4,7,6,4
+41,41.0,42.0,2024-20GrêmioVasco da Gama,20,2024/07/28 19:00,Grêmio,Vasco da Gama,1,0,8,3,3,4,0,0,57' - 1st Goal - Soteldo (Gremio) - Shot,54,46,67,20,99,83,3,1,17,11
+42,42.0,43.0,2024-20Cuiabá ECAthletico Paranaense,20,2024/07/28 19:00,Cuiabá EC,Athletico Paranaense,1,2,12,2,0,2,0,0,11' - 1st Goal - Julimar (Athletico Paranaense) - Shot,50,50,80,38,121,86,4,4,14,7
+43,43.0,44.0,2024-20FlamengoAtlético GO,20,2024/07/28 16:00,Flamengo,Atlético GO,2,0,6,3,3,2,2,0,19' - 1st Goal - Pedro (Flamengo) - Shot,53,47,53,48,104,102,6,3,6,9
+44,44.0,45.0,2024-20BragantinoFluminense,20,2024/07/28 11:00,Bragantino,Fluminense,0,1,5,6,1,2,0,0,44' - 1st Goal - Kaua Elias (Fluminense) - Shot (Assist: Ganso),59,41,49,41,111,81,2,3,11,4
+45,45.0,46.0,2024-20BotafogoCruzeiro,20,2024/07/27 21:30,Botafogo,Cruzeiro,0,3,8,1,2,4,0,0,13' - 1st Goal - William (Cruzeiro) - Shot,58,42,60,23,122,70,10,5,8,7
+46,46.0,47.0,2024-20Fortaleza ECSão Paulo,20,2024/07/27 21:30,Fortaleza EC,São Paulo,1,0,3,10,2,3,0,0,4' - 1st Goal - Kayzer (Fortaleza) - Penalty,37,63,37,38,83,89,2,1,10,8
+47,47.0,48.0,2024-20EC BahiaInternacional,20,2024/07/27 20:00,EC Bahia,Internacional,1,1,4,2,1,4,0,0,13' - 1st Goal - David Duarte (Bahia) - Header,51,49,40,45,94,127,3,2,7,10
+48,48.0,49.0,2024-20JuventudeCriciúma,20,2024/07/27 19:00,Juventude,Criciúma,1,2,5,7,1,2,0,0,57' - 1st Goal - Bolasie (Criciuma) - Shot,58,42,48,46,100,91,5,7,5,7
+49,49.0,50.0,2024-20PalmeirasVitória,20,2024/07/27 19:00,Palmeiras,Vitória,0,2,13,2,2,4,0,1,52' - 1st Goal - Osvaldo (Vitoria) - Shot,71,29,98,23,144,93,3,3,18,7
+50,50.0,51.0,2024-19CorinthiansGrêmio,19,2024/07/25 20:00,Corinthians,Grêmio,2,2,4,5,1,1,0,0,2' - 1st Goal - Ely (Gremio) - Header,64,36,41,24,89,70,7,7,7,11
+51,51.0,52.0,2024-19FluminensePalmeiras,19,2024/07/24 21:30,Fluminense,Palmeiras,1,0,4,2,2,3,0,0,87' - 1st Goal - Arias (Fluminense) - Shot,50,50,37,39,91,107,2,1,12,6
+52,52.0,53.0,2024-19Atlético GOEC Bahia,19,2024/07/24 21:30,Atlético GO,EC Bahia,1,1,8,4,4,4,1,0,60' - 1st Goal - Fernando (Atletico GO) - Shot,30,70,47,46,61,116,4,2,11,5
+53,53.0,54.0,2024-19VitóriaFlamengo,19,2024/07/24 20:00,Vitória,Flamengo,1,2,4,8,1,1,0,0,39' - 1st Goal - De Arrascaeta (Flamengo) - Shot,44,56,38,45,90,123,3,4,7,4
+54,54.0,55.0,2024-19São PauloBotafogo,19,2024/07/24 19:30,São Paulo,Botafogo,2,2,7,1,4,3,0,0,6' - 1st Goal - Lucas Moura (Sao Paulo) - Penalty,69,31,45,24,104,62,6,6,9,6
+55,55.0,56.0,2024-3CriciúmaFortaleza EC,3,2024/07/24 19:00,Criciúma,Fortaleza EC,1,1,4,5,0,1,0,0,21' - 1st Goal - Trauco (Criciuma) - Shot,49,51,58,52,108,109,7,4,5,11
+56,56.0,57.0,2024-19CruzeiroJuventude,19,2024/07/24 19:00,Cruzeiro,Juventude,2,0,6,5,3,2,0,1,45' - 1st Goal - William (Cruzeiro) - Penalty,56,44,54,21,96,68,5,2,7,5
+57,57.0,58.0,2024-18Cuiabá ECFluminense,18,2024/07/21 20:00,Cuiabá EC,Fluminense,0,1,6,4,1,2,0,0,74' - 1st Goal - Kaua Elias (Fluminense) - Shot,47,53,51,38,90,102,6,4,10,6
+58,58.0,59.0,2024-18JuventudeSão Paulo,18,2024/07/21 18:30,Juventude,São Paulo,0,0,1,4,4,2,0,0,,37,63,40,39,78,112,0,2,10,9
+59,59.0,60.0,2024-18BragantinoAthletico Paranaense,18,2024/07/21 18:30,Bragantino,Athletico Paranaense,1,0,2,11,2,7,1,0,8' - 1st Goal - Raul (Bragantino) - Shot,35,65,44,77,93,110,3,7,9,12
+60,60.0,61.0,2024-18Fortaleza ECAtlético GO,18,2024/07/21 18:30,Fortaleza EC,Atlético GO,3,1,5,6,4,3,1,1,23' - 1st Goal - Pochettino (Fortaleza) - Header,60,40,42,40,123,71,3,2,9,8
+61,61.0,62.0,2024-18EC BahiaCorinthians,18,2024/07/21 16:00,EC Bahia,Corinthians,0,1,6,3,3,3,0,0,37' - 1st Goal - Romero (Corinthians) - Shot,65,35,66,32,132,79,7,2,10,5
+62,62.0,63.0,2024-18Atlético MineiroVasco da Gama,18,2024/07/21 16:00,Atlético Mineiro,Vasco da Gama,2,0,6,1,1,1,0,0,28' - 1st Goal - Hulk (Atletico Mineiro) - Header,54,46,39,41,110,126,3,1,12,7
+63,63.0,64.0,2024-18GrêmioVitória,18,2024/07/21 11:00,Grêmio,Vitória,2,0,7,4,1,7,0,0,63' - 1st Goal - Soteldo (Gremio) - Shot,59,41,53,24,126,109,6,0,8,5
+64,64.0,65.0,2024-18PalmeirasCruzeiro,18,2024/07/20 21:00,Palmeiras,Cruzeiro,2,0,6,4,4,4,0,0,36' - 1st Goal - Lopez (Palmeiras) - Shot,42,58,54,41,95,87,5,2,10,6
+65,65.0,66.0,2024-18BotafogoInternacional,18,2024/07/20 18:30,Botafogo,Internacional,1,0,2,1,3,2,0,0,38' - 1st Goal - Luiz Henrique (Botafogo) - Shot,48,52,55,29,104,105,4,0,6,9
+66,66.0,67.0,2024-18FlamengoCriciúma,18,2024/07/20 16:00,Flamengo,Criciúma,2,1,7,4,4,6,0,0,38' - 1st Goal - Rodrigo (Criciuma) -,63,37,60,30,103,88,6,4,9,12
+67,67.0,68.0,2024-17BotafogoPalmeiras,17,2024/07/17 21:30,Botafogo,Palmeiras,1,0,5,4,2,0,0,0,56' - 1st Goal - Tiquinho Soares (Botafogo) - Shot (Assist: Luiz Henrique),43,57,45,44,76,83,7,5,9,13
+68,68.0,69.0,2024-17Fortaleza ECVitória,17,2024/07/17 21:30,Fortaleza EC,Vitória,3,1,1,6,4,3,0,0,25' - 1st Goal - Breno (Fortaleza) - Free Kick,48,52,23,32,69,86,4,3,8,8
+69,69.0,70.0,2024-17São PauloGrêmio,17,2024/07/17 20:00,São Paulo,Grêmio,1,0,8,9,5,3,1,0,10' - 1st Goal - Lucas Moura (Sao Paulo) - Shot,54,46,30,38,94,99,8,5,6,14
+70,70.0,71.0,2024-17Atlético GOVasco da Gama,17,2024/07/17 19:00,Atlético GO,Vasco da Gama,0,1,4,6,2,3,0,0,51' - 1st Goal - David (Vasco da Gama) - Shot,52,48,66,38,95,97,7,5,11,9
+71,71.0,72.0,2024-17CorinthiansCriciúma,17,2024/07/16 21:00,Corinthians,Criciúma,2,1,5,5,1,0,0,0,41' - 1st Goal - Claudinho (Criciuma) - Shot,54,46,45,33,115,97,5,4,7,11
+72,72.0,73.0,2024-17JuventudeAtlético Mineiro,17,2024/07/16 19:00,Juventude,Atlético Mineiro,1,1,1,8,2,1,0,0,18' - 1st Goal - Alonso (Atletico Mineiro) - Shot,27,73,27,80,79,125,2,4,6,15
+73,73.0,74.0,2024-17EC BahiaCuiabá EC,17,2024/07/13 16:00,EC Bahia,Cuiabá EC,1,2,8,4,2,3,0,0,22' - 1st Goal - Pitta (Cuiaba) - Header,63,37,89,36,141,100,2,3,11,11
+74,74.0,75.0,2024-17CruzeiroBragantino,17,2024/07/13 16:00,Cruzeiro,Bragantino,2,1,1,8,2,2,0,0,8' - 1st Goal - Veron (Cruzeiro) - Shot,53,47,46,39,79,123,4,5,6,10
+75,75.0,76.0,2024-16Atlético MineiroSão Paulo,16,2024/07/11 21:30,Atlético Mineiro,São Paulo,2,1,2,6,2,1,0,1,13' - 1st Goal - Vargas (Atletico Mineiro) - Shot,61,39,45,35,121,96,5,4,9,7
+76,76.0,77.0,2024-16VitóriaBotafogo,16,2024/07/11 21:30,Vitória,Botafogo,0,1,4,5,1,3,0,0,62' - 1st Goal - Savarino (Botafogo) - Shot,43,57,37,33,84,108,5,4,6,11
+77,77.0,78.0,2024-16FlamengoFortaleza EC,16,2024/07/11 20:00,Flamengo,Fortaleza EC,1,2,9,4,1,1,0,0,11' - 1st Goal - (Fortaleza) -,70,30,64,17,135,77,7,2,14,5
+78,78.0,79.0,2024-16CriciúmaFluminense,16,2024/07/11 20:00,Criciúma,Fluminense,1,1,2,5,2,1,0,0,53' - 1st Goal - Matheusinho (Criciuma) - Shot,42,58,41,67,73,134,4,10,9,8
+79,79.0,80.0,2024-16PalmeirasAtlético GO,16,2024/07/11 19:30,Palmeiras,Atlético GO,3,1,9,2,2,2,0,0,6' - 1st Goal - Lopez (Palmeiras) - Shot,64,36,56,38,131,73,6,3,17,8
+80,80.0,81.0,2024-16Vasco da GamaCorinthians,16,2024/07/10 19:00,Vasco da Gama,Corinthians,2,0,7,5,3,5,0,0,55' - 1st Goal - Lucas Piton (Vasco da Gama) - Shot,51,49,63,32,94,109,3,2,11,9
+81,81.0,82.0,2024-16Athletico ParanaenseEC Bahia,16,2024/07/10 19:00,Athletico Paranaense,EC Bahia,1,3,9,2,2,2,0,0,10' - 1st Goal - Everaldo (Bahia) - Shot,52,48,63,19,141,81,9,5,14,2
+82,82.0,83.0,2024-16GrêmioCruzeiro,16,2024/07/10 18:30,Grêmio,Cruzeiro,0,2,1,5,1,1,1,0,15' - 1st Goal - Ramiro (Cruzeiro) - Header,45,55,59,39,109,103,3,6,5,8
+83,83.0,84.0,2024-15BotafogoAtlético Mineiro,15,2024/07/07 20:30,Botafogo,Atlético Mineiro,3,0,3,2,2,1,0,1,13' - 1st Goal - Luiz Henrique (Botafogo) - Shot,63,37,47,12,129,52,8,2,11,4
+84,84.0,85.0,2024-15PalmeirasEC Bahia,15,2024/07/07 18:30,Palmeiras,EC Bahia,2,0,4,3,1,1,0,0,45+3' - 1st Goal - Oliveira Goncalves (Palmeiras) - Shot,45,55,40,30,104,84,4,3,7,10
+85,85.0,86.0,2024-15Atlético GOAthletico Paranaense,15,2024/07/07 18:30,Atlético GO,Athletico Paranaense,1,2,4,11,1,3,1,0,47' - 1st Goal - Fernando (Atletico GO) - Shot,43,57,57,51,105,89,3,6,9,11
+86,86.0,87.0,2024-15VitóriaCriciúma,15,2024/07/07 18:30,Vitória,Criciúma,2,1,6,3,1,2,0,0,31' - 1st Goal - Alerrando (Vitoria) - Penalty,45,55,28,42,67,118,3,3,6,10
+87,87.0,88.0,2024-15InternacionalVasco da Gama,15,2024/07/07 18:00,Internacional,Vasco da Gama,1,2,4,4,2,2,0,0,61' - 1st Goal - Adson (Vasco da Gama) - Shot,65,35,82,20,154,64,6,6,8,2
+88,88.0,89.0,2024-15CruzeiroCorinthians,15,2024/07/07 16:00,Cruzeiro,Corinthians,3,0,8,8,2,1,0,0,6' - 1st Goal - Matheus Pereira (Cruzeiro) - Shot,47,53,36,45,87,84,5,2,7,13
+89,89.0,90.0,2024-15JuventudeGrêmio,15,2024/07/07 16:00,Juventude,Grêmio,3,0,3,8,1,2,0,0,25' - 1st Goal - Gilberto (Juventude) - Shot,48,52,29,39,89,81,6,5,8,8
+90,90.0,91.0,2024-15Fortaleza ECFluminense,15,2024/07/07 16:00,Fortaleza EC,Fluminense,1,0,12,3,1,1,0,0,56' - 1st Goal - Lucero (Fortaleza) - Header,42,58,49,47,107,100,6,3,13,8
+91,91.0,92.0,2024-15São PauloBragantino,15,2024/07/06 20:00,São Paulo,Bragantino,2,0,6,3,1,2,0,0,66' - 1st Goal - Andre Silva (Sao Paulo) - Shot,59,41,39,35,125,75,4,3,10,7
+92,92.0,93.0,2024-15FlamengoCuiabá EC,15,2024/07/06 20:00,Flamengo,Cuiabá EC,1,1,7,0,1,3,0,0,6' - 1st Goal - Lacerda (Cuiaba) - Shot,66,34,64,17,142,83,10,3,10,4
+93,93.0,94.0,2024-14FluminenseInternacional,14,2024/07/04 20:00,Fluminense,Internacional,1,1,3,4,6,6,0,0,40' - 1st Goal - Igor Gomes (Internacional) - Shot,55,45,52,32,115,96,3,4,5,8
+94,94.0,95.0,2024-14CorinthiansVitória,14,2024/07/04 20:00,Corinthians,Vitória,3,2,9,9,4,2,0,0,26' - 1st Goal - Garro (Corinthians) - Shot,44,56,30,51,109,97,5,6,10,12
+95,95.0,96.0,2024-14EC BahiaJuventude,14,2024/07/04 19:00,EC Bahia,Juventude,2,0,6,7,0,4,0,0,59' - 1st Goal - Thaciano (Bahia) - Shot,56,44,36,32,90,93,9,2,13,8
+96,96.0,97.0,2024-14GrêmioPalmeiras,14,2024/07/04 19:00,Grêmio,Palmeiras,2,2,5,10,2,3,0,0,2' - 1st Goal - Pavon (Gremio) - Shot,40,60,51,64,75,132,5,5,9,16
+97,97.0,98.0,2024-14Atlético MineiroFlamengo,14,2024/07/03 21:30,Atlético Mineiro,Flamengo,2,4,4,4,3,2,1,0,14' - 1st Goal - Bruno Henrique (Flamengo) - Shot,51,49,32,45,92,87,4,8,5,6
+98,98.0,99.0,2024-14Athletico ParanaenseSão Paulo,14,2024/07/03 21:30,Athletico Paranaense,São Paulo,1,2,6,2,1,3,1,0,33' - 1st Goal - Ferreira (Sao Paulo) - Shot,45,55,47,32,109,96,4,8,8,5
+99,99.0,100.0,2024-14BragantinoAtlético GO,14,2024/07/03 21:30,Bragantino,Atlético GO,3,1,3,8,2,3,0,0,6' - 1st Goal - Lincoln (Bragantino) - Shot,52,48,43,59,82,103,5,6,8,7
+100,100.0,101.0,2024-14Vasco da GamaFortaleza EC,14,2024/07/03 20:00,Vasco da Gama,Fortaleza EC,2,0,7,3,4,3,0,1,45+3' - 1st Goal - Matheus Tucurui (Vasco da Gama) - Shot,60,40,49,24,127,98,9,4,10,6
+101,101.0,102.0,2024-14CriciúmaCruzeiro,14,2024/07/03 20:00,Criciúma,Cruzeiro,1,0,7,10,3,2,1,0,46' - 1st Goal - Bolasie (Criciuma) - Shot,35,65,38,64,79,137,6,6,7,11
+102,102.0,103.0,2024-14Cuiabá ECBotafogo,14,2024/07/03 19:00,Cuiabá EC,Botafogo,1,2,7,5,4,1,0,0,5' - 1st Goal - Kaue (Botafogo) - Shot,51,49,61,21,93,76,6,4,5,2
+103,103.0,104.0,2024-13PalmeirasCorinthians,13,2024/07/01 20:00,Palmeiras,Corinthians,2,0,7,3,3,4,1,0,53' - 1st Goal - Veiga (Palmeiras) - Free Kick,49,51,43,34,110,89,10,3,9,11
+104,104.0,105.0,2024-13FlamengoCruzeiro,13,2024/06/30 18:30,Flamengo,Cruzeiro,2,1,2,5,1,3,0,0,17' - 1st Goal - Pedro (Flamengo) - Shot,46,54,25,37,92,111,3,5,4,9
+105,105.0,106.0,2024-13CriciúmaInternacional,13,2024/06/30 18:30,Criciúma,Internacional,1,1,5,5,2,3,0,0,40' - 1st Goal - Bruno Henrique (Internacional) - Shot,46,54,52,62,107,114,7,4,10,7
+106,106.0,107.0,2024-13VitóriaAthletico Paranaense,13,2024/06/30 18:30,Vitória,Athletico Paranaense,0,1,7,6,3,2,0,0,80' - 1st Goal - Julimar (Athletico Paranaense) - Shot,59,41,54,41,111,93,3,2,13,5
+107,107.0,108.0,2024-13São PauloEC Bahia,13,2024/06/30 16:00,São Paulo,EC Bahia,3,1,4,4,4,1,0,0,30' - 1st Goal - Calleri (Sao Paulo) - Shot,40,60,28,34,79,104,4,6,6,9
+108,108.0,109.0,2024-13GrêmioFluminense,13,2024/06/30 16:00,Grêmio,Fluminense,1,0,6,1,2,2,0,1,61' - 1st Goal - Gomes (Gremio) - Shot,47,53,73,27,114,90,9,3,7,5
+109,109.0,110.0,2024-13Fortaleza ECJuventude,13,2024/06/30 16:00,Fortaleza EC,Juventude,2,1,7,5,2,0,0,0,21' - 1st Goal - Lucero (Fortaleza) - Penalty,38,62,45,42,83,99,7,3,12,10
+110,110.0,111.0,2024-13Atlético MineiroAtlético GO,13,2024/06/30 11:00,Atlético Mineiro,Atlético GO,1,1,5,8,0,1,0,0,13' - 1st Goal - Fernando (Atletico GO) - Shot (Assist: Lucas Kal),68,32,43,47,123,80,6,6,9,6
+111,111.0,112.0,2024-13Vasco da GamaBotafogo,13,2024/06/29 18:30,Vasco da Gama,Botafogo,1,1,0,5,4,4,0,0,73' - 1st Goal - Bastos (Botafogo) - Header,54,46,28,45,101,96,2,6,8,7
+112,112.0,113.0,2024-13Cuiabá ECBragantino,13,2024/06/29 18:30,Cuiabá EC,Bragantino,1,1,3,11,3,2,1,0,33' - 1st Goal - Lacerda (Cuiaba) - Shot,34,66,23,58,63,153,2,5,3,10
+113,113.0,114.0,2024-12São PauloCriciúma,12,2024/06/27 20:00,São Paulo,Criciúma,2,1,2,2,2,4,0,0,2' - 1st Goal - Alisson (Sao Paulo) - Shot,62,38,30,27,106,97,6,2,7,8
+114,114.0,115.0,2024-12FluminenseVitória,12,2024/06/27 19:00,Fluminense,Vitória,0,1,6,2,3,1,0,0,90' - 1st Goal - Janderson (Vitoria) - Shot,63,37,47,31,108,88,5,6,7,3
+115,115.0,116.0,2024-12InternacionalAtlético Mineiro,12,2024/06/26 21:30,Internacional,Atlético Mineiro,1,2,5,9,3,4,0,0,53' - 1st Goal - Igor Rabello (Atletico Mineiro) - Header,46,54,52,38,130,108,6,5,7,11
+116,116.0,117.0,2024-12EC BahiaVasco da Gama,12,2024/06/26 21:30,EC Bahia,Vasco da Gama,2,1,7,0,0,4,0,1,7' - 1st Goal - Thaciano (Bahia) - Shot,63,37,76,19,104,72,8,3,9,6
+117,117.0,118.0,2024-12Fortaleza ECPalmeiras,12,2024/06/26 21:30,Fortaleza EC,Palmeiras,3,0,3,8,2,2,0,0,10' - 1st Goal - Lucero (Fortaleza) -,32,68,21,46,72,143,6,7,6,10
+118,118.0,119.0,2024-12JuventudeFlamengo,12,2024/06/26 20:00,Juventude,Flamengo,2,1,7,8,2,1,0,0,19' - 1st Goal - Pedro (Flamengo) - Shot,53,47,38,50,91,96,8,5,7,4
+119,119.0,120.0,2024-12Atlético GOGrêmio,12,2024/06/26 20:00,Atlético GO,Grêmio,1,1,5,8,7,4,0,0,72' - 1st Goal - Felipe (Atletico GO) - Shot,49,51,55,56,106,87,5,4,11,7
+120,120.0,121.0,2024-12CorinthiansCuiabá EC,12,2024/06/26 20:00,Corinthians,Cuiabá EC,1,1,13,1,3,4,0,0,5' - 1st Goal - Marllon (Cuiaba) - Shot,65,35,78,29,144,74,7,4,13,9
+121,121.0,122.0,2024-12BotafogoBragantino,12,2024/06/26 19:00,Botafogo,Bragantino,2,1,7,4,2,3,0,0,6' - 1st Goal - Evangelista (Bragantino) - Shot,49,51,40,46,93,97,4,6,8,7
+122,122.0,123.0,2024-12CruzeiroAthletico Paranaense,12,2024/06/26 19:00,Cruzeiro,Athletico Paranaense,2,0,7,12,2,2,0,0,15' - 1st Goal - Veron (Cruzeiro) - Shot,49,51,46,61,109,120,7,3,15,11
+123,123.0,124.0,2024-11PalmeirasJuventude,11,2024/06/23 18:30,Palmeiras,Juventude,3,1,10,4,2,3,0,0,49' - 1st Goal - Lopez (Palmeiras) -,57,43,73,35,125,92,9,8,8,3
+124,124.0,125.0,2024-11Atlético MineiroFortaleza EC,11,2024/06/23 18:30,Atlético Mineiro,Fortaleza EC,1,1,3,4,3,1,0,0,25' - 1st Goal - Breno (Fortaleza) - Shot,67,33,51,19,129,78,8,3,13,10
+125,125.0,126.0,2024-11BragantinoVitória,11,2024/06/23 18:30,Bragantino,Vitória,2,1,6,7,3,2,0,0,17' - 1st Goal - Jean Mota (Vitoria) - Shot,64,36,62,40,129,68,6,5,10,5
+126,126.0,127.0,2024-11EC BahiaCruzeiro,11,2024/06/23 16:00,EC Bahia,Cruzeiro,4,1,3,1,0,3,0,1,14' - 1st Goal - Veron (Cruzeiro) - Shot,64,36,61,23,149,77,6,1,8,6
+127,127.0,128.0,2024-11FluminenseFlamengo,11,2024/06/23 16:00,Fluminense,Flamengo,0,1,2,6,2,3,1,0,86' - 1st Goal - Pedro (Flamengo) - Penalty,54,46,21,68,63,101,0,4,2,10
+128,128.0,129.0,2024-11Athletico ParanaenseCorinthians,11,2024/06/23 16:00,Athletico Paranaense,Corinthians,1,1,11,2,2,1,0,0,45' - 1st Goal - Christian (Athletico Paranaense) - Header,54,46,51,26,92,63,7,6,13,9
+129,129.0,130.0,2024-11Vasco da GamaSão Paulo,11,2024/06/22 21:30,Vasco da Gama,São Paulo,4,1,2,8,3,1,0,0,11' - 1st Goal - Andre Silva (Sao Paulo) - Header,40,60,34,66,102,109,7,2,7,8
+130,130.0,131.0,2024-11Cuiabá ECAtlético GO,11,2024/06/22 18:30,Cuiabá EC,Atlético GO,0,0,5,4,2,1,0,0,,49,51,50,36,90,103,3,9,7,9
+131,131.0,132.0,2024-11GrêmioInternacional,11,2024/06/22 17:30,Grêmio,Internacional,0,1,5,4,0,0,1,0,64' - 1st Goal - (Internacional) -,58,42,65,40,118,78,1,2,4,10
+132,132.0,133.0,2024-11CriciúmaBotafogo,11,2024/06/22 16:00,Criciúma,Botafogo,2,1,4,7,4,3,0,0,10' - 1st Goal - Barreto (Criciuma) - Header,38,62,44,48,73,131,4,2,12,8
+133,133.0,134.0,2024-10PalmeirasBragantino,10,2024/06/20 21:30,Palmeiras,Bragantino,2,1,10,3,0,2,0,0,21' - 1st Goal - Veiga (Palmeiras) - Shot,54,46,62,25,91,98,7,3,17,10
+134,134.0,135.0,2024-10FlamengoEC Bahia,10,2024/06/20 20:00,Flamengo,EC Bahia,2,1,6,2,1,1,0,0,24' - 1st Goal - Gerson (Flamengo) - Shot,35,65,53,42,92,103,3,3,11,6
+135,135.0,136.0,2024-10VitóriaAtlético Mineiro,10,2024/06/20 18:30,Vitória,Atlético Mineiro,4,2,2,4,2,2,0,0,8' - 1st Goal - Matheus Martins (Vitoria) - Shot,38,62,22,55,75,146,5,7,6,12
+136,136.0,137.0,2024-10InternacionalCorinthians,10,2024/06/19 21:30,Internacional,Corinthians,1,0,3,7,1,2,0,0,42' - 1st Goal - Wesley (Internacional) - Shot,47,53,29,54,92,114,5,3,6,10
+137,137.0,138.0,2024-10CruzeiroFluminense,10,2024/06/19 21:30,Cruzeiro,Fluminense,2,0,6,5,3,1,0,0,41' - 1st Goal - William (Cruzeiro) - Penalty,34,66,39,56,80,104,5,4,12,5
+138,138.0,139.0,2024-10JuventudeVasco da Gama,10,2024/06/19 20:00,Juventude,Vasco da Gama,2,0,5,4,2,3,0,1,52' - 1st Goal - Lucas Barbosa (Juventude) - Shot,55,45,29,29,76,118,4,2,10,4
+139,139.0,140.0,2024-10Fortaleza ECGrêmio,10,2024/06/19 20:00,Fortaleza EC,Grêmio,1,0,8,3,3,4,0,1,42' - 1st Goal - Lucero (Fortaleza) - Penalty,52,48,41,45,104,122,4,2,9,6
+140,140.0,141.0,2024-10São PauloCuiabá EC,10,2024/06/19 20:00,São Paulo,Cuiabá EC,0,1,4,6,2,2,0,0,82' - 1st Goal - Eliel Chrytian (Cuiaba) - Shot,66,34,58,32,139,83,4,3,11,8
+141,141.0,142.0,2024-10BotafogoAthletico Paranaense,10,2024/06/19 19:00,Botafogo,Athletico Paranaense,1,1,5,9,0,5,0,0,53' - 1st Goal - Mastriani (Athletico Paranaense) - Shot,62,38,47,49,129,84,1,6,7,10
+142,142.0,143.0,2024-10Atlético GOCriciúma,10,2024/06/19 19:00,Atlético GO,Criciúma,1,2,5,1,1,1,1,0,11' - 1st Goal - Guilherme Romao (Atletico GO) - Shot,50,50,47,40,105,94,1,7,11,11
+143,143.0,144.0,2024-9Atlético MineiroPalmeiras,9,2024/06/17 20:30,Atlético Mineiro,Palmeiras,0,4,3,6,4,3,1,0,25' - 1st Goal - Moreno (Palmeiras) - Shot,52,48,28,40,81,98,3,9,8,13
+144,144.0,145.0,2024-9Vasco da GamaCruzeiro,9,2024/06/16 18:30,Vasco da Gama,Cruzeiro,0,0,5,5,2,4,0,0,,51,49,46,22,112,89,4,2,10,6
+145,145.0,146.0,2024-9GrêmioBotafogo,9,2024/06/16 18:30,Grêmio,Botafogo,1,2,7,4,3,3,0,0,10' - 1st Goal - Cuiabano (Botafogo) - Shot,47,53,65,33,105,127,4,5,11,9
+146,146.0,147.0,2024-9CriciúmaEC Bahia,9,2024/06/16 18:30,Criciúma,EC Bahia,2,2,6,7,3,1,1,0,34' - 1st Goal - Marcelo Hermes (Criciuma) - Free Kick,44,56,38,51,83,91,5,6,12,15
+147,147.0,148.0,2024-9Cuiabá ECFortaleza EC,9,2024/06/16 18:30,Cuiabá EC,Fortaleza EC,5,0,5,1,1,3,0,2,3' - 1st Goal - Clayson (Cuiaba) - Shot,53,47,60,20,98,78,13,0,8,2
+148,148.0,149.0,2024-9CorinthiansSão Paulo,9,2024/06/16 16:00,Corinthians,São Paulo,2,2,9,5,3,3,1,0,4' - 1st Goal - Lucas Moura (Sao Paulo) - Shot,68,32,41,37,85,99,8,8,8,5
+149,149.0,150.0,2024-9Athletico ParanaenseFlamengo,9,2024/06/16 16:00,Athletico Paranaense,Flamengo,1,1,5,9,4,3,0,0,90+2' - 1st Goal - Fernandinho (Athletico Paranaense) - Penalty,52,48,38,45,82,103,3,6,11,3
+150,150.0,151.0,2024-9VitóriaInternacional,9,2024/06/16 16:00,Vitória,Internacional,2,1,4,2,1,5,0,0,8' - 1st Goal - Willian (Vitoria) - Shot,45,55,35,49,85,126,4,5,7,10
+151,151.0,152.0,2024-9FluminenseAtlético GO,9,2024/06/15 21:00,Fluminense,Atlético GO,1,2,3,3,3,1,0,0,41' - 1st Goal - Ganso (Fluminense) - Shot,56,44,39,47,109,105,5,7,4,10
+152,152.0,153.0,2024-9BragantinoJuventude,9,2024/06/15 18:30,Bragantino,Juventude,2,1,1,1,3,4,0,5,2' - 1st Goal - Helinho (Bragantino) - Shot,36,64,39,46,88,91,2,6,4,8
+153,153.0,154.0,2024-8EC BahiaFortaleza EC,8,2024/06/13 21:30,EC Bahia,Fortaleza EC,1,0,5,9,6,2,0,0,80' - 1st Goal - Jean Lucas (Bahia) - Header,54,46,75,54,101,88,3,6,9,15
+154,154.0,155.0,2024-8PalmeirasVasco da Gama,8,2024/06/13 21:30,Palmeiras,Vasco da Gama,2,0,10,6,1,2,0,0,26' - 1st Goal - Piquerez (Palmeiras) - Shot,58,42,65,33,100,110,6,2,22,7
+155,155.0,156.0,2024-8InternacionalSão Paulo,8,2024/06/13 20:00,Internacional,São Paulo,0,0,5,3,5,4,0,0,,52,48,60,19,110,67,0,4,7,5
+156,156.0,157.0,2024-8FlamengoGrêmio,8,2024/06/13 20:00,Flamengo,Grêmio,2,1,4,6,1,4,0,0,42' - 1st Goal - Luiz Araujo (Flamengo) - Shot,42,58,46,63,91,125,6,5,10,10
+157,157.0,158.0,2024-8Athletico ParanaenseCriciúma,8,2024/06/13 20:00,Athletico Paranaense,Criciúma,3,1,5,3,0,1,0,0,9' - 1st Goal - Barreto (Criciuma) - Shot,57,43,56,18,128,88,7,4,16,8
+158,158.0,159.0,2024-8CruzeiroCuiabá EC,8,2024/06/13 19:00,Cruzeiro,Cuiabá EC,2,1,6,4,3,2,0,0,45+1' - 1st Goal - Matheus Pereira (Cruzeiro) - Header,51,49,66,69,107,87,6,5,6,11
+159,159.0,160.0,2024-8BragantinoAtlético Mineiro,8,2024/06/11 21:30,Bragantino,Atlético Mineiro,1,2,8,5,5,5,1,1,25' - 1st Goal - Evangelista (Bragantino) - Shot,55,45,42,35,108,72,5,4,10,6
+160,160.0,161.0,2024-8BotafogoFluminense,8,2024/06/11 20:00,Botafogo,Fluminense,1,0,14,2,3,3,0,0,66' - 1st Goal - Bastos (Botafogo) - Header,44,56,31,26,78,78,6,0,13,6
+161,161.0,162.0,2024-8Atlético GOCorinthians,8,2024/06/11 19:00,Atlético GO,Corinthians,2,2,3,4,2,4,0,1,15' - 1st Goal - Yuri Alberto (Corinthians) - Shot (Assist: Caca),72,28,101,21,134,34,7,3,15,4
+162,162.0,163.0,2024-8JuventudeVitória,8,2024/06/11 19:00,Juventude,Vitória,1,1,5,4,3,4,0,0,34' - 1st Goal - Rodrigo Sam (Juventude) - Header,58,42,46,32,103,89,2,3,10,15
+163,163.0,164.0,2024-6CriciúmaCuiabá EC,6,2024/06/09 16:00,Criciúma,Cuiabá EC,2,5,6,2,4,5,1,0,16' - 1st Goal - Pitta (Cuiaba) - Shot (Assist: Cafu),61,39,64,41,113,59,8,7,14,6
+164,164.0,165.0,2024-2Cuiabá ECVitória,2,2024/06/05 20:00,Cuiabá EC,Vitória,0,0,4,3,3,4,0,0,,54,46,45,46,117,100,0,4,11,9
+165,165.0,166.0,2024-5JuventudeAtlético GO,5,2024/06/05 19:00,Juventude,Atlético GO,1,0,4,7,1,3,2,0,38' - 1st Goal - Lucas Barbosa (Juventude) - Shot,42,58,37,46,82,119,2,5,6,17
+166,166.0,167.0,2024-7São PauloCruzeiro,7,2024/06/02 18:30,São Paulo,Cruzeiro,2,0,4,2,2,2,0,1,5' - 1st Goal - Lucas Moura (Sao Paulo) - Shot (Assist: Franco),55,45,45,22,97,99,4,3,7,7
+167,167.0,168.0,2024-7Fortaleza ECAthletico Paranaense,7,2024/06/02 18:30,Fortaleza EC,Athletico Paranaense,1,0,2,4,2,4,0,0,45' - 1st Goal - Kuscevic (Fortaleza) - Header,52,48,30,46,103,98,4,2,7,11
+168,168.0,169.0,2024-7Vasco da GamaFlamengo,7,2024/06/02 16:00,Vasco da Gama,Flamengo,1,6,1,8,2,0,1,0,9' - 1st Goal - Vegetti (Vasco da Gama) - Shot,27,73,19,64,56,132,2,18,0,12
+169,169.0,170.0,2024-7CriciúmaPalmeiras,7,2024/06/02 16:00,Criciúma,Palmeiras,1,2,4,6,7,3,0,0,67' - 1st Goal - Gomez (Palmeiras) - Penalty,39,61,39,62,62,118,4,5,8,18
+170,170.0,171.0,2024-7Atlético MineiroEC Bahia,7,2024/06/02 16:00,Atlético Mineiro,EC Bahia,1,1,5,4,5,4,0,0,62' - 1st Goal - Hulk (Atletico Mineiro) - Free Kick,64,36,49,31,127,78,4,2,16,7
+171,171.0,172.0,2024-7CorinthiansBotafogo,7,2024/06/01 21:00,Corinthians,Botafogo,0,1,2,5,2,4,0,0,59' - 1st Goal - Junior Santos (Botafogo) - Shot,53,47,51,38,116,97,7,2,9,7
+172,172.0,173.0,2024-7Cuiabá ECInternacional,7,2024/06/01 18:30,Cuiabá EC,Internacional,0,1,0,2,4,4,0,0,69' - 1st Goal - Hugo Mallo (Internacional) - Shot,36,64,26,45,75,117,3,3,5,6
+173,173.0,174.0,2024-7FluminenseJuventude,7,2024/06/01 18:30,Fluminense,Juventude,1,1,5,3,2,3,0,1,42' - 1st Goal - Marcelo (Fluminense) - Penalty,62,38,59,32,105,66,4,3,15,9
+174,174.0,175.0,2024-7VitóriaAtlético GO,7,2024/06/01 16:00,Vitória,Atlético GO,0,2,3,4,2,2,2,0,42' - 1st Goal - Vagner Love (Atletico GO) - Shot,34,66,25,41,81,126,3,5,9,7
+175,175.0,176.0,2024-7GrêmioBragantino,7,2024/06/01 16:00,Grêmio,Bragantino,0,2,6,0,4,2,0,0,3' - 1st Goal - Eric (Bragantino) - Shot,44,56,52,26,110,110,1,4,8,10
+176,176.0,177.0,2024-6São PauloFluminense,6,2024/05/13 20:00,São Paulo,Fluminense,2,1,7,4,5,3,0,0,29' - 1st Goal - Igor Vinicius (Fluminense) - Own Goal,50,50,51,42,81,104,8,3,7,5
+177,177.0,178.0,2024-6Vasco da GamaVitória,6,2024/05/12 18:30,Vasco da Gama,Vitória,2,1,4,4,5,2,0,1,50' - 1st Goal - Maicon (Vasco da Gama) - Header,57,43,46,55,130,103,8,5,9,8
+178,178.0,179.0,2024-6EC BahiaBragantino,6,2024/05/12 18:30,EC Bahia,Bragantino,1,0,6,7,2,3,0,0,37' - 1st Goal - Thaciano (Bahia) - Shot (Assist: Cauly),50,50,44,38,76,110,3,5,5,10
+179,179.0,180.0,2024-6PalmeirasAthletico Paranaense,6,2024/05/12 16:00,Palmeiras,Athletico Paranaense,0,2,9,6,4,5,0,1,45+9' - 1st Goal - Pablo (Athletico Paranaense) - Free Kick,63,37,36,25,119,73,6,6,17,5
+180,180.0,181.0,2024-6Atlético GOCruzeiro,6,2024/05/12 16:00,Atlético GO,Cruzeiro,0,1,5,5,1,2,0,0,81' - 1st Goal - Matheus Pereira (Cruzeiro) - Shot,46,54,48,38,104,97,3,4,12,7
+181,181.0,182.0,2024-6Fortaleza ECBotafogo,6,2024/05/12 16:00,Fortaleza EC,Botafogo,1,1,6,5,3,6,0,0,10' - 1st Goal - Pochettino (Fortaleza) - Shot (Assist: Breno),43,57,28,29,108,95,4,5,6,6
+182,182.0,183.0,2024-6FlamengoCorinthians,6,2024/05/11 16:00,Flamengo,Corinthians,2,0,13,6,1,1,0,0,20' - 1st Goal - Pedro (Flamengo) - Shot,58,42,70,37,115,78,9,3,9,9
+183,183.0,184.0,2024-5Cuiabá ECPalmeiras,5,2024/05/05 18:30,Cuiabá EC,Palmeiras,0,2,6,6,2,3,0,0,45+1' - 1st Goal - Lazaro (Palmeiras) - Header,45,55,27,57,78,113,1,6,8,9
+184,184.0,185.0,2024-5BotafogoEC Bahia,5,2024/05/05 18:30,Botafogo,EC Bahia,1,2,5,1,2,2,0,0,45+3' - 1st Goal - Everaldo (Bahia) - Penalty,55,45,61,28,124,75,5,4,11,6
+185,185.0,186.0,2024-5Athletico ParanaenseVasco da Gama,5,2024/05/05 16:00,Athletico Paranaense,Vasco da Gama,1,0,6,5,1,0,0,1,26' - 1st Goal - Erick (Athletico Paranaense) - Shot,56,44,66,26,103,96,7,1,19,6
+186,186.0,187.0,2024-5VitóriaSão Paulo,5,2024/05/05 16:00,Vitória,São Paulo,1,3,3,8,3,4,1,0,45' - 1st Goal - Luciano (Sao Paulo) - Header,33,67,29,40,61,100,2,3,4,17
+187,187.0,188.0,2024-5CorinthiansFortaleza EC,5,2024/05/04 21:00,Corinthians,Fortaleza EC,0,0,9,5,1,6,0,0,,65,35,79,65,127,104,9,1,9,11
+188,188.0,189.0,2024-5BragantinoFlamengo,5,2024/05/04 18:30,Bragantino,Flamengo,1,1,8,4,2,2,0,0,30' - 1st Goal - Pedro Henrique (Bragantino) - Header,43,57,64,59,100,84,2,6,15,13
+189,189.0,190.0,2024-5FluminenseAtlético Mineiro,5,2024/05/04 16:00,Fluminense,Atlético Mineiro,2,2,4,11,4,2,0,0,4' - 1st Goal - Cano (Fluminense) - Shot,43,57,18,41,98,113,5,7,5,12
+190,190.0,191.0,2024-4São PauloPalmeiras,4,2024/04/29 20:00,São Paulo,Palmeiras,0,0,6,4,4,3,0,0,,53,47,29,29,93,102,1,3,16,6
+191,191.0,192.0,2024-4InternacionalAtlético GO,4,2024/04/28 20:00,Internacional,Atlético GO,1,1,13,0,0,4,1,5,50' - 1st Goal - Derek (Atletico GO) - Shot,72,28,91,17,164,78,5,2,17,2
+192,192.0,193.0,2024-4JuventudeAthletico Paranaense,4,2024/04/28 18:30,Juventude,Athletico Paranaense,1,1,4,6,2,2,0,0,8' - 1st Goal - Erick (Juventude) - Shot (Assist: Lucas Barbosa),55,45,47,42,82,114,5,6,10,9
+193,193.0,194.0,2024-4Fortaleza ECBragantino,4,2024/04/28 18:30,Fortaleza EC,Bragantino,1,1,12,6,1,1,0,0,9' - 1st Goal - Andrade (Fortaleza) - Shot,44,56,52,36,84,134,5,4,17,6
+194,194.0,195.0,2024-4CorinthiansFluminense,4,2024/04/28 16:00,Corinthians,Fluminense,3,0,6,8,4,2,0,0,40' - 1st Goal - Wesley (Corinthians) - Shot,31,69,23,50,79,93,7,2,10,11
+195,195.0,196.0,2024-4CruzeiroVitória,4,2024/04/28 16:00,Cruzeiro,Vitória,3,1,10,4,2,0,0,0,50' - 1st Goal - Matheus Pereira (Cruzeiro) - Shot,54,46,57,26,109,94,6,2,9,6
+196,196.0,197.0,2024-4FlamengoBotafogo,4,2024/04/28 11:00,Flamengo,Botafogo,0,2,8,3,1,4,0,0,53' - 1st Goal - Luiz Henrique (Botafogo) - Shot,60,40,69,24,113,77,0,3,14,6
+197,197.0,198.0,2024-4EC BahiaGrêmio,4,2024/04/27 21:00,EC Bahia,Grêmio,1,0,4,0,2,4,0,0,17' - 1st Goal - Everaldo (Bahia) - Shot,60,40,49,20,146,100,4,2,10,1
+198,198.0,199.0,2024-4Cuiabá ECAtlético Mineiro,4,2024/04/27 18:30,Cuiabá EC,Atlético Mineiro,0,3,3,10,4,4,0,1,28' - 1st Goal - Vargas (Atletico Mineiro) - Header (Assist: Paulinho),32,68,16,61,66,119,1,5,3,8
+199,199.0,200.0,2024-4Vasco da GamaCriciúma,4,2024/04/27 16:00,Vasco da Gama,Criciúma,0,4,5,4,1,0,0,0,32' - 1st Goal - Fellipe Mateus (Criciuma) - Shot (Assist: Bolasie),58,42,48,31,131,67,5,10,15,7
+200,200.0,201.0,2024-3BotafogoJuventude,3,2024/04/21 18:30,Botafogo,Juventude,5,1,5,4,3,3,0,1,4' - 1st Goal - Junior Santos (Botafogo) - Shot,55,45,36,37,100,88,6,1,7,11
+201,201.0,202.0,2024-3Atlético GOSão Paulo,3,2024/04/21 18:30,Atlético GO,São Paulo,0,3,4,3,4,0,2,0,14' - 1st Goal - Calleri (Sao Paulo) - Header,34,66,35,63,76,124,1,7,8,12
+202,202.0,203.0,2024-3PalmeirasFlamengo,3,2024/04/21 16:00,Palmeiras,Flamengo,0,0,6,5,5,4,0,0,,48,52,27,30,94,87,1,3,10,5
+203,203.0,204.0,2024-3Athletico ParanaenseInternacional,3,2024/04/21 16:00,Athletico Paranaense,Internacional,1,0,5,3,4,5,1,0,71' - 1st Goal - Canobbio (Athletico Paranaense) - Shot,46,54,15,7,29,40,1,1,5,6
+204,204.0,205.0,2024-3VitóriaEC Bahia,3,2024/04/21 16:00,Vitória,EC Bahia,2,2,2,7,3,3,0,0,20' - 1st Goal - Matheus Martins (Vitoria) - Shot,43,57,22,43,77,105,8,6,5,12
+205,205.0,206.0,2024-3Atlético MineiroCruzeiro,3,2024/04/20 21:00,Atlético Mineiro,Cruzeiro,3,0,4,4,2,2,1,3,25' - 1st Goal - Zaracho (Atletico Mineiro) - Shot,58,42,39,42,90,105,4,3,5,7
+206,206.0,207.0,2024-3BragantinoCorinthians,3,2024/04/20 18:30,Bragantino,Corinthians,1,0,3,4,4,2,0,0,5' - 1st Goal - Vitinho (Bragantino) - Shot (Assist: Bruninho),35,65,24,47,98,103,3,4,7,10
+207,207.0,208.0,2024-3GrêmioCuiabá EC,3,2024/04/20 18:30,Grêmio,Cuiabá EC,1,0,3,4,3,2,0,0,44' - 1st Goal - Cristaldo (Gremio) - Shot (Assist: Soteldo),57,43,71,40,125,88,4,3,3,10
+208,208.0,209.0,2024-3FluminenseVasco da Gama,3,2024/04/20 16:00,Fluminense,Vasco da Gama,2,1,2,7,4,5,0,0,10' - 1st Goal - Ganso (Fluminense) - Header,58,42,48,40,123,79,8,5,3,16
+209,209.0,210.0,2024-2BotafogoAtlético GO,2,2024/04/18 21:30,Botafogo,Atlético GO,1,0,8,8,3,4,0,0,32' - 1st Goal - Ponte (Botafogo) - Shot,53,47,48,53,90,99,4,3,9,9
+210,210.0,211.0,2024-2FlamengoSão Paulo,2,2024/04/17 21:30,Flamengo,São Paulo,2,1,9,1,1,3,0,0,20' - 1st Goal - Luiz Araujo (Flamengo) - Shot,46,54,38,24,89,100,6,3,6,7
+211,211.0,212.0,2024-2PalmeirasInternacional,2,2024/04/17 20:00,Palmeiras,Internacional,0,1,6,2,2,4,0,0,45' - 1st Goal - Wesley (Internacional) - Shot,68,32,37,26,77,72,3,2,15,3
+212,212.0,213.0,2024-2JuventudeCorinthians,2,2024/04/17 20:00,Juventude,Corinthians,2,0,6,7,2,1,1,0,53' - 1st Goal - Jean Carlos (Juventude) - Shot,45,55,27,45,81,127,8,2,8,15
+213,213.0,214.0,2024-2Atlético MineiroCriciúma,2,2024/04/17 20:00,Atlético Mineiro,Criciúma,1,1,9,2,2,4,0,0,40' - 1st Goal - Gustavo Scarpa (Atletico Mineiro) - Shot (Assist: Hulk),68,32,70,33,139,88,6,1,16,4
+214,214.0,215.0,2024-2Fortaleza ECCruzeiro,2,2024/04/17 20:00,Fortaleza EC,Cruzeiro,1,1,7,5,2,2,0,1,19' - 1st Goal - Hercules (Fortaleza) - Shot,39,61,38,45,87,97,3,6,11,8
+215,215.0,216.0,2024-2BragantinoVasco da Gama,2,2024/04/17 19:00,Bragantino,Vasco da Gama,2,1,4,6,2,1,0,0,7' - 1st Goal - Laquintana (Bragantino) - Shot,40,60,54,41,97,101,5,3,12,10
+216,216.0,217.0,2024-2GrêmioAthletico Paranaense,2,2024/04/17 19:00,Grêmio,Athletico Paranaense,2,0,9,2,1,3,0,0,19' - 1st Goal - Cristaldo (Gremio) - Shot (Assist: Pavon),48,52,44,45,95,117,7,0,7,4
+217,217.0,218.0,2024-2EC BahiaFluminense,2,2024/04/16 21:30,EC Bahia,Fluminense,2,1,4,3,4,5,0,0,4' - 1st Goal - Cano (Fluminense) - Shot (Assist: Arias),40,60,60,35,89,94,5,3,7,6
+218,218.0,219.0,2024-1VitóriaPalmeiras,1,2024/04/14 18:30,Vitória,Palmeiras,0,1,3,9,3,5,0,0,20' - 1st Goal - Rios (Palmeiras) - Shot,57,43,37,42,91,91,5,4,7,12
+219,219.0,220.0,2024-1CruzeiroBotafogo,1,2024/04/14 17:00,Cruzeiro,Botafogo,3,2,6,3,4,3,0,1,5' - 1st Goal - Tiquinho Soares (Botafogo) - Shot,56,44,55,25,101,70,6,3,10,3
+220,220.0,221.0,2024-1CorinthiansAtlético Mineiro,1,2024/04/14 16:00,Corinthians,Atlético Mineiro,0,0,3,3,7,5,0,1,,49,51,38,26,71,61,1,3,12,5
+221,221.0,222.0,2024-1Vasco da GamaGrêmio,1,2024/04/14 16:00,Vasco da Gama,Grêmio,2,1,3,5,4,1,0,0,25' - 1st Goal - David (Vasco da Gama) - Shot,47,53,52,42,96,116,3,2,13,7
+222,222.0,223.0,2024-1Atlético GOFlamengo,1,2024/04/14 16:00,Atlético GO,Flamengo,1,2,4,4,4,3,2,0,45+6' - 1st Goal - De la Cruz (Flamengo) - Free Kick,32,68,31,48,69,99,4,2,7,13
+223,223.0,224.0,2024-1Athletico ParanaenseCuiabá EC,1,2024/04/14 16:00,Athletico Paranaense,Cuiabá EC,4,0,7,0,0,3,0,0,23' - 1st Goal - Pablo (Athletico Paranaense) - Header,62,38,68,15,144,64,9,0,11,1
+224,224.0,225.0,2024-1FluminenseBragantino,1,2024/04/13 21:00,Fluminense,Bragantino,2,2,13,6,2,4,0,0,45+4' - 1st Goal - Lima (Fluminense) - Header,69,31,75,46,86,72,11,8,16,8
+225,225.0,226.0,2024-1São PauloFortaleza EC,1,2024/04/13 21:00,São Paulo,Fortaleza EC,1,2,11,4,1,3,0,0,66' - 1st Goal - Lucero (Fortaleza) - Shot,72,28,67,28,170,66,6,2,9,4
+226,226.0,227.0,2024-1CriciúmaJuventude,1,2024/04/13 18:30,Criciúma,Juventude,1,1,0,4,4,6,0,0,36' - 1st Goal - Kayzer (Criciuma) - Shot,47,53,27,65,96,113,3,4,7,11
+227,227.0,228.0,2024-1InternacionalEC Bahia,1,2024/04/13 18:30,Internacional,EC Bahia,2,1,6,3,5,3,0,0,70' - 1st Goal - Gabriel Teixeira (Bahia) - Shot,52,48,49,31,119,83,8,4,9,4
+228,228.0,229.0,2023-38São PauloFlamengo,38,2023/12/06 22:30,São Paulo,Flamengo,1,0,4,9,0,3,0,0,26' - 1st Goal - Luciano (Sao Paulo) - Shot,43,57,26,49,73,112,3,2,6,8
+229,229.0,230.0,2023-38InternacionalBotafogo,38,2023/12/06 22:30,Internacional,Botafogo,3,1,1,5,1,2,0,0,19' - 1st Goal - Valencia (Internacional) - Shot,54,46,21,31,104,120,3,5,4,4
+230,230.0,231.0,2023-38SantosFortaleza EC,38,2023/12/06 22:30,Santos,Fortaleza EC,1,2,10,6,2,2,0,0,39' - 1st Goal - Marinho (Fortaleza) - Shot,54,46,72,32,112,81,6,7,9,7
+231,231.0,232.0,2023-38CruzeiroPalmeiras,38,2023/12/06 22:30,Cruzeiro,Palmeiras,1,1,3,4,1,1,0,0,21' - 1st Goal - Endrick (Palmeiras) - Shot,56,44,38,26,116,60,6,5,8,3
+232,232.0,233.0,2023-38FluminenseGrêmio,38,2023/12/06 22:30,Fluminense,Grêmio,2,3,7,3,3,3,0,0,34' - 1st Goal - Arias (Fluminense) - Penalty,70,30,76,27,146,68,7,5,16,7
+233,233.0,234.0,2023-38EC BahiaAtlético Mineiro,38,2023/12/06 22:30,EC Bahia,Atlético Mineiro,4,1,3,5,2,2,0,0,11' - 1st Goal - Cauly (Bahia) - Shot,35,65,45,26,81,111,6,5,9,2
+234,234.0,235.0,2023-38CoritibaCorinthians,38,2023/12/06 22:30,Coritiba,Corinthians,0,2,6,6,1,0,0,0,11' - 1st Goal - Vera (Corinthians) - Shot,46,54,63,45,93,104,5,6,8,7
+235,235.0,236.0,2023-38Cuiabá ECAthletico Paranaense,38,2023/12/06 22:30,Cuiabá EC,Athletico Paranaense,3,0,5,9,3,3,1,0,13' - 1st Goal - Clayson (Cuiaba) - Penalty,44,56,28,62,76,102,6,3,8,14
+236,236.0,237.0,2023-38Vasco da GamaBragantino,38,2023/12/06 22:30,Vasco da Gama,Bragantino,2,1,2,3,2,1,0,1,29' - 1st Goal - Paulinho (Vasco da Gama) - Shot,46,54,44,35,88,108,6,2,7,7
+237,237.0,238.0,2023-38GoiásAmérica Mineiro,38,2023/12/06 20:00,Goiás,América Mineiro,1,0,8,7,2,2,0,0,33' - 1st Goal - Luis Oyama (Goias) - Shot,42,58,44,62,66,128,2,3,12,8
+238,238.0,239.0,2023-37Athletico ParanaenseSantos,37,2023/12/03 19:30,Athletico Paranaense,Santos,3,0,6,6,5,4,0,0,45+6' - 1st Goal - Vitor Bueno (Athletico Paranaense) - Free Kick,54,46,33,47,90,87,6,3,6,10
+239,239.0,240.0,2023-37Fortaleza ECGoiás,37,2023/12/03 19:30,Fortaleza EC,Goiás,1,0,4,2,2,3,0,0,6' - 1st Goal - Guilherme Augusto (Fortaleza) - Shot,46,54,45,25,95,122,1,1,5,4
+240,240.0,241.0,2023-37América MineiroEC Bahia,37,2023/12/03 19:30,América Mineiro,EC Bahia,3,2,2,10,2,0,1,0,26' - 1st Goal - Everaldo (Bahia) - Penalty,43,57,32,81,81,125,3,5,8,20
+241,241.0,242.0,2023-37BotafogoCruzeiro,37,2023/12/03 19:30,Botafogo,Cruzeiro,0,0,6,2,4,3,0,0,,61,39,63,27,112,88,2,3,14,4
+242,242.0,243.0,2023-37BragantinoCoritiba,37,2023/12/03 19:30,Bragantino,Coritiba,1,0,12,6,4,0,0,0,75' - 1st Goal - Leo Ortiz (Bragantino) - Header,65,35,81,34,139,68,9,0,18,6
+243,243.0,244.0,2023-37GrêmioVasco da Gama,37,2023/12/03 19:30,Grêmio,Vasco da Gama,1,0,5,6,3,1,0,0,46' - 1st Goal - Suarez (Gremio) - Shot,47,53,39,44,90,108,5,1,8,7
+244,244.0,245.0,2023-37PalmeirasFluminense,37,2023/12/03 17:00,Palmeiras,Fluminense,1,0,7,1,1,2,0,1,30' - 1st Goal - Breno (Palmeiras) - Shot,36,64,46,34,74,67,5,2,17,4
+245,245.0,246.0,2023-37FlamengoCuiabá EC,37,2023/12/03 17:00,Flamengo,Cuiabá EC,2,1,6,2,2,1,0,0,6' - 1st Goal - Luiz Araujo (Flamengo) - Shot,68,32,40,28,61,52,6,1,13,1
+246,246.0,247.0,2023-37Atlético MineiroSão Paulo,37,2023/12/02 22:00,Atlético Mineiro,São Paulo,2,1,3,5,3,1,0,0,77' - 1st Goal - Hulk (Atletico Mineiro) - Shot,48,52,36,32,92,104,2,5,5,11
+247,247.0,248.0,2023-37CorinthiansInternacional,37,2023/12/02 19:00,Corinthians,Internacional,1,2,5,4,2,2,1,0,35' - 1st Goal - Mauricio (Internacional) - Shot,49,51,45,34,130,95,2,3,7,8
+248,248.0,249.0,2023-36BragantinoFortaleza EC,36,2023/11/30 21:30,Bragantino,Fortaleza EC,1,2,15,3,1,4,2,0,14' - 1st Goal - Yago Pikachu (Fortaleza) - Shot,75,25,84,12,155,58,6,4,11,3
+249,249.0,250.0,2023-36CruzeiroAthletico Paranaense,36,2023/11/30 21:00,Cruzeiro,Athletico Paranaense,1,1,2,3,3,4,0,0,65' - 1st Goal - Vitor Roque (Athletico Paranaense) - Shot,57,43,63,30,134,60,9,3,17,3
+250,250.0,251.0,2023-36GrêmioGoiás,36,2023/11/30 20:00,Grêmio,Goiás,2,1,6,3,3,2,0,0,28' - 1st Goal - Everton Morelli (Goias) - Shot,50,50,62,33,125,102,7,6,6,8
+251,251.0,252.0,2023-36PalmeirasAmérica Mineiro,36,2023/11/29 22:30,Palmeiras,América Mineiro,4,0,10,2,2,2,0,0,2' - 1st Goal - Endrick (Palmeiras) - Shot,46,54,62,20,93,84,12,1,14,3
+252,252.0,253.0,2023-36CoritibaBotafogo,36,2023/11/29 22:30,Coritiba,Botafogo,1,1,3,10,4,1,1,1,90+7' - 1st Goal - Tiquinho Soares (Botafogo) - Penalty,47,53,39,66,96,146,2,6,11,18
+253,253.0,254.0,2023-36EC BahiaSão Paulo,36,2023/11/29 21:00,EC Bahia,São Paulo,0,1,3,5,4,3,0,0,90+7' - 1st Goal - Caio Paulista (Sao Paulo) - Shot,33,67,33,56,87,123,3,5,12,9
+254,254.0,255.0,2023-36Cuiabá ECInternacional,36,2023/11/29 21:00,Cuiabá EC,Internacional,0,2,2,5,3,2,0,0,52' - 1st Goal - Valencia (Internacional) - Shot,45,55,40,47,101,89,3,4,8,9
+255,255.0,256.0,2023-36FlamengoAtlético Mineiro,36,2023/11/29 20:30,Flamengo,Atlético Mineiro,0,3,10,1,3,2,0,0,8' - 1st Goal - Paulinho (Atletico Mineiro) - Shot (Assist: Hulk),58,42,93,16,158,78,4,6,15,5
+256,256.0,257.0,2023-36SantosFluminense,36,2023/11/29 20:00,Santos,Fluminense,0,3,5,3,2,3,0,0,10' - 1st Goal - Martinelli (Fluminense) - Shot,28,72,73,28,82,89,9,5,18,4
+257,257.0,258.0,2023-36Vasco da GamaCorinthians,36,2023/11/28 22:30,Vasco da Gama,Corinthians,2,4,8,3,3,1,0,0,4' - 1st Goal - Luis Rodriguez (Vasco da Gama) - Header,53,47,65,38,126,96,9,6,11,9
+258,258.0,259.0,2023-35GoiásCruzeiro,35,2023/11/27 22:00,Goiás,Cruzeiro,0,1,4,5,3,2,0,0,90+6' - 1st Goal - Robert (Cruzeiro) - Shot,50,50,49,59,90,93,3,7,7,5
+259,259.0,260.0,2023-35InternacionalBragantino,35,2023/11/26 19:30,Internacional,Bragantino,1,0,4,7,5,5,0,0,30' - 1st Goal - Valencia (Internacional) - Penalty,34,66,22,72,70,144,2,5,6,8
+260,260.0,261.0,2023-35América MineiroFlamengo,35,2023/11/26 19:30,América Mineiro,Flamengo,0,3,3,7,4,4,8,15,29' - 1st Goal - Everton (Flamengo) - Header,43,57,41,67,80,104,1,8,10,16
+261,261.0,262.0,2023-35Fortaleza ECPalmeiras,35,2023/11/26 19:30,Fortaleza EC,Palmeiras,2,2,4,7,2,1,0,1,20' - 1st Goal - Thiago Galhardo (Fortaleza) - Shot,37,63,33,27,70,99,8,5,12,8
+262,262.0,263.0,2023-35São PauloCuiabá EC,35,2023/11/26 19:30,São Paulo,Cuiabá EC,0,0,5,1,1,0,1,2,,62,38,54,40,126,72,4,0,15,3
+263,263.0,264.0,2023-35BotafogoSantos,35,2023/11/26 17:00,Botafogo,Santos,1,1,4,5,2,3,0,0,11' - 1st Goal - Danilo Barbosa (Botafogo) - Header,46,54,54,38,91,115,5,5,13,3
+264,264.0,265.0,2023-35Atlético MineiroGrêmio,35,2023/11/26 17:00,Atlético Mineiro,Grêmio,3,0,7,7,3,2,0,0,25' - 1st Goal - Guilherme Arana (Atletico Mineiro) - Shot,42,58,41,67,81,131,6,6,11,15
+265,265.0,266.0,2023-35FluminenseCoritiba,35,2023/11/25 22:00,Fluminense,Coritiba,2,1,6,5,2,2,0,0,45+1' - 1st Goal - Cano (Fluminense) - Shot,65,35,56,46,116,90,8,3,13,13
+266,266.0,267.0,2023-35Athletico ParanaenseVasco da Gama,35,2023/11/25 20:30,Athletico Paranaense,Vasco da Gama,0,0,5,1,1,4,0,0,,55,45,70,24,113,64,4,2,14,6
+267,267.0,268.0,2023-35CorinthiansEC Bahia,35,2023/11/24 22:00,Corinthians,EC Bahia,1,5,3,3,2,3,0,0,4' - 1st Goal - Rezende (Bahia) - Header,65,35,48,27,151,74,4,7,10,6
+268,268.0,269.0,2023-30FlamengoBragantino,30,2023/11/23 22:30,Flamengo,Bragantino,1,0,8,6,4,3,0,1,75' - 1st Goal - De Arrascaeta (Flamengo) - Shot,47,53,46,38,106,110,4,3,12,16
+269,269.0,270.0,2023-29Fortaleza ECBotafogo,29,2023/11/23 20:00,Fortaleza EC,Botafogo,2,2,4,5,2,4,0,0,8' - 1st Goal - Yago Pikachu (Fortaleza) - Shot,31,69,50,42,63,120,4,1,11,8
+270,270.0,271.0,2023-32FluminenseSão Paulo,32,2023/11/22 22:30,Fluminense,São Paulo,1,0,3,4,5,5,0,1,54' - 1st Goal - Cano (Fluminense) - Shot,55,45,62,26,99,59,8,1,16,3
+271,271.0,272.0,2023-33CruzeiroVasco da Gama,33,2023/11/22 20:00,Cruzeiro,Vasco da Gama,2,2,7,5,1,0,0,0,15' - 1st Goal - Luis Rodriguez (Vasco da Gama) - Shot,57,43,54,29,127,84,4,4,10,5
+272,272.0,273.0,2023-30Fortaleza ECCruzeiro,30,2023/11/18 19:30,Fortaleza EC,Cruzeiro,0,1,11,1,1,2,0,0,80' - 1st Goal - Bruno Rodrigues (Cruzeiro) - Shot,53,47,61,28,89,82,7,2,11,5
+273,273.0,274.0,2023-34SantosSão Paulo,34,2023/11/12 19:30,Santos,São Paulo,0,0,1,4,0,2,0,0,,30,70,33,43,87,121,3,3,8,10
+274,274.0,275.0,2023-34Atlético MineiroGoiás,34,2023/11/12 19:30,Atlético Mineiro,Goiás,2,1,3,7,1,2,1,0,41' - 1st Goal - Hulk (Atletico Mineiro) - Penalty,48,52,22,46,106,106,4,6,4,15
+275,275.0,276.0,2023-34EC BahiaAthletico Paranaense,34,2023/11/12 19:30,EC Bahia,Athletico Paranaense,1,1,11,5,2,4,0,0,73' - 1st Goal - Everaldo (Bahia) - Penalty,51,49,77,36,131,100,5,4,23,2
+276,276.0,277.0,2023-34Cuiabá ECFortaleza EC,34,2023/11/12 19:30,Cuiabá EC,Fortaleza EC,2,1,2,9,1,2,0,0,6' - 1st Goal - Deyverson (Cuiaba) - Header,35,65,19,76,66,144,4,3,3,10
+277,277.0,278.0,2023-34Vasco da GamaAmérica Mineiro,34,2023/11/12 19:30,Vasco da Gama,América Mineiro,2,1,7,8,1,1,0,0,4' - 1st Goal - Vegetti (Vasco da Gama) - Shot,50,50,38,56,94,98,6,6,11,10
+278,278.0,279.0,2023-34BragantinoBotafogo,34,2023/11/12 17:00,Bragantino,Botafogo,2,2,7,3,2,1,0,0,3' - 1st Goal - Borbas (Bragantino) - Shot,65,35,73,30,148,69,7,4,18,7
+279,279.0,280.0,2023-34GrêmioCorinthians,34,2023/11/12 17:00,Grêmio,Corinthians,0,1,12,1,2,6,1,1,32' - 1st Goal - Romero (Corinthians) - Shot,74,26,133,21,167,66,9,4,17,6
+280,280.0,281.0,2023-34PalmeirasInternacional,34,2023/11/11 22:00,Palmeiras,Internacional,3,0,6,3,1,2,0,0,38' - 1st Goal - Ze Rafael (Palmeiras) - Shot,38,62,40,37,90,117,10,5,8,2
+281,281.0,282.0,2023-34FlamengoFluminense,34,2023/11/11 19:30,Flamengo,Fluminense,1,1,5,2,1,4,1,1,45+2' - 1st Goal - De Arrascaeta (Flamengo) - Shot,42,58,55,30,89,88,7,4,4,9
+282,282.0,283.0,2023-34CoritibaCruzeiro,34,2023/11/11 17:00,Coritiba,Cruzeiro,1,0,1,5,4,4,0,0,90+1' - 1st Goal - Robson (Coritiba) - Shot,45,55,44,55,80,104,3,4,4,9
+283,283.0,284.0,2023-33EC BahiaCuiabá EC,33,2023/11/09 21:00,EC Bahia,Cuiabá EC,0,3,7,4,1,3,1,0,22' - 1st Goal - Deyverson (Cuiaba) - Penalty,62,38,52,29,120,87,4,6,11,5
+284,284.0,285.0,2023-33BotafogoGrêmio,33,2023/11/09 21:00,Botafogo,Grêmio,3,4,2,6,1,1,0,0,6' - 1st Goal - Costa (Botafogo) - Shot,51,49,28,35,106,98,5,6,7,7
+285,285.0,286.0,2023-33CorinthiansAtlético Mineiro,33,2023/11/09 20:00,Corinthians,Atlético Mineiro,1,1,5,6,1,4,0,0,23' - 1st Goal - Romero (Corinthians) - Header,40,60,35,39,112,147,9,3,6,11
+286,286.0,287.0,2023-33GoiásSantos,33,2023/11/09 20:00,Goiás,Santos,0,1,5,6,2,1,0,0,87' - 1st Goal - Furch (Santos) - Shot,58,42,47,58,122,91,3,5,10,10
+287,287.0,288.0,2023-33FlamengoPalmeiras,33,2023/11/08 22:30,Flamengo,Palmeiras,3,0,4,5,1,1,0,1,18' - 1st Goal - Pedro (Flamengo) - Shot (Assist: Pulgar),48,52,43,35,103,95,6,1,6,11
+288,288.0,289.0,2023-33São PauloBragantino,33,2023/11/08 21:00,São Paulo,Bragantino,1,0,9,5,2,2,0,0,90+3' - 1st Goal - Erison (Sao Paulo) - Penalty,61,39,31,55,106,125,5,3,10,6
+289,289.0,290.0,2023-33Athletico ParanaenseFortaleza EC,33,2023/11/08 21:00,Athletico Paranaense,Fortaleza EC,1,1,14,2,1,0,0,0,54' - 1st Goal - Guilherme Augusto (Fortaleza) - Shot,54,46,49,29,107,93,3,3,17,10
+290,290.0,291.0,2023-33InternacionalFluminense,33,2023/11/08 20:00,Internacional,Fluminense,0,0,5,3,2,2,0,0,,50,50,60,27,87,103,5,4,15,4
+291,291.0,292.0,2023-33América MineiroCoritiba,33,2023/11/08 20:00,América Mineiro,Coritiba,0,3,8,4,0,1,0,0,22' - 1st Goal - Bruno Gomes (Coritiba) - Header,58,42,70,28,138,83,3,5,8,5
+292,292.0,293.0,2023-32SantosCuiabá EC,32,2023/11/06 22:00,Santos,Cuiabá EC,0,0,4,4,1,2,0,0,,0,0,62,39,128,86,2,0,2,7
+293,293.0,294.0,2023-32Vasco da GamaBotafogo,32,2023/11/06 20:00,Vasco da Gama,Botafogo,1,0,4,4,2,4,0,0,29' - 1st Goal - Paulo Henrique (Vasco da Gama) - Shot,42,58,39,46,94,133,3,2,7,10
+294,294.0,295.0,2023-32CoritibaGoiás,32,2023/11/05 19:30,Coritiba,Goiás,0,1,5,9,3,3,0,0,70' - 1st Goal - Guzzo (Goias) - Shot,50,50,50,39,108,110,2,6,6,15
+295,295.0,296.0,2023-32BragantinoCorinthians,32,2023/11/05 17:00,Bragantino,Corinthians,1,0,10,6,1,2,15,7,29' - 1st Goal - Helinho (Bragantino) - Shot,56,44,77,35,128,92,6,2,13,7
+296,296.0,297.0,2023-32Fortaleza ECFlamengo,32,2023/11/05 17:00,Fortaleza EC,Flamengo,0,2,4,3,1,3,3,0,45' - 1st Goal - Pedro (Flamengo) - Shot,57,43,58,33,125,99,4,5,14,2
+297,297.0,298.0,2023-32CruzeiroInternacional,32,2023/11/05 17:00,Cruzeiro,Internacional,1,2,8,1,2,1,2,0,14' - 1st Goal - Mauricio (Internacional) - Shot,65,35,71,28,156,65,5,3,15,6
+298,298.0,299.0,2023-32PalmeirasAthletico Paranaense,32,2023/11/04 21:30,Palmeiras,Athletico Paranaense,1,0,2,2,3,4,0,0,6' - 1st Goal - Endrick (Palmeiras) - Shot,48,52,42,40,89,118,6,2,12,12
+299,299.0,300.0,2023-32América MineiroAtlético Mineiro,32,2023/11/04 19:30,América Mineiro,Atlético Mineiro,1,1,0,4,2,2,1,1,66' - 1st Goal - Jemerson (America MG) - Own Goal,40,60,36,48,109,138,4,6,8,9
+300,300.0,301.0,2023-32GrêmioEC Bahia,32,2023/11/04 19:30,Grêmio,EC Bahia,1,0,5,4,2,4,0,0,70' - 1st Goal - Suarez (Gremio) - Shot,41,59,41,39,124,114,3,5,4,14
+301,301.0,302.0,2023-31São PauloCruzeiro,31,2023/11/02 20:00,São Paulo,Cruzeiro,1,0,3,4,1,2,0,0,84' - 1st Goal - Luciano (Sao Paulo) - Header,55,45,38,22,128,107,5,4,9,15
+302,302.0,303.0,2023-31GoiásBragantino,31,2023/11/02 18:00,Goiás,Bragantino,0,2,10,7,3,3,0,0,45' - 1st Goal - Borbas (Bragantino) - Shot,42,58,46,61,74,108,5,7,15,16
+303,303.0,304.0,2023-31Cuiabá ECVasco da Gama,31,2023/11/02 17:00,Cuiabá EC,Vasco da Gama,0,2,5,1,2,1,0,0,57' - 1st Goal - Gabriel Pec (Vasco da Gama) - Header,51,49,58,35,123,88,2,3,11,7
+304,304.0,305.0,2023-31Atlético MineiroFortaleza EC,31,2023/11/01 21:30,Atlético Mineiro,Fortaleza EC,3,1,0,4,0,2,0,0,16' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,57,43,48,23,128,93,4,2,7,6
+305,305.0,306.0,2023-31BotafogoPalmeiras,31,2023/11/01 21:30,Botafogo,Palmeiras,3,4,2,6,5,4,1,0,21' - 1st Goal - Carlos Eduardo (Botafogo) - Shot,40,60,25,52,80,95,8,6,10,9
+306,306.0,307.0,2023-31FlamengoSantos,31,2023/11/01 20:00,Flamengo,Santos,1,2,1,6,2,2,2,0,21' - 1st Goal - Pedro (Flamengo) - Shot,60,40,25,40,124,87,4,5,4,10
+307,307.0,308.0,2023-31CoritibaGrêmio,31,2023/11/01 20:00,Coritiba,Grêmio,1,2,6,11,2,2,1,0,27' - 1st Goal - Villasanti (Gremio) - Shot (Assist: Everton),52,48,42,62,119,115,2,4,10,15
+308,308.0,309.0,2023-31CorinthiansAthletico Paranaense,31,2023/11/01 19:00,Corinthians,Athletico Paranaense,1,0,1,7,1,2,0,0,64' - 1st Goal - Yuri Alberto (Corinthians) - Header,44,56,33,57,92,119,4,3,9,16
+309,309.0,310.0,2023-31InternacionalAmérica Mineiro,31,2023/11/01 19:00,Internacional,América Mineiro,1,1,3,5,0,2,0,0,15' - 1st Goal - Valencia (Internacional) - Header,56,44,49,37,120,119,4,2,11,9
+310,310.0,311.0,2023-31EC BahiaFluminense,31,2023/10/31 19:00,EC Bahia,Fluminense,1,0,2,4,2,3,0,0,40' - 1st Goal - Everaldo (Bahia) - Header,45,55,32,49,89,124,5,4,3,13
+311,311.0,312.0,2023-30BotafogoCuiabá EC,30,2023/10/29 20:00,Botafogo,Cuiabá EC,0,1,7,2,1,5,0,0,53' - 1st Goal - Pitta (Cuiaba) -,67,33,99,24,131,83,8,1,23,5
+312,312.0,313.0,2023-30CorinthiansSantos,30,2023/10/29 18:30,Corinthians,Santos,1,1,10,3,6,1,0,0,57' - 1st Goal - Jean Lucas (Corinthians) - Own Goal,61,39,49,43,111,100,7,3,10,7
+313,313.0,314.0,2023-30InternacionalCoritiba,30,2023/10/29 18:30,Internacional,Coritiba,3,4,5,1,6,5,1,0,28' - 1st Goal - Mauricio Garcez (Coritiba) - Shot,62,38,54,24,101,75,10,7,8,5
+314,314.0,315.0,2023-30GoiásVasco da Gama,30,2023/10/29 16:00,Goiás,Vasco da Gama,1,1,7,2,2,4,0,1,58' - 1st Goal - Vegetti (Vasco da Gama) - Shot,44,56,59,44,85,86,6,2,12,3
+315,315.0,316.0,2023-30Athletico ParanaenseSão Paulo,30,2023/10/29 16:00,Athletico Paranaense,São Paulo,1,1,4,3,1,5,0,0,7' - 1st Goal - Pablo (Athletico Paranaense) - Header,43,57,42,11,105,86,5,2,11,3
+316,316.0,317.0,2023-30Atlético MineiroFluminense,30,2023/10/28 21:00,Atlético Mineiro,Fluminense,2,0,9,4,2,1,0,0,62' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,47,53,52,28,109,79,3,3,15,8
+317,317.0,318.0,2023-30América MineiroGrêmio,30,2023/10/28 19:00,América Mineiro,Grêmio,3,4,5,7,0,2,0,0,3' - 1st Goal - Rodriguinho (America MG) - Shot,43,57,43,49,88,117,6,11,9,6
+318,318.0,319.0,2023-30PalmeirasEC Bahia,30,2023/10/28 19:00,Palmeiras,EC Bahia,1,0,6,1,1,3,0,1,38' - 1st Goal - Veiga (Palmeiras) - Shot,62,38,63,42,149,79,9,1,17,4
+319,319.0,320.0,2023-29SantosCoritiba,29,2023/10/26 21:30,Santos,Coritiba,2,1,11,2,2,4,0,1,4' - 1st Goal - Joaquim (Santos) - Header,64,36,80,29,117,76,7,2,17,1
+320,320.0,321.0,2023-29Vasco da GamaInternacional,29,2023/10/26 19:00,Vasco da Gama,Internacional,1,2,7,1,3,4,2,0,20' - 1st Goal - Mauricio (Internacional) - Shot,53,47,62,26,118,100,6,5,9,4
+321,321.0,322.0,2023-29Cuiabá ECCorinthians,29,2023/10/25 21:30,Cuiabá EC,Corinthians,0,1,6,5,1,3,0,0,78' - 1st Goal - Romero (Corinthians) -,49,51,68,34,128,91,2,5,15,4
+322,322.0,323.0,2023-29GrêmioFlamengo,29,2023/10/25 21:30,Grêmio,Flamengo,3,2,6,1,3,4,0,0,42' - 1st Goal - Everton (Flamengo) - Shot,37,63,58,46,102,98,4,4,7,4
+323,323.0,324.0,2023-29PalmeirasSão Paulo,29,2023/10/25 20:00,Palmeiras,São Paulo,5,0,5,0,3,3,0,1,16' - 1st Goal - Breno (Palmeiras) - Shot,47,53,33,13,91,66,8,0,4,3
+324,324.0,325.0,2023-29CruzeiroEC Bahia,29,2023/10/25 20:00,Cruzeiro,EC Bahia,3,0,1,2,2,1,0,0,19' - 1st Goal - Kanu (Cruzeiro) - Own Goal,40,60,43,45,85,117,6,0,9,6
+325,325.0,326.0,2023-29BragantinoAtlético Mineiro,29,2023/10/25 19:00,Bragantino,Atlético Mineiro,1,2,17,5,2,4,0,0,36' - 1st Goal - Hulk (Atletico Mineiro) - Penalty,58,42,90,32,112,78,3,5,8,4
+326,326.0,327.0,2023-29Athletico ParanaenseAmérica Mineiro,29,2023/10/25 19:00,Athletico Paranaense,América Mineiro,3,2,14,5,0,1,0,0,12' - 1st Goal - Mastriani (America MG) - Shot,58,42,74,29,141,85,8,6,14,6
+327,327.0,328.0,2023-29FluminenseGoiás,29,2023/10/25 19:00,Fluminense,Goiás,5,3,6,1,4,3,0,0,5' - 1st Goal - Allano (Goias) - Shot,65,35,54,32,104,81,8,4,12,5
+328,328.0,329.0,2023-28CorinthiansAmérica Mineiro,28,2023/10/22 18:30,Corinthians,América Mineiro,1,1,4,4,2,2,1,0,38' - 1st Goal - Benitez (America MG) - Shot,70,30,56,46,142,98,6,4,14,9
+329,329.0,330.0,2023-28BragantinoFluminense,28,2023/10/22 18:30,Bragantino,Fluminense,1,0,7,3,3,2,0,0,17' - 1st Goal - Eduardo Sasha (Bragantino) - Penalty,42,58,53,37,104,74,2,5,19,7
+330,330.0,331.0,2023-28CoritibaPalmeiras,28,2023/10/22 18:30,Coritiba,Palmeiras,0,2,3,6,1,1,0,0,33' - 1st Goal - Gomez (Palmeiras) - Header,46,54,43,43,109,101,3,6,10,13
+331,331.0,332.0,2023-28FlamengoVasco da Gama,28,2023/10/22 16:00,Flamengo,Vasco da Gama,1,0,7,8,1,2,0,0,76' - 1st Goal - Gerson (Flamengo) - Shot,47,53,38,46,97,112,5,7,5,10
+332,332.0,333.0,2023-28InternacionalSantos,28,2023/10/22 16:00,Internacional,Santos,7,1,3,6,1,1,0,0,1' - 1st Goal - Kevyson (Internacional) - Own Goal,52,48,23,30,87,96,8,3,6,6
+333,333.0,334.0,2023-28Atlético MineiroCruzeiro,28,2023/10/22 16:00,Atlético Mineiro,Cruzeiro,0,1,1,7,3,3,0,0,87' - 1st Goal - Jemerson (Cruzeiro) - Own Goal,54,46,31,46,95,97,1,4,8,10
+334,334.0,335.0,2023-28BotafogoAthletico Paranaense,28,2023/10/22 15:00,Botafogo,Athletico Paranaense,1,1,6,3,2,1,0,0,24' - 1st Goal - Tiquinho Soares (Botafogo) - Shot,61,39,68,31,122,81,5,2,4,8
+335,335.0,336.0,2023-28São PauloGrêmio,28,2023/10/21 18:30,São Paulo,Grêmio,3,0,6,3,1,3,1,2,21' - 1st Goal - Araujo (Sao Paulo) - Header,58,42,56,28,113,79,8,2,12,1
+336,336.0,337.0,2023-28EC BahiaFortaleza EC,28,2023/10/21 18:30,EC Bahia,Fortaleza EC,2,0,7,2,5,3,0,0,24' - 1st Goal - Kanu (Bahia) -,49,51,35,36,95,96,3,5,13,5
+337,337.0,338.0,2023-28Cuiabá ECGoiás,28,2023/10/21 18:30,Cuiabá EC,Goiás,1,1,13,2,1,4,0,0,45+8' - 1st Goal - Guilherme (Goias) - Penalty,60,40,69,20,124,77,5,3,11,7
+338,338.0,339.0,2023-27FluminenseCorinthians,27,2023/10/19 21:30,Fluminense,Corinthians,3,3,15,1,4,3,0,0,10' - 1st Goal - Yuri Alberto (Corinthians) - Shot,70,30,103,14,170,53,10,3,14,4
+339,339.0,340.0,2023-27SantosBragantino,27,2023/10/19 20:00,Santos,Bragantino,1,3,5,4,4,1,0,0,9' - 1st Goal - Eduardo Sasha (Bragantino) - Header,47,53,47,39,106,138,7,9,19,6
+340,340.0,341.0,2023-27PalmeirasAtlético Mineiro,27,2023/10/19 19:00,Palmeiras,Atlético Mineiro,0,2,7,2,6,3,0,0,2' - 1st Goal - Hulk (Atletico Mineiro) - Shot,57,43,76,27,122,91,4,3,8,11
+341,341.0,342.0,2023-27CruzeiroFlamengo,27,2023/10/19 19:00,Cruzeiro,Flamengo,0,2,9,3,3,2,0,0,39' - 1st Goal - Ayrton Lucas (Flamengo) - Shot,49,51,52,28,103,105,5,2,6,7
+342,342.0,343.0,2023-27Vasco da GamaFortaleza EC,27,2023/10/18 21:30,Vasco da Gama,Fortaleza EC,1,0,6,6,3,2,0,0,58' - 1st Goal - Payet (Vasco da Gama) - Shot,48,52,42,49,122,98,8,4,10,8
+343,343.0,344.0,2023-27EC BahiaInternacional,27,2023/10/18 21:30,EC Bahia,Internacional,1,0,5,3,1,1,0,1,44' - 1st Goal - Gabriel Teixeira (Bahia) - Shot,47,53,45,50,94,115,4,1,10,12
+344,344.0,345.0,2023-27GoiásSão Paulo,27,2023/10/18 21:30,Goiás,São Paulo,2,0,6,3,4,3,0,0,10' - 1st Goal - Hugo (Goias) - Shot,33,67,43,83,54,152,3,3,4,5
+345,345.0,346.0,2023-27América MineiroBotafogo,27,2023/10/18 20:00,América Mineiro,Botafogo,1,2,12,1,1,1,0,0,22' - 1st Goal - Junior Santos (Botafogo) - Shot,47,53,68,43,106,115,7,2,17,4
+346,346.0,347.0,2023-27CoritibaCuiabá EC,27,2023/10/18 20:00,Coritiba,Cuiabá EC,0,3,4,4,0,2,0,0,24' - 1st Goal - Deyverson (Cuiaba) - Header,64,36,65,24,142,105,3,6,16,2
+347,347.0,348.0,2023-27GrêmioAthletico Paranaense,27,2023/10/18 19:00,Grêmio,Athletico Paranaense,1,2,4,8,2,6,1,0,7' - 1st Goal - Besozzi (Gremio) - Shot,50,50,55,61,114,140,5,7,6,13
+348,348.0,349.0,2023-26Cuiabá ECCruzeiro,26,2023/10/14 21:00,Cuiabá EC,Cruzeiro,0,0,5,5,0,3,0,0,,48,52,64,57,99,97,2,2,8,6
+349,349.0,350.0,2023-26Athletico ParanaenseBragantino,26,2023/10/08 18:30,Athletico Paranaense,Bragantino,1,1,8,7,2,4,0,0,34' - 1st Goal - Ramires (Bragantino) - Shot,42,58,34,49,95,103,6,3,16,9
+350,350.0,351.0,2023-26Atlético MineiroCoritiba,26,2023/10/08 18:30,Atlético Mineiro,Coritiba,1,2,2,5,2,2,0,0,59' - 1st Goal - Hulk (Atletico Mineiro) - Header,62,38,68,31,133,100,3,4,10,5
+351,351.0,352.0,2023-26Fortaleza ECAmérica Mineiro,26,2023/10/08 18:30,Fortaleza EC,América Mineiro,3,2,8,2,2,1,0,0,18' - 1st Goal - Mastriani (America MG) - Penalty,61,39,60,28,119,80,5,3,13,12
+352,352.0,353.0,2023-26InternacionalGrêmio,26,2023/10/08 16:00,Internacional,Grêmio,3,2,4,1,6,4,6,4,6' - 1st Goal - Valencia (Internacional) - Shot,46,54,32,55,97,97,7,2,9,6
+353,353.0,354.0,2023-26PalmeirasSantos,26,2023/10/08 16:00,Palmeiras,Santos,1,2,6,2,2,3,7,1,43' - 1st Goal - Ze Rafael (Palmeiras) - Header,70,30,48,34,143,68,6,10,18,2
+354,354.0,355.0,2023-26FluminenseBotafogo,26,2023/10/08 16:00,Fluminense,Botafogo,0,2,3,2,2,2,3,1,20' - 1st Goal - Junior Santos (Botafogo) - Shot,66,34,65,36,137,65,5,5,14,8
+355,355.0,356.0,2023-26CorinthiansFlamengo,26,2023/10/07 21:00,Corinthians,Flamengo,1,1,2,8,3,3,0,0,55' - 1st Goal - Gerson (Flamengo) - Shot (Assist: Everton Ribeiro),42,58,45,51,94,126,5,7,9,13
+356,356.0,357.0,2023-26Vasco da GamaSão Paulo,26,2023/10/07 18:30,Vasco da Gama,São Paulo,0,0,7,3,3,1,0,0,,39,61,45,32,101,100,2,4,9,8
+357,357.0,358.0,2023-26GoiásEC Bahia,26,2023/10/07 16:00,Goiás,EC Bahia,4,6,6,4,2,2,0,0,15' - 1st Goal - Everaldo (Bahia) - Shot,63,37,72,16,139,54,6,9,16,4
+358,358.0,359.0,2023-25BotafogoGoiás,25,2023/10/02 20:00,Botafogo,Goiás,1,1,8,3,4,4,0,0,27' - 1st Goal - Halter (Goias) - Header,60,40,62,30,126,112,6,3,12,5
+359,359.0,360.0,2023-25BragantinoPalmeiras,25,2023/10/01 18:30,Bragantino,Palmeiras,2,1,6,4,4,2,0,0,15' - 1st Goal - Endrick (Palmeiras) - Shot (Assist: Jhonatan),68,32,69,31,137,56,8,3,14,7
+360,360.0,361.0,2023-25SantosVasco da Gama,25,2023/10/01 16:00,Santos,Vasco da Gama,4,1,5,11,5,1,1,1,15' - 1st Goal - Marcos Leonardo (Santos) - Shot,35,65,52,54,73,115,5,5,12,8
+361,361.0,362.0,2023-25CoritibaAthletico Paranaense,25,2023/10/01 16:00,Coritiba,Athletico Paranaense,2,0,2,11,2,4,0,0,14' - 1st Goal - Victor Luis (Coritiba) - Free Kick,36,64,24,43,81,106,3,5,4,6
+362,362.0,363.0,2023-25CruzeiroAmérica Mineiro,25,2023/10/01 16:00,Cruzeiro,América Mineiro,1,1,9,7,3,3,1,0,21' - 1st Goal - Luciano Castan (Cruzeiro) - Shot,60,40,67,47,118,90,2,7,16,11
+363,363.0,364.0,2023-25InternacionalAtlético Mineiro,25,2023/09/30 21:00,Internacional,Atlético Mineiro,0,2,4,4,1,1,1,0,73' - 1st Goal - Hulk (Atletico Mineiro) - Shot,64,36,51,23,144,74,4,5,11,3
+364,364.0,365.0,2023-25São PauloCorinthians,25,2023/09/30 18:30,São Paulo,Corinthians,2,1,11,4,5,2,0,0,3' - 1st Goal - Romero (Corinthians) - Shot (Assist: Mendez),54,46,52,28,119,80,8,3,15,4
+365,365.0,366.0,2023-25Cuiabá ECFluminense,25,2023/09/30 18:30,Cuiabá EC,Fluminense,3,0,7,0,3,3,0,1,57' - 1st Goal - Clayson (Cuiaba) - Shot,60,40,60,17,116,64,6,2,10,5
+366,366.0,367.0,2023-25FlamengoEC Bahia,25,2023/09/30 16:00,Flamengo,EC Bahia,1,0,12,2,1,2,0,1,61' - 1st Goal - Pedro (Flamengo) - Penalty,67,33,86,28,128,80,5,4,10,2
+367,367.0,368.0,2023-25Fortaleza ECGrêmio,25,2023/09/30 16:00,Fortaleza EC,Grêmio,1,1,3,7,1,2,0,0,44' - 1st Goal - Thiago Galhardo (Fortaleza) - Penalty,51,49,45,48,122,115,6,3,12,12
+368,368.0,369.0,2023-22São PauloCoritiba,22,2023/09/27 19:00,São Paulo,Coritiba,2,1,4,3,2,3,0,0,30' - 1st Goal - Franco (Sao Paulo) - Shot,64,36,65,36,138,67,6,3,8,5
+369,369.0,370.0,2023-15América MineiroVasco da Gama,15,2023/09/25 20:00,América Mineiro,Vasco da Gama,0,1,3,8,2,2,1,0,90+1' - 1st Goal - Jair (Vasco da Gama) - Shot,34,66,38,76,105,122,8,3,10,12
+370,370.0,371.0,2023-24Atlético MineiroCuiabá EC,24,2023/09/23 21:00,Atlético Mineiro,Cuiabá EC,1,0,6,3,3,3,0,0,44' - 1st Goal - Paulinho (Atletico Mineiro) -,64,36,55,33,136,75,3,3,4,6
+371,371.0,372.0,2023-24CorinthiansBotafogo,24,2023/09/22 20:00,Corinthians,Botafogo,1,0,6,1,4,4,0,1,59' - 1st Goal - Gil (Corinthians) - Shot,66,34,59,35,147,90,5,2,14,7
+372,372.0,373.0,2023-24GrêmioPalmeiras,24,2023/09/21 21:30,Grêmio,Palmeiras,1,0,2,11,4,3,1,0,10' - 1st Goal - Joao Pedro (Gremio) - Shot,37,63,25,62,77,124,2,4,5,14
+373,373.0,374.0,2023-24Athletico ParanaenseInternacional,24,2023/09/21 19:30,Athletico Paranaense,Internacional,2,1,7,5,3,5,0,0,25' - 1st Goal - Erick (Athletico Paranaense) -,44,56,28,34,103,98,6,4,9,8
+374,374.0,375.0,2023-24Vasco da GamaCoritiba,24,2023/09/21 19:00,Vasco da Gama,Coritiba,5,1,6,0,1,3,0,0,8' - 1st Goal - Ze Gabriel (Vasco da Gama) - Header,54,46,53,31,95,93,12,3,7,5
+375,375.0,376.0,2023-24São PauloFortaleza EC,24,2023/09/20 21:30,São Paulo,Fortaleza EC,1,2,9,0,3,6,0,0,16' - 1st Goal - Jose Welison (Fortaleza) - Header,73,27,70,16,166,59,7,4,6,3
+376,376.0,377.0,2023-24FluminenseCruzeiro,24,2023/09/20 21:30,Fluminense,Cruzeiro,1,0,7,3,6,1,0,0,67' - 1st Goal - Fernandez (Fluminense) - Free Kick,56,44,45,31,129,78,4,3,8,4
+377,377.0,378.0,2023-24GoiásFlamengo,24,2023/09/20 19:00,Goiás,Flamengo,0,0,3,2,1,3,0,0,,35,65,33,48,87,140,1,2,6,8
+378,378.0,379.0,2023-24América MineiroBragantino,24,2023/09/19 21:30,América Mineiro,Bragantino,0,2,2,14,1,2,0,0,36' - 1st Goal - Jadsom (Bragantino) - Shot,36,64,28,86,76,152,2,6,5,15
+379,379.0,380.0,2023-15CorinthiansGrêmio,15,2023/09/18 21:00,Corinthians,Grêmio,4,4,6,4,1,1,0,0,21' - 1st Goal - Nathan (Gremio) - Shot (Assist: Cristaldo),54,46,47,38,84,109,8,8,15,9
+380,380.0,381.0,2023-24EC BahiaSantos,24,2023/09/18 20:00,EC Bahia,Santos,1,2,6,8,1,1,0,0,60' - 1st Goal - Candido (Bahia) - Shot,63,37,50,34,122,78,5,7,14,9
+381,381.0,382.0,2023-23Atlético MineiroBotafogo,23,2023/09/16 21:00,Atlético Mineiro,Botafogo,1,0,5,3,2,1,0,0,81' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,41,59,27,33,90,113,6,0,7,7
+382,382.0,383.0,2023-23Vasco da GamaFluminense,23,2023/09/16 16:00,Vasco da Gama,Fluminense,4,2,4,11,4,1,0,0,23' - 1st Goal - Praxedes (Vasco da Gama) - Header,28,72,31,111,55,145,4,8,5,11
+383,383.0,384.0,2023-23PalmeirasGoiás,23,2023/09/15 21:30,Palmeiras,Goiás,1,0,6,3,3,2,0,1,90+6' - 1st Goal - Breno (Palmeiras) - Shot,67,33,65,19,158,70,6,3,12,5
+384,384.0,385.0,2023-23Cuiabá ECAmérica Mineiro,23,2023/09/15 20:00,Cuiabá EC,América Mineiro,2,2,9,1,1,4,0,1,11' - 1st Goal - Rodriguinho (America MG) - Shot,63,37,63,30,140,97,8,3,12,4
+385,385.0,386.0,2023-23BragantinoGrêmio,23,2023/09/14 21:30,Bragantino,Grêmio,2,0,5,1,4,2,0,0,20' - 1st Goal - Joao Pedro (Bragantino) - Own Goal,59,41,63,34,150,83,4,4,12,7
+386,386.0,387.0,2023-23CoritibaEC Bahia,23,2023/09/14 20:00,Coritiba,EC Bahia,2,4,7,2,3,1,0,0,2' - 1st Goal - Gomez (Coritiba) - Shot,55,45,40,24,127,72,6,10,9,8
+387,387.0,388.0,2023-23Fortaleza ECCorinthians,23,2023/09/14 19:00,Fortaleza EC,Corinthians,2,1,6,3,1,2,0,0,26' - 1st Goal - Lucero (Fortaleza) - Shot,52,48,59,38,134,71,6,2,17,4
+388,388.0,389.0,2023-23SantosCruzeiro,23,2023/09/14 19:00,Santos,Cruzeiro,0,3,8,9,3,2,0,0,41' - 1st Goal - Matheus Jussa (Cruzeiro) - Header,55,45,77,41,106,96,1,7,11,7
+389,389.0,390.0,2023-23InternacionalSão Paulo,23,2023/09/13 21:30,Internacional,São Paulo,2,1,4,7,5,3,0,0,45+4' - 1st Goal - Calleri (Sao Paulo) - Penalty,43,57,45,45,114,113,5,3,10,8
+390,390.0,391.0,2023-23FlamengoAthletico Paranaense,23,2023/09/13 21:30,Flamengo,Athletico Paranaense,0,3,8,2,2,2,1,0,27' - 1st Goal - Caca (Athletico Paranaense) - Shot,58,42,45,24,127,72,5,9,8,6
+391,391.0,392.0,2023-22EC BahiaVasco da Gama,22,2023/09/03 18:30,EC Bahia,Vasco da Gama,1,1,6,0,2,2,0,1,45' - 1st Goal - Ademir Santos (Bahia) - Shot,54,46,41,29,141,96,4,1,7,5
+392,392.0,393.0,2023-22América MineiroSantos,22,2023/09/03 18:30,América Mineiro,Santos,2,0,3,5,1,4,0,1,29' - 1st Goal - Rodrigo Varanda (America MG) - Shot,37,63,40,64,118,125,7,2,5,8
+393,393.0,394.0,2023-22CruzeiroBragantino,22,2023/09/03 18:30,Cruzeiro,Bragantino,0,0,8,5,1,5,0,0,,50,50,62,35,72,116,3,5,12,8
+394,394.0,395.0,2023-22CorinthiansPalmeiras,22,2023/09/03 16:00,Corinthians,Palmeiras,0,0,2,11,2,3,1,1,,44,56,28,70,84,131,2,4,4,12
+395,395.0,396.0,2023-22FluminenseFortaleza EC,22,2023/09/03 16:00,Fluminense,Fortaleza EC,1,0,5,7,4,3,0,0,90+2' - 1st Goal - Diogo Barbosa (Fluminense) - Shot,64,36,45,31,111,98,5,5,8,15
+396,396.0,397.0,2023-22GrêmioCuiabá EC,22,2023/09/03 11:00,Grêmio,Cuiabá EC,2,0,2,8,2,1,0,0,30' - 1st Goal - Suarez (Gremio) - Shot,42,58,33,51,81,130,5,3,6,14
+397,397.0,398.0,2023-22BotafogoFlamengo,22,2023/09/02 21:00,Botafogo,Flamengo,1,2,12,6,2,3,0,0,2' - 1st Goal - Marlon Freitas (Flamengo) - Own Goal,47,53,53,39,116,105,7,4,10,8
+398,398.0,399.0,2023-22Athletico ParanaenseAtlético Mineiro,22,2023/09/02 16:00,Athletico Paranaense,Atlético Mineiro,1,1,12,7,2,3,1,0,6' - 1st Goal - Paulinho (Atletico Mineiro) - Header,56,44,61,43,127,93,6,7,17,2
+399,399.0,400.0,2023-22GoiásInternacional,22,2023/09/02 16:00,Goiás,Internacional,0,0,5,5,2,3,2,1,,39,61,37,25,105,117,2,2,9,9
+400,400.0,401.0,2023-21GrêmioCruzeiro,21,2023/08/27 19:00,Grêmio,Cruzeiro,3,0,6,5,3,3,0,0,29' - 1st Goal - Suarez (Gremio) - Shot,40,60,36,53,94,118,4,1,6,5
+401,401.0,402.0,2023-21PalmeirasVasco da Gama,21,2023/08/27 18:30,Palmeiras,Vasco da Gama,1,0,9,2,2,2,0,0,65' - 1st Goal - Raphael Veiga (Palmeiras) - Free Kick,56,44,60,31,133,104,5,2,8,2
+402,402.0,403.0,2023-21Fortaleza ECCoritiba,21,2023/08/27 18:30,Fortaleza EC,Coritiba,3,1,2,3,3,6,0,0,42' - 1st Goal - Lucero (Fortaleza) - Penalty,53,47,38,26,120,90,6,2,6,8
+403,403.0,404.0,2023-21Athletico ParanaenseFluminense,21,2023/08/27 18:30,Athletico Paranaense,Fluminense,2,2,2,8,3,3,1,0,13' - 1st Goal - Caca (Athletico Paranaense) - Shot,28,72,19,79,59,122,5,10,7,13
+404,404.0,405.0,2023-21Atlético MineiroSantos,21,2023/08/27 16:00,Atlético Mineiro,Santos,2,0,5,2,5,2,0,0,12' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,56,44,54,29,88,67,6,0,9,13
+405,405.0,406.0,2023-21BotafogoEC Bahia,21,2023/08/27 16:00,Botafogo,EC Bahia,3,0,4,7,2,3,0,0,4' - 1st Goal - Costa (Botafogo) - Shot,44,56,32,51,90,144,5,6,5,13
+406,406.0,407.0,2023-21América MineiroSão Paulo,21,2023/08/27 16:00,América Mineiro,São Paulo,2,1,4,6,5,1,1,0,61' - 1st Goal - Mastriani (America MG) - Shot,26,74,36,58,86,145,4,5,5,8
+407,407.0,408.0,2023-21BragantinoCuiabá EC,21,2023/08/27 11:00,Bragantino,Cuiabá EC,2,0,11,4,4,3,0,0,55' - 1st Goal - Borbas (Bragantino) - Shot,64,36,90,26,139,92,4,3,7,3
+408,408.0,409.0,2023-21CorinthiansGoiás,21,2023/08/26 21:00,Corinthians,Goiás,1,1,7,6,3,1,0,0,59' - 1st Goal - Guilherme (Goias) - Penalty,65,35,79,39,122,92,8,5,13,14
+409,409.0,410.0,2023-21FlamengoInternacional,21,2023/08/26 18:30,Flamengo,Internacional,0,0,6,3,2,3,0,0,,59,41,53,25,124,87,4,1,4,3
+410,410.0,411.0,2023-20GoiásAthletico Paranaense,20,2023/08/21 20:00,Goiás,Athletico Paranaense,1,1,4,7,2,4,0,0,39' - 1st Goal - Vitor Roque (Athletico Paranaense) - Shot (Assist: Canobbio),46,54,42,40,86,106,3,5,10,9
+411,411.0,412.0,2023-20EC BahiaBragantino,20,2023/08/20 16:00,EC Bahia,Bragantino,4,0,4,7,2,5,0,0,9' - 1st Goal - Rezende (Bahia) - Shot,48,52,28,49,105,125,7,7,7,4
+412,412.0,413.0,2023-20CoritibaFlamengo,20,2023/08/20 16:00,Coritiba,Flamengo,2,3,4,5,3,3,0,0,15' - 1st Goal - Robson (Coritiba) - Penalty,38,62,39,45,89,104,4,5,11,12
+413,413.0,414.0,2023-20SantosGrêmio,20,2023/08/20 16:00,Santos,Grêmio,2,1,9,4,6,5,0,1,46' - 1st Goal - Cristaldo (Gremio) - Shot,55,45,63,36,102,92,7,3,12,6
+414,414.0,415.0,2023-20Vasco da GamaAtlético Mineiro,20,2023/08/20 11:00,Vasco da Gama,Atlético Mineiro,1,0,3,7,5,3,0,0,5' - 1st Goal - Serginho (Vasco da Gama) - Shot,41,59,43,45,96,128,3,5,13,5
+415,415.0,416.0,2023-20CruzeiroCorinthians,20,2023/08/19 21:00,Cruzeiro,Corinthians,1,1,10,3,3,3,0,0,45' - 1st Goal - Papagaio (Cruzeiro) - Shot (Assist: Bruno Rodrigues),46,54,47,44,100,119,8,2,11,3
+416,416.0,417.0,2023-20Cuiabá ECPalmeiras,20,2023/08/19 18:30,Cuiabá EC,Palmeiras,0,2,9,2,2,6,0,0,31' - 1st Goal - Raphael Veiga (Palmeiras) - Header (Assist: Luan Garcia),52,48,65,43,107,82,2,5,11,13
+417,417.0,418.0,2023-20FluminenseAmérica Mineiro,20,2023/08/19 18:30,Fluminense,América Mineiro,3,1,7,1,1,1,0,0,52' - 1st Goal - Felipe Azevedo (America MG) - Shot (Assist: Rodrigo Varanda),72,28,61,27,138,65,5,3,15,10
+418,418.0,419.0,2023-20InternacionalFortaleza EC,20,2023/08/19 16:00,Internacional,Fortaleza EC,0,1,10,6,4,5,0,0,13' - 1st Goal - Thiago Galhardo (Fortaleza) - Penalty,76,24,59,34,150,69,4,3,15,5
+419,419.0,420.0,2023-20São PauloBotafogo,20,2023/08/19 16:00,São Paulo,Botafogo,0,0,5,2,3,2,0,0,,64,36,40,39,94,107,4,1,9,11
+420,420.0,421.0,2023-19Athletico ParanaenseCuiabá EC,19,2023/08/15 20:00,Athletico Paranaense,Cuiabá EC,2,0,5,3,5,3,0,0,45' - 1st Goal - Canobbio (Athletico Paranaense) - Header,54,46,41,34,93,105,6,1,6,10
+421,421.0,422.0,2023-19BragantinoVasco da Gama,19,2023/08/14 21:00,Bragantino,Vasco da Gama,1,1,7,6,3,5,0,0,32' - 1st Goal - Vegetti (Vasco da Gama) - Penalty,64,36,75,31,148,76,7,4,17,4
+422,422.0,423.0,2023-19PalmeirasCruzeiro,19,2023/08/14 19:00,Palmeiras,Cruzeiro,1,0,3,5,2,3,0,0,90+6' - 1st Goal - Lopez (Palmeiras) - Shot (Assist: Raphael Veiga),52,48,40,27,105,115,4,5,8,8
+423,423.0,424.0,2023-19Fortaleza ECSantos,19,2023/08/13 18:30,Fortaleza EC,Santos,4,0,10,6,2,1,0,0,58' - 1st Goal - Machuca (Fortaleza) - Shot,54,46,56,33,96,74,10,3,15,6
+424,424.0,425.0,2023-19FlamengoSão Paulo,19,2023/08/13 18:30,Flamengo,São Paulo,1,1,8,2,2,6,0,0,38' - 1st Goal - Lucas Moura (Sao Paulo) - Shot (Assist: Franco),54,46,83,25,129,99,7,1,12,7
+425,425.0,426.0,2023-19América MineiroGoiás,19,2023/08/13 16:00,América Mineiro,Goiás,0,1,7,3,0,1,1,0,34' - 1st Goal - Halter (Goias) - Header,66,34,78,32,163,78,2,3,10,3
+426,426.0,427.0,2023-19CorinthiansCoritiba,19,2023/08/13 16:00,Corinthians,Coritiba,3,1,4,2,2,2,0,0,28' - 1st Goal - Murillo (Coritiba) - Own Goal,54,46,41,32,105,91,9,2,7,1
+427,427.0,428.0,2023-19GrêmioFluminense,19,2023/08/13 16:00,Grêmio,Fluminense,2,1,3,8,3,4,0,0,19' - 1st Goal - Cano (Fluminense) - Shot,29,71,35,58,74,127,5,7,8,12
+428,428.0,429.0,2023-19Atlético MineiroEC Bahia,19,2023/08/13 11:00,Atlético Mineiro,EC Bahia,1,0,2,9,2,0,0,0,49' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,39,61,30,68,61,120,4,4,7,10
+429,429.0,430.0,2023-19BotafogoInternacional,19,2023/08/12 21:00,Botafogo,Internacional,3,1,7,3,3,3,0,0,18' - 1st Goal - Mauricio (Internacional) - Shot,50,50,52,21,124,105,10,4,8,5
+430,430.0,431.0,2023-18Cuiabá ECFlamengo,18,2023/08/06 20:00,Cuiabá EC,Flamengo,3,0,10,6,2,0,0,0,46' - 1st Goal - Matheus Alexandre (Cuiaba) - Shot,37,63,46,87,70,122,7,4,10,6
+431,431.0,432.0,2023-18CoritibaBragantino,18,2023/08/06 18:30,Coritiba,Bragantino,0,1,3,4,3,5,0,0,19' - 1st Goal - Marcos Vinicios (Bragantino) - Shot (Assist: Vitinho),50,50,53,48,89,102,2,2,8,8
+432,432.0,433.0,2023-18EC BahiaAmérica Mineiro,18,2023/08/06 18:30,EC Bahia,América Mineiro,3,1,7,2,4,4,0,1,26' - 1st Goal - Everaldo (Bahia) - Shot,66,34,62,20,119,73,7,5,15,1
+433,433.0,434.0,2023-18CruzeiroBotafogo,18,2023/08/06 18:30,Cruzeiro,Botafogo,0,0,8,1,1,2,0,0,,67,33,54,12,153,61,4,1,9,1
+434,434.0,435.0,2023-18São PauloAtlético Mineiro,18,2023/08/06 16:00,São Paulo,Atlético Mineiro,0,2,9,3,6,5,0,0,4' - 1st Goal - Hulk (Atletico Mineiro) - Free Kick,68,32,79,23,152,65,4,2,15,6
+435,435.0,436.0,2023-18Vasco da GamaGrêmio,18,2023/08/06 16:00,Vasco da Gama,Grêmio,1,0,5,7,1,1,0,0,80' - 1st Goal - Vegetti (Vasco da Gama) - Header (Assist: Gabriel Pec),53,47,38,66,115,123,5,3,6,8
+436,436.0,437.0,2023-18FluminensePalmeiras,18,2023/08/05 21:00,Fluminense,Palmeiras,2,1,0,8,5,2,1,0,15' - 1st Goal - Arias (Fluminense) - Penalty,55,45,19,63,53,106,4,4,5,10
+437,437.0,438.0,2023-18InternacionalCorinthians,18,2023/08/05 18:30,Internacional,Corinthians,2,2,1,4,4,3,1,0,13' - 1st Goal - Renato Augusto (Corinthians) - Shot,55,45,52,32,137,93,5,3,11,6
+438,438.0,439.0,2023-18GoiásFortaleza EC,18,2023/08/05 18:30,Goiás,Fortaleza EC,1,0,5,2,1,3,0,0,53' - 1st Goal - Tobias Figueiredo (Goias) - Own Goal,36,64,47,65,84,133,7,5,5,6
+439,439.0,440.0,2023-18SantosAthletico Paranaense,18,2023/08/05 16:00,Santos,Athletico Paranaense,1,1,3,3,3,2,0,0,30' - 1st Goal - Pablo (Athletico Paranaense) - Shot,64,36,57,22,116,80,3,2,7,3
+440,440.0,441.0,2023-17GoiásGrêmio,17,2023/07/30 18:30,Goiás,Grêmio,1,1,6,5,4,2,0,0,77' - 1st Goal - Matheus Babi (Goias) - Header,48,52,46,44,105,101,2,2,13,8
+441,441.0,442.0,2023-17BotafogoCoritiba,17,2023/07/30 16:00,Botafogo,Coritiba,4,1,7,3,1,3,0,0,3' - 1st Goal - Sauer (Botafogo) - Shot,56,44,51,28,117,94,8,6,5,4
+442,442.0,443.0,2023-17América MineiroPalmeiras,17,2023/07/30 16:00,América Mineiro,Palmeiras,1,4,5,4,2,1,0,0,18' - 1st Goal - Murilo (Palmeiras) - Header,49,51,59,37,123,97,7,8,8,7
+443,443.0,444.0,2023-17São PauloEC Bahia,17,2023/07/30 11:00,São Paulo,EC Bahia,0,0,10,5,0,4,0,0,,65,35,69,22,157,98,9,4,6,10
+444,444.0,445.0,2023-17Atlético MineiroFlamengo,17,2023/07/29 21:00,Atlético Mineiro,Flamengo,1,2,7,2,3,5,0,0,33' - 1st Goal - Paulinho (Atletico Mineiro) - Shot,43,57,9,23,45,70,2,4,8,0
+445,445.0,446.0,2023-17Fortaleza ECBragantino,17,2023/07/29 18:30,Fortaleza EC,Bragantino,0,3,2,9,2,3,0,0,23' - 1st Goal - Candido (Bragantino) - Header,49,51,36,54,127,115,2,10,8,11
+446,446.0,447.0,2023-17CorinthiansVasco da Gama,17,2023/07/29 18:30,Corinthians,Vasco da Gama,3,1,0,6,2,0,0,0,19' - 1st Goal - Maycon (Corinthians) - Shot,53,47,48,55,108,114,6,6,6,17
+447,447.0,448.0,2023-17FluminenseSantos,17,2023/07/29 16:00,Fluminense,Santos,1,0,6,2,6,6,0,0,77' - 1st Goal - Cano (Fluminense) - Shot,67,33,71,19,133,45,1,0,14,4
+448,448.0,449.0,2023-17InternacionalCuiabá EC,17,2023/07/29 16:00,Internacional,Cuiabá EC,1,2,7,5,4,2,1,0,16' - 1st Goal - Bustos (Internacional) - Shot,62,38,65,28,133,100,4,5,14,7
+449,449.0,450.0,2023-17Athletico ParanaenseCruzeiro,17,2023/07/29 16:00,Athletico Paranaense,Cruzeiro,3,3,7,5,1,4,0,0,8' - 1st Goal - Arthur Gomes (Cruzeiro) - Header,52,48,32,56,80,93,6,8,9,5
+450,450.0,451.0,2023-16CoritibaFluminense,16,2023/07/24 19:00,Coritiba,Fluminense,2,0,7,11,1,1,0,0,24' - 1st Goal - Robson (Coritiba) - Penalty,27,73,32,93,48,159,5,3,3,11
+451,451.0,452.0,2023-16Vasco da GamaAthletico Paranaense,16,2023/07/23 18:30,Vasco da Gama,Athletico Paranaense,0,2,8,2,2,3,0,1,73' - 1st Goal - (Athletico Paranaense) -,56,44,66,33,114,67,3,3,14,7
+452,452.0,453.0,2023-16BragantinoInternacional,16,2023/07/23 16:00,Bragantino,Internacional,0,0,13,4,3,2,0,0,,55,45,62,32,120,102,4,5,18,6
+453,453.0,454.0,2023-16SantosBotafogo,16,2023/07/23 16:00,Santos,Botafogo,2,2,2,8,3,3,0,0,24' - 1st Goal - Marcos Leonardo (Santos) - Shot,36,64,31,44,77,118,2,5,4,12
+454,454.0,455.0,2023-16CruzeiroGoiás,16,2023/07/23 16:00,Cruzeiro,Goiás,0,1,13,1,4,5,0,0,28' - 1st Goal - Magno (Goias) - Header,69,31,92,39,138,100,1,2,14,5
+455,455.0,456.0,2023-16GrêmioAtlético Mineiro,16,2023/07/22 21:00,Grêmio,Atlético Mineiro,1,0,3,8,3,4,0,0,11' - 1st Goal - Ronald (Gremio) - Header,38,62,34,62,111,142,2,4,4,11
+456,456.0,457.0,2023-16EC BahiaCorinthians,16,2023/07/22 18:30,EC Bahia,Corinthians,0,0,11,5,3,2,0,0,,60,40,77,27,149,91,4,3,15,4
+457,457.0,458.0,2023-16Cuiabá ECSão Paulo,16,2023/07/22 18:30,Cuiabá EC,São Paulo,2,1,2,4,2,5,0,0,66' - 1st Goal - Clayson (Cuiaba) - Shot,29,71,29,39,72,109,5,3,7,5
+458,458.0,459.0,2023-16PalmeirasFortaleza EC,16,2023/07/22 16:00,Palmeiras,Fortaleza EC,3,1,4,4,3,6,0,0,8' - 1st Goal - Richard (Palmeiras) - Shot,50,50,19,18,41,35,4,4,4,2
+459,459.0,460.0,2023-16FlamengoAmérica Mineiro,16,2023/07/22 16:00,Flamengo,América Mineiro,1,1,12,7,2,4,0,0,84' - 1st Goal - Felipe Azevedo (America MG) - Shot,50,50,25,16,37,28,4,4,6,8
+460,460.0,461.0,2023-15GoiásAtlético Mineiro,15,2023/07/17 20:00,Goiás,Atlético Mineiro,0,0,6,4,5,4,0,1,,38,62,47,38,102,106,3,1,13,4
+461,461.0,462.0,2023-15InternacionalPalmeiras,15,2023/07/16 18:30,Internacional,Palmeiras,0,0,4,7,1,3,0,0,,47,53,51,48,91,163,4,5,5,12
+462,462.0,463.0,2023-15Athletico ParanaenseEC Bahia,15,2023/07/16 18:30,Athletico Paranaense,EC Bahia,2,0,5,3,2,1,0,0,24' - 1st Goal - Vitor Roque (Athletico Paranaense) - Shot (Assist: Khellven),52,48,43,35,97,96,7,6,8,2
+463,463.0,464.0,2023-15São PauloSantos,15,2023/07/16 16:00,São Paulo,Santos,4,1,4,3,3,5,0,0,22' - 1st Goal - Calleri (Sao Paulo) - Penalty,64,36,41,32,101,85,7,3,16,6
+464,464.0,465.0,2023-15FluminenseFlamengo,15,2023/07/16 16:00,Fluminense,Flamengo,0,0,8,1,6,5,0,1,,54,46,53,51,102,93,9,4,8,5
+465,465.0,466.0,2023-15Fortaleza ECCuiabá EC,15,2023/07/16 16:00,Fortaleza EC,Cuiabá EC,0,1,10,0,5,4,0,0,19' - 1st Goal - Deyverson (Cuiaba) - Shot,68,32,70,27,136,76,7,1,17,6
+466,466.0,467.0,2023-15CruzeiroCoritiba,15,2023/07/16 11:00,Cruzeiro,Coritiba,0,0,11,8,1,4,0,0,,56,44,46,49,100,105,2,9,10,8
+467,467.0,468.0,2023-15BotafogoBragantino,15,2023/07/15 21:00,Botafogo,Bragantino,2,0,4,11,1,1,0,0,48' - 1st Goal - Carlos Eduardo (Botafogo) - Shot,35,65,28,52,78,153,5,5,7,11
+468,468.0,469.0,2023-14Fortaleza ECAthletico Paranaense,14,2023/07/09 18:30,Fortaleza EC,Athletico Paranaense,1,0,7,2,3,3,0,0,84' - 1st Goal - Yago Pikachu (Fortaleza) - Shot,53,47,66,27,104,102,6,2,14,8
+469,469.0,470.0,2023-14GrêmioBotafogo,14,2023/07/09 18:30,Grêmio,Botafogo,0,2,10,2,2,4,0,0,75' - 1st Goal - Carlos Eduardo (Botafogo) - Shot,51,49,66,33,130,114,4,7,18,9
+470,470.0,471.0,2023-14BragantinoSão Paulo,14,2023/07/09 16:00,Bragantino,São Paulo,0,0,6,4,2,2,0,0,,59,41,68,28,126,72,4,1,21,5
+471,471.0,472.0,2023-14FluminenseInternacional,14,2023/07/09 16:00,Fluminense,Internacional,2,0,7,4,2,3,0,0,25' - 1st Goal - Cano (Fluminense) - Shot,55,45,49,49,119,79,8,0,5,10
+472,472.0,473.0,2023-14SantosGoiás,14,2023/07/09 11:00,Santos,Goiás,4,3,8,13,6,2,0,1,16' - 1st Goal - Marcos Leonardo (Santos) - Shot,34,66,42,58,65,127,6,5,11,15
+473,473.0,474.0,2023-14PalmeirasFlamengo,14,2023/07/08 21:00,Palmeiras,Flamengo,1,1,4,7,2,3,0,0,24' - 1st Goal - Dudu (Palmeiras) - Shot,43,57,42,55,89,125,6,4,8,6
+474,474.0,475.0,2023-14Atlético MineiroCorinthians,14,2023/07/08 18:30,Atlético Mineiro,Corinthians,0,1,10,2,3,2,0,0,40' - 1st Goal - Roger Guedes (Corinthians) -,59,41,59,28,144,98,6,2,21,6
+475,475.0,476.0,2023-14CoritibaAmérica Mineiro,14,2023/07/08 18:30,Coritiba,América Mineiro,3,1,7,8,5,3,0,0,8' - 1st Goal - Juninho (America MG) - Shot,43,57,29,57,81,135,7,4,7,12
+476,476.0,477.0,2023-14Cuiabá ECEC Bahia,14,2023/07/08 16:00,Cuiabá EC,EC Bahia,1,1,5,5,1,3,0,0,18' - 1st Goal - Deyverson (Cuiaba) - Penalty,41,59,37,41,105,109,6,4,5,3
+477,477.0,478.0,2023-14Vasco da GamaCruzeiro,14,2023/07/08 16:00,Vasco da Gama,Cruzeiro,0,1,4,6,2,3,0,0,45+4' - 1st Goal - Machado (Cruzeiro) - Shot,56,44,63,33,118,99,1,5,9,3
+478,478.0,479.0,2023-13GoiásCoritiba,13,2023/07/03 20:00,Goiás,Coritiba,1,2,7,2,4,7,0,0,26' - 1st Goal - Alef Mangueira (Coritiba) -,64,36,69,35,153,94,6,7,11,7
+479,479.0,480.0,2023-13Cuiabá ECSantos,13,2023/07/02 18:30,Cuiabá EC,Santos,3,0,9,5,0,2,0,0,53' - 1st Goal - Deyverson (Cuiaba) - Header (Assist: Ceppelini),48,52,46,32,109,77,6,2,9,4
+480,480.0,481.0,2023-13BotafogoVasco da Gama,13,2023/07/02 16:00,Botafogo,Vasco da Gama,2,0,4,8,2,5,0,0,54' - 1st Goal - Luis Henrique (Botafogo) -,53,47,60,39,129,85,7,4,10,8
+481,481.0,482.0,2023-13Athletico ParanaensePalmeiras,13,2023/07/02 16:00,Athletico Paranaense,Palmeiras,2,2,7,2,4,1,0,1,22' - 1st Goal - Endrick (Palmeiras) -,48,52,52,29,119,111,7,6,21,5
+482,482.0,483.0,2023-13Atlético MineiroAmérica Mineiro,13,2023/07/02 16:00,Atlético Mineiro,América Mineiro,2,2,4,7,2,1,0,0,2' - 1st Goal - Zaracho (Atletico Mineiro) - Shot (Assist: Pavon),46,54,29,54,75,130,5,11,7,13
+483,483.0,484.0,2023-13CorinthiansBragantino,13,2023/07/02 11:00,Corinthians,Bragantino,0,1,4,2,3,2,0,0,17' - 1st Goal - Eduardo Sasha (Bragantino) -,48,52,35,57,99,153,5,5,10,5
+484,484.0,485.0,2023-13InternacionalCruzeiro,13,2023/07/01 21:00,Internacional,Cruzeiro,0,0,2,4,5,3,0,1,,54,46,72,39,108,109,4,3,11,5
+485,485.0,486.0,2023-13FlamengoFortaleza EC,13,2023/07/01 18:30,Flamengo,Fortaleza EC,2,0,5,4,2,0,0,0,14' - 1st Goal - Gabriel Barbosa (Flamengo) - Shot (Assist: De Arrascaeta),59,41,50,43,133,98,4,6,6,9
+486,486.0,487.0,2023-13EC BahiaGrêmio,13,2023/07/01 18:30,EC Bahia,Grêmio,1,2,7,2,3,2,0,0,9' - 1st Goal - Cristaldo (Gremio) - Shot,47,53,41,38,123,119,3,8,12,7
+487,487.0,488.0,2023-13São PauloFluminense,13,2023/07/01 16:00,São Paulo,Fluminense,1,0,12,2,2,2,0,0,87' - 1st Goal - Luciano (Sao Paulo) - Shot,55,45,63,18,128,91,6,1,16,3
+488,488.0,489.0,2023-12Vasco da GamaCuiabá EC,12,2023/06/26 21:00,Vasco da Gama,Cuiabá EC,1,0,4,6,5,3,0,0,77' - 1st Goal - Jair (Vasco da Gama) - Penalty,48,52,51,41,99,126,2,3,6,10
+489,489.0,490.0,2023-12SantosFlamengo,12,2023/06/25 18:30,Santos,Flamengo,2,3,2,7,2,1,0,0,22' - 1st Goal - Everton (Flamengo) -,33,67,20,89,75,175,7,4,6,6
+490,490.0,491.0,2023-12BragantinoGoiás,12,2023/06/25 18:30,Bragantino,Goiás,2,0,10,4,2,2,0,0,7' - 1st Goal - Eduardo Sasha (Bragantino) -,60,40,60,20,116,73,6,0,14,6
+491,491.0,492.0,2023-12América MineiroInternacional,12,2023/06/25 18:30,América Mineiro,Internacional,1,2,3,2,1,1,0,0,19' - 1st Goal - Juninho (America MG) -,39,61,71,43,93,121,3,2,11,5
+492,492.0,493.0,2023-12PalmeirasBotafogo,12,2023/06/25 16:00,Palmeiras,Botafogo,0,1,12,1,0,3,0,0,28' - 1st Goal - Tiquinho Soares (Botafogo) -,64,36,80,24,140,72,4,2,15,4
+493,493.0,494.0,2023-12GrêmioCoritiba,12,2023/06/25 16:00,Grêmio,Coritiba,5,1,8,5,2,4,0,1,34' - 1st Goal - Cristaldo (Gremio) -,50,50,47,33,96,116,7,7,10,9
+494,494.0,495.0,2023-12CruzeiroSão Paulo,12,2023/06/24 21:00,Cruzeiro,São Paulo,1,0,6,5,1,3,0,0,3' - 1st Goal - Rafinha (Cruzeiro) - Own Goal,30,70,52,68,78,129,1,9,6,6
+495,495.0,496.0,2023-12Fortaleza ECAtlético Mineiro,12,2023/06/24 18:30,Fortaleza EC,Atlético Mineiro,2,1,3,8,1,1,0,1,54' - 1st Goal - Pochettino (Fortaleza) -,42,58,27,35,103,117,3,4,6,14
+496,496.0,497.0,2023-12FluminenseEC Bahia,12,2023/06/24 18:30,Fluminense,EC Bahia,2,1,9,10,1,0,1,0,28' - 1st Goal - Mingotti (Bahia) -,48,52,43,53,120,97,10,5,7,10
+497,497.0,498.0,2023-12Athletico ParanaenseCorinthians,12,2023/06/24 16:00,Athletico Paranaense,Corinthians,1,0,5,5,4,2,0,0,36' - 1st Goal - Vitor Roque (Athletico Paranaense) -,35,65,48,60,98,107,7,3,19,9
+498,498.0,499.0,2023-11BragantinoFlamengo,11,2023/06/22 21:30,Bragantino,Flamengo,4,0,17,2,0,0,0,0,40' - 1st Goal - Santos (Bragantino) - Header (Assist: Evangelista),60,40,85,30,156,67,12,0,19,7
+499,499.0,500.0,2023-11Cuiabá ECBotafogo,11,2023/06/22 20:00,Cuiabá EC,Botafogo,0,1,6,2,2,2,0,0,60' - 1st Goal - Tiquinho Soares (Botafogo) -,52,48,60,37,121,115,9,3,14,2
+500,500.0,501.0,2023-11CoritibaInternacional,11,2023/06/22 20:00,Coritiba,Internacional,0,1,10,5,2,4,0,0,66' - 1st Goal - Pedro Henrique (Internacional) -,52,48,37,25,104,106,3,5,13,1
+501,501.0,502.0,2023-11Vasco da GamaGoiás,11,2023/06/22 20:00,Vasco da Gama,Goiás,0,1,8,2,2,3,0,0,73' - 1st Goal - Morelli (Goias) - Shot,60,40,75,32,163,85,6,2,15,7
+502,502.0,503.0,2023-11GrêmioAmérica Mineiro,11,2023/06/22 19:00,Grêmio,América Mineiro,3,1,10,2,0,2,0,1,25' - 1st Goal - Avelar (America MG) - Header (Assist: Martinez),72,28,110,28,170,77,10,2,14,6
+503,503.0,504.0,2023-11EC BahiaPalmeiras,11,2023/06/21 21:30,EC Bahia,Palmeiras,1,0,6,8,3,3,0,0,90+3' - 1st Goal - Thaciano (Bahia) - Shot,46,54,56,37,110,116,2,5,7,6
+504,504.0,505.0,2023-11FluminenseAtlético Mineiro,11,2023/06/21 21:30,Fluminense,Atlético Mineiro,1,1,3,5,2,4,0,0,35' - 1st Goal - Guga (Atletico Mineiro) - Own Goal,49,51,26,42,93,88,4,5,6,9
+505,505.0,506.0,2023-11São PauloAthletico Paranaense,11,2023/06/21 19:00,São Paulo,Athletico Paranaense,2,1,4,4,3,2,0,0,11' - 1st Goal - Vitor Roque (Athletico Paranaense) - Shot,56,44,36,37,116,86,5,3,3,10
+506,506.0,507.0,2023-11CruzeiroFortaleza EC,11,2023/06/21 19:00,Cruzeiro,Fortaleza EC,0,1,5,2,4,4,0,0,80' - 1st Goal - Lucero (Fortaleza) - Shot (Assist: Calebe),68,32,54,29,172,76,3,2,10,8
+507,507.0,508.0,2023-10GoiásFluminense,10,2023/06/11 18:30,Goiás,Fluminense,2,2,6,7,3,3,0,0,2' - 1st Goal - Cano (Fluminense) -,41,59,47,49,86,95,9,3,13,10
+508,508.0,509.0,2023-10FlamengoGrêmio,10,2023/06/11 18:30,Flamengo,Grêmio,3,0,3,7,0,3,0,0,24' - 1st Goal - Everton (Flamengo) -,53,47,45,72,126,106,4,7,10,18
+509,509.0,510.0,2023-10São PauloPalmeiras,10,2023/06/11 16:00,São Paulo,Palmeiras,0,2,8,3,3,1,1,0,11' - 1st Goal - Menino (Palmeiras) -,66,34,72,26,140,63,6,4,17,4
+510,510.0,511.0,2023-10InternacionalVasco da Gama,10,2023/06/11 16:00,Internacional,Vasco da Gama,2,1,7,6,2,3,0,0,3' - 1st Goal - Romulo (Internacional) -,44,56,48,35,89,104,2,4,7,10
+511,511.0,512.0,2023-10América MineiroAthletico Paranaense,10,2023/06/11 11:00,América Mineiro,Athletico Paranaense,2,2,7,3,2,4,0,0,9' - 1st Goal - Vitor Roque (Athletico Paranaense) -,51,49,43,32,126,99,12,4,8,6
+512,512.0,513.0,2023-10BotafogoFortaleza EC,10,2023/06/10 21:00,Botafogo,Fortaleza EC,2,0,7,3,3,3,0,0,45+3' - 1st Goal - Tiquinho Soares (Botafogo) -,55,45,53,19,124,106,8,3,13,6
+513,513.0,514.0,2023-10CorinthiansCuiabá EC,10,2023/06/10 18:30,Corinthians,Cuiabá EC,1,1,8,6,2,3,0,0,55' - 1st Goal - Deyverson (Cuiaba) - Header,61,39,64,26,132,94,9,2,15,8
+514,514.0,515.0,2023-10Atlético MineiroBragantino,10,2023/06/10 18:30,Atlético Mineiro,Bragantino,1,1,7,2,2,3,0,0,17' - 1st Goal - Paulinho (Atletico Mineiro) -,61,39,61,32,146,146,8,3,10,5
+515,515.0,516.0,2023-10EC BahiaCruzeiro,10,2023/06/10 18:30,EC Bahia,Cruzeiro,2,2,6,5,4,1,0,0,18' - 1st Goal - Kayky (Bahia) -,47,53,47,28,109,112,7,8,7,9
+516,516.0,517.0,2023-10CoritibaSantos,10,2023/06/10 16:00,Coritiba,Santos,0,0,8,3,3,1,0,1,,46,54,56,27,119,94,6,3,12,4
+517,517.0,518.0,2023-9Vasco da GamaFlamengo,9,2023/06/05 20:00,Vasco da Gama,Flamengo,1,4,4,0,2,0,0,0,14' - 1st Goal - Pulgar (Flamengo) - Shot (Assist: De Arrascaeta),45,55,51,29,123,97,4,5,9,5
+518,518.0,519.0,2023-9PalmeirasCoritiba,9,2023/06/04 18:30,Palmeiras,Coritiba,3,1,11,6,4,5,0,0,30' - 1st Goal - Artur (Palmeiras) -,51,49,63,36,116,93,9,4,14,4
+519,519.0,520.0,2023-9GoiásCuiabá EC,9,2023/06/04 18:30,Goiás,Cuiabá EC,0,1,4,5,2,3,0,0,54' - 1st Goal - Deyverson (Cuiaba) -,55,45,65,55,116,94,4,8,8,7
+520,520.0,521.0,2023-9FluminenseBragantino,9,2023/06/04 16:00,Fluminense,Bragantino,2,1,6,7,5,2,0,0,27' - 1st Goal - Ganso (Fluminense) -,51,49,63,49,95,109,4,3,7,14
+521,521.0,522.0,2023-9GrêmioSão Paulo,9,2023/06/04 16:00,Grêmio,São Paulo,2,1,7,8,2,1,0,0,15' - 1st Goal - Calleri (Sao Paulo) -,40,60,48,54,90,131,8,3,15,14
+522,522.0,523.0,2023-9SantosInternacional,9,2023/06/03 21:00,Santos,Internacional,1,1,5,5,2,4,0,0,3' - 1st Goal - Luiz Adriano (Internacional) -,56,44,60,34,160,95,5,3,14,5
+523,523.0,524.0,2023-9Athletico ParanaenseBotafogo,9,2023/06/03 18:30,Athletico Paranaense,Botafogo,1,0,6,7,3,1,0,0,42' - 1st Goal - Santana (Athletico Paranaense) - Shot (Assist: Vitor Roque),48,52,36,35,111,88,7,4,9,8
+524,524.0,525.0,2023-9América MineiroCorinthians,9,2023/06/03 18:30,América Mineiro,Corinthians,2,0,2,3,1,0,0,0,74' - 1st Goal - Avelar (America MG) -,30,70,41,46,109,144,7,2,8,4
+525,525.0,526.0,2023-9CruzeiroAtlético Mineiro,9,2023/06/03 18:30,Cruzeiro,Atlético Mineiro,0,1,12,4,4,5,0,0,27' - 1st Goal - Hulk (Atletico Mineiro) -,65,35,64,22,131,64,6,5,14,4
+526,526.0,527.0,2023-9Fortaleza ECEC Bahia,9,2023/06/03 16:00,Fortaleza EC,EC Bahia,0,0,8,4,2,3,0,0,,54,46,43,26,130,92,3,2,9,5
+527,527.0,528.0,2023-8BotafogoAmérica Mineiro,8,2023/05/28 19:00,Botafogo,América Mineiro,2,0,7,0,2,3,0,0,3' - 1st Goal - Junior Santos (Botafogo) -,55,45,49,34,113,124,6,1,13,3
+528,528.0,529.0,2023-8BragantinoSantos,8,2023/05/28 18:30,Bragantino,Santos,2,0,5,4,2,1,0,0,31' - 1st Goal - Vitinho (Bragantino) - Shot (Assist: Eduardo Sasha),59,41,64,20,146,81,9,1,7,8
+529,529.0,530.0,2023-8Atlético MineiroPalmeiras,8,2023/05/28 18:30,Atlético Mineiro,Palmeiras,1,1,3,3,3,3,0,0,45' - 1st Goal - Pavon (Atletico Mineiro) -,58,42,41,30,125,98,4,3,5,9
+530,530.0,531.0,2023-8InternacionalEC Bahia,8,2023/05/28 16:00,Internacional,EC Bahia,2,0,2,7,1,2,0,0,49' - 1st Goal - Johnny (Internacional) -,44,56,27,48,110,124,2,3,3,5
+531,531.0,532.0,2023-8CorinthiansFluminense,8,2023/05/28 16:00,Corinthians,Fluminense,2,0,7,6,4,2,0,0,59' - 1st Goal - Roger Guedes (Corinthians) -,30,70,31,71,58,155,4,5,10,17
+532,532.0,533.0,2023-8São PauloGoiás,8,2023/05/27 21:00,São Paulo,Goiás,2,1,11,5,1,4,0,0,29' - 1st Goal - Maguinho (Goias) - Header,68,32,63,25,124,75,7,3,10,6
+533,533.0,534.0,2023-8Cuiabá ECCoritiba,8,2023/05/27 18:30,Cuiabá EC,Coritiba,1,1,2,6,3,5,0,0,3' - 1st Goal - Fernando Sobral (Cuiaba) -,44,56,41,29,132,123,2,2,7,7
+534,534.0,535.0,2023-8FlamengoCruzeiro,8,2023/05/27 18:30,Flamengo,Cruzeiro,1,1,2,1,4,5,0,0,5' - 1st Goal - Marlon (Cruzeiro) -,62,38,73,40,144,92,3,6,10,12
+535,535.0,536.0,2023-8Fortaleza ECVasco da Gama,8,2023/05/27 16:00,Fortaleza EC,Vasco da Gama,2,0,9,5,3,1,0,0,87' - 1st Goal - Thiago Galhardo (Fortaleza) -,49,51,50,39,104,99,7,1,9,12
+536,536.0,537.0,2023-8Athletico ParanaenseGrêmio,8,2023/05/27 16:00,Athletico Paranaense,Grêmio,1,2,10,5,2,4,0,0,32' - 1st Goal - Cuiabano (Gremio) -,66,34,70,26,147,96,4,4,12,5
+537,537.0,538.0,2023-7CruzeiroCuiabá EC,7,2023/05/22 20:00,Cruzeiro,Cuiabá EC,0,1,6,2,1,3,0,0,37' - 1st Goal - Deyverson (Cuiaba) -,65,35,69,31,152,100,8,3,7,12
+538,538.0,539.0,2023-7GrêmioInternacional,7,2023/05/21 18:30,Grêmio,Internacional,3,1,3,7,1,1,1,0,7' - 1st Goal - Suarez (Gremio) -,29,71,48,53,83,131,4,4,9,19
+539,539.0,540.0,2023-7FlamengoCorinthians,7,2023/05/21 16:00,Flamengo,Corinthians,1,0,6,9,0,2,0,0,,65,35,74,35,153,70,4,3,7,12
+540,540.0,541.0,2023-7SantosPalmeiras,7,2023/05/20 21:00,Santos,Palmeiras,0,0,3,4,3,1,0,0,,38,62,46,40,102,129,4,1,8,11
+541,541.0,542.0,2023-7São PauloVasco da Gama,7,2023/05/20 18:30,São Paulo,Vasco da Gama,4,2,3,9,0,3,0,0,24' - 1st Goal - Calleri (Sao Paulo) -,52,48,35,59,88,115,7,3,8,13
+542,542.0,543.0,2023-7BotafogoFluminense,7,2023/05/20 18:30,Botafogo,Fluminense,1,0,7,4,4,2,0,0,75' - 1st Goal - Cuesta (Botafogo) - Shot (Assist: Tiquinho Soares),34,66,29,75,89,187,1,4,8,7
+543,543.0,544.0,2023-7CoritibaAtlético Mineiro,7,2023/05/20 18:30,Coritiba,Atlético Mineiro,1,2,5,7,4,7,1,1,13' - 1st Goal - Robson (Coritiba) -,34,66,37,56,89,129,2,5,10,12
+544,544.0,545.0,2023-7BragantinoAthletico Paranaense,7,2023/05/20 18:30,Bragantino,Athletico Paranaense,2,0,6,5,2,3,0,0,16' - 1st Goal - Eduardo Sasha (Bragantino) -,61,39,59,33,104,72,4,5,8,9
+545,545.0,546.0,2023-7América MineiroFortaleza EC,7,2023/05/20 18:30,América Mineiro,Fortaleza EC,2,1,1,2,4,2,0,0,2' - 1st Goal - Breno (America MG) -,27,73,46,105,66,122,2,5,7,3
+546,546.0,547.0,2023-7EC BahiaGoiás,7,2023/05/20 16:00,EC Bahia,Goiás,1,1,4,6,1,3,0,0,25' - 1st Goal - Everaldo (Bahia) -,51,49,62,40,124,105,4,7,18,10
+547,547.0,548.0,2023-6Athletico ParanaenseCoritiba,6,2023/05/14 18:30,Athletico Paranaense,Coritiba,3,2,4,1,3,3,0,0,20' - 1st Goal - Moreno (Coritiba) - Shot,66,34,66,30,179,90,7,3,19,4
+548,548.0,549.0,2023-6GoiásBotafogo,6,2023/05/14 18:30,Goiás,Botafogo,2,1,4,7,6,3,0,0,33' - 1st Goal - Tiquinho Soares (Botafogo) -,47,53,48,63,85,103,5,2,3,15
+549,549.0,550.0,2023-6América MineiroCruzeiro,6,2023/05/14 18:30,América Mineiro,Cruzeiro,0,4,5,6,2,0,0,0,33' - 1st Goal - Henrique (Cruzeiro) - Header,47,53,53,45,113,123,3,8,14,8
+550,550.0,551.0,2023-6CorinthiansSão Paulo,6,2023/05/14 16:00,Corinthians,São Paulo,1,1,5,4,2,4,0,0,15' - 1st Goal - Araujo (Sao Paulo) -,34,66,57,48,75,144,3,3,5,6
+551,551.0,552.0,2023-6Vasco da GamaSantos,6,2023/05/14 16:00,Vasco da Gama,Santos,0,1,14,1,4,1,0,0,29' - 1st Goal - Deivid Washington (Santos) - Shot,70,30,91,25,156,68,9,1,15,5
+552,552.0,553.0,2023-6GrêmioFortaleza EC,6,2023/05/14 16:00,Grêmio,Fortaleza EC,0,0,9,5,3,4,0,0,,57,43,69,37,135,95,1,5,16,10
+553,553.0,554.0,2023-6Atlético MineiroInternacional,6,2023/05/13 21:00,Atlético Mineiro,Internacional,2,0,3,3,2,3,0,0,3' - 1st Goal - Vargas (Atletico Mineiro) - Header,54,46,33,43,119,108,4,4,10,2
+554,554.0,555.0,2023-6PalmeirasBragantino,6,2023/05/13 18:30,Palmeiras,Bragantino,1,1,15,6,1,4,0,0,65' - 1st Goal - Artur (Palmeiras) - Header (Assist: Gomez),58,42,72,30,113,98,5,4,17,5
+555,555.0,556.0,2023-6FluminenseCuiabá EC,6,2023/05/13 18:30,Fluminense,Cuiabá EC,2,0,7,3,3,4,0,0,6' - 1st Goal - Nino (Fluminense) -,62,38,38,48,93,109,2,3,5,13
+556,556.0,557.0,2023-6EC BahiaFlamengo,6,2023/05/13 16:00,EC Bahia,Flamengo,2,3,10,4,5,5,2,0,23' - 1st Goal - Matheus Franca (Flamengo) -,52,48,65,40,103,86,6,5,14,10
+557,557.0,558.0,2023-5Fortaleza ECSão Paulo,5,2023/05/11 20:00,Fortaleza EC,São Paulo,0,0,4,10,2,4,1,1,,44,56,41,37,97,107,4,1,12,12
+558,558.0,559.0,2023-5BotafogoCorinthians,5,2023/05/11 19:30,Botafogo,Corinthians,3,0,3,3,1,2,0,0,12' - 1st Goal - Tiquinho Soares (Botafogo) -,54,46,50,41,109,124,7,4,8,8
+559,559.0,560.0,2023-5CoritibaVasco da Gama,5,2023/05/11 19:00,Coritiba,Vasco da Gama,1,1,5,5,2,1,0,0,45+4' - 1st Goal - Ze Roberto (Coritiba) - (Assist: Robson),41,59,29,55,94,144,5,3,6,5
+560,560.0,561.0,2023-5CruzeiroFluminense,5,2023/05/10 21:30,Cruzeiro,Fluminense,0,2,16,3,1,5,0,1,44' - 1st Goal - Ganso (Fluminense) -,48,52,90,31,114,54,5,6,23,4
+561,561.0,562.0,2023-5PalmeirasGrêmio,5,2023/05/10 21:30,Palmeiras,Grêmio,4,1,7,4,2,4,0,0,24' - 1st Goal - Raphael Veiga (Palmeiras) -,58,42,45,23,107,79,11,2,12,0
+562,562.0,563.0,2023-5Cuiabá ECAtlético Mineiro,5,2023/05/10 20:00,Cuiabá EC,Atlético Mineiro,0,4,6,1,1,2,0,0,13' - 1st Goal - Hyoran (Atletico Mineiro) -,47,53,35,19,83,72,1,7,4,0
+563,563.0,564.0,2023-5FlamengoGoiás,5,2023/05/10 20:00,Flamengo,Goiás,2,0,8,7,0,1,0,0,8' - 1st Goal - Pedro (Flamengo) - Penalty,57,43,66,20,90,72,6,5,11,8
+564,564.0,565.0,2023-5SantosEC Bahia,5,2023/05/10 19:00,Santos,EC Bahia,3,0,1,4,3,4,0,0,4' - 1st Goal - Deivid Washington (Santos) -,40,60,27,34,87,125,8,3,5,14
+565,565.0,566.0,2023-5InternacionalAthletico Paranaense,5,2023/05/10 19:00,Internacional,Athletico Paranaense,0,2,4,3,2,4,0,0,79' - 1st Goal - Christian (Athletico Paranaense) -,46,54,48,53,82,104,3,5,9,9
+566,566.0,567.0,2023-5BragantinoAmérica Mineiro,5,2023/05/10 19:00,Bragantino,América Mineiro,2,2,5,4,5,3,0,0,15' - 1st Goal - Aloisio (America MG) -,59,41,72,27,145,61,9,3,12,5
+567,567.0,568.0,2023-4CorinthiansFortaleza EC,4,2023/05/08 20:00,Corinthians,Fortaleza EC,1,1,5,5,2,2,0,0,79' - 1st Goal - Caio Alexandre (Fortaleza) -,49,51,109,91,131,130,7,2,10,9
+568,568.0,569.0,2023-4BotafogoAtlético Mineiro,4,2023/05/07 18:30,Botafogo,Atlético Mineiro,2,0,5,9,1,3,0,0,30' - 1st Goal - Victor Sa (Botafogo) - Shot (Assist: Di Placido),39,61,45,38,77,102,6,1,11,7
+569,569.0,570.0,2023-4GoiásPalmeiras,4,2023/05/07 18:30,Goiás,Palmeiras,0,5,4,6,2,6,1,0,10' - 1st Goal - Artur (Palmeiras) -,44,56,31,49,87,101,2,7,12,6
+570,570.0,571.0,2023-4GrêmioBragantino,4,2023/05/07 18:30,Grêmio,Bragantino,3,3,4,7,5,2,0,0,6' - 1st Goal - Cristaldo (Gremio) -,42,58,28,66,80,128,3,8,7,11
+571,571.0,572.0,2023-4São PauloInternacional,4,2023/05/07 16:00,São Paulo,Internacional,2,0,4,9,3,4,0,0,33' - 1st Goal - Luciano (Sao Paulo) -,43,57,33,51,85,115,3,3,3,13
+572,572.0,573.0,2023-4EC BahiaCoritiba,4,2023/05/07 16:00,EC Bahia,Coritiba,3,1,3,5,2,7,0,0,16' - 1st Goal - Victor Luis (Bahia) - Own Goal,51,49,52,28,105,136,6,5,9,5
+573,573.0,574.0,2023-4Athletico ParanaenseFlamengo,4,2023/05/07 16:00,Athletico Paranaense,Flamengo,2,1,2,8,2,2,0,0,16' - 1st Goal - Gabriel Barbosa (Flamengo) -,39,61,43,67,67,124,6,5,6,9
+574,574.0,575.0,2023-4América MineiroCuiabá EC,4,2023/05/07 11:00,América Mineiro,Cuiabá EC,1,2,4,6,3,3,1,0,12' - 1st Goal - Aloisio (America MG) -,45,55,64,52,129,110,4,6,11,5
+575,575.0,576.0,2023-4FluminenseVasco da Gama,4,2023/05/06 21:00,Fluminense,Vasco da Gama,1,1,9,1,3,3,0,0,1' - 1st Goal - Pedro Raul (Vasco da Gama) -,79,21,115,19,172,47,8,1,15,8
+576,576.0,577.0,2023-4CruzeiroSantos,4,2023/05/06 16:00,Cruzeiro,Santos,2,1,4,4,5,3,0,0,21' - 1st Goal - Wesley (Cruzeiro) - Shot,55,45,44,53,129,93,3,4,7,7
+577,577.0,578.0,2023-3Vasco da GamaEC Bahia,3,2023/05/01 20:00,Vasco da Gama,EC Bahia,0,1,7,6,1,4,0,0,44' - 1st Goal - Thaciano (Bahia) -,55,45,46,45,124,80,7,6,10,5
+578,578.0,579.0,2023-3InternacionalGoiás,3,2023/04/30 18:30,Internacional,Goiás,1,0,8,11,4,1,0,1,53' - 1st Goal - De Pena (Internacional) -,57,43,54,46,91,96,8,3,10,13
+579,579.0,580.0,2023-3Cuiabá ECGrêmio,3,2023/04/30 18:30,Cuiabá EC,Grêmio,1,2,7,5,4,5,1,0,10' - 1st Goal - Vinicius (Gremio) - Header (Assist: Da Silva),51,49,72,44,117,92,5,5,11,6
+580,580.0,581.0,2023-3FlamengoBotafogo,3,2023/04/30 16:00,Flamengo,Botafogo,2,3,7,2,4,3,0,1,30' - 1st Goal - Tiquinho Soares (Botafogo) -,74,26,87,26,150,58,11,6,14,7
+581,581.0,582.0,2023-3Atlético MineiroAthletico Paranaense,3,2023/04/29 21:00,Atlético Mineiro,Athletico Paranaense,2,1,1,5,2,2,0,1,10' - 1st Goal - Hulk (Atletico Mineiro) - Shot (Assist: Edenilson),59,41,48,33,127,84,7,3,11,5
+582,582.0,583.0,2023-3PalmeirasCorinthians,3,2023/04/29 18:30,Palmeiras,Corinthians,2,1,12,3,3,3,0,0,16' - 1st Goal - Murilo (Palmeiras) -,54,46,66,39,114,104,6,3,15,7
+583,583.0,584.0,2023-3BragantinoCruzeiro,3,2023/04/29 18:30,Bragantino,Cruzeiro,0,3,5,9,3,3,1,0,1' - 1st Goal - Ramiro (Cruzeiro) - Shot,45,55,44,55,117,104,5,5,7,14
+584,584.0,585.0,2023-3SantosAmérica Mineiro,3,2023/04/29 18:30,Santos,América Mineiro,3,2,2,6,3,4,1,0,7' - 1st Goal - Ale (America MG) -,44,56,39,51,95,127,6,7,5,12
+585,585.0,586.0,2023-3Fortaleza ECFluminense,3,2023/04/29 16:30,Fortaleza EC,Fluminense,4,2,8,5,0,3,0,0,29' - 1st Goal - Thiago Galhardo (Fortaleza) -,30,70,38,71,70,128,15,3,4,8
+586,586.0,587.0,2023-3CoritibaSão Paulo,3,2023/04/29 16:30,Coritiba,São Paulo,1,1,7,6,4,1,0,0,12' - 1st Goal - Bruno Gomes (Coritiba) -,40,60,47,37,82,134,4,7,13,14
+587,587.0,588.0,2023-2EC BahiaBotafogo,2,2023/04/24 20:00,EC Bahia,Botafogo,1,2,6,3,1,2,0,0,29' - 1st Goal - Junior Santos (Botafogo) - Shot,60,40,54,30,127,110,5,4,8,2
+588,588.0,589.0,2023-2GoiásCorinthians,2,2023/04/23 19:00,Goiás,Corinthians,3,1,5,8,5,2,4,1,17' - 1st Goal - Roger Guedes (Corinthians) - Shot,51,49,65,33,124,72,6,2,12,8
+589,589.0,590.0,2023-2CoritibaFortaleza EC,2,2023/04/23 18:30,Coritiba,Fortaleza EC,0,3,3,7,1,2,0,0,51' - 1st Goal - Bruno Pacheco (Fortaleza) - Shot (Assist: Pochettino),59,41,29,43,120,83,8,8,10,5
+590,590.0,591.0,2023-2Vasco da GamaPalmeiras,2,2023/04/23 16:00,Vasco da Gama,Palmeiras,2,2,2,5,4,3,0,1,29' - 1st Goal - Pedro Raul (Vasco da Gama) -,36,64,37,53,88,132,3,6,8,7
+591,591.0,592.0,2023-2SantosAtlético Mineiro,2,2023/04/23 16:00,Santos,Atlético Mineiro,0,0,9,6,3,3,0,1,,38,62,38,65,105,130,1,4,10,10
+592,592.0,593.0,2023-2InternacionalFlamengo,2,2023/04/23 11:00,Internacional,Flamengo,2,1,6,2,3,0,2,3,63' - 1st Goal - Gerson (Flamengo) -,36,64,41,51,87,129,4,5,12,12
+593,593.0,594.0,2023-2CruzeiroGrêmio,2,2023/04/22 21:00,Cruzeiro,Grêmio,1,0,11,5,5,2,1,0,64' - 1st Goal - Bruno Rodrigues (Cruzeiro) - Shot,49,51,60,44,134,109,5,7,17,4
+594,594.0,595.0,2023-2Cuiabá ECBragantino,2,2023/04/22 18:30,Cuiabá EC,Bragantino,1,1,4,5,3,3,0,0,67' - 1st Goal - Mateusinho (Cuiaba) -,33,67,48,50,86,120,9,1,7,6
+595,595.0,596.0,2023-2São PauloAmérica Mineiro,2,2023/04/22 18:30,São Paulo,América Mineiro,3,0,3,7,5,3,0,0,21' - 1st Goal - Luciano (Sao Paulo) - Shot (Assist: Araujo),53,47,38,49,114,107,6,9,11,11
+596,596.0,597.0,2023-2FluminenseAthletico Paranaense,2,2023/04/22 16:00,Fluminense,Athletico Paranaense,2,0,10,6,3,3,3,1,11' - 1st Goal - Lima (Fluminense) -,62,38,62,32,129,96,7,1,8,11
+597,597.0,598.0,2023-1GrêmioSantos,1,2023/04/16 18:30,Grêmio,Santos,1,0,4,11,3,3,0,1,44' - 1st Goal - Joao Pedro (Gremio) -,45,55,51,65,104,111,6,4,12,11
+598,598.0,599.0,2023-1FlamengoCoritiba,1,2023/04/16 16:00,Flamengo,Coritiba,3,0,6,3,3,3,0,0,12' - 1st Goal - Ayrton (Flamengo) - Shot,59,41,82,26,147,96,8,3,8,7
+599,599.0,600.0,2023-1CorinthiansCruzeiro,1,2023/04/16 16:00,Corinthians,Cruzeiro,2,1,7,4,4,2,0,0,68' - 1st Goal - Matheus Araujo (Corinthians) -,42,58,36,41,84,139,7,2,5,7
+600,600.0,601.0,2023-1Atlético MineiroVasco da Gama,1,2023/04/15 21:00,Atlético Mineiro,Vasco da Gama,1,2,14,3,6,5,0,0,5' - 1st Goal - Santos (Vasco da Gama) - Header,74,26,73,20,145,73,9,3,18,3
+601,601.0,602.0,2023-1Fortaleza ECInternacional,1,2023/04/15 18:30,Fortaleza EC,Internacional,1,1,5,1,1,1,0,0,54' - 1st Goal - Wanderson (Internacional) -,47,53,73,30,126,110,7,6,18,5
+602,602.0,603.0,2023-1BragantinoEC Bahia,1,2023/04/15 18:30,Bragantino,EC Bahia,2,1,4,7,3,1,0,0,45' - 1st Goal - Everaldo (Bahia) -,56,44,54,39,127,87,6,3,7,6
+603,603.0,604.0,2023-1BotafogoSão Paulo,1,2023/04/15 18:30,Botafogo,São Paulo,2,1,3,7,3,2,0,0,4' - 1st Goal - Tiquinho Soares (Botafogo) -,31,69,57,41,85,122,3,2,9,13
+604,604.0,605.0,2023-1Athletico ParanaenseGoiás,1,2023/04/15 18:30,Athletico Paranaense,Goiás,2,0,3,8,2,3,0,0,36' - 1st Goal - Pedro Henrique (Athletico Paranaense) - Shot,44,56,44,51,96,120,3,2,8,14
+605,605.0,606.0,2023-1PalmeirasCuiabá EC,1,2023/04/15 16:00,Palmeiras,Cuiabá EC,2,1,4,4,1,4,0,1,5' - 1st Goal - Endrick (Palmeiras) -,52,48,73,41,111,112,6,5,12,8
+606,606.0,607.0,2023-1América MineiroFluminense,1,2023/04/15 16:00,América Mineiro,Fluminense,0,3,11,1,3,2,0,0,52' - 1st Goal - Cano (Fluminense) -,46,54,95,22,114,56,1,8,17,7
+607,643.0,,2024-24Vasco da GamaAthletico Paranaense,24,2024/08/26 21:00,Vasco da Gama,Athletico Paranaense,2,1,4,5,1,2,0,0,24' - 1st Goal - Gabriel (Athletico Paranaense) - Shot,46,54,66,73,95,128,5,4,2,5
+608,,,2024-19CriciúmaBragantino,19,2024/08/28 19:30,Criciúma,Bragantino,1,0,6,8,3,3,0,0,36' - 1st Goal - Marcelo Hermes (Criciuma) - Shot,49,51,51,55,80,110,2,5,12,8
+609,,,2024-5CruzeiroInternacional,5,2024/08/28 19:30,Cruzeiro,Internacional,0,0,10,3,2,7,0,1,,68,32,78,26,109,70,4,0,16,1

@@ -26,5 +26,5 @@ export  function confGols(qtd,context,estadia,metade,time,c,asc,valor){
         if(asc?golBuscado<valor:golBuscado>valor)contCertos++
         cont++
     }
-    return parseFloat((contCertos*100/cont).toFixed(1))
+    return {greens:contCertos,cont,porc:parseFloat((contCertos*100/cont).toFixed(1))}
 }
