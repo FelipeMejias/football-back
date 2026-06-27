@@ -25,7 +25,10 @@ export function buscarApostasJogo(camp,mandante,visitante){
         const asc=parseInt(info[2])
         const metade=parseInt(info[3])
         if(grandeza==1){
-            apostas.push({info,aps:[{tex:'',q:null,odd:conversor(num)}]})
+            const green=jogoAntigo?(
+            confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null).porc
+            ):undefined
+            apostas.push({info,aps:[{tex:'',q:null,odd:conversor(num),green}]})
         }
         if(grandeza==2){
             const aps=[]
@@ -34,7 +37,11 @@ export function buscarApostasJogo(camp,mandante,visitante){
             const maior=asc?'Menos que':'Mais que'
             while(i<num.length){
                 const ode=`${num[i]}${num[i+1]}${num[i+2]}`
-                aps.push({tex:`${maior} ${maq}`,q:maq,odd:conversor(ode)})
+                const green=jogoAntigo?(
+                    confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd).porc
+                    ):undefined
+                    
+                aps.push({tex:`${maior} ${maq}`,q:maq,odd:conversor(ode),green})
                 i+=3
                 maq+=1
             }
@@ -42,7 +49,6 @@ export function buscarApostasJogo(camp,mandante,visitante){
         }
         
     }
-    console.log(apostas)
     return apostas
 }
 function conversor(str){

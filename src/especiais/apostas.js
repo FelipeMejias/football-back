@@ -32,7 +32,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
             odd=(num/100).toFixed(2)
             const green=jogoAntigo?(
             grandeza==1?
-            confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):
+            confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null).porc:
             grandeza==7?confPrimGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null):
                     confUltimoGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null)
             ):undefined
@@ -78,7 +78,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
                 }*/
                 const o=(`${num[k]}${num[k+1]}${num[k+2]}`/100).toFixed(2)
                 const green=jogoAntigo?(
-                    grandeza==2?confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
+                    grandeza==2?confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd).porc:
                     grandeza==6?confEsc(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
                     grandeza==7?confPrimGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd):
                     confUltimoGol(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd)

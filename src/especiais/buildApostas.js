@@ -7,10 +7,12 @@ import { quantoTempoFalta } from "../mu/utils.js"
 import { confPrimGol } from "../mu/conferencias/confPrimGol.js"
 import { confUltimoGol } from "../mu/conferencias/confUltimoGol.js"
 
-export function buildApostas(pageBet,dataInicio=false,dataFim=false){/*
+export function buildApostas(pb,dataInicio=false,dataFim=false){
+    console.log('cheguei')
+    const paths=['bra1'];
+    const pageBet=2
     let desordenada=[]
     let ordenada
-    const {paths}=ligas
     if(pageBet==1){
         paths.forEach(camp=>{desordenada=[...desordenada,...extrairFuturas(camp)]})
         ordenada= desordenada.sort((a,b)=>{if(a.data<b.data){return -1}else{return true}})
@@ -25,13 +27,14 @@ export function buildApostas(pageBet,dataInicio=false,dataFim=false){/*
         const lista2= lista2Desord.sort((a,b)=>{if(a.data>b.data){return -1}else{return true}})
         ordenada=[...lista1,...lista2]
         if(dataInicio)ordenada=ordenada.filter(j=>j.data>dataInicio&&j.data<dataFim)
-    }*/const paths=['bra1'];const ordenada=extrairFuturas('bra1')
+    }
     const resp=[]
     for(let partida of ordenada){
         
         const {camp,mandante,visitante,cinza}=partida
         
         const apostas=buscarApostasJogo(camp,mandante,visitante)
+        console.log(apostas)
         const context=buildContext(camp,mandante+visitante)
         for(let ap of apostas){
             let tex;let ode;let valor

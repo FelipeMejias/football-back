@@ -35,6 +35,7 @@ export function criarOrdemDuplaPreflop(camp,mandante,visitante,inteiro=false){
             for(let k=0;k<apostas.length;k++){
                 const ap=apostas[k]
                 if(ap.info==codigo){
+                    
                     apostas.splice(k,1)
                     parzinho.push(ap)
                 }

@@ -9,7 +9,7 @@ import { confUltimoGol } from "../conferencias/confUltimoGol.js"
 
 
 export function buildApostas(qtd1,qtd2){
-    const pageBet=3
+    const pageBet=2
     let desordenada=[]
     let ordenada
     const {paths}=ligas
@@ -31,6 +31,7 @@ export function buildApostas(qtd1,qtd2){
     const resp=[]
     
     for(let partida of ordenada){
+        console.log('cheguei novo')
         const {camp,mandante,visitante,cinza}=partida
         const apostas=buscarApostasJogo(camp,mandante,visitante)
         const context=buildContext(camp,mandante+visitante)
