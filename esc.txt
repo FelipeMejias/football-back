@@ -1,0 +1,168 @@
+2026-05-31 20:30:00	Full	Cruzeiro	1	1	Fluminense	-0.5	5	4	3	2	9.5	Under	2.0, 2.5	Under	137	55	19	10
+2026-05-31 20:30:00	Full	Remo	1	0	São Paulo	0.0	6	7	2	5	10.5	Over	2.0, 2.5	Under	93	80	9	9
+2026-05-31 16:00:00	Full	Vasco da Gama	0	1	Atlético Mineiro	-0.5	3	4	1	4	10.0	Under	2.0, 2.5	Under	136	88	25	10
+2026-05-31 16:00:00	Full	Palmeiras	1	0	Chapecoense	-1.5	3	2	1	0	10.5	Under	2.5, 3.0	Under	92	114	13	15
+2026-05-31 11:00:00	Full	Bragantino	3	1	Internacional	0.0, -0.5	6	1	2	0	10.0	Under	2.5	Over	97	110	18	8
+2026-05-30 20:00:00	Full	Santos	3	1	Vitória	-0.5, -1.0	1	5	0	1	10.0	Under	2.5	Over	95	126	5	22
+2026-05-30 17:30:00	Full	Grêmio	1	3	Corinthians	0.0, +0.5	4	8	1	6	9.0	Over	2.0	Over	50	114	10	24
+2026-05-30 17:30:00	Full	Bahia	2	1	Botafogo	-0.5	10	4	3	4	10.0	Over	2.5, 3.0	Over	122	60	24	13
+2026-05-30 16:00:00	Full	Athletico Paranaense	1	0	Mirassol	-0.5	6	4	2	2	10.5	Under	2.0	Under	94	97	13	10
+2026-05-30 16:00:00	Full	Flamengo	3	0	Coritiba	-1.0, -1.5	6	4	5	1	9.5	Over	2.5, 3.0	Over	135	53	21	10
+2026-05-25 20:00:00	Full	Coritiba	3	2	Bahia	0.0	3	6	1	2	10.0	Under	2.0, 2.5	Over	86	92	13	14
+2026-05-24 20:30:00	Full	Vasco da Gama	0	3	Bragantino	-0.5	6	6	2	3	10.0	Over	2.0, 2.5	Over	95	76	14	21
+2026-05-24 18:30:00	Full	Corinthians	1	0	Atlético Mineiro	-0.5	3	0	2	0	9.5	Under	2.0	Under	113	70	10	10
+2026-05-24 16:00:00	Full	Remo	1	2	Athletico Paranaense	0.0, -0.5	3	10	2	7	10.5	Over	2.0, 2.5	Over	70	102	3	16
+2026-05-24 16:00:00	Full	Cruzeiro	2	1	Chapecoense	-1.5	9	2	4	0	10.0	Over	3.0	Push	87	58	18	8
+2026-05-23 21:00:00	Full	Flamengo	0	3	Palmeiras	-0.5, -1.0	8	4	4	2	10.5	Over	2.0, 2.5	Over	136	79	22	12
+2026-05-23 19:00:00	Full	Mirassol	1	0	Fluminense	0.0	4	5	1	1	10.0	Under	2.0, 2.5	Under	81	98	13	10
+2026-05-23 19:00:00	Full	Grêmio	3	2	Santos	0.0, -0.5	8	5	6	1	10.0	Over	2.0, 2.5	Over	99	96	12	13
+2026-05-23 17:00:00	Full	São Paulo	1	1	Botafogo	-0.5, -1.0	4	3	2	0	9.5	Under	2.5	Under	101	89	14	14
+2026-05-23 17:00:00	Full	Vitória	2	0	Internacional	0.0	4	6	3	5	9.5	Over	2.0, 2.5	Under	61	116	8	20
+2026-05-17 19:30:00	Full	Athletico Paranaense	1	1	Flamengo	0.0, +0.5	9	7	6	1	9.5	Over	2.0, 2.5	Under	71	107	18	12
+2026-05-17 18:30:00	Full	Chapecoense	2	3	Remo	0.0	3	9	0	7	10.0	Over	2.0, 2.5	Over	99	102	18	11
+2026-05-17 18:30:00	Full	Bragantino	2	0	Vitória	-0.5, -1.0	7	6	3	1	10.0	Over	2.5	Under	99	69	23	7
+2026-05-17 16:00:00	Full	Botafogo	3	1	Corinthians	0.0, -0.5	3	2	1	1	9.5	Under	2.0, 2.5	Over	74	107	13	19
+2026-05-17 16:00:00	Full	Bahia	1	1	Grêmio	-0.5, -1.0	7	3	3	1	10.0	Push	2.5, 3.0	Under	111	50	17	3
+2026-05-17 11:00:00	Full	Santos	0	3	Coritiba	-0.5, -1.0	3	3	2	2	10.0	Under	2.5	Over	106	71	13	9
+2026-05-16 21:00:00	Full	Palmeiras	1	1	Cruzeiro	-0.5	6	5	3	2	10.0	Over	2.0, 2.5	Under	78	93	16	11
+2026-05-16 19:00:00	Full	Fluminense	2	1	São Paulo	-0.5, -1.0	3	5	1	3	10.0	Under	2.5	Over	97	99	10	14
+2026-05-16 18:30:00	Full	Atlético Mineiro	3	1	Mirassol	-0.5	5	6	2	4	10.0	Over	2.0, 2.5	Over	103	76	15	7
+2026-05-16 18:30:00	Full	Internacional	4	1	Vasco da Gama	-0.5	3	4	1	0	9.5	Under	2.0, 2.5	Over	90	121	12	14
+2026-05-10 20:30:00	Full	Vasco da Gama	1	0	Athletico Paranaense	-0.5	4	3	4	2	9.5	Under	2.0, 2.5	Under	130	99	16	9
+2026-05-10 19:30:00	Full	Grêmio	0	1	Flamengo	+0.5	0	6	0	4	9.5	Under	2.0, 2.5	Under	66	139	6	20
+2026-05-10 18:30:00	Full	Santos	2	0	Bragantino	-0.5	7	3	6	2	10.0	Push	2.5	Under	80	103	9	11
+2026-05-10 18:30:00	Full	Mirassol	1	1	Chapecoense	-1.0, -1.5	8	1	4	0	10.5	Under	2.5	Under	116	76	22	11
+2026-05-10 18:30:00	Full	Corinthians	3	2	São Paulo	-0.5	7	7	6	3	10.0	Over	2.0	Over	79	90	15	7
+2026-05-10 17:38:36	Full	Remo	1	1	Palmeiras	+0.5	5	17	2	7	10.5	Over	2.5	Under	78	98	15	18
+2026-05-10 16:00:00	Full	Atlético Mineiro	1	1	Botafogo	0.0, -0.5	6	4	2	1	10.0	Push	2.5	Under	83	98	17	18
+2026-05-09 21:00:00	Full	Bahia	1	2	Cruzeiro	0.0, -0.5	6	8	1	5	9.5	Over	2.0, 2.5	Over	82	98	8	20
+2026-05-09 18:00:00	Full	Fluminense	2	2	Vitória	-1.0, -1.5	6	3	4	1	9.0	Push	2.5	Over	117	85	12	10
+2026-05-09 16:00:00	Full	Coritiba	2	2	Internacional	0.0	3	8	3	2	10.0	Over	2.0, 2.5	Over	65	149	8	22
+2026-05-03 20:30:00	Full	Mirassol	2	1	Corinthians	0.0, -0.5	1	5	1	1	10.0	Under	2.0	Over	82	115	7	11
+2026-05-03 18:30:00	Full	Internacional	2	0	Fluminense	0.0, -0.5	3	3	1	1	9.5	Under	2.0, 2.5	Under	88	96	18	11
+2026-05-03 18:30:00	Full	Chapecoense	1	2	Bragantino	+0.5	5	2	1	0	10.5	Under	2.0, 2.5	Over	96	74	19	7
+2026-05-03 16:00:00	Full	São Paulo	2	2	Bahia	-0.5	14	10	5	8	9.5	Over	2.5	Over	65	105	18	20
+2026-05-03 16:00:00	Full	Flamengo	2	2	Vasco da Gama	-1.0	5	6	3	2	9.5	Over	2.5	Over	46	73	12	20
+2026-05-02 21:00:00	Full	Cruzeiro	1	3	Atlético Mineiro	-0.5	5	1	3	0	9.5	Under	2.0, 2.5	Over	128	64	14	6
+2026-05-02 20:30:00	Full	Athletico Paranaense	0	0	Grêmio	-0.5, -1.0	7	3	4	1	9.5	Over	2.0, 2.5	Under	78	94	11	7
+2026-05-02 18:30:00	Full	Vitória	4	1	Coritiba	0.0, -0.5	2	4	0	1	10.0	Under	2.0, 2.5	Over	95	70	11	5
+2026-05-02 18:30:00	Full	Palmeiras	1	1	Santos	-1.0	9	4	3	2	10.0	Over	2.0, 2.5	Under	98	86	22	14
+2026-05-02 16:00:00	Full	Botafogo	1	2	Remo	-1.0	9	6	6	4	10.0	Over	2.5, 3.0	Over	97	78	16	18
+2026-04-26 20:30:00	Full	Atlético Mineiro	0	4	Flamengo	+0.5	8	1	5	1	9.5	Under	2.0, 2.5	Over	52	62	18	9
+2026-04-26 20:30:00	Full	Fluminense	2	1	Chapecoense	-1.5	7	1	3	0	10.0	Under	2.5, 3.0	Over	120	63	30	8
+2026-04-26 18:30:00	Full	Bragantino	0	1	Palmeiras	0.0	9	4	4	3	10.5	Over	2.0, 2.5	Under	82	69	19	6
+2026-04-26 18:30:00	Full	Athletico Paranaense	3	1	Vitória	-1.0	4	4	3	3	9.5	Under	2.0, 2.5	Over	71	63	23	7
+2026-04-26 16:00:00	Full	Grêmio	1	0	Coritiba	-0.5	5	2	2	2	10.0	Under	2.0, 2.5	Under	49	68	22	15
+2026-04-26 16:00:00	Full	Corinthians	1	0	Vasco da Gama	0.0, -0.5	5	7	4	2	9.5	Over	2.0, 2.5	Under	84	93	13	21
+2026-04-25 21:00:00	Full	São Paulo	1	0	Mirassol	-0.5	12	4	6	0	10.5	Over	2.0, 2.5	Under	68	52	17	10
+2026-04-25 18:30:00	Full	Remo	0	1	Cruzeiro	0.0, +0.5	4	1	1	0	10.5	Under	2.5	Under	81	80	14	6
+2026-04-25 18:30:00	Full	Botafogo	2	2	Internacional	0.0	3	5	2	2	9.5	Under	2.0, 2.5	Over	105	101	16	8
+2026-04-25 18:30:00	Full	Bahia	2	2	Santos	-0.5, -1.0	5	3	2	1	10.0	Under	2.5	Over	97	38	18	11
+2026-04-19 19:30:00	Full	Flamengo	2	0	Bahia	-1.0	6	1	2	1	9.5	Under	2.5, 3.0	Under	116	99	20	13
+2026-04-19 18:30:00	Full	Palmeiras	1	0	Athletico Paranaense	-1.0	9	3	6	1	10.0	Over	2.0, 2.5	Under	84	74	10	9
+2026-04-19 18:30:00	Full	Bragantino	4	2	Remo	-1.0	1	1	0	0	10.5	Under	2.5	Over	73	107	15	6
+2026-04-19 16:00:00	Full	Santos	2	3	Fluminense	0.0, -0.5	6	4	2	4	10.0	Push	2.0, 2.5	Over	99	94	7	10
+2026-04-19 16:00:00	Full	Coritiba	2	0	Atlético Mineiro	0.0, -0.5	2	8	1	4	10.0	Push	2.0, 2.5	Under	48	153	2	23
+2026-04-19 11:00:00	Full	Internacional	1	2	Mirassol	-0.5, -1.0	11	2	5	0	10.0	Over	2.5	Over	166	51	24	10
+2026-04-18 20:30:00	Full	Cruzeiro	2	0	Grêmio	-0.5, -1.0	4	1	3	0	10.0	Under	2.0, 2.5	Under	85	86	18	8
+2026-04-18 20:00:00	Full	Vitória	0	0	Corinthians	0.0	4	2	1	0	9.5	Under	2.0	Under	88	76	12	7
+2026-04-18 18:30:00	Full	Vasco da Gama	2	1	São Paulo	0.0, -0.5	6	5	5	2	9.5	Over	2.0, 2.5	Over	120	59	20	10
+2026-04-18 18:30:00	Full	Chapecoense	1	4	Botafogo	0.0, +0.5	4	4	2	2	10.0	Under	2.5	Over	116	82	9	13
+2026-04-12 18:30:00	Full	Cruzeiro	2	1	Bragantino	-0.5	2	7	2	1	10.0	Under	2.0, 2.5	Over	95	92	16	15
+2026-04-12 18:30:00	Full	Corinthians	0	0	Palmeiras	0.0	1	5	0	3	10.0	Under	2.0	Under	50	66	5	2
+2026-04-12 18:00:00	Full	Fluminense	1	2	Flamengo	0.0, +0.5	8	2	2	1	9.5	Over	2.0	Over	125	85	18	17
+2026-04-12 16:00:00	Full	Botafogo	2	2	Coritiba	-0.5	7	4	5	3	9.5	Over	2.0, 2.5	Over	122	58	20	14
+2026-04-12 11:00:00	Full	Athletico Paranaense	2	0	Chapecoense	-1.0, -1.5	5	0	4	0	10.5	Under	2.5	Under	94	81	14	8
+2026-04-11 20:30:00	Full	Internacional	0	0	Grêmio	-0.5	8	2	3	0	9.5	Over	2.5	Under	104	66	11	4
+2026-04-11 20:00:00	Full	Santos	1	0	Atlético Mineiro	0.0, -0.5	5	7	5	2	10.0	Over	2.0, 2.5	Under	105	91	18	11
+2026-04-11 18:30:00	Full	Mirassol	1	2	Bahia	0.0, -0.5	8	4	1	2	10.5	Over	2.5	Over	81	102	16	14
+2026-04-11 16:59:40	Full	Remo	1	1	Vasco da Gama	0.0	3	6	1	3	10.5	Under	2.5	Under	106	121	12	19
+2026-04-11 16:30:00	Full	Vitória	2	0	São Paulo	0.0	1	6	0	3	9.5	Under	2.0	Push	82	100	15	16
+2026-04-05 20:30:00	Full	Grêmio	0	0	Remo	-0.5, -1.0	8	3	0	1	10.0	Over	2.5	Under	122	86	20	11
+2026-04-05 20:00:00	Full	Mirassol	0	1	Bragantino	0.0, -0.5	12	6	2	5	10.5	Over	2.0, 2.5	Under	82	84	14	16
+2026-04-05 19:30:00	Full	Corinthians	0	1	Internacional	0.0, -0.5	7	4	3	2	10.0	Over	2.0, 2.5	Under	115	63	11	8
+2026-04-05 19:30:00	Full	Bahia	1	2	Palmeiras	0.0	7	5	3	0	10.0	Over	2.5	Over	123	64	19	8
+2026-04-05 17:30:00	Full	Atlético Mineiro	2	1	Athletico Paranaense	-0.5	2	8	2	2	9.5	Over	2.0, 2.5	Over	86	101	15	11
+2026-04-05 17:30:00	Full	Flamengo	3	1	Santos	-1.0, -1.5	2	7	2	2	10.0	Under	2.5	Over	134	81	19	17
+2026-04-05 16:00:00	Full	Chapecoense	1	1	Vitória	0.0	9	1	3	0	9.5	Over	2.0, 2.5	Under	89	90	25	15
+2026-04-04 21:00:00	Full	Vasco da Gama	1	2	Botafogo	-0.5	3	2	2	1	9.5	Under	2.0, 2.5	Over	107	59	17	18
+2026-04-04 20:30:00	Full	Coritiba	1	1	Fluminense	0.0, +0.5	3	10	1	6	10.0	Over	2.0	Push	61	98	10	15
+2026-04-04 18:30:00	Full	São Paulo	4	1	Cruzeiro	0.0, -0.5	6	4	3	1	10.0	Push	2.0, 2.5	Over	52	123	11	13
+2026-04-02 21:30:00	Full	Palmeiras	2	1	Grêmio	-1.0	8	2	4	0	10.0	Push	2.5, 3.0	Over	138	70	16	10
+2026-04-02 21:30:00	Full	Bragantino	3	0	Flamengo	0.0, +0.5	7	5	4	2	10.0	Over	2.0, 2.5	Over	71	60	18	7
+2026-04-02 19:00:00	Full	Santos	2	0	Remo	-0.5, -1.0	7	4	3	4	10.5	Over	2.5	Under	99	98	7	11
+2026-04-02 19:00:00	Full	Chapecoense	0	4	Atlético Mineiro	0.0, +0.5	7	3	2	2	10.0	Push	2.0, 2.5	Over	107	85	19	20
+2026-04-01 21:30:00	Full	Fluminense	3	1	Corinthians	-0.5	8	10	3	2	9.5	Over	2.0, 2.5	Over	74	84	20	12
+2026-04-01 20:30:00	Full	Coritiba	1	1	Vasco da Gama	0.0	3	4	1	3	10.0	Under	2.0	Push	120	75	18	11
+2026-04-01 20:00:00	Full	Bahia	3	0	Athletico Paranaense	-0.5	3	1	2	1	10.0	Under	2.0, 2.5	Over	78	103	7	12
+2026-04-01 20:00:00	Full	Cruzeiro	3	0	Vitória	-1.0	5	6	5	3	10.0	Over	2.5	Over	114	80	11	4
+2026-04-01 19:30:00	Full	Internacional	1	1	São Paulo	0.0, -0.5	2	11	2	6	10.0	Over	2.5	Under	73	125	6	15
+2026-04-01 19:30:00	Full	Botafogo	3	2	Mirassol	0.0, -0.5	2	8	1	1	10.0	Push	2.5	Over	59	141	11	19
+2026-03-29 19:30:00	Full	Athletico Paranaense	4	1	Botafogo	-0.5	1	8	1	2	9.5	Under	2.0, 2.5	Over	90	94	10	12
+2026-03-22 20:30:00	Full	Corinthians	1	1	Flamengo	0.0, +0.5	6	2	3	1	9.5	Under	2.0	Push	120	74	12	10
+2026-03-22 18:30:00	Full	Vitória	1	0	Mirassol	0.0	4	5	1	1	10.0	Under	2.0, 2.5	Under	93	100	13	16
+2026-03-22 18:30:00	Full	Internacional	2	0	Chapecoense	-1.5	4	4	2	1	10.5	Under	3.0	Under	102	94	14	10
+2026-03-22 16:00:00	Full	Vasco da Gama	2	1	Grêmio	-0.5	0	2	0	0	9.5	Under	2.5	Over	93	121	9	10
+2026-03-22 16:00:00	Full	Remo	4	1	Bahia	0.0	5	9	3	5	10.5	Over	2.5	Over	70	96	16	10
+2026-03-22 16:00:00	Full	Cruzeiro	0	0	Santos	-0.5, -1.0	6	0	1	0	10.5	Under	2.0, 2.5	Under	112	80	8	5
+2026-03-22 16:00:00	Full	Athletico Paranaense	2	0	Coritiba	-0.5	7	4	6	0	10.0	Over	2.0, 2.5	Under	93	60	6	4
+2026-03-21 21:00:00	Full	São Paulo	0	1	Palmeiras	0.0	10	1	2	1	10.0	Over	2.0, 2.5	Under	148	88	2	6
+2026-03-21 18:30:00	Full	Fluminense	1	0	Atlético Mineiro	-0.5, -1.0	3	2	2	1	10.0	Under	2.0, 2.5	Under	113	89	14	14
+2026-03-21 16:00:00	Full	Bragantino	1	2	Botafogo	-0.5	11	6	3	1	10.0	Over	2.0, 2.5	Over	89	51	17	8
+2026-03-19 21:30:00	Full	Chapecoense	0	0	Corinthians	0.0, +0.5	6	4	0	0	10.0	Push	2.0, 2.5	Under	61	116	14	13
+2026-03-19 20:00:00	Full	Flamengo	3	0	Remo	-2.0, -2.5	7	2	3	2	10.5	Under	3.0, 3.5	Under	153	88	11	7
+2026-03-19 19:00:00	Full	Grêmio	2	0	Vitória	-0.5, -1.0	4	5	4	2	9.0	Push	2.0, 2.5	Under	91	98	16	8
+2026-03-18 21:30:00	Full	Vasco da Gama	3	2	Fluminense	0.0, +0.5	5	5	1	2	9.5	Over	2.0	Over	108	88	16	14
+2026-03-18 21:30:00	Full	Santos	1	2	Internacional	-0.5	3	8	0	4	10.0	Over	2.5	Over	101	94	11	17
+2026-03-18 20:00:00	Full	Mirassol	0	1	Coritiba	-0.5, -1.0	7	2	2	0	10.0	Under	2.0, 2.5	Under	143	52	21	14
+2026-03-18 20:00:00	Full	Atlético Mineiro	1	0	São Paulo	0.0, -0.5	4	1	3	1	9.5	Under	2.0, 2.5	Under	64	126	13	12
+2026-03-18 19:30:00	Full	Athletico Paranaense	2	1	Cruzeiro	0.0, -0.5	4	6	2	4	10.0	Push	2.0, 2.5	Over	93	91	8	11
+2026-03-18 19:00:00	Full	Palmeiras	2	1	Botafogo	-1.0	6	1	3	1	10.0	Under	2.5, 3.0	Over	80	85	19	6
+2026-03-18 19:00:00	Full	Bahia	2	0	Bragantino	-0.5	7	7	4	0	10.0	Over	2.5	Under	97	86	15	14
+2026-03-16 20:00:00	Full	Chapecoense	1	1	Grêmio	0.0, +0.5	4	5	1	2	10.0	Under	2.5	Under	66	111	11	13
+2026-03-15 20:30:00	Full	Cruzeiro	3	3	Vasco da Gama	-0.5	5	4	2	2	10.0	Under	2.5	Over	91	86	20	15
+2026-03-15 20:30:00	Full	Bragantino	1	2	São Paulo	0.0, -0.5	6	4	2	1	10.0	Push	2.0, 2.5	Over	84	71	13	4
+2026-03-15 18:30:00	Full	Palmeiras	1	0	Mirassol	-0.5, -1.0	2	4	1	2	10.5	Under	2.5	Under	82	117	11	12
+2026-03-15 18:30:00	Full	Coritiba	1	0	Remo	-0.5, -1.0	4	6	1	3	10.5	Under	2.5	Under	51	84	8	14
+2026-03-15 16:00:00	Full	Santos	1	1	Corinthians	0.0, -0.5	4	6	3	4	10.0	Push	2.0, 2.5	Under	92	77	11	10
+2026-03-15 16:00:00	Full	Internacional	0	1	Bahia	-0.5	7	1	4	1	9.5	Under	2.5, 3.0	Under	118	65	14	7
+2026-03-15 16:00:00	Full	Fluminense	3	2	Athletico Paranaense	-0.5, -1.0	7	1	3	0	9.5	Under	2.0, 2.5	Over	118	47	23	4
+2026-03-14 20:30:00	Full	Botafogo	0	3	Flamengo	+0.5	2	4	0	1	9.5	Under	2.0, 2.5	Over	74	123	7	18
+2026-03-14 18:30:00	Full	Vitória	2	0	Atlético Mineiro	0.0, -0.5	4	10	0	3	9.5	Over	2.0	Push	80	114	9	12
+2026-02-26 19:00:00	Full	Santos	2	1	Vasco da Gama	-0.5	5	2	5	1	10.0	Under	2.5	Over	89	103	8	16
+2026-02-25 21:30:00	Full	Palmeiras	2	1	Fluminense	-0.5, -1.0	5	11	1	7	10.0	Over	2.5	Over	72	103	13	18
+2026-02-25 21:30:00	Full	Grêmio	2	1	Atlético Mineiro	0.0, -0.5	6	3	5	0	9.5	Under	2.0, 2.5	Over	126	70	18	7
+2026-02-25 20:00:00	Full	Cruzeiro	1	1	Corinthians	-0.5, -1.0	5	3	1	1	10.0	Under	2.0, 2.5	Under	79	90	11	4
+2026-02-25 19:30:00	Full	Coritiba	0	1	São Paulo	0.0	3	7	1	2	9.5	Over	2.0, 2.5	Under	89	98	18	9
+2026-02-25 19:00:00	Full	Remo	1	1	Internacional	0.0, +0.5	7	12	2	8	10.5	Over	2.5, 3.0	Under	79	106	12	18
+2026-02-25 19:00:00	Full	Bragantino	1	1	Athletico Paranaense	-0.5	2	7	2	2	9.5	Under	2.0, 2.5	Under	61	98	7	18
+2026-02-19 19:30:00	Full	Athletico Paranaense	0	1	Corinthians	0.0	8	0	5	0	9.5	Under	2.0	Under	92	49	19	4
+2026-02-12 21:30:00	Full	Internacional	1	3	Palmeiras	0.0, +0.5	16	4	7	4	10.0	Over	2.5	Over	123	61	25	11
+2026-02-12 20:00:00	Full	Corinthians	2	0	Bragantino	-0.5	3	3	1	2	10.0	Under	2.0, 2.5	Under	68	86	13	9
+2026-02-12 19:30:00	Full	Fluminense	1	0	Botafogo	-0.5	4	0	3	0	9.5	Under	2.0, 2.5	Under	88	86	10	5
+2026-02-12 19:00:00	Full	Athletico Paranaense	2	1	Santos	0.0, -0.5	8	2	3	0	10.0	Push	2.0, 2.5	Over	92	87	12	10
+2026-02-11 21:30:00	Full	Vasco da Gama	0	1	Bahia	0.0, -0.5	8	4	5	4	9.0	Over	2.5	Under	110	80	26	8
+2026-02-11 21:30:00	Full	São Paulo	2	0	Grêmio	-0.5	3	3	0	2	9.5	Under	2.0, 2.5	Under	96	74	18	5
+2026-02-11 20:00:00	Full	Atlético Mineiro	3	3	Remo	-1.0, -1.5	6	5	3	1	10.5	Over	2.5	Over	93	87	18	18
+2026-02-11 19:00:00	Full	Mirassol	2	2	Cruzeiro	0.0	9	0	5	0	9.5	Under	2.0, 2.5	Over	89	73	20	9
+2026-02-11 19:00:00	Full	Chapecoense	3	3	Coritiba	0.0, -0.5	6	5	1	3	10.0	Over	2.0, 2.5	Over	93	79	21	13
+2026-02-10 21:30:00	Full	Vitória	1	2	Flamengo	+1.0	7	2	3	0	8.5	Over	2.5	Over	98	88	10	6
+2026-02-05 21:30:00	Full	Cruzeiro	1	2	Coritiba	-1.0, -1.5	12	2	2	1	10.0	Over	2.0, 2.5	Over	149	58	19	10
+2026-02-05 20:00:00	Full	Vasco da Gama	1	1	Chapecoense	-1.0	14	0	10	0	9.5	Over	2.5	Under	134	57	30	7
+2026-02-05 19:00:00	Full	Bahia	1	1	Fluminense	0.0, -0.5	6	4	4	4	9.5	Over	2.0, 2.5	Under	110	96	19	13
+2026-02-04 21:30:00	Full	Palmeiras	5	1	Vitória	-1.5	6	4	4	2	9.5	Over	2.5, 3.0	Over	84	70	17	9
+2026-02-04 21:30:00	Full	Grêmio	5	3	Botafogo	0.0, -0.5	4	2	3	0	9.5	Under	2.0, 2.5	Over	79	77	14	9
+2026-02-04 20:00:00	Full	Santos	1	1	São Paulo	0.0, -0.5	7	4	2	3	10.0	Over	2.0	Push	115	78	12	9
+2026-02-04 20:00:00	Full	Remo	2	2	Mirassol	0.0	4	4	2	2	10.5	Under	2.0, 2.5	Over	89	95	18	8
+2026-02-04 19:00:00	Full	Flamengo	1	1	Internacional	-1.0, -1.5	4	3	3	1	10.0	Under	2.5	Under	156	77	19	9
+2026-02-04 19:00:00	Full	Bragantino	1	0	Atlético Mineiro	0.0, -0.5	6	12	3	1	10.0	Over	2.0, 2.5	Under	80	88	19	11
+2026-01-29 21:30:00	Full	Botafogo	4	0	Cruzeiro	0.0, -0.5	3	7	2	3	9.5	Over	2.0, 2.5	Over	62	103	10	17
+2026-01-29 20:00:00	Full	Mirassol	2	1	Vasco da Gama	-0.5	5	5	3	2	10.0	Push	2.0, 2.5	Over	82	100	13	13
+2026-01-28 21:30:00	Full	São Paulo	2	1	Flamengo	0.0, +0.5	2	6	1	5	9.5	Under	1.5, 2.0	Over	62	144	10	15
+2026-01-28 20:00:00	Full	Chapecoense	4	2	Santos	0.0	1	14	0	12	9.5	Over	2.0, 2.5	Over	48	151	8	25
+2026-01-28 20:00:00	Full	Corinthians	1	2	Bahia	0.0, -0.5	4	6	1	4	10.0	Push	2.5	Over	100	87	17	11
+2026-01-28 19:30:00	Full	Fluminense	2	1	Grêmio	-1.0	3	6	1	3	9.5	Under	2.5	Over	119	93	10	12
+2026-01-28 19:00:00	Full	Vitória	2	0	Remo	-0.5	4	1	1	1	10.0	Under	2.0, 2.5	Under	81	87	20	13
+2026-01-28 19:00:00	Full	Atlético Mineiro	2	2	Palmeiras	0.0, +0.5	5	7	1	2	10.0	Over	2.0, 2.5	Over	97	63	14	14
+2026-01-28 19:00:00	Full	Internacional	0	1	Athletico Paranaense	-0.5	13	1	5	1	9.5	Over	2.0, 2.5	Under	121	68	19	6
+2026-01-28 19:00:00	Full	Coritiba	0	1	Bragantino	0.0	1	5	0	2	10.5	Under	2.0	Under	74	127	8	28

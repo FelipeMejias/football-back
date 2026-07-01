@@ -7,6 +7,7 @@ import { confPrimGol } from '../mu/conferencias/confPrimGol.js'
 import { confUltimoGol } from '../mu/conferencias/confUltimoGol.js'
 import { getPartida } from './getPartida.js'
 import { quantoTempoFalta } from '../mu/utils.js'
+import { listaAnalise } from './listaAnalise.js'
 export function analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor){
     const context=buildContext(camp)
     const cPar=c==1?3:c==2?2:1
@@ -34,19 +35,23 @@ function conferir(context,grandeza,c,asc,estadia,metade,valor,time){
     if(grandeza==1){
         return {
             chance:confPlacar(100,context,estadia,metade,time,c,asc,valor),
-            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
+            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
+            forma:buscarForma(context,grandeza,estadia,metade,time,c,asc,valor)
         }
     }
     if(grandeza==2){
+        
         return {
             chance:confGols(100,context,estadia,metade,time,c,asc,valor),
-            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
+            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
+            forma:buscarForma(context,grandeza,estadia,metade,time,c,asc,valor)
         }
     }
     if(grandeza==6){
         return {
             chance:confEsc(100,context,estadia,metade,time,c,asc,valor),
-            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor)
+            texto:frasesAnalise(grandeza,c,asc,estadia,metade,valor),
+            forma:buscarForma(context,grandeza,estadia,metade,time,c,asc,valor)
         }
     }  
     if(grandeza==7){
@@ -108,7 +113,11 @@ export function frasesAnalise(grandeza,c,asc,estadia,metade,valor){
         return frases[c-1][asc][0]+complementos2[estadia]
     }    
 }
-
+function buscarForma(context,grandeza,estadia,metade,time,c,asc,valor){
+    const {resp}=listaAnalise(context,grandeza,estadia,metade,time,c,asc,valor)
+    const formaRaw=resp.slice(0, 5).reverse()
+    return formaRaw.map(obj=>obj.sg)
+}
 
 function objetoApostas(apostas,codigo,grandeza,valor){
     for(let ap of apostas){

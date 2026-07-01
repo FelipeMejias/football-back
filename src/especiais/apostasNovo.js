@@ -28,7 +28,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
             const green=jogoAntigo?(
             confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null).porc
             ):undefined
-            apostas.push({info,aps:[{tex:'',q:null,odd:conversor(num),green}]})
+            apostas.push({info,aps:[{tex:'Odd',q:null,odd:conversor(num),green}]})
         }
         if(grandeza==2){
             const aps=[]

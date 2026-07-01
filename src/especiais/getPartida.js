@@ -19,15 +19,23 @@ export function create(part,camp){
     const gols=[]
     let man=0
     let vis=0
+    let man1=0
+    let man2=0
+    let vis1=0
+    let vis2=0
     for(let goal of goals){
        if(goal>=0){
+        if(goal==46)man2++
+        if(goal==1)man1++
              man++
            gols.push({mandante:true,minuto:goal})
        }else{
+        if(goal==-46)vis2++
+        if(goal==-1)vis1++
          vis++
           gols.push({mandante:false,minuto:-goal})
        }
     }
-    const partida={mandante,visitante,escant,gols,placar:[man,vis],apostas}
+    const partida={mandante,visitante,escant,gols,placar:[man,vis],t1:[man1,vis1],t2:[man2,vis2],apostas}
     return partida
 }

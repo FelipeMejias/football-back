@@ -90,8 +90,22 @@ fs.createReadStream("bra26.csv")
         hora.padStart(2, "0") +
         minuto.padStart(2, "0");
 
+
+      const linhas = fs.readFileSync('escw.txt', 'utf-8')
+      .split('\n');
+      let escMan=-1
+      let escVis=-1
+      for(let c of linhas){
+        const lis=c.split(',')
+        if(lis[0]==codigo){
+          escMan=lis[1]
+          escVis=lis[2]
+        }
+      }
+
+
       console.log(
-        `['${codigo}',[0,0],[${eventos.join(",")}],'${data}'],`
+        `['${codigo}',[${escMan},${escVis}],[${eventos.join(",")}],'${data}'],`
       );
     }
   });

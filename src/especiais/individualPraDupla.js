@@ -15,7 +15,7 @@ export function criarOrdem(context,time,enxuta=false){
         [['derrotas',false],['derrotas',true]],
     ]
     let complementos=[
-        '',' no 1º tempo',' no 2º tempo'
+        '','',''
     ]
     let complementos2=[
         '',' em casa',' fora de casa'
@@ -41,9 +41,9 @@ export function criarOrdem(context,time,enxuta=false){
         }
     }
     frases=[
-        [['média de gols marcados',true],['média de gols marcados',false]],
-        [['média de gols',null],['média de gols',null]],
-        [['média de gols sofridos',false],['média de gols sofridos',true]],
+        [['média marcados',true],['média marcados',false]],
+        [['média',null],['média',null]],
+        [['média sofridos',false],['média sofridos',true]],
     ]
     for(let i=0;i<=2;i++){
         for(let j=0;j<=2;j++){
@@ -65,10 +65,10 @@ export function criarOrdem(context,time,enxuta=false){
             })
         }
     }
-    /*frases=[
-        [['escanteios a favor',true],['escanteios a favor',false]],
-        [['escanteios na partida',null],['escanteios na partida',null]],
-        [['escanteios contrários',false],['escanteios contrários',true]],
+    frases=[
+        [['média a favor',true],['média a favor',false]],
+        [['média na partida',null],['média na partida',null]],
+        [['média contrários',false],['média contrários',true]],
     ]
     for(let i=0;i<=2;i++){
         const list=fucarTabela(escanteios(context,i),time)
@@ -88,6 +88,7 @@ export function criarOrdem(context,time,enxuta=false){
             })
         })
     }
+        /*
     frases=[
         [['que mais marca o primeiro gol',true],['que menos marca o primeiro gol',false]],
         [['partida sem gols',null],['partida sem gols',null]],

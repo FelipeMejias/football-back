@@ -65,7 +65,7 @@ export function criarOrdem(context,time,enxuta=false){
             })
         }
     }
-    /*frases=[
+    frases=[
         [['com mais escanteios a favor',true],['com menos escanteios a favor',false]],
         [['com mais escanteios na partida',null],['com menos escanteios na partida',null]],
         [['com mais escanteios contrários',false],['com menos escanteios contrários',true]],
@@ -87,7 +87,7 @@ export function criarOrdem(context,time,enxuta=false){
                 handicap:null
             })
         })
-    }
+    }/*
     frases=[
         [['que mais marca o primeiro gol',true],['que menos marca o primeiro gol',false]],
         [['partida sem gols',null],['partida sem gols',null]],

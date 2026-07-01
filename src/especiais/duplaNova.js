@@ -79,6 +79,13 @@ function darDica(grandeza,c,asc,metade,nomeM,nomeV){
         if(metade==2)r+=' no 2º tempo'
         return r
     }
+    if(grandeza==6){
+        if(asc)r+='Poucos escanteios'
+        if(!asc)r+='Muitos escanteios'
+        if(c==1)r+=` para ${nomeM}`
+        if(c==3)r+=` para ${nomeV}`
+        return r
+    }
 }
 export function acharPar(lista,grandezaa,cc,ascc,estadiaa,metadee,handicapp){
     for(let k=0;k<lista.length;k++){
