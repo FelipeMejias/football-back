@@ -194,7 +194,7 @@ const contextIng1={
 export const ligas={
   paths:[
     'bra1',
-    'bra2',//'arg1','uru1','eua1',
+    //'bra2',//'arg1','uru1','eua1',
     //'bra2',//'jap1','kor1','sue1',
     //'ing1',
     //'ale1',//'esp1','ita1',
@@ -202,7 +202,8 @@ export const ligas={
   ],
 
   contexts:[
-    contextBra1,//contextArg1,contextUru1,contextEua1,
+    contextBra1,
+    //contextBra2//contextArg1,contextUru1,contextEua1,
     //contextBra2y25,//contextJap1,contextKor1,contextSue1,
     //contextIng1,
     //contextAle1,//contextEsp1,contextIta1,
