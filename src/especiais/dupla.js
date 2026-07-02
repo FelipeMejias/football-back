@@ -27,14 +27,12 @@ export function criarOrdemDupla(camp,mandante,visitante){
             valor=melhorQtd
         }
         const analise=analisar(camp,mandante,visitante,grandeza,c,asc,metade,valor)
-        //console.log(analise)
         const {tex,ode,green,comecou,nome}=analise[2]
         const novo={
             mandante:[analise[0][0].chance,analise[1][0].chance],
             aposta:{tex,ode,green,comecou,nome},
             visitante:[analise[0][1].chance,analise[1][1].chance],
         }
-        //console.log(novo)
         resposta.push(analise)
     }
     return resposta

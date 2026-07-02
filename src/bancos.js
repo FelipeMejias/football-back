@@ -186,9 +186,15 @@ const contextIng1={
     listaTimes:['cap','cam','bah','bot','bra','cha','cor','ctb','cru','fla','flu','gre','int','mir','pal','rem','san','sao','vas','vit'],
     path:'bra1'
   }
+  const contextBra2={
+    listaNomes:['Athletic','América MG','Atlético GO','Avaí','Botafogo SP','Ceará','CRB','Criciúma','Cuiabá','Fortaleza','Goiás','Juventude','Londrina','Náutico','Novorizontino','Operário','Ponte Preta','São Bernardo','Sport Recife','Vila Nova'],
+    listaTimes:['ath','amg','ago','ava','bot','cea','crb','cri','cui','for', 'goi','juv','lon','nau','nov','ope','pon','sao','spo','vil'],
+    path:'bra2'
+  }
 export const ligas={
   paths:[
-    'bra1',//'arg1','uru1','eua1',
+    'bra1',
+    'bra2',//'arg1','uru1','eua1',
     //'bra2',//'jap1','kor1','sue1',
     //'ing1',
     //'ale1',//'esp1','ita1',

@@ -8,7 +8,6 @@ import { confPrimGol } from "../mu/conferencias/confPrimGol.js"
 import { confUltimoGol } from "../mu/conferencias/confUltimoGol.js"
 
 export function buildApostas(pb,dataInicio=false,dataFim=false){
-    console.log('cheguei')
     const paths=['bra1'];
     const pageBet=2
     let desordenada=[]

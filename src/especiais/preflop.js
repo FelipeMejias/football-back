@@ -33,7 +33,6 @@ export function preFlop(camp,mandante,visitante){
         }
     }
     const r=resposta.sort((a,b)=>{if(a.analise.grandeza<b.analise.grandeza){return -1}else{return true}})
-    console.log(r)
         return r
 }
 function nomePreFlop(mand,visi,camp,stat){

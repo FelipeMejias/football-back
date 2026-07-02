@@ -29,8 +29,7 @@ export function buscarApostasJogo(camp,mandante,visitante){
             confPlacar(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,null).porc
             ):undefined
             apostas.push({info,aps:[{tex:'Odd',q:null,odd:conversor(num),green}]})
-        }
-        if(grandeza==2){
+        }else{
             const aps=[]
             let maq=parseInt(num[0])
             let i=1
@@ -38,7 +37,9 @@ export function buscarApostasJogo(camp,mandante,visitante){
             while(i<num.length){
                 const ode=`${num[i]}${num[i+1]}${num[i+2]}`
                 const green=jogoAntigo?(
-                    confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd).porc
+                    grandeza==2?
+                    confGols(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd).porc:
+                    confEsc(1,{partidasTotais:[partida]},0,metade,mandante,c,asc,qtd).porc
                     ):undefined
                     
                 aps.push({tex:`${maior} ${maq}`,q:maq,odd:conversor(ode),green})
