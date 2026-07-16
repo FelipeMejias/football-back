@@ -32,11 +32,18 @@ import { bancoUsuarios } from './mu/2-online/1_____usuarios.js';
 
 import { criarOrdemDuplaPreflop } from './especiais/duplaNova.js';
 import { preFlop } from './especiais/preFlopNovo.js'
+import { googleLogin } from './online/login.js';
+import { autenticar } from './online/autenticar.js';
+import { criarAposta } from './online/criarAposta.js';
+import { buscarApostas } from './online/buscarApostas.js';
 
 export const router=Router()
 router.get('/',async(req,res)=>{
     res.sendStatus(200)
 })
+router.post("/google", googleLogin);
+router.post("/apostas", autenticar, criarAposta);
+router.get("/apostas", autenticar, buscarApostas);
 router.get('/tabelas/:camp/:pagestr',validateCamp,async(req,res)=>{
     const {camp,pagestr}=req.params
     const page=parseInt(pagestr)
